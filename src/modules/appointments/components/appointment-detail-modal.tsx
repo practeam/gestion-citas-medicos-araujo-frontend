@@ -1,4 +1,5 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Can } from "@/modules/auth";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -258,31 +259,35 @@ function AppointmentDetail({
             {t("close")}
           </Button>
           {canEdit && (
-            <Button
-              variant="outline"
-              disabled={statusChange.isPending}
-              onClick={() =>
-                onEdit(appointment, {
-                  patient: patientLabel,
-                  staff: staffLabel,
-                })
-              }
-            >
-              {t("edit")}
-            </Button>
+            <Can permission="appointment.update">
+              <Button
+                variant="outline"
+                disabled={statusChange.isPending}
+                onClick={() =>
+                  onEdit(appointment, {
+                    patient: patientLabel,
+                    staff: staffLabel,
+                  })
+                }
+              >
+                {t("edit")}
+              </Button>
+            </Can>
           )}
           {transitions.map((status) => (
-            <Button
-              key={status}
-              variant={status === "cancelled" ? "destructive" : "default"}
-              disabled={statusChange.isPending}
-              onClick={() => requestTransition(status)}
-            >
-              {statusChange.pendingStatus === status && <Spinner />}
-              {statusChange.pendingStatus === status
-                ? t(`pending.${status}`)
-                : t(`actions.${status}`)}
-            </Button>
+            <Can permission="appointment.update">
+              <Button
+                key={status}
+                variant={status === "cancelled" ? "destructive" : "default"}
+                disabled={statusChange.isPending}
+                onClick={() => requestTransition(status)}
+              >
+                {statusChange.pendingStatus === status && <Spinner />}
+                {statusChange.pendingStatus === status
+                  ? t(`pending.${status}`)
+                  : t(`actions.${status}`)}
+              </Button>
+            </Can>
           ))}
         </div>
       )}

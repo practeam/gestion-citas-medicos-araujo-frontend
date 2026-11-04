@@ -1,4 +1,5 @@
 import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
+import { Can } from "@/modules/auth";
 import { PageMeta } from "@/components/shared/page-meta";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -138,10 +139,12 @@ export default function AppointmentsCalendarPage() {
                 onClear={() => setFilters(EMPTY_FILTERS)}
               />
             </div>
-            <Button onClick={() => openCreate()}>
-              <PlusIcon className="fill-current" />
-              {t("newAppointment")}
-            </Button>
+            <Can permission="appointment.create">
+              <Button onClick={() => openCreate()}>
+                <PlusIcon className="fill-current" />
+                {t("newAppointment")}
+              </Button>
+            </Can>
           </div>
 
           <div className="space-y-4 border-t border-gray-100 p-4 sm:p-6 dark:border-white/5">
