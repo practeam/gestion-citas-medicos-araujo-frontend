@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Can } from "@/modules/auth";
 import {
   Table,
   TableBody,
@@ -73,23 +74,27 @@ export function RolesTable({ roles, onToggleStatus }: RolesTableProps) {
                   >
                     {t("actions.view")}
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    nativeButton={false}
-                    render={<Link to={`/roles/${role.id}/edit`} />}
-                  >
-                    {t("actions.edit")}
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    onClick={() => onToggleStatus(role)}
-                  >
-                    {role.is_active
-                      ? t("actions.deactivate")
-                      : t("actions.activate")}
-                  </Button>
+                  <Can permission="role.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      nativeButton={false}
+                      render={<Link to={`/roles/${role.id}/edit`} />}
+                    >
+                      {t("actions.edit")}
+                    </Button>
+                  </Can>
+                  <Can permission="role.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => onToggleStatus(role)}
+                    >
+                      {role.is_active
+                        ? t("actions.deactivate")
+                        : t("actions.activate")}
+                    </Button>
+                  </Can>
                 </div>
               </TableCell>
             </TableRow>
