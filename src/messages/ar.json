@@ -1,0 +1,3330 @@
+{
+  "common": {
+    "home": "الرئيسية",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "saveChanges": "حفظ التغييرات",
+    "viewMore": "عرض المزيد",
+    "delete": "حذف",
+    "filter": "تصفية",
+    "seeAll": "عرض الكل",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء"
+  },
+  "sidebar": {
+    "groups": {
+      "menu": "القائمة",
+      "support": "الدعم",
+      "others": "أخرى"
+    },
+    "badges": {
+      "new": "جديد",
+      "pro": "احترافي"
+    },
+    "items": {
+      "dashboard": "لوحة التحكم",
+      "ecommerceHome": "التجارة الإلكترونية",
+      "analytics": "التحليلات",
+      "marketing": "التسويق",
+      "crm": "إدارة العملاء",
+      "stocks": "الأسهم",
+      "saas": "SaaS",
+      "logistics": "الخدمات اللوجستية",
+      "ai": "الذكاء الاصطناعي",
+      "sales": "المبيعات",
+      "finance": "المالية",
+      "aiAssistant": "مساعد الذكاء الاصطناعي",
+      "textGenerator": "مولد النصوص",
+      "imageGenerator": "مولد الصور",
+      "codeGenerator": "مولد الأكواد",
+      "videoGenerator": "مولد الفيديو",
+      "aiSettings": "إعدادات الذكاء الاصطناعي",
+      "ecommerce": "التجارة الإلكترونية",
+      "products": "المنتجات",
+      "addProduct": "إضافة منتج",
+      "billing": "الفوترة",
+      "invoices": "الفواتير",
+      "singleInvoice": "فاتورة واحدة",
+      "createInvoice": "إنشاء فاتورة",
+      "transactions": "المعاملات",
+      "singleTransaction": "معاملة واحدة",
+      "calendar": "التقويم",
+      "userProfile": "الملف الشخصي",
+      "task": "المهام",
+      "taskList": "القائمة",
+      "kanban": "كانبان",
+      "forms": "النماذج",
+      "formElements": "عناصر النموذج",
+      "formLayout": "تخطيط النموذج",
+      "tables": "الجداول",
+      "basicTables": "الجداول الأساسية",
+      "dataTables": "جداول البيانات",
+      "pages": "الصفحات",
+      "fileManager": "مدير الملفات",
+      "pricingTables": "جداول الأسعار",
+      "faq": "الأسئلة الشائعة",
+      "apiKeys": "مفاتيح API",
+      "integrations": "التكاملات",
+      "blankPage": "صفحة فارغة",
+      "error404": "خطأ 404",
+      "error500": "خطأ 500",
+      "error503": "خطأ 503",
+      "comingSoon": "قريبًا",
+      "maintenance": "الصيانة",
+      "successPage": "نجاح",
+      "layouts": "التخطيطات",
+      "layoutOne": "التخطيط الأول",
+      "layoutTwo": "التخطيط الثاني",
+      "layoutThree": "التخطيط الثالث",
+      "layoutFour": "التخطيط الرابع",
+      "layoutFive": "التخطيط الخامس",
+      "layoutSix": "التخطيط السادس",
+      "charts": "الرسوم البيانية",
+      "lineChart": "رسم بياني خطي",
+      "barChart": "رسم بياني شريطي",
+      "pieChart": "رسم بياني دائري",
+      "radarChart": "رسم بياني نقطي",
+      "radialChart": "رسم بياني شعاعي",
+      "maps": "الخرائط",
+      "mapsGoogle": "الخرائط",
+      "vectorMap": "الخريطة المتجهة",
+      "uiElements": "عناصر الواجهة",
+      "alerts": "التنبيهات",
+      "avatar": "الصورة الرمزية",
+      "badge": "الشارة",
+      "breadcrumb": "مسار التنقل",
+      "buttons": "الأزرار",
+      "buttonsGroup": "مجموعة الأزرار",
+      "cards": "البطاقات",
+      "carousel": "شريط التمرير",
+      "dropdowns": "القوائم المنسدلة",
+      "images": "الصور",
+      "links": "الروابط",
+      "listView": "القائمة",
+      "dialogs": "مربعات الحوار",
+      "notificationUi": "الإشعارات",
+      "pagination": "ترقيم الصفحات",
+      "popovers": "النوافذ العائمة",
+      "progressbar": "شريط التقدم",
+      "ribbons": "الشرائط",
+      "spinners": "مؤشرات التحميل",
+      "tabs": "علامات التبويب",
+      "tooltips": "تلميحات الأدوات",
+      "videos": "مقاطع الفيديو",
+      "authentication": "المصادقة",
+      "signIn": "تسجيل الدخول",
+      "signUp": "إنشاء حساب",
+      "resetPassword": "إعادة تعيين كلمة المرور",
+      "twoStepVerification": "التحقق بخطوتين",
+      "chat": "الدردشة",
+      "supportMenu": "الدعم",
+      "supportList": "قائمة الدعم",
+      "supportReply": "رد الدعم",
+      "email": "البريد الإلكتروني",
+      "inbox": "صندوق الوارد",
+      "inboxDetails": "التفاصيل",
+      "hr": "الموارد البشرية",
+      "emptyState": "حالة فارغة",
+      "variants01": "المتغير 01",
+      "variants02": "المتغير 02",
+      "variants03": "المتغير 03",
+      "variants04": "المتغير 04",
+      "variants05": "المتغير 05",
+      "roles": "الأدوار",
+      "administration": "الإدارة",
+      "permissions": "الصلاحيات",
+      "clinicalManagement": "الإدارة السريرية",
+      "specialties": "التخصصات",
+      "specialConditions": "الحالات الخاصة",
+      "clinics": "العيادات",
+      "peopleManagement": "إدارة الأشخاص",
+      "persons": "الأشخاص",
+      "patientManagement": "إدارة المرضى",
+      "patients": "المرضى",
+      "staffManagement": "إدارة الموظفين",
+      "staff": "الموظفون",
+      "scheduleManagement": "إدارة الجدولة",
+      "scheduleExceptions": "استثناءات الجدول",
+      "scheduleOverrides": "التعديلات الجزئية",
+      "appointmentManagement": "إدارة المواعيد",
+      "appointmentsAgenda": "جدول المواعيد",
+      "serviceManagement": "إدارة الخدمات",
+      "procedures": "الإجراءات",
+      "communication": "التواصل",
+      "conversations": "المحادثات"
+    },
+    "widget": {
+      "title": "لوحة التحكم رقم 1 بـ Tailwind CSS",
+      "description": "قالب الإدارة الرائد بـ Tailwind CSS مع أكثر من 500 مكون وصفحة واجهة مستخدم.",
+      "purchasePlan": "شراء الخطة"
+    }
+  },
+  "header": {
+    "searchPlaceholder": "ابحث أو اكتب أمرًا...",
+    "toggleSidebar": "تبديل الشريط الجانبي",
+    "notifications": {
+      "title": "الإشعارات",
+      "requestsPermission": "يطلب الإذن لتغيير",
+      "project": "المشروع",
+      "minAgo": "منذ {count} دقيقة",
+      "hrAgo": "منذ {count} ساعة",
+      "viewAll": "عرض جميع الإشعارات"
+    }
+  },
+  "userDropdown": {
+    "editProfile": "تعديل الملف الشخصي",
+    "accountSettings": "إعدادات الحساب",
+    "support": "الدعم",
+    "language": "اللغة",
+    "signOut": "تسجيل الخروج"
+  },
+  "ecommerce": {
+    "title": "لوحة تحكم التجارة الإلكترونية",
+    "metrics": {
+      "customers": "العملاء",
+      "orders": "الطلبات"
+    },
+    "months": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dec"
+    },
+    "monthlySales": {
+      "title": "المبيعات الشهرية",
+      "series": "المبيعات"
+    },
+    "monthlyTarget": {
+      "title": "الهدف الشهري",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "earned": "لقد ربحت {amount} اليوم، وهو أعلى من الشهر الماضي. واصل عملك الرائع!",
+      "target": "الهدف",
+      "revenue": "الإيرادات",
+      "today": "اليوم"
+    },
+    "statistics": {
+      "title": "الإحصائيات",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "overview": "نظرة عامة",
+      "sales": "المبيعات",
+      "revenue": "الإيرادات",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "annually": "سنوي",
+      "selectDateRange": "اختر نطاق التاريخ"
+    },
+    "recentOrders": {
+      "title": "الطلبات الأخيرة",
+      "products": "المنتجات",
+      "category": "الفئة",
+      "price": "السعر",
+      "status": "الحالة",
+      "variants": "{count, plural, one {متغير واحد} two {متغيران} few {# متغيرات} many {# متغيرًا} other {# متغير}}",
+      "categories": {
+        "laptop": "حاسوب محمول",
+        "watch": "ساعة",
+        "smartphone": "هاتف ذكي",
+        "electronics": "إلكترونيات",
+        "accessories": "إكسسوارات"
+      },
+      "statuses": {
+        "delivered": "تم التوصيل",
+        "pending": "قيد الانتظار",
+        "canceled": "ملغي"
+      }
+    },
+    "demographic": {
+      "title": "التوزيع الديموغرافي للعملاء",
+      "subtitle": "عدد العملاء حسب الدولة",
+      "customers": "{count} عميل",
+      "usa": "USA",
+      "france": "France",
+      "yemen": "Yemen",
+      "uk": "UK"
+    }
+  },
+  "analytics": {
+    "metrics": {
+      "uniqueVisitors": "زوار فريدون",
+      "totalPageviews": "إجمالي مشاهدات الصفحة",
+      "bounceRate": "معدل الارتداد",
+      "visitDuration": "مدة الزيارة",
+      "vsLastMonth": "مقارنة بالشهر الماضي"
+    },
+    "barChart": {
+      "title": "التحليلات",
+      "subtitle": "تحليلات الزوار لآخر 30 يوماً",
+      "twelveMonths": "12 شهراً",
+      "thirtyDays": "30 يوماً",
+      "sevenDays": "7 أيام",
+      "twentyFourHours": "24 ساعة",
+      "visitors": "الزوار"
+    },
+    "topChannels": {
+      "title": "أهم القنوات",
+      "source": "المصدر",
+      "visitors": "الزوار",
+      "channelsReport": "تقرير القنوات"
+    },
+    "topPages": {
+      "title": "أهم الصفحات",
+      "source": "المصدر",
+      "pageview": "مشاهدة الصفحة",
+      "channelsReport": "تقرير القنوات"
+    },
+    "activeUsers": {
+      "title": "المستخدمون النشطون",
+      "liveVisitors": "زوار مباشرون",
+      "avgDaily": "المتوسط اليومي",
+      "avgWeekly": "المتوسط الأسبوعي",
+      "avgMonthly": "المتوسط الشهري"
+    },
+    "acquisitionChannels": {
+      "title": "قنوات الاكتساب",
+      "direct": "مباشر",
+      "organic": "عضوي",
+      "referral": "إحالة",
+      "total": "الإجمالي: 120 ألف"
+    },
+    "session": {
+      "title": "الجلسات حسب الجهاز",
+      "total": "الإجمالي"
+    },
+    "recentOrders": {
+      "title": "الطلبات الأخيرة",
+      "products": "المنتجات",
+      "category": "الفئة",
+      "country": "الدولة",
+      "cr": "معدل التحويل",
+      "value": "القيمة",
+      "categories": {
+        "uiKits": "مجموعات واجهة المستخدم",
+        "templates": "القوالب",
+        "saas": "SaaS"
+      },
+      "crDashboard": "لوحة التحكم"
+    }
+  },
+  "notFound": {
+    "error": "خطأ",
+    "message": "يبدو أننا لا نستطيع العثور على الصفحة التي تبحث عنها!",
+    "backHome": "العودة إلى الصفحة الرئيسية"
+  },
+  "marketing": {
+    "metrics": {
+      "avgClientRating": "متوسط تقييم العملاء",
+      "instagramFollowers": "متابعو إنستغرام",
+      "totalRevenue": "إجمالي الإيرادات",
+      "vsLastMonth": "مقارنة بالشهر الماضي"
+    },
+    "impressionChart": {
+      "title": "الانطباعات وحركة البيانات",
+      "totalRevenue": "إجمالي الإيرادات",
+      "sales": "المبيعات",
+      "revenue": "الإيرادات",
+      "selectDateRange": "تحديد النطاق الزمني"
+    },
+    "featuredCampaign": {
+      "title": "الحملات المميزة",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "products": "المنتجات",
+      "campaign": "الحملة",
+      "status": "الحالة",
+      "adsCampaign": "حملة إعلانية",
+      "campaigns": {
+        "growBrand": "نمّ علامتك التجارية عبر...",
+        "betterIdeas": "اصنع أفكارًا أفضل...",
+        "increaseTraffic": "زيادة زيارات موقعك..."
+      },
+      "statuses": {
+        "success": "ناجح",
+        "pending": "قيد الانتظار",
+        "failed": "فاشل"
+      }
+    },
+    "trafficStats": {
+      "title": "إحصائيات حركة المرور",
+      "today": "اليوم",
+      "week": "الأسبوع",
+      "month": "الشهر",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "newSubscribers": "مشتركون جدد",
+      "conversionRate": "معدل التحويل",
+      "pageBounceRate": "معدل الارتداد للصفحة",
+      "thenLastWeek": "عن الأسبوع الماضي",
+      "thanYesterday": "عن الأمس",
+      "thanLastMonth": "عن الشهر الماضي",
+      "newSales": "مبيعات جديدة"
+    },
+    "trafficSource": {
+      "title": "أهم مصادر الزيارات",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "viewAll": "عرض الكل"
+    }
+  },
+  "crm": {
+    "metrics": {
+      "activeDeal": "الصفقة النشطة",
+      "revenueTotal": "إجمالي الإيرادات",
+      "closedDeals": "الصفقات المغلقة",
+      "lastMonth": "الشهر الماضي"
+    },
+    "statistics": {
+      "title": "الإحصائيات",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "avgYearlyProfit": "متوسط الربح السنوي",
+      "sales": "المبيعات",
+      "revenue": "الإيرادات",
+      "monthly": "شهري",
+      "quarterly": "فصلي",
+      "annually": "سنوي"
+    },
+    "estimatedRevenue": {
+      "title": "الإيرادات المقدرة",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "goals": "أهداف يونيو",
+      "marketing": "التسويق",
+      "sales": "المبيعات"
+    },
+    "salesCategory": {
+      "title": "فئة المبيعات",
+      "affiliate": "التسويق بالعمولة",
+      "direct": "مباشر",
+      "adsense": "أدسنس",
+      "affiliateProgram": "برنامج التسويق بالعمولة",
+      "directBuy": "شراء مباشر",
+      "products": "منتجات",
+      "total": "الإجمالي",
+      "usedOf": "المستخدم من"
+    },
+    "upcomingSchedule": {
+      "title": "الجدول القادم",
+      "schedules": {
+        "item1": {
+          "title": "مؤتمر تحليلات الأعمال",
+          "description": "استكشاف مستقبل البيانات الموجهة +6 المزيد"
+        },
+        "item2": {
+          "title": "سبرنت الأعمال",
+          "description": "تقنيات من سبرنت الأعمال +2 المزيد"
+        },
+        "item3": {
+          "title": "اجتماع مراجعة العملاء",
+          "description": "رؤى من اجتماع مراجعة العملاء +8 المزيد"
+        }
+      }
+    },
+    "recentOrders": {
+      "title": "الطلبات الأخيرة",
+      "searchPlaceholder": "بحث...",
+      "dealId": "معرف الصفقة",
+      "customer": "العميل",
+      "productService": "المنتج/الخدمة",
+      "dealValue": "قيمة الصفقة",
+      "closeDate": "تاريخ الإغلاق",
+      "status": "الحالة",
+      "action": "الإجراء",
+      "products": {
+        "softwareLicense": "ترخيص البرمجيات",
+        "cloudHosting": "استضافة سحابية",
+        "webDomain": "نطاق ويب",
+        "sslCertificate": "شهادة SSL",
+        "premiumSupport": "دعم متميز"
+      },
+      "statuses": {
+        "complete": "مكتمل",
+        "pending": "قيد الانتظار",
+        "cancel": "ملغي"
+      },
+      "noOrders": "لم يتم العثور على طلبات",
+      "noOrdersDescription": "حاول ضبط البحث أو عامل التصفية للعثور على ما تبحث عنه."
+    }
+  },
+  "stocks": {
+    "title": "الأسهم",
+    "dividend": {
+      "title": "توزيعات الأرباح",
+      "series": "توزيعات الأرباح",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "portfolioPerformance": {
+      "title": "أداء المحفظة",
+      "subtitle": "إليك إحصائيات أدائك لكل شهر",
+      "series": "أداء المحفظة",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "annually": "سنوي"
+    },
+    "trendingStocks": {
+      "title": "الأسهم الرائجة",
+      "shortStock": "بيع على المكشوف",
+      "buyStock": "شراء السهم"
+    },
+    "watchlist": {
+      "title": "قائمة مراقبتي",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "latestTransactions": {
+      "title": "أحدث المعاملات",
+      "searchPlaceholder": "بحث...",
+      "table": {
+        "name": "الاسم",
+        "date": "التاريخ",
+        "price": "السعر",
+        "category": "الفئة",
+        "status": "الحالة"
+      },
+      "actions": {
+        "bought": "شراء {symbol}",
+        "sell": "بيع {symbol}"
+      },
+      "categories": {
+        "finance": "المالية",
+        "technology": "تكنولوجيا",
+        "ecommerce": "التجارة الإلكترونية",
+        "media": "وسائل التواصل"
+      },
+      "statuses": {
+        "success": "ناجح",
+        "pending": "قيد الانتظار",
+        "failed": "فاشل"
+      }
+    }
+  },
+  "saas": {
+    "title": "SaaS",
+    "metrics": {
+      "overview": "نظرة عامة",
+      "totalRevenue": "إجمالي الإيرادات",
+      "activeUsers": "المستخدمون النشطون",
+      "clv": "القيمة الدائمة للعميل",
+      "cac": "تكلفة اكتساب العميل",
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "yearly": "سنوي",
+      "filter": "تصفية"
+    },
+    "churnRate": {
+      "title": "معدل التراجع",
+      "subtitle": "الرجوع إلى الخطة المجانية",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "series": "معدل التراجع",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "userGrowth": {
+      "title": "نمو المستخدمين",
+      "subtitle": "تسجيلات جديدة من الموقع والتطبيق",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "series": "الإيرادات",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "conversionFunnel": {
+      "title": "مسار التحويل",
+      "total": "الإجمالي: 120 ألف",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "series": {
+        "adImpression": "مرات ظهور الإعلانات",
+        "adImpressions": "مرات ظهور الإعلانات",
+        "websiteSession": "جلسات الموقع",
+        "appDownload": "تنزيلات التطبيق",
+        "newUsers": "مستخدمون جدد"
+      }
+    },
+    "recentInvoices": {
+      "title": "أحدث الفواتير",
+      "table": {
+        "serialNo": "الرقم التسلسلي:",
+        "closeDate": "تاريخ الإغلاق",
+        "user": "المستخدم",
+        "amount": "المبلغ",
+        "status": "الحالة"
+      },
+      "statuses": {
+        "complete": "مكتمل",
+        "pending": "قيد الانتظار",
+        "cancelled": "ملغي"
+      }
+    },
+    "productPerformance": {
+      "title": "أداء المنتج",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "tabs": {
+        "dailySales": "المبيعات اليومية",
+        "onlineSales": "المبيعات عبر الإنترنت",
+        "newUsers": "المستخدمون الجدد"
+      },
+      "digitalProduct": "منتج رقمي",
+      "physicalProduct": "منتج مادي",
+      "avgDailySales": "متوسط المبيعات اليومية",
+      "totalOnlineSales": "إجمالي المبيعات عبر الإنترنت",
+      "addedLastMonth": "أضيف الشهر الماضي",
+      "totalNewUsers": "إجمالي المستخدمين الجدد",
+      "series": {
+        "sales": "المبيعات",
+        "revenue": "الإيرادات"
+      }
+    },
+    "activities": {
+      "title": "الأنشطة",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "newInvoice": "فاتورة جديدة",
+      "createdInvoice": "أنشأ فاتورة"
+    }
+  },
+  "logistics": {
+    "title": "اللوجستيات",
+    "metrics": {
+      "totalOrders": "إجمالي الطلبات",
+      "ordersInTransit": "طلبات في الطريق"
+    },
+    "deliveryStatistics": {
+      "title": "إحصائيات التوصيل",
+      "subtitle": "إجمالي عدد عمليات التوصيل 70.5K",
+      "monthly": "شهري",
+      "yearly": "سنوي",
+      "shipment": "الشحنة",
+      "inTransit": "في الطريق",
+      "delivery": "التوصيل"
+    },
+    "revenueEarned": {
+      "totalRevenue": "إجمالي الإيرادات المحققة",
+      "shippedQuantities": "الكميات المشحونة",
+      "newSales": "مبيعات جديدة"
+    },
+    "deliveryVehicle": {
+      "title": "مركبات التوصيل",
+      "subtitle": "المركبات العاملة على الطريق",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "onRoute": "في الطريق"
+    },
+    "trackingDelivery": {
+      "title": "تتبع التوصيل",
+      "subtitle": "آخر سجل تسليم تمت مشاهدته"
+    },
+    "trackingProgress": {
+      "trackingId": "معرف التتبع",
+      "inTransit": "في الطريق",
+      "pickedUp": "تم الاستلام",
+      "delivered": "تم التوصيل"
+    },
+    "deliveryMan": {
+      "courier": "مندوب التوصيل"
+    },
+    "deliveriesActivity": {
+      "title": "أنشطة التوصيل",
+      "subtitle": "تتبع أنشطة الشحن الأخيرة الخاصة بك",
+      "tabs": {
+        "all": "جميع الشحنات",
+        "delivered": "تم التوصيل",
+        "inTransit": "في الطريق",
+        "pending": "قيد الانتظار",
+        "processing": "قيد المعالجة"
+      },
+      "filter": {
+        "button": "تصفية",
+        "category": "الفئة",
+        "searchCategory": "البحث في الفئة...",
+        "company": "الشركة",
+        "searchCompany": "البحث عن شركة...",
+        "apply": "تطبيق"
+      },
+      "table": {
+        "orderId": "معرف الطلب",
+        "category": "الفئة",
+        "company": "الشركة",
+        "arrivalTime": "وقت الوصول",
+        "route": "المسار",
+        "price": "السعر",
+        "status": "الحالة"
+      },
+      "categories": {
+        "furniture": "أثاث",
+        "clothing": "ملابس",
+        "books": "كتب",
+        "automotive": "سيارات",
+        "electronics": "إلكترونيات",
+        "health": "صحة",
+        "toys": "ألعاب",
+        "kitchen": "مطبخ",
+        "beauty": "جمال",
+        "sports": "رياضة"
+      },
+      "statuses": {
+        "delivered": "تم التوصيل",
+        "inTransit": "في الطريق",
+        "pending": "قيد الانتظار",
+        "processing": "قيد المعالجة",
+        "canceled": "ملغي"
+      },
+      "pagination": {
+        "showing": "عرض",
+        "to": "إلى",
+        "of": "من",
+        "page": "صفحة"
+      }
+    }
+  },
+  "aiDashboard": {
+    "stats": {
+      "users": "المستخدمون",
+      "projects": "المشاريع",
+      "revenue": "الإيرادات",
+      "paidUsers": "المستخدمون المشتركون",
+      "last30Days": "آخر 30 يوماً"
+    },
+    "userRevenue": {
+      "title": "إحصائيات المستخدمين والإيرادات",
+      "subtitle": "تصور التقدم والتفاعل شهراً بعد شهر.",
+      "users": "المستخدمون",
+      "revenue": "الإيرادات",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "annually": "سنوي"
+    },
+    "apiToken": {
+      "title": "استخدامات رمز API",
+      "totalApiTokenUsed": "إجمالي رموز API المستخدمة",
+      "tokenUsed": "الرمز المستخدم",
+      "configuredKey": "{count, plural, one {تم تكوين مفتاح API واحد} other {تم تكوين {count} مفاتيح API}}",
+      "viewAllUsageDetails": "عرض كافة تفاصيل الاستخدام"
+    },
+    "userAnalytics": {
+      "title": "تحليلات المستخدمين",
+      "subtitle": "رؤى مستخدمي المنصة",
+      "totalUsers": "إجمالي المستخدمين",
+      "freeUsers": "المستخدمون المجانيون",
+      "paidUsers": "المستخدمون المشتركون",
+      "ofTotalUser": "من إجمالي المستخدمين",
+      "thisMonth": "هذا الشهر",
+      "fromLastMonth": "عن الشهر الماضي",
+      "thisYear": "هذا العام",
+      "fromLastYear": "عن العام الماضي"
+    },
+    "projectAnalytics": {
+      "title": "تحليلات المشاريع",
+      "subtitle": "عرض تفاصيل رؤى المشاريع",
+      "totalProjects": "إجمالي المشاريع",
+      "today": "اليوم",
+      "yesterday": "أمس",
+      "projectCreated": "تم إنشاء المشروع",
+      "thisMonth": "هذا الشهر",
+      "fromLastMonth": "عن الشهر الماضي",
+      "thisYear": "هذا العام",
+      "fromLastYear": "عن العام الماضي"
+    },
+    "recentTransactions": {
+      "title": "المعاملات الأخيرة",
+      "searchPlaceholder": "بحث...",
+      "filter": "تصفية",
+      "noTransactions": "لم يتم العثور على معاملات",
+      "noTransactionsDescription": "حاول ضبط البحث أو عامل التصفية للعثور على ما تبحث عنه.",
+      "table": {
+        "paidBy": "دفع بواسطة",
+        "packageName": "اسم الباقة",
+        "price": "السعر",
+        "paidDate": "تاريخ الدفع",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      },
+      "packages": {
+        "starterMonthly": "المبتدئ - شهري",
+        "growthYearly": "النمو - سنوي",
+        "premiumMonthly": "المميز - شهري"
+      },
+      "statuses": {
+        "active": "نشط",
+        "expired": "منتهي الصلاحية"
+      },
+      "pagination": {
+        "previous": "السابق",
+        "next": "التالي",
+        "pageOf": "صفحة {current} من {total}"
+      }
+    }
+  },
+  "sales": {
+    "salesStats": {
+      "title": "لوحة بيانات المبيعات",
+      "subtitle": "تتبع الإيرادات والأداء ونمو المبيعات في الوقت الفعلي",
+      "selectDateRange": "تحديد النطاق الزمني",
+      "export": "تصدير",
+      "totalRevenue": "إجمالي الإيرادات",
+      "totalSales": "إجمالي المبيعات",
+      "conversionRate": "معدل التحويل",
+      "refundRate": "معدل الاسترداد",
+      "vsLastMonth": "مقارنة بالشهر الماضي",
+      "newSales": "مبيعات جديدة"
+    },
+    "userRevenueStats": {
+      "title": "إحصائيات المستخدمين والإيرادات",
+      "subtitle": "تصور التقدم والتفاعل من شهر لآخر.",
+      "daily": "يومي",
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "onlineSales": "المبيعات عبر الإنترنت",
+      "offlineSales": "المبيعات في المتجر"
+    },
+    "revenueChart": {
+      "title": "تفاصيل الإيرادات",
+      "subtitle": "رؤى الإيرادات ونظرة عامة على الأداء",
+      "daily": "يومي",
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "online": "عبر الإنترنت",
+      "offline": "في المتجر"
+    },
+    "userRetention": {
+      "title": "الاحتفاظ بالمستخدمين",
+      "subtitle": "تفاعل المستخدم بمرور الوقت",
+      "increasedVsLastWeek": "زيادة مقارنة بالأسبوع الماضي"
+    },
+    "salesByChannel": {
+      "title": "المبيعات حسب القناة",
+      "subtitle": "نظرة عامة على أداء القنوات",
+      "increasedVsLastWeek": "زيادة مقارنة بالأسبوع الماضي",
+      "channels": {
+        "website": "الموقع الإلكتروني",
+        "email": "البريد الإلكتروني",
+        "socialMedia": "وسائل التواصل الاجتماعي"
+      },
+      "table": {
+        "channels": "القنوات",
+        "metric": "المقياس",
+        "total": "الإجمالي"
+      }
+    },
+    "salesByCountry": {
+      "title": "المبيعات حسب الدولة",
+      "subtitle": "نظرة عامة على المبيعات حسب الدولة",
+      "countries": {
+        "usa": "الولايات المتحدة",
+        "france": "فرنسا",
+        "japan": "اليابان",
+        "egypt": "مصر",
+        "germany": "ألمانيا"
+      }
+    },
+    "topProducts": {
+      "title": "أفضل المنتجات",
+      "searchPlaceholder": "بحث...",
+      "noProducts": "لم يتم العثور على منتجات",
+      "noProductsDescription": "حاول تغيير استعلام البحث.",
+      "table": {
+        "productName": "اسم المنتج",
+        "productId": "معرف المنتج",
+        "category": "الفئة",
+        "sales": "المبيعات",
+        "earnings": "الأرباح",
+        "stocks": "المخزون",
+        "status": "الحالة"
+      },
+      "products": {
+        "classicDenimJacket": "جاكيت جينز كلاسيكي",
+        "slimFitChinos": "بنطال تشينو سليم فيت",
+        "organicCottonTShirt": "تي شيرت قطن عضوي",
+        "leatherAnkleBoots": "حذاء كاحل جلدي",
+        "woolBlendScarf": "وشاح مزيج الصوف"
+      },
+      "variants": {
+        "threeSizes": "3 مقاسات",
+        "fourColors": "4 ألوان",
+        "fiveColors": "5 ألوان",
+        "sixSizes": "6 مقاسات",
+        "twoColors": "لونان"
+      },
+      "categories": {
+        "jacket": "جاكيت",
+        "pants": "بنطال",
+        "tShirt": "تي شيرت",
+        "footwear": "أحذية",
+        "accessory": "إكسسوار"
+      },
+      "statuses": {
+        "inStock": "متوفر بالمخزون",
+        "lowStock": "مخزون منخفض",
+        "outOfStock": "نفد المخزون"
+      }
+    }
+  },
+  "finance": {
+    "totalBalanceOverview": {
+      "title": "إجمالي الرصيد",
+      "overview": "نظرة عامة على أموالك الحالية",
+      "thanLastMonth": "مقارنة بالشهر الماضي",
+      "primaryAccount": "الحساب الأساسي:",
+      "seeDetails": "عرض التفاصيل",
+      "transfer": "تحويل",
+      "received": "استلام",
+      "balance": "الرصيد"
+    },
+    "stats": {
+      "totalBalance": "إجمالي الرصيد",
+      "monthlyIncome": "الدخل الشهري",
+      "totalSpent": "إجمالي المصروفات",
+      "savingRate": "معدل الادخار",
+      "thanLastMonth": "مقارنة بالشهر الماضي",
+      "goalProgress": "الهدف: 30% - 3.9% متبقية"
+    },
+    "cashflow": {
+      "title": "نظرة عامة على التدفق النقدي",
+      "totalRevenue": "إجمالي الإيرادات",
+      "income": "الدخل",
+      "expense": "المصروفات"
+    },
+    "spending": {
+      "title": "الإنفاق",
+      "yearly": "سنوي",
+      "monthly": "شهري",
+      "total": "الإجمالي",
+      "categories": {
+        "activity": "النشاط",
+        "onlinePurchases": "المشتريات عبر الإنترنت",
+        "groceries": "البقالة",
+        "digitalGoods": "السلع الرقمية",
+        "stationery": "القرطاسية",
+        "others": "أخرى"
+      }
+    },
+    "quickSend": {
+      "title": "إرسال سريع",
+      "sendFrom": "إرسال من",
+      "currency": "العملة",
+      "amount": "المبلغ",
+      "sendMoney": "إرسال الأموال"
+    },
+    "myCards": {
+      "title": "بطاقاتي",
+      "addCard": "إضافة بطاقة",
+      "virtualCard": "بطاقة افتراضية",
+      "recentTransactions": "المعاملات الأخيرة",
+      "seeAllTransactions": "عرض جميع المعاملات",
+      "transactions": {
+        "paymentReceived": "تم استلام الدفعة",
+        "cashbackDesc": "استرداد نقدي من Stellar Rewards",
+        "netflixSubscription": "اشتراك Netflix",
+        "netflixDesc": "رسوم اشتراك شهر سبتمبر",
+        "moneyReceived": "تم استلام الأموال",
+        "paypalDesc": "تم استلام الدفعة عبر PayPal",
+        "googleAds": "إعلانات Google",
+        "googleAdsDesc": "تم استلام الدفعة من إعلانات Google"
+      }
+    },
+    "transactionsTable": {
+      "title": "المعاملات الأخيرة",
+      "searchPlaceholder": "بحث...",
+      "filter": "تصفية",
+      "table": {
+        "orderId": "معرف الطلب",
+        "activity": "النشاط",
+        "price": "السعر",
+        "date": "التاريخ",
+        "status": "الحالة"
+      },
+      "activities": {
+        "hotelBooking": "حجز فندق",
+        "onlineShopping": "تسوق عبر الإنترنت",
+        "gamePurchase": "شراء لعبة",
+        "utilityBillPayment": "دفع فواتير الخدمات",
+        "onlineCourseEnrollment": "التسجيل في دورة تدريبية"
+      },
+      "statuses": {
+        "completed": "مكتمل",
+        "inProgress": "قيد التنفيذ"
+      }
+    }
+  },
+  "hr": {
+    "header": {
+      "title": "لوحة تحكم الموارد البشرية",
+      "subtitle": "إليك ما يحدث في جميع أنحاء فريقك.",
+      "dateRange": "16 أغسطس 2028 - 16 سبتمبر 2028",
+      "addMember": "إضافة عضو"
+    },
+    "quickStats": {
+      "title": "إحصائيات سريعة",
+      "monthly": "شهرياً",
+      "weekly": "أسبوعياً",
+      "yearly": "سنوياً",
+      "thanLastMonth": "عن الشهر الماضي",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "thanLastYear": "عن العام الماضي",
+      "totalEmployee": "إجمالي الموظفين",
+      "activeEmployee": "الموظفون النشطون",
+      "onLeave": "في إجازة",
+      "totalPayroll": "إجمالي الرواتب"
+    },
+    "attendanceOverview": {
+      "title": "نظرة عامة على الحضور",
+      "monthly": "شهرياً",
+      "weekly": "أسبوعياً",
+      "yearly": "سنوياً",
+      "days": {
+        "mon": "الإثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة",
+        "sat": "السبت",
+        "sun": "الأحد"
+      }
+    },
+    "employeeByDepartment": {
+      "title": "الموظفون حسب القسم",
+      "thanLastMonth": "عن الشهر الماضي",
+      "viewDetails": "عرض التفاصيل",
+      "exportData": "تصدير البيانات",
+      "departments": {
+        "engineering": "الهندسة",
+        "marketing": "التسويق",
+        "sales": "المبيعات",
+        "hr": "الموارد البشرية",
+        "finance": "المالية",
+        "others": "أخرى"
+      }
+    },
+    "interviewAndMeetings": {
+      "title": "المقابلات والاجتماعات",
+      "monthYear": "يناير 2027",
+      "joinNow": "الانضمام الآن",
+      "days": {
+        "mon": "الإثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة",
+        "sat": "السبت",
+        "sun": "الأحد"
+      },
+      "meetings": {
+        "productSync": "مزامنة فريق المنتج",
+        "frontendInterview": "مقابلات المرشحين - مطور واجهات أمامية"
+      }
+    },
+    "jobStatistics": {
+      "title": "إحصائيات الوظائف",
+      "monthly": "شهرياً",
+      "weekly": "أسبوعياً",
+      "yearly": "سنوياً",
+      "totalJob": "إجمالي الوظائف",
+      "activeJob": "وظائف نشطة",
+      "interview": "مقابلات",
+      "hired": "تم التعيين"
+    },
+    "employeeGrowth": {
+      "title": "نمو الموظفين",
+      "weekly": "أسبوعياً",
+      "monthly": "شهرياً",
+      "yearly": "سنوياً",
+      "series": "الموظفون",
+      "days": {
+        "sat": "السبت",
+        "sun": "الأحد",
+        "mon": "الإثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة"
+      }
+    },
+    "employeeDirectory": {
+      "title": "دليل الموظفين",
+      "searchPlaceholder": "بحث...",
+      "filter": "تصفية",
+      "noEmployeesTitle": "لم يتم العثور على موظفين",
+      "allDepartment": "جميع الأقسام",
+      "allStatus": "جميع الحالات",
+      "table": {
+        "users": "المستخدمون",
+        "department": "القسم",
+        "role": "الدور",
+        "status": "الحالة",
+        "joined": "تاريخ الانضمام",
+        "action": "الإجراء"
+      },
+      "departments": {
+        "all": "جميع الأقسام",
+        "engineering": "الهندسة",
+        "hr": "الموارد البشرية",
+        "sales": "المبيعات",
+        "marketing": "التسويق",
+        "finance": "المالية"
+      },
+      "statuses": {
+        "all": "جميع الحالات",
+        "active": "نشط",
+        "onboarding": "قيد الإعداد",
+        "onLeave": "في إجازة"
+      },
+      "roles": {
+        "seniorDeveloper": "مطور أول",
+        "juniorDeveloper": "مطور مبتدئ",
+        "hrSpecialist": "أخصائي موارد بشرية",
+        "accountExecutive": "مسؤول حسابات"
+      },
+      "noEmployees": "لم يتم العثور على موظفين يطابقون المعايير المحددة."
+    }
+  },
+  "roles": {
+    "title": "الأدوار",
+    "meta": {
+      "title": "الأدوار | إدارة مواعيد الأسنان",
+      "description": "إدارة الأدوار المتاحة في النظام."
+    },
+    "create": "دور جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ تحميل الأدوار...",
+    "empty": "لا توجد أدوار مسجلة بعد.",
+    "noResults": "لا يوجد دور يطابق البحث.",
+    "noDescription": "بدون وصف",
+    "columns": {
+      "name": "الاسم",
+      "description": "الوصف",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم...",
+      "searchLabel": "البحث عن الأدوار بالاسم",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      }
+    },
+    "actions": {
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل",
+      "view": "عرض"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل الدور",
+        "description": "هل تريد تفعيل الدور \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل الدور",
+        "description": "هل تريد تعطيل الدور \"{name}\"؟ لن يتم حذف الدور وستبقى صلاحياته كما هي.",
+        "confirm": "تعطيل"
+      }
+    },
+    "form": {
+      "createTitle": "دور جديد",
+      "editTitle": "تعديل الدور",
+      "nameLabel": "الاسم",
+      "namePlaceholder": "مثال: receptionist",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "وصف اختياري للدور",
+      "create": "إنشاء الدور",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى الأدوار",
+      "noChanges": "لا توجد تغييرات للحفظ."
+    },
+    "validation": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameTooLong": "يجب ألا يتجاوز الاسم 80 حرفًا."
+    },
+    "notices": {
+      "created": "تم إنشاء الدور بنجاح.",
+      "updated": "تم تحديث الدور بنجاح.",
+      "activated": "تم تفعيل الدور بنجاح.",
+      "deactivated": "تم تعطيل الدور بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الدور.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    },
+    "detail": {
+      "title": "تفاصيل الدور"
+    },
+    "permissions": {
+      "title": "صلاحيات الدور",
+      "createHint": "اختياري. اختر الصلاحيات النشطة التي ستُسند بعد إنشاء الدور.",
+      "editHint": "الصلاحيات المسندة لهذا الدور. تُطبّق التغييرات عند حفظ الدور.",
+      "manageInEdit": "إدارة الصلاحيات",
+      "selectedLabel": "الصلاحيات المختارة",
+      "removeSelection": "إزالة {name} من الاختيار",
+      "searchPlaceholder": "البحث في الصلاحيات النشطة...",
+      "searchLabel": "البحث عن الصلاحيات النشطة بالاسم",
+      "catalogError": "تعذر تحميل كتالوج الصلاحيات.",
+      "retry": "إعادة المحاولة",
+      "loadingCatalog": "جارٍ تحميل الصلاحيات...",
+      "noResults": "لا توجد صلاحيات نشطة متاحة لهذا البحث.",
+      "emptyPage": "لا توجد صلاحيات في هذه الصفحة.",
+      "alreadyAssigned": "مُسندة",
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "pageSummary": "صفحة {page} من {totalPages} · {total} صلاحية نشطة",
+      "previous": "السابق",
+      "next": "التالي",
+      "status": {
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "assignedError": "تعذر تحميل الصلاحيات المسندة.",
+      "loadingAssigned": "جارٍ تحميل الصلاحيات المسندة...",
+      "noAssigned": "لا توجد صلاحيات مسندة لهذا الدور.",
+      "currentTitle": "الصلاحيات المسندة",
+      "inactiveAssigned": "هذه الصلاحية غير نشطة. تبقى مرتبطة ويمكن إزالتها.",
+      "willBeRemoved": "سيتم إزالتها",
+      "undoRemove": "تراجع",
+      "remove": "إزالة",
+      "addTitle": "إضافة صلاحيات",
+      "roleInactive": "هذا الدور غير نشط. فعّله أولًا لإسناد صلاحيات جديدة.",
+      "saved": "تم حفظ تغييرات الصلاحيات بنجاح.",
+      "someFailed": "تعذر إكمال بعض تغييرات الصلاحيات",
+      "pendingSummary": "تغييرات صلاحيات معلقة: {adds} للإضافة، {removes} للإزالة.",
+      "roleDataSaved": "تم حفظ بيانات الدور. لا تزال بعض تغييرات الصلاحيات معلقة؛ راجعها أدناه واحفظ مرة أخرى.",
+      "assigning": "جارٍ إسناد الصلاحيات...",
+      "partial": {
+        "title": "تم إنشاء الدور لكن لم تُسند بعض الصلاحيات",
+        "description": "تم إنشاء الدور \"{name}\" بنجاح لكن تعذر إكمال بعض إسنادات الصلاحيات. لن يُنشأ الدور مرة أخرى؛ يمكنك إعادة محاولة الصلاحيات المعلقة فقط.",
+        "assigned": "الصلاحيات المسندة",
+        "failed": "الصلاحيات المعلقة",
+        "retry": "إعادة محاولة الصلاحيات المعلقة",
+        "goToList": "الذهاب إلى قائمة الأدوار",
+        "editRole": "تعديل الدور"
+      },
+      "errors": {
+        "unexpected": "حدث خطأ غير متوقع.",
+        "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+        "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+        "duplicate": "الصلاحية مسندة بالفعل لهذا الدور.",
+        "notFound": "الدور أو الصلاحية لم تعد متاحة.",
+        "assignFailed": "تعذر إسناد الصلاحية.",
+        "removeFailed": "تعذرت إزالة الصلاحية."
+      }
+    }
+  },
+  "permissions": {
+    "title": "الصلاحيات",
+    "meta": {
+      "title": "الصلاحيات | إدارة مواعيد الأسنان",
+      "description": "إدارة كتالوج صلاحيات النظام."
+    },
+    "create": "صلاحية جديدة",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ تحميل الصلاحيات...",
+    "empty": "لا توجد صلاحيات مسجلة بعد.",
+    "noResults": "لا توجد صلاحية تطابق البحث.",
+    "noDescription": "بدون وصف",
+    "columns": {
+      "name": "الاسم",
+      "description": "الوصف",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم...",
+      "searchLabel": "البحث عن الصلاحيات بالاسم",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      }
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل الصلاحية",
+        "description": "هل تريد تفعيل الصلاحية \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل الصلاحية",
+        "description": "هل تريد تعطيل الصلاحية \"{name}\"؟ لن يتم حذف السجل.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل الصلاحية"
+    },
+    "form": {
+      "createTitle": "صلاحية جديدة",
+      "editTitle": "تعديل الصلاحية",
+      "nameLabel": "الاسم",
+      "namePlaceholder": "مثال: appointment.cancel",
+      "nameHint": "استخدم الصيغة resource.action بأحرف صغيرة (مثال: person.create). لا يمكن تغييره لاحقًا.",
+      "nameReadOnlyHint": "الاسم معرّف ثابت ولا يمكن تعديله.",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "وصف اختياري للصلاحية",
+      "create": "إنشاء الصلاحية",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى الصلاحيات",
+      "noChanges": "لا توجد تغييرات للحفظ."
+    },
+    "validation": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameTooLong": "يجب ألا يتجاوز الاسم 120 حرفًا.",
+      "nameInvalid": "استخدم أحرفًا صغيرة وأرقامًا وشرطات سفلية بالصيغة resource.action (مثال: person.create)."
+    },
+    "notices": {
+      "created": "تم إنشاء الصلاحية بنجاح.",
+      "updated": "تم تحديث الصلاحية بنجاح.",
+      "activated": "تم تفعيل الصلاحية بنجاح.",
+      "deactivated": "تم تعطيل الصلاحية بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الصلاحية.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    }
+  },
+  "specialties": {
+    "title": "التخصصات",
+    "meta": {
+      "title": "التخصصات | إدارة مواعيد الأسنان",
+      "description": "إدارة كتالوج التخصصات المهنية."
+    },
+    "create": "تخصص جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ تحميل التخصصات...",
+    "empty": "لا توجد تخصصات مسجلة بعد.",
+    "noResults": "لا يوجد تخصص يطابق البحث.",
+    "noDescription": "بدون وصف",
+    "columns": {
+      "id": "المعرّف",
+      "name": "الاسم",
+      "description": "الوصف",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم...",
+      "searchLabel": "البحث عن التخصصات بالاسم",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "sortByLabel": "ترتيب حسب",
+      "sortBy": {
+        "id": "الترتيب: المعرّف",
+        "name": "الترتيب: الاسم",
+        "created_at": "الترتيب: تاريخ الإنشاء"
+      },
+      "orderLabel": "الاتجاه",
+      "order": {
+        "asc": "تصاعدي",
+        "desc": "تنازلي"
+      }
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل التخصص",
+        "description": "هل تريد تفعيل التخصص \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل التخصص",
+        "description": "هل تريد تعطيل التخصص \"{name}\"؟ لن يتم حذف السجل ولن تتغير السجلات التاريخية.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل التخصص"
+    },
+    "form": {
+      "createTitle": "تخصص جديد",
+      "editTitle": "تعديل التخصص",
+      "nameLabel": "الاسم",
+      "namePlaceholder": "مثال: تقويم الأسنان",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "وصف اختياري للتخصص",
+      "create": "إنشاء التخصص",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى التخصصات",
+      "noChanges": "لا توجد تغييرات للحفظ."
+    },
+    "validation": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameTooLong": "يجب ألا يتجاوز الاسم 120 حرفًا."
+    },
+    "notices": {
+      "created": "تم إنشاء التخصص بنجاح.",
+      "updated": "تم تحديث التخصص بنجاح.",
+      "activated": "تم تفعيل التخصص بنجاح.",
+      "deactivated": "تم تعطيل التخصص بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على التخصص.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    }
+  },
+  "specialConditions": {
+    "title": "الحالات الخاصة",
+    "meta": {
+      "title": "الحالات الخاصة | إدارة مواعيد الأسنان",
+      "description": "إدارة كتالوج الحالات الخاصة."
+    },
+    "create": "حالة خاصة جديدة",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ تحميل الحالات الخاصة...",
+    "empty": "لا توجد حالات خاصة مسجلة بعد.",
+    "noResults": "لا يوجد حالة خاصة يطابق البحث.",
+    "noDescription": "بدون وصف",
+    "columns": {
+      "id": "المعرّف",
+      "name": "الاسم",
+      "description": "الوصف",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم...",
+      "searchLabel": "البحث عن الحالات الخاصة بالاسم",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "sortByLabel": "ترتيب حسب",
+      "sortBy": {
+        "id": "الترتيب: المعرّف",
+        "name": "الترتيب: الاسم",
+        "created_at": "الترتيب: تاريخ الإنشاء"
+      },
+      "orderLabel": "الاتجاه",
+      "order": {
+        "asc": "تصاعدي",
+        "desc": "تنازلي"
+      }
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل الحالة الخاصة",
+        "description": "هل تريد تفعيل الحالة الخاصة \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل الحالة الخاصة",
+        "description": "هل تريد تعطيل الحالة الخاصة \"{name}\"؟ لن يتم حذف السجل ولن تتغير السجلات التاريخية.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل الحالة الخاصة"
+    },
+    "form": {
+      "createTitle": "حالة خاصة جديدة",
+      "editTitle": "تعديل الحالة الخاصة",
+      "nameLabel": "الاسم",
+      "namePlaceholder": "مثال: حساسية اللاتكس",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "وصف اختياري للحالة خاصة",
+      "create": "إنشاء الحالة الخاصة",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى الحالات الخاصة",
+      "noChanges": "لا توجد تغييرات للحفظ."
+    },
+    "validation": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameTooLong": "يجب ألا يتجاوز الاسم 120 حرفًا."
+    },
+    "notices": {
+      "created": "تم إنشاء الحالة الخاصة بنجاح.",
+      "updated": "تم تحديث الحالة الخاصة بنجاح.",
+      "activated": "تم تفعيل الحالة الخاصة بنجاح.",
+      "deactivated": "تم تعطيل الحالة الخاصة بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الحالة الخاصة.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    }
+  },
+  "clinics": {
+    "title": "العيادات",
+    "meta": {
+      "title": "العيادات | إدارة مواعيد الأسنان",
+      "description": "إدارة كتالوج العيادات والفروع."
+    },
+    "create": "عيادة جديدة",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ تحميل العيادات...",
+    "empty": "لا توجد عيادات مسجلة بعد.",
+    "noResults": "لا يوجد عيادة يطابق البحث.",
+    "noDescription": "بدون وصف",
+    "columns": {
+      "id": "المعرّف",
+      "name": "الاسم",
+      "description": "الوصف",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات",
+      "address": "العنوان",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم...",
+      "searchLabel": "البحث عن العيادات بالاسم",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "sortByLabel": "ترتيب حسب",
+      "sortBy": {
+        "id": "الترتيب: المعرّف",
+        "name": "الترتيب: الاسم",
+        "created_at": "الترتيب: تاريخ الإنشاء"
+      },
+      "orderLabel": "الاتجاه",
+      "order": {
+        "asc": "تصاعدي",
+        "desc": "تنازلي"
+      }
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل العيادة",
+        "description": "هل تريد تفعيل العيادة \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل العيادة",
+        "description": "هل تريد تعطيل العيادة \"{name}\"؟ لن يتم حذف السجل ولن تتغير السجلات التاريخية.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل العيادة"
+    },
+    "form": {
+      "createTitle": "عيادة جديدة",
+      "editTitle": "تعديل العيادة",
+      "nameLabel": "الاسم",
+      "namePlaceholder": "مثال: العيادة المركزية",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "وصف اختياري للعيادة",
+      "create": "إنشاء العيادة",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى العيادات",
+      "noChanges": "لا توجد تغييرات للحفظ.",
+      "addressLabel": "العنوان",
+      "addressPlaceholder": "مثال: شارع الرئيسي 123",
+      "phoneLabel": "الهاتف",
+      "phonePlaceholder": "مثال: ‎+51 976 543 210",
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "مثال: contact@clinic.com"
+    },
+    "validation": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameTooLong": "يجب ألا يتجاوز الاسم 150 حرفًا.",
+      "addressRequired": "العنوان مطلوب.",
+      "addressTooLong": "يجب ألا يتجاوز العنوان 255 حرفًا.",
+      "phoneInvalid": "أدخل رقم هاتف صالحًا من 6 إلى 15 رقمًا (يُسمح بعلامة + في البداية).",
+      "emailInvalid": "أدخل بريدًا إلكترونيًا بصيغة صالحة."
+    },
+    "notices": {
+      "created": "تم إنشاء العيادة بنجاح.",
+      "updated": "تم تحديث العيادة بنجاح.",
+      "activated": "تم تفعيل العيادة بنجاح.",
+      "deactivated": "تم تعطيل العيادة بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على العيادة.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    },
+    "noValue": "—",
+    "schedules": {
+      "title": "ساعات العمل",
+      "createHint": "اختياري. أضف الفترات الأسبوعية المتكررة (بالتوقيت المحلي للعيادة). يمكنك إضافة عدة فترات في اليوم وإكمالها لاحقًا.",
+      "editHint": "فترات الافتتاح الأسبوعية المتكررة بالتوقيت المحلي للعيادة. تُعطَّل الفترات ولا تُحذف أبدًا. تُطبّق التغييرات عند حفظ ساعات العمل.",
+      "manageInEdit": "إدارة ساعات العمل",
+      "days": {
+        "1": "الاثنين",
+        "2": "الثلاثاء",
+        "3": "الأربعاء",
+        "4": "الخميس",
+        "5": "الجمعة",
+        "6": "السبت",
+        "7": "الأحد"
+      },
+      "fields": {
+        "day": "اليوم",
+        "startsAt": "البداية",
+        "endsAt": "النهاية",
+        "validFrom": "ساري من",
+        "validUntil": "ساري حتى"
+      },
+      "optional": "اختياري",
+      "noDrafts": "لم تُضف فترات. يمكن تسجيل العيادة بدون ساعات عمل.",
+      "addInterval": "إضافة فترة",
+      "removeInterval": "إزالة الفترة",
+      "loading": "جارٍ تحميل ساعات العمل...",
+      "loadError": "تعذر تحميل ساعات العمل.",
+      "retry": "إعادة المحاولة",
+      "empty": "لا توجد ساعات عمل مضبوطة.",
+      "noIntervals": "لا توجد فترات مضبوطة",
+      "validity": "ساري {from} – {until}",
+      "validityOpen": "ساري من {from}، بدون تاريخ انتهاء",
+      "partialList": "عرض {shown} من {total} فترة.",
+      "status": {
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "currentTitle": "الفترات المسجلة",
+      "edit": "تعديل",
+      "cancelEdit": "إلغاء التعديل",
+      "activate": "إعادة التفعيل",
+      "deactivate": "تعطيل",
+      "undoStatus": "تراجع",
+      "willActivate": "ستتم إعادة تفعيله",
+      "willDeactivate": "سيتم تعطيله",
+      "addTitle": "إضافة فترات",
+      "saved": "تم حفظ ساعات العمل بنجاح.",
+      "someFailed": "تعذر إكمال بعض تغييرات ساعات العمل",
+      "operations": {
+        "create": "التسجيل",
+        "update": "التحديث",
+        "activate": "إعادة التفعيل",
+        "deactivate": "التعطيل"
+      },
+      "pendingSummary": "تغييرات ساعات العمل المعلقة: {count}.",
+      "discard": "تجاهل التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "save": "حفظ ساعات العمل",
+      "creating": "جارٍ تسجيل ساعات العمل...",
+      "partial": {
+        "title": "تم تسجيل العيادة لكن لم تُحفظ بعض الفترات",
+        "description": "تم تسجيل العيادة \"{name}\" بنجاح لكن تعذر تسجيل بعض الفترات. لن تُنشأ العيادة مرة أخرى؛ يمكنك إعادة محاولة الفترات المعلقة فقط (القيم التي أدخلتها محفوظة).",
+        "created": "الفترات المسجلة",
+        "failed": "الفترات المعلقة",
+        "retry": "إعادة محاولة الفترات المعلقة",
+        "goToList": "الذهاب إلى قائمة العيادات",
+        "editClinic": "تعديل العيادة"
+      },
+      "validation": {
+        "dayInvalid": "يجب أن يكون اليوم بين الاثنين والأحد.",
+        "startsRequired": "أدخل وقت البداية.",
+        "endsRequired": "أدخل وقت النهاية.",
+        "timeOrder": "يجب أن يسبق وقت البداية وقت النهاية. لا يمكن أن تتجاوز الفترة منتصف الليل؛ استخدم يومين متتاليين.",
+        "validFromRequired": "أدخل التاريخ الذي تسري منه الفترة.",
+        "validUntilBeforeFrom": "لا يمكن أن يسبق تاريخ الانتهاء تاريخ البداية.",
+        "overlap": "تتداخل هذه الفترة مع فترة نشطة أخرى في اليوم وفترة السريان نفسها."
+      },
+      "errors": {
+        "unexpected": "حدث خطأ غير متوقع.",
+        "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+        "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+        "notFound": "العيادة أو الفترة لم تعد متاحة.",
+        "createFailed": "تعذر تسجيل الفترة.",
+        "updateFailed": "تعذر تحديث الفترة.",
+        "activateFailed": "تعذرت إعادة تفعيل الفترة.",
+        "deactivateFailed": "تعذر تعطيل الفترة."
+      }
+    }
+  },
+  "persons": {
+    "title": "الأشخاص",
+    "meta": {
+      "title": "الأشخاص | إدارة مواعيد الأسنان",
+      "description": "إدارة البيانات الشخصية للأشخاص المسجلين في النظام."
+    },
+    "create": "شخص جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ التحميل...",
+    "empty": "لا يوجد أشخاص مسجلون بعد.",
+    "noResults": "لا يوجد شخص يطابق البحث.",
+    "noValue": "—",
+    "columns": {
+      "id": "المعرّف",
+      "fullName": "الاسم الكامل",
+      "document": "الوثيقة",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم أو اللقب...",
+      "searchLabel": "البحث عن الأشخاص بالاسم أو اللقب",
+      "documentTypePlaceholder": "نوع الوثيقة",
+      "documentTypeLabel": "نوع الوثيقة",
+      "documentNumberPlaceholder": "رقم الوثيقة (مطابق)",
+      "documentNumberLabel": "رقم الوثيقة (مطابقة تامة)",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "sortByLabel": "ترتيب حسب",
+      "sortBy": {
+        "id": "الترتيب: المعرّف",
+        "last_name": "الترتيب: اللقب",
+        "first_name": "الترتيب: الاسم الأول",
+        "created_at": "الترتيب: تاريخ الإنشاء"
+      },
+      "orderLabel": "الاتجاه",
+      "order": {
+        "asc": "تصاعدي",
+        "desc": "تنازلي"
+      }
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل الشخص",
+        "description": "هل تريد تفعيل \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل الشخص",
+        "description": "هل تريد تعطيل \"{name}\"؟ لن يتم حذف السجل ولن يتغير أي مريض أو موظف مرتبط.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل الشخص",
+      "personalData": "البيانات الشخصية",
+      "audit": "معلومات السجل"
+    },
+    "form": {
+      "createTitle": "شخص جديد",
+      "editTitle": "تعديل الشخص",
+      "optional": "اختياري",
+      "first_nameLabel": "الاسم الأول",
+      "first_namePlaceholder": "مثال: ماريا",
+      "last_nameLabel": "اللقب",
+      "last_namePlaceholder": "مثال: غارسيا",
+      "maternal_last_nameLabel": "اللقب الثاني",
+      "maternal_last_namePlaceholder": "مثال: لوبيز",
+      "document_typeLabel": "نوع الوثيقة",
+      "document_typePlaceholder": "مثال: DNI",
+      "document_numberLabel": "رقم الوثيقة",
+      "document_numberPlaceholder": "مثال: 12345678",
+      "birth_dateLabel": "تاريخ الميلاد",
+      "birth_datePlaceholder": "",
+      "phoneLabel": "الهاتف",
+      "phonePlaceholder": "مثال: ‎+51 976 543 210",
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "مثال: name@example.com",
+      "addressLabel": "العنوان",
+      "addressPlaceholder": "مثال: شارع الرئيسي 123",
+      "create": "تسجيل الشخص",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى الأشخاص",
+      "noChanges": "لا توجد تغييرات للحفظ."
+    },
+    "validation": {
+      "firstNameRequired": "الاسم الأول مطلوب.",
+      "lastNameRequired": "اللقب مطلوب.",
+      "nameTooLong": "يجب ألا يتجاوز هذا الحقل 100 حرف.",
+      "documentTypeInvalid": "استخدم أحرفًا وأرقامًا وشرطات سفلية فقط (حتى 30 حرفًا).",
+      "documentTypeRequired": "أدخل نوع الوثيقة أو امسح رقم الوثيقة.",
+      "documentNumberRequired": "أدخل رقم الوثيقة أو امسح نوع الوثيقة.",
+      "documentNumberTooLong": "يجب ألا يتجاوز رقم الوثيقة 30 حرفًا.",
+      "birthDateInvalid": "أدخل تاريخًا صالحًا غير مستقبلي.",
+      "phoneInvalid": "أدخل رقم هاتف صالحًا من 6 إلى 15 رقمًا (يُسمح بعلامة + في البداية).",
+      "emailInvalid": "أدخل بريدًا إلكترونيًا بصيغة صالحة.",
+      "addressTooLong": "يجب ألا يتجاوز العنوان 255 حرفًا."
+    },
+    "selector": {
+      "namePlaceholder": "الاسم أو اللقب",
+      "nameLabel": "الاسم أو اللقب",
+      "documentTypePlaceholder": "نوع الوثيقة",
+      "documentTypeLabel": "نوع الوثيقة",
+      "documentNumberPlaceholder": "رقم الوثيقة",
+      "documentNumberLabel": "رقم الوثيقة (مطابقة تامة)",
+      "search": "بحث",
+      "hint": "ابحث بالاسم أو برقم الوثيقة بالتحديد للعثور على شخص.",
+      "criteriaRequired": "أدخل اسمًا أو رقم وثيقة للبحث.",
+      "noResults": "لم يتم العثور على أشخاص بهذه المعايير.",
+      "noDocument": "بدون وثيقة",
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "refine": "عرض {shown} من {total} نتيجة. حدّد البحث أكثر لتضييقها."
+    },
+    "notices": {
+      "created": "تم تسجيل الشخص بنجاح.",
+      "updated": "تم تحديث الشخص بنجاح.",
+      "activated": "تم تفعيل الشخص بنجاح.",
+      "deactivated": "تم تعطيل الشخص بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الشخص.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    }
+  },
+  "patients": {
+    "title": "المرضى",
+    "meta": {
+      "title": "المرضى | إدارة مواعيد الأسنان",
+      "description": "إدارة مرضى النظام."
+    },
+    "newPatient": "مريض جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ التحميل...",
+    "empty": "لا يوجد مرضى مسجلون بعد.",
+    "noResults": "لا يوجد مريض يطابق البحث.",
+    "noValue": "—",
+    "columns": {
+      "id": "المعرّف",
+      "fullName": "الاسم الكامل",
+      "document": "الوثيقة",
+      "patientNumber": "رقم المريض",
+      "notes": "ملاحظات",
+      "status": "الحالة",
+      "createdAt": "تاريخ التسجيل",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم أو اللقب...",
+      "searchLabel": "البحث عن المرضى بالاسم أو اللقب",
+      "documentNumberPlaceholder": "رقم الوثيقة (مطابق)",
+      "documentNumberLabel": "رقم الوثيقة (مطابقة تامة)",
+      "patientNumberPlaceholder": "رقم المريض (مطابق)",
+      "patientNumberLabel": "رقم المريض (مطابقة تامة)",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "sortByLabel": "ترتيب حسب",
+      "sortBy": {
+        "id": "الترتيب: المعرّف",
+        "created_at": "الترتيب: تاريخ التسجيل",
+        "patient_number": "الترتيب: رقم المريض",
+        "last_name": "الترتيب: اللقب"
+      },
+      "orderLabel": "الاتجاه",
+      "order": {
+        "asc": "تصاعدي",
+        "desc": "تنازلي"
+      }
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل المريض",
+        "description": "هل تريد تفعيل المريض \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل المريض",
+        "description": "هل تريد تعطيل المريض \"{name}\"؟ لن يتم حذف السجل ولن يتغير الشخص المرتبط.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل المريض",
+      "patientData": "معلومات المريض",
+      "personData": "الشخص المرتبط",
+      "viewPerson": "عرض الشخص",
+      "firstName": "الاسم الأول",
+      "lastName": "اللقب",
+      "personStatus": "حالة الشخص"
+    },
+    "form": {
+      "createTitle": "مريض جديد",
+      "editTitle": "تعديل المريض",
+      "optional": "اختياري",
+      "patientNumberLabel": "رقم المريض",
+      "patientNumberPlaceholder": "مثال: HC-0001",
+      "notesLabel": "ملاحظات إدارية",
+      "notesPlaceholder": "ملاحظات إدارية اختيارية (ليست سجلًا طبيًا)",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى المرضى",
+      "noChanges": "لا توجد تغييرات للحفظ.",
+      "editPersonLink": "تعديل البيانات الشخصية",
+      "personDataHint": "تُدار البيانات الشخصية في وحدة الأشخاص. هنا يمكنك فقط تعديل رقم المريض والملاحظات."
+    },
+    "create": {
+      "personSection": "1. الشخص",
+      "patientSection": "2. بيانات المريض",
+      "patientSectionHint": "معلومات تخص المريض وليس الشخص.",
+      "modeExisting": "اختيار شخص موجود",
+      "modeNew": "تسجيل شخص جديد",
+      "selectedPerson": "الشخص المختار",
+      "selectPersonFirst": "اختر شخصًا نشطًا للمتابعة.",
+      "save": "تسجيل المريض",
+      "saveNew": "تسجيل الشخص والمريض",
+      "retry": "إعادة محاولة تسجيل المريض",
+      "partialTitle": "تم تسجيل الشخص لكن لم يتم إنشاء المريض",
+      "partialDescription": "تم تسجيل الشخص \"{name}\" بنجاح لكن تعذر إنشاء المريض. راجع البيانات وأعد المحاولة؛ لن يتم تسجيل الشخص مرة أخرى.",
+      "conditionsSection": "3. الحالات الخاصة للمريض",
+      "conditionsSectionHint": "اختياري. اختر الحالات الخاصة النشطة التي ستُربط بعد تسجيل المريض، مع ملاحظات اختيارية لكل منها.",
+      "conditionsPartialTitle": "تم تسجيل المريض لكن لم تُربط بعض الحالات الخاصة",
+      "conditionsPartialDescription": "تم تسجيل المريض \"{name}\" بنجاح لكن تعذر ربط بعض الحالات الخاصة. لن يُنشأ المريض مرة أخرى؛ يمكنك إعادة محاولة الحالات المعلقة فقط (ملاحظاتها محفوظة).",
+      "conditionsAssigned": "الحالات المرتبطة",
+      "conditionsFailed": "الحالات المعلقة",
+      "conditionsRetry": "إعادة محاولة الحالات المعلقة",
+      "goToList": "الذهاب إلى قائمة المرضى",
+      "editPatient": "تعديل المريض"
+    },
+    "validation": {
+      "patientNumberInvalid": "استخدم حتى 30 حرفًا وأرقامًا والرموز . _ / -",
+      "notesTooLong": "يجب ألا تتجاوز الملاحظات 1000 حرف."
+    },
+    "notices": {
+      "created": "تم تسجيل المريض بنجاح.",
+      "updated": "تم تحديث المريض بنجاح.",
+      "activated": "تم تفعيل المريض بنجاح.",
+      "deactivated": "تم تعطيل المريض بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على المريض.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    },
+    "conditions": {
+      "title": "الحالات الخاصة",
+      "editHint": "معلومات إدارية عن المريض. ليست تشخيصات ولا تولّد قرارات سريرية. تُطبّق التغييرات عند الحفظ.",
+      "manageInEdit": "إدارة الحالات",
+      "patientDataSaved": "تم حفظ بيانات المريض. لا تزال بعض تغييرات الحالات الخاصة معلقة؛ راجعها أدناه واحفظ مرة أخرى.",
+      "selectedLabel": "الحالات المختارة",
+      "removeSelection": "إزالة {name} من الاختيار",
+      "removeFromSelection": "إزالة",
+      "notesLabel": "ملاحظات",
+      "notesPlaceholder": "ملاحظات اختيارية عن هذه الحالة لهذا المريض",
+      "optional": "اختياري",
+      "noNotes": "بدون ملاحظات",
+      "searchPlaceholder": "البحث في الحالات النشطة...",
+      "searchLabel": "البحث عن الحالات الخاصة النشطة بالاسم",
+      "catalogError": "تعذر تحميل كتالوج الحالات الخاصة.",
+      "retry": "إعادة المحاولة",
+      "loadingCatalog": "جارٍ تحميل الحالات الخاصة...",
+      "noResults": "لا توجد حالات خاصة نشطة متاحة لهذا البحث.",
+      "emptyPage": "لا توجد حالات خاصة في هذه الصفحة.",
+      "alreadyAssigned": "مرتبطة",
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "pageSummary": "صفحة {page} من {totalPages} · {total} حالة نشطة",
+      "previous": "السابق",
+      "next": "التالي",
+      "status": {
+        "active": "نشطة",
+        "inactive": "غير نشطة"
+      },
+      "assignedError": "تعذر تحميل الحالات الخاصة للمريض.",
+      "loadingAssigned": "جارٍ تحميل الحالات الخاصة...",
+      "noAssigned": "لا توجد حالات خاصة مرتبطة بهذا المريض.",
+      "currentTitle": "الحالات المرتبطة",
+      "inactiveAssigned": "هذه الحالة غير نشطة. تبقى مرتبطة ويمكن إزالتها.",
+      "willBeRemoved": "ستتم إزالتها",
+      "undoRemove": "تراجع",
+      "remove": "إزالة",
+      "addTitle": "إضافة حالات",
+      "saved": "تم حفظ تغييرات الحالات الخاصة بنجاح.",
+      "someFailed": "تعذر إكمال بعض تغييرات الحالات الخاصة",
+      "operations": {
+        "assign": "الربط",
+        "updateNotes": "تحديث الملاحظات",
+        "remove": "الإزالة"
+      },
+      "pendingSummary": "تغييرات الحالات الخاصة المعلقة: {count}.",
+      "assigning": "جارٍ ربط الحالات الخاصة...",
+      "errors": {
+        "unexpected": "حدث خطأ غير متوقع.",
+        "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+        "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+        "notFound": "المريض أو الحالة لم تعد متاحة.",
+        "assignFailed": "تعذر ربط الحالة.",
+        "updateNotesFailed": "تعذر تحديث الملاحظات.",
+        "removeFailed": "تعذرت إزالة الحالة."
+      }
+    }
+  },
+  "staff": {
+    "title": "الموظفون",
+    "meta": {
+      "title": "الموظفون | إدارة مواعيد الأسنان",
+      "description": "إدارة موظفي المؤسسة."
+    },
+    "newStaffMember": "موظف جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ التحميل...",
+    "empty": "لا يوجد موظفون مسجلون بعد.",
+    "noResults": "لا يوجد موظف يطابق البحث.",
+    "noValue": "—",
+    "columns": {
+      "id": "المعرّف",
+      "fullName": "الاسم الكامل",
+      "document": "الوثيقة",
+      "employeeNumber": "الرقم الوظيفي",
+      "hireDate": "تاريخ التعيين",
+      "status": "الحالة",
+      "createdAt": "تاريخ التسجيل",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "searchPlaceholder": "البحث بالاسم أو اللقب...",
+      "searchLabel": "البحث عن الموظفين بالاسم أو اللقب",
+      "documentNumberPlaceholder": "رقم الوثيقة (مطابق)",
+      "documentNumberLabel": "رقم الوثيقة (مطابقة تامة)",
+      "employeeNumberPlaceholder": "الرقم الوظيفي (مطابق)",
+      "employeeNumberLabel": "الرقم الوظيفي (مطابقة تامة)",
+      "statusLabel": "التصفية حسب الحالة",
+      "status": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "sortByLabel": "ترتيب حسب",
+      "sortBy": {
+        "id": "الترتيب: المعرّف",
+        "created_at": "الترتيب: تاريخ التسجيل",
+        "employee_number": "الترتيب: الرقم الوظيفي",
+        "last_name": "الترتيب: اللقب"
+      },
+      "orderLabel": "الاتجاه",
+      "order": {
+        "asc": "تصاعدي",
+        "desc": "تنازلي"
+      }
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل الموظف",
+        "description": "هل تريد تفعيل الموظف \"{name}\"؟",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل الموظف",
+        "description": "هل تريد تعطيل الموظف \"{name}\"؟ لن يتم حذف السجل ولن يتغير الشخص المرتبط.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل الموظف",
+      "staffMemberData": "معلومات الموظف",
+      "personData": "الشخص المرتبط",
+      "viewPerson": "عرض الشخص",
+      "firstName": "الاسم الأول",
+      "lastName": "اللقب",
+      "personStatus": "حالة الشخص"
+    },
+    "form": {
+      "createTitle": "موظف جديد",
+      "editTitle": "تعديل الموظف",
+      "optional": "اختياري",
+      "employeeNumberLabel": "الرقم الوظيفي",
+      "employeeNumberPlaceholder": "مثال: EMP-0001",
+      "hireDateLabel": "تاريخ التعيين",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى الموظفين",
+      "noChanges": "لا توجد تغييرات للحفظ.",
+      "editPersonLink": "تعديل البيانات الشخصية",
+      "personDataHint": "تُدار البيانات الشخصية في وحدة الأشخاص. هنا يمكنك فقط تعديل الرقم الوظيفي وتاريخ التعيين."
+    },
+    "create": {
+      "personSection": "1. الشخص",
+      "staffMemberSection": "2. بيانات الموظف",
+      "staffMemberSectionHint": "معلومات تخص سجل الموظف وليس الشخص.",
+      "modeExisting": "اختيار شخص موجود",
+      "modeNew": "تسجيل شخص جديد",
+      "selectedPerson": "الشخص المختار",
+      "selectPersonFirst": "اختر شخصًا نشطًا للمتابعة.",
+      "save": "تسجيل الموظف",
+      "saveNew": "تسجيل الشخص والموظف",
+      "retry": "إعادة محاولة تسجيل الموظف",
+      "partialTitle": "تم تسجيل الشخص لكن لم يتم إنشاء سجل الموظف",
+      "partialDescription": "تم تسجيل الشخص \"{name}\" بنجاح لكن تعذر إكمال سجل الموظف. راجع البيانات وأعد المحاولة؛ لن يتم تسجيل الشخص مرة أخرى.",
+      "rolesSection": "3. أدوار الموظف",
+      "rolesSectionHint": "اختياري. اختر الأدوار النشطة التي ستُسند بعد إنشاء سجل الموظف.",
+      "rolesPartialTitle": "تم تسجيل الموظف لكن لم تُسند بعض الأدوار",
+      "rolesPartialDescription": "تم تسجيل الموظف \"{name}\" بنجاح لكن تعذر إكمال بعض إسنادات الأدوار. لن يُنشأ السجل مرة أخرى؛ يمكنك إعادة محاولة الأدوار المعلقة فقط.",
+      "rolesAssigned": "الأدوار المسندة",
+      "rolesFailed": "الأدوار المعلقة",
+      "rolesRetry": "إعادة محاولة الأدوار المعلقة",
+      "goToList": "الذهاب إلى قائمة الموظفين",
+      "editStaffMember": "تعديل الموظف",
+      "specialtiesSection": "4. تخصصات الموظف",
+      "specialtiesSectionHint": "اختياري. اختر التخصصات النشطة التي ستُربط بعد إنشاء سجل الموظف. يمكنك أيضًا تركه فارغًا وإكماله لاحقًا.",
+      "assigningRelations": "جارٍ إسناد الأدوار والتخصصات...",
+      "relationsPartialTitle": "تم تسجيل الموظف لكن لم تُسند بعض الأدوار أو التخصصات",
+      "relationsPartialDescription": "تم تسجيل الموظف \"{name}\" بنجاح لكن تعذر إكمال بعض الإسنادات. لن يُنشأ السجل مرة أخرى؛ يمكنك إعادة محاولة المعلقة فقط.",
+      "rolesResultTitle": "الأدوار",
+      "specialtiesResultTitle": "التخصصات",
+      "assignedLabel": "المسندة",
+      "pendingLabel": "المعلقة",
+      "relationsRetry": "إعادة محاولة الإسنادات المعلقة",
+      "schedulesSection": "5. التوافر الأسبوعي",
+      "schedulesSectionHint": "اختياري. أضف فترات التوافر الأسبوعية المتكررة التي ستُسجَّل بعد إنشاء سجل الموظف. يمكنك أيضًا تركه فارغًا وإكماله لاحقًا.",
+      "schedulesResultTitle": "التوافر الأسبوعي",
+      "registeredLabel": "المسجلة"
+    },
+    "validation": {
+      "employeeNumberInvalid": "استخدم حتى 30 حرفًا وأرقامًا والرموز . _ / -",
+      "hireDateInvalid": "أدخل تاريخًا صالحًا."
+    },
+    "notices": {
+      "created": "تم تسجيل الموظف بنجاح.",
+      "updated": "تم تحديث الموظف بنجاح.",
+      "activated": "تم تفعيل الموظف بنجاح.",
+      "deactivated": "تم تعطيل الموظف بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الموظف.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    },
+    "roles": {
+      "title": "أدوار الموظف",
+      "hint": "الأدوار المسندة لهذا الموظف. إسناد دور لا يمنح وصولًا ولا صلاحيات في هذه المرحلة.",
+      "manageInEdit": "إدارة الأدوار",
+      "selectedLabel": "الأدوار المختارة",
+      "removeSelection": "إزالة {name} من الاختيار",
+      "searchPlaceholder": "البحث في الأدوار النشطة...",
+      "searchLabel": "البحث عن الأدوار النشطة بالاسم",
+      "catalogError": "تعذر تحميل كتالوج الأدوار.",
+      "retry": "إعادة المحاولة",
+      "loadingCatalog": "جارٍ تحميل الأدوار...",
+      "noResults": "لا يوجد دور نشط يطابق البحث.",
+      "catalogEmpty": "لا توجد أدوار نشطة متاحة.",
+      "alreadyAssigned": "مُسند",
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "refine": "عرض {shown} من {total} دورًا نشطًا. استخدم البحث لتضييقها.",
+      "status": {
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "assignedError": "تعذر تحميل الأدوار المسندة.",
+      "loadingAssigned": "جارٍ تحميل الأدوار المسندة...",
+      "noAssigned": "لا توجد أدوار مسندة لهذا الموظف.",
+      "currentTitle": "الأدوار المسندة",
+      "inactiveAssigned": "هذا الدور غير نشط. يبقى مسندًا ويمكن إزالته.",
+      "willBeRemoved": "سيتم إزالته",
+      "undoRemove": "تراجع",
+      "remove": "إزالة",
+      "addTitle": "إضافة أدوار",
+      "saved": "تم حفظ تغييرات الأدوار بنجاح.",
+      "someFailed": "تعذر إكمال بعض تغييرات الأدوار",
+      "pendingSummary": "تغييرات معلقة: {adds} للإضافة، {removes} للإزالة.",
+      "discard": "تجاهل التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "save": "حفظ الأدوار",
+      "assigning": "جارٍ إسناد الأدوار...",
+      "errors": {
+        "unexpected": "حدث خطأ غير متوقع.",
+        "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+        "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+        "duplicate": "الدور مسند بالفعل لهذا الموظف.",
+        "notFound": "الموظف أو الدور لم يعد متاحًا.",
+        "assignFailed": "تعذر إسناد الدور.",
+        "removeFailed": "تعذرت إزالة الدور."
+      }
+    },
+    "specialties": {
+      "title": "تخصصات الموظف",
+      "hint": "التخصصات المصرّح بها لهذا الموظف. الارتباط ليس شهادة مهنية ولا تفويضًا لإجراء الإجراءات.",
+      "manageInEdit": "إدارة التخصصات",
+      "selectedLabel": "التخصصات المختارة",
+      "removeSelection": "إزالة {name} من الاختيار",
+      "searchPlaceholder": "البحث في التخصصات النشطة...",
+      "searchLabel": "البحث عن التخصصات النشطة بالاسم",
+      "catalogError": "تعذر تحميل كتالوج التخصصات.",
+      "retry": "إعادة المحاولة",
+      "loadingCatalog": "جارٍ تحميل التخصصات...",
+      "noResults": "لا توجد تخصصات نشطة متاحة لهذا البحث.",
+      "emptyPage": "لا توجد تخصصات في هذه الصفحة.",
+      "alreadyAssigned": "مرتبط",
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "pageSummary": "صفحة {page} من {totalPages} · {total} تخصصًا نشطًا",
+      "previous": "السابق",
+      "next": "التالي",
+      "status": {
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "assignedError": "تعذر تحميل التخصصات المرتبطة.",
+      "loadingAssigned": "جارٍ تحميل التخصصات المرتبطة...",
+      "noAssigned": "لا توجد تخصصات مرتبطة بهذا الموظف.",
+      "currentTitle": "التخصصات المرتبطة",
+      "inactiveAssigned": "هذا التخصص غير نشط. يبقى مرتبطًا ويمكن إزالته.",
+      "willBeRemoved": "سيتم إزالته",
+      "undoRemove": "تراجع",
+      "remove": "إزالة",
+      "addTitle": "إضافة تخصصات",
+      "saved": "تم حفظ تغييرات التخصصات بنجاح.",
+      "someFailed": "تعذر إكمال بعض تغييرات التخصصات",
+      "pendingSummary": "تغييرات التخصصات المعلقة: {adds} للإضافة، {removes} للإزالة.",
+      "discard": "تجاهل التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "save": "حفظ التخصصات",
+      "errors": {
+        "unexpected": "حدث خطأ غير متوقع.",
+        "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+        "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+        "notFound": "الموظف أو التخصص لم يعد متاحًا.",
+        "assignFailed": "تعذر ربط التخصص.",
+        "removeFailed": "تعذرت إزالة التخصص."
+      }
+    },
+    "schedules": {
+      "title": "التوافر الأسبوعي",
+      "createHint": "اختياري. أضف فترات التوافر الأسبوعية المتكررة (بالتوقيت المحلي). يمكنك إضافة عدة فترات في اليوم وإكمالها لاحقًا.",
+      "editHint": "التوافر الأسبوعي المتكرر المصرّح به لهذا الموظف (بالتوقيت المحلي). تُعطَّل الفترات ولا تُحذف أبدًا. ليست ساعات عمل فعلية ولا حضورًا. تُطبّق التغييرات عند حفظ التوافر.",
+      "manageInEdit": "إدارة التوافر",
+      "days": {
+        "1": "الاثنين",
+        "2": "الثلاثاء",
+        "3": "الأربعاء",
+        "4": "الخميس",
+        "5": "الجمعة",
+        "6": "السبت",
+        "7": "الأحد"
+      },
+      "fields": {
+        "day": "اليوم",
+        "startsAt": "البداية",
+        "endsAt": "النهاية",
+        "validFrom": "ساري من",
+        "validUntil": "ساري حتى"
+      },
+      "optional": "اختياري",
+      "noDrafts": "لم تُضف فترات. يمكن تسجيل الموظف بدون توافر.",
+      "addInterval": "إضافة فترة",
+      "removeInterval": "إزالة الفترة",
+      "loading": "جارٍ تحميل التوافر...",
+      "loadError": "تعذر تحميل التوافر.",
+      "retry": "إعادة المحاولة",
+      "empty": "لا يوجد توافر أسبوعي مضبوط.",
+      "noIntervals": "لا توجد فترات مضبوطة",
+      "validity": "ساري {from} – {until}",
+      "validityOpen": "ساري من {from}، بدون تاريخ انتهاء",
+      "partialList": "عرض {shown} من {total} فترة.",
+      "status": {
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "currentTitle": "الفترات المسجلة",
+      "edit": "تعديل",
+      "cancelEdit": "إلغاء التعديل",
+      "activate": "إعادة التفعيل",
+      "deactivate": "تعطيل",
+      "undoStatus": "تراجع",
+      "willActivate": "ستتم إعادة تفعيله",
+      "willDeactivate": "سيتم تعطيله",
+      "addTitle": "إضافة فترات",
+      "saved": "تم حفظ التوافر بنجاح.",
+      "someFailed": "تعذر إكمال بعض تغييرات التوافر",
+      "operations": {
+        "create": "التسجيل",
+        "update": "التحديث",
+        "activate": "إعادة التفعيل",
+        "deactivate": "التعطيل"
+      },
+      "pendingSummary": "تغييرات التوافر المعلقة: {count}.",
+      "discard": "تجاهل التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "save": "حفظ التوافر",
+      "creating": "جارٍ تسجيل التوافر...",
+      "validation": {
+        "dayInvalid": "يجب أن يكون اليوم بين الاثنين والأحد.",
+        "startsRequired": "أدخل وقت البداية.",
+        "endsRequired": "أدخل وقت النهاية.",
+        "timeOrder": "يجب أن يسبق وقت البداية وقت النهاية. لا يمكن أن تتجاوز الفترة منتصف الليل؛ استخدم يومين متتاليين.",
+        "validFromRequired": "أدخل التاريخ الذي تسري منه الفترة.",
+        "validUntilBeforeFrom": "لا يمكن أن يسبق تاريخ الانتهاء تاريخ البداية.",
+        "overlap": "تتداخل هذه الفترة مع فترة نشطة أخرى في اليوم وفترة السريان نفسها."
+      },
+      "errors": {
+        "unexpected": "حدث خطأ غير متوقع.",
+        "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+        "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+        "notFound": "الموظف أو الفترة لم تعد متاحة.",
+        "createFailed": "تعذر تسجيل الفترة.",
+        "updateFailed": "تعذر تحديث الفترة.",
+        "activateFailed": "تعذرت إعادة تفعيل الفترة.",
+        "deactivateFailed": "تعذر تعطيل الفترة."
+      },
+      "declaredNote": "توافر متكرر مصرّح به. ليس ساعات عمل ولا حضورًا ولا توافرًا فعليًا للمواعيد."
+    }
+  },
+  "scheduleExceptions": {
+    "title": "استثناءات الجدول",
+    "meta": {
+      "title": "استثناءات الجدول | إدارة مواعيد الأسنان",
+      "description": "إدارة الإغلاقات والحجب الاستثنائية للعيادات والموظفين."
+    },
+    "newException": "استثناء جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ التحميل...",
+    "empty": "لا توجد استثناءات جدول مسجلة بعد.",
+    "noResults": "لا يوجد استثناء يطابق عوامل التصفية.",
+    "noValue": "—",
+    "blockNote": "الاستثناء حجب استثنائي: يقلّل التوافر دائمًا ولا يوسّعه أبدًا ولا يغيّر الجداول المتكررة.",
+    "columns": {
+      "id": "المعرّف",
+      "target": "يؤثر على",
+      "type": "النوع",
+      "reason": "السبب",
+      "startsAt": "البداية",
+      "endsAt": "النهاية",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "types": {
+      "closure": "إغلاق",
+      "absence": "غياب",
+      "maintenance": "صيانة",
+      "other": "أخرى"
+    },
+    "target": {
+      "clinic": "عيادة",
+      "staff": "موظف"
+    },
+    "filters": {
+      "clinic": "العيادة",
+      "staff": "الموظف",
+      "type": "النوع",
+      "allClinics": "كل العيادات",
+      "allStaff": "كل الموظفين",
+      "allTypes": "كل الأنواع",
+      "clear": "مسح عوامل التصفية",
+      "rangeStart": "تنتهي بعد",
+      "rangeEnd": "تبدأ قبل",
+      "rangeHint": "يعيد النطاق الاستثناءات التي تنتهي بعد التاريخ الأول وتبدأ قبل الثاني (بمنطقتك الزمنية)."
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "detail": {
+      "title": "تفاصيل الاستثناء",
+      "effect": {
+        "clinic": "يؤثر هذا الحجب على العيادة بأكملها: لا يتوفر أي مختص في العيادة خلال هذه الفترة.",
+        "staff": "يؤثر هذا الحجب على هذا الموظف فقط؛ لا يتغير المختصون الآخرون ولا ساعات افتتاح العيادة."
+      },
+      "notRecurring": "هذا حجب استثنائي وليس تغييرًا في الجدول المتكرر."
+    },
+    "form": {
+      "createTitle": "استثناء جدول جديد",
+      "editTitle": "تعديل استثناء الجدول",
+      "create": "تسجيل الاستثناء",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى الاستثناءات",
+      "noChanges": "لا توجد تغييرات للحفظ.",
+      "blockNote": "يحجب الاستثناء التوافر خلال الفترة. لا يوسّعه أبدًا ولا يعدّل جداول العيادة أو الموظف.",
+      "targetSection": "ما الذي يُحجب",
+      "targetHint": {
+        "clinic": "يحجب العيادة بأكملها (كل مختصيها).",
+        "staff": "يحجب الموظف المحدد فقط."
+      },
+      "selectedTarget": "المحدد",
+      "detailsSection": "التفاصيل والفترة",
+      "typeLabel": "نوع الاستثناء",
+      "reasonLabel": "السبب",
+      "reasonPlaceholder": "مثال: صيانة",
+      "optional": "اختياري",
+      "startsAtLabel": "البداية",
+      "endsAtLabel": "النهاية",
+      "timeZoneHint": "تُرسل التواريخ مع إزاحة منطقتك الزمنية (UTC{offset}).",
+      "timeZoneHintGeneric": "تُرسل التواريخ مع إزاحة منطقتك الزمنية."
+    },
+    "targetSelector": {
+      "searchPlaceholder": {
+        "clinic": "البحث عن العيادات...",
+        "staff": "البحث عن الموظفين بالاسم..."
+      },
+      "searchLabel": {
+        "clinic": "البحث عن العيادات بالاسم",
+        "staff": "البحث عن الموظفين بالاسم"
+      },
+      "loadError": {
+        "clinic": "تعذر تحميل العيادات.",
+        "staff": "تعذر تحميل الموظفين."
+      },
+      "retry": "إعادة المحاولة",
+      "loading": {
+        "clinic": "جارٍ تحميل العيادات...",
+        "staff": "جارٍ تحميل الموظفين..."
+      },
+      "noResults": {
+        "clinic": "لم يتم العثور على عيادات نشطة.",
+        "staff": "لم يتم العثور على موظفين نشطين."
+      },
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "refine": "عرض {shown} من {total}. استخدم البحث لتضييقها."
+    },
+    "validation": {
+      "typeInvalid": "اختر نوع استثناء صالحًا.",
+      "targetRequired": "اختر العيادة أو الموظف المراد حجبه.",
+      "startsRequired": "أدخل تاريخ ووقت البداية.",
+      "endsRequired": "أدخل تاريخ ووقت النهاية.",
+      "dateTimeInvalid": "أدخل تاريخًا ووقتًا صالحين.",
+      "intervalOrder": "يجب أن تكون النهاية بعد البداية."
+    },
+    "notices": {
+      "created": "تم تسجيل الاستثناء بنجاح.",
+      "updated": "تم تحديث الاستثناء بنجاح."
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الاستثناء.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    }
+  },
+  "scheduleOverrides": {
+    "title": "التعديلات الجزئية للجدول",
+    "meta": {
+      "title": "التعديلات الجزئية | إدارة مواعيد الأسنان",
+      "description": "إدارة فترات التوافر الاستثنائية لمرة واحدة للعيادات والموظفين."
+    },
+    "newOverride": "تعديل جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ التحميل...",
+    "empty": "لا توجد تعديلات جزئية مسجلة بعد.",
+    "noResults": "لا يوجد تعديل يطابق عوامل التصفية.",
+    "noValue": "—",
+    "overrideNote": "يتيح التعديل الجزئي توافرًا استثنائيًا في تاريخ ووقت محددين. لا يغيّر الجداول الأسبوعية ولا يلغي الاستثناءات (الإغلاق والغياب والصيانة) ولا يضمن إمكانية حجز موعد في الفترة كلها.",
+    "columns": {
+      "id": "المعرّف",
+      "target": "ينطبق على",
+      "startsAt": "البداية",
+      "endsAt": "النهاية",
+      "reason": "السبب",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "filters": {
+      "clinic": "العيادة",
+      "staff": "الموظف",
+      "status": "الحالة",
+      "statusOptions": {
+        "all": "كل الحالات",
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "allClinics": "كل العيادات",
+      "allStaff": "كل الموظفين",
+      "clear": "مسح عوامل التصفية",
+      "rangeStart": "ينتهي بعد",
+      "rangeEnd": "يبدأ قبل",
+      "rangeHint": "يعيد النطاق التعديلات التي تنتهي بعد التاريخ الأول وتبدأ قبل الثاني (بمنطقتك الزمنية)."
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل التعديل",
+        "description": "هل تريد تفعيل التعديل #{id}؟ سيصبح بإمكانه المشاركة في التوافر.",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "تعطيل التعديل",
+        "description": "هل تريد تعطيل التعديل #{id}؟ يُحتفظ بالسجل لكنه لن يشارك في التوافر.",
+        "confirm": "تعطيل"
+      }
+    },
+    "detail": {
+      "title": "تفاصيل التعديل",
+      "effect": {
+        "clinic": "يضيف هذا التعديل فترة افتتاح استثنائية للعيادة بأكملها.",
+        "staff": "يضيف هذا التعديل توافرًا استثنائيًا لهذا الموظف، دائمًا ضمن الافتتاح الفعلي للعيادة."
+      },
+      "activeNote": "هو نشط ويمكنه المشاركة في التوافر.",
+      "inactiveNote": "هو غير نشط ولا يشارك في التوافر.",
+      "notRecurring": "هذا تعديل جزئي وليس جدولًا أسبوعيًا متكررًا."
+    },
+    "form": {
+      "createTitle": "تعديل جزئي جديد",
+      "editTitle": "تعديل التعديل الجزئي",
+      "create": "تسجيل التعديل",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى التعديلات",
+      "noChanges": "لا توجد تغييرات للحفظ.",
+      "statusHint": "تتغير الحالة بإجراء التفعيل / التعطيل.",
+      "overrideNote": "يتيح التعديل الجزئي توافرًا استثنائيًا. للغياب أو الإغلاق أو الصيانة استخدم استثناءات الجدول. لا يعدّل الجداول الأسبوعية.",
+      "overlap": {
+        "title": "تداخل محتمل مع تعديلات نشطة",
+        "description": "{count} تعديل (تعديلات) نشط للهدف نفسه يتداخل مع هذه الفترة. قد يرفضه الخادم إذا كان التداخل غامضًا.",
+        "review": "مراجعة",
+        "continue": "التسجيل على أي حال"
+      },
+      "targetSection": "على من ينطبق",
+      "targetLocked": "لا يمكن تغيير الهدف بعد الإنشاء؛ سجّل تعديلًا آخر بدلًا من ذلك.",
+      "targetHint": {
+        "clinic": "يضيف فترة افتتاح استثنائية للعيادة بأكملها.",
+        "staff": "يضيف توافرًا للموظف المحدد ضمن الافتتاح الفعلي للعيادة."
+      },
+      "selectedTarget": "المحدد",
+      "detailsSection": "الفترة والتفاصيل",
+      "startsAtLabel": "البداية",
+      "endsAtLabel": "النهاية",
+      "timeZoneHint": "تُرسل التواريخ مع إزاحة منطقتك الزمنية (UTC{offset}).",
+      "timeZoneHintGeneric": "تُرسل التواريخ مع إزاحة منطقتك الزمنية.",
+      "reasonLabel": "السبب",
+      "reasonPlaceholder": "مثال: افتتاح استثنائي",
+      "reasonHint": "صف التوافر الإضافي (مثل يوم عمل ممتد). لا تستخدم التعديلات لتسجيل الغياب أو الإغلاق أو الصيانة.",
+      "optional": "اختياري",
+      "isActiveLabel": "التسجيل كنشط"
+    },
+    "validation": {
+      "targetRequired": "اختر العيادة أو الموظف.",
+      "startsRequired": "أدخل تاريخ ووقت البداية.",
+      "endsRequired": "أدخل تاريخ ووقت النهاية.",
+      "dateTimeInvalid": "أدخل تاريخًا ووقتًا صالحين.",
+      "intervalOrder": "يجب أن تكون النهاية بعد البداية."
+    },
+    "notices": {
+      "created": "تم تسجيل التعديل بنجاح.",
+      "updated": "تم تحديث التعديل بنجاح.",
+      "activated": "تم تفعيل التعديل بنجاح.",
+      "deactivated": "تم تعطيل التعديل بنجاح."
+    },
+    "target": {
+      "clinic": "عيادة",
+      "staff": "موظف"
+    },
+    "targetSelector": {
+      "searchPlaceholder": {
+        "clinic": "البحث عن العيادات...",
+        "staff": "البحث عن الموظفين بالاسم..."
+      },
+      "searchLabel": {
+        "clinic": "البحث عن العيادات بالاسم",
+        "staff": "البحث عن الموظفين بالاسم"
+      },
+      "loadError": {
+        "clinic": "تعذر تحميل العيادات.",
+        "staff": "تعذر تحميل الموظفين."
+      },
+      "retry": "إعادة المحاولة",
+      "loading": {
+        "clinic": "جارٍ تحميل العيادات...",
+        "staff": "جارٍ تحميل الموظفين..."
+      },
+      "noResults": {
+        "clinic": "لم يتم العثور على عيادات نشطة.",
+        "staff": "لم يتم العثور على موظفين نشطين."
+      },
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "refine": "عرض {shown} من {total}. استخدم البحث لتضييقها."
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "errors": {
+      "network": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على التعديل الجزئي للجدول.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    }
+  },
+  "appointments": {
+    "title": "جدول المواعيد",
+    "meta": {
+      "title": "جدول المواعيد | إدارة مواعيد طب الأسنان",
+      "description": "عرض مواعيد الأسنان وإدارتها في تقويم يومي وأسبوعي وشهري."
+    },
+    "newAppointment": "موعد جديد",
+    "retry": "إعادة المحاولة",
+    "dismiss": "إغلاق",
+    "empty": "لا توجد مواعيد في هذه الفترة.",
+    "noResults": "لا توجد مواعيد في هذه الفترة تطابق عوامل التصفية.",
+    "truncated": "تحتوي هذه الفترة على مواعيد أكثر مما يمكن عرضه. ضيّق النطاق باستخدام عوامل التصفية أو عرض أقصر.",
+    "availabilityNote": "يتحقق الخادم من التوافر والتداخلات وقواعد المريض والموظف النشطين. لا يضمن وجود وقت فارغ في التقويم إمكانية الحجز.",
+    "notices": {
+      "created": "تم إنشاء الموعد بنجاح.",
+      "updated": "تم تحديث الموعد بنجاح.",
+      "pending": "تم تحديد الموعد كقيد الانتظار.",
+      "confirmed": "تم تأكيد الموعد.",
+      "completed": "تم تحديد الموعد كمكتمل.",
+      "cancelled": "تم إلغاء الموعد."
+    },
+    "status": {
+      "pending": "قيد الانتظار",
+      "confirmed": "مؤكد",
+      "completed": "مكتمل",
+      "cancelled": "ملغى"
+    },
+    "filters": {
+      "patient": "المريض",
+      "staff": "الموظف",
+      "status": "الحالة",
+      "allPatients": "جميع المرضى",
+      "allStaff": "جميع الموظفين",
+      "allStatuses": "جميع الحالات",
+      "clear": "مسح عوامل التصفية"
+    },
+    "calendar": {
+      "previous": "الفترة السابقة",
+      "next": "الفترة التالية",
+      "today": "اليوم",
+      "goToDate": "الانتقال إلى تاريخ",
+      "viewLabel": "عرض التقويم",
+      "loading": "جارٍ تحميل المواعيد...",
+      "views": {
+        "day": "يوم",
+        "week": "أسبوع",
+        "month": "شهر"
+      }
+    },
+    "selector": {
+      "searchPlaceholder": {
+        "patient": "ابحث عن مريض بالاسم",
+        "staff": "ابحث عن موظف بالاسم"
+      },
+      "searchLabel": {
+        "patient": "البحث عن المرضى",
+        "staff": "البحث عن الموظفين"
+      },
+      "loadError": {
+        "patient": "تعذّر تحميل المرضى.",
+        "staff": "تعذّر تحميل الموظفين."
+      },
+      "retry": "إعادة المحاولة",
+      "loading": {
+        "patient": "جارٍ تحميل المرضى...",
+        "staff": "جارٍ تحميل الموظفين..."
+      },
+      "noResults": {
+        "patient": "لم يتم العثور على مرضى نشطين.",
+        "staff": "لم يتم العثور على موظفين نشطين."
+      },
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "refine": "عرض {shown} من {total}. حسّن البحث للعثور على آخرين."
+    },
+    "form": {
+      "createTitle": "موعد جديد",
+      "editTitle": "تعديل الموعد",
+      "createDescription": "اختر المريض والموظف والتاريخ والوقت.",
+      "editDescription": "غيّر الجدول أو الموظف أو السبب. سيتحقق الخادم من التوافر مرة أخرى.",
+      "availabilityNote": "يتحقق الخادم من أن الموظف نشط، وأن الفترة ضمن توافره، وأنه لا توجد استثناءات تحجبها، وأنها لا تتداخل مع مواعيد أخرى.",
+      "patientSection": "المريض",
+      "patientLocked": "لا يمكن تغيير المريض. لحجز موعد لمريض آخر، أنشئ موعدًا جديدًا.",
+      "selectedPatient": "المريض المختار",
+      "staffSection": "الموظف",
+      "selectedStaff": "الموظف المختار",
+      "scheduleSection": "التاريخ والوقت",
+      "dateLabel": "التاريخ",
+      "startTimeLabel": "وقت البدء",
+      "endTimeLabel": "وقت الانتهاء",
+      "timeZoneHint": "الأوقات بتوقيت {timeZone} (UTC{offset}).",
+      "timeZoneHintGeneric": "تُفسَّر الأوقات حسب المنطقة الزمنية للتطبيق.",
+      "reasonLabel": "السبب",
+      "optional": "اختياري",
+      "reasonPlaceholder": "وصف موجز لسبب الزيارة",
+      "cancel": "إلغاء",
+      "saveCreate": "إنشاء الموعد",
+      "saveEdit": "حفظ التغييرات",
+      "savingCreate": "جارٍ الإنشاء...",
+      "savingEdit": "جارٍ الحفظ...",
+      "noChanges": "لم تُجرِ أي تغيير.",
+      "close": "إغلاق"
+    },
+    "validation": {
+      "patientRequired": "اختر مريضًا.",
+      "staffRequired": "اختر موظفًا.",
+      "dateRequired": "أدخل التاريخ.",
+      "dateInvalid": "أدخل تاريخًا صالحًا.",
+      "startRequired": "أدخل وقت البدء.",
+      "endRequired": "أدخل وقت الانتهاء.",
+      "timeInvalid": "أدخل وقتًا صالحًا.",
+      "intervalOrder": "يجب أن يكون وقت الانتهاء بعد وقت البدء."
+    },
+    "errors": {
+      "unexpected": "حدث خطأ غير متوقع. حاول مرة أخرى.",
+      "network": "تعذّر الاتصال بالخادم. تحقق من اتصالك وحاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الموعد.",
+      "server": "تعذّر على الخادم إكمال الطلب. حاول لاحقًا.",
+      "loadList": "تعذّر تحميل المواعيد."
+    },
+    "detail": {
+      "title": "تفاصيل الموعد",
+      "description": "اطّلع على الموعد وأدِر حالته.",
+      "loading": "جارٍ تحميل الموعد...",
+      "retry": "إعادة المحاولة",
+      "close": "إغلاق",
+      "id": "المعرّف",
+      "patient": "المريض",
+      "staff": "الموظف",
+      "date": "التاريخ",
+      "startTime": "وقت البدء",
+      "endTime": "وقت الانتهاء",
+      "status": "الحالة",
+      "reason": "السبب",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "تاريخ التحديث",
+      "noValue": "—",
+      "edit": "تعديل / إعادة جدولة",
+      "finalNote": {
+        "completed": "هذا الموعد مكتمل ولا يمكن تعديله بعد الآن.",
+        "cancelled": "هذا الموعد ملغى ولا يمكن إعادة تفعيله. لحجز موعد جديد، أنشئ موعدًا جديدًا."
+      },
+      "actions": {
+        "confirmed": "تأكيد",
+        "completed": "تحديد كمكتمل",
+        "cancelled": "إلغاء الموعد"
+      },
+      "pending": {
+        "confirmed": "جارٍ التأكيد...",
+        "completed": "جارٍ الإكمال...",
+        "cancelled": "جارٍ الإلغاء..."
+      },
+      "confirm": {
+        "back": "رجوع",
+        "completed": {
+          "description": "سيتم تحديد الموعد كمكتمل. لا يمكن التراجع عن هذا الإجراء.",
+          "confirm": "تحديد كمكتمل"
+        },
+        "cancelled": {
+          "description": "سيتم إلغاء الموعد ولن يمكن إعادة تفعيله. يبقى محفوظًا في السجل.",
+          "confirm": "إلغاء الموعد"
+        }
+      }
+    },
+    "section": {
+      "title": "المواعيد",
+      "viewInAgenda": "عرض في الجدول",
+      "retry": "إعادة المحاولة",
+      "loading": "جارٍ تحميل المواعيد...",
+      "empty": {
+        "patient": "لا توجد مواعيد لهذا المريض.",
+        "staff": "لا توجد مواعيد لهذا الموظف."
+      },
+      "counterpart": {
+        "patient": "الموظف",
+        "staff": "المريض"
+      },
+      "page": "الصفحة {page} من {totalPages}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "procedures": {
+      "title": "الإجراءات",
+      "hint": "اختياري. تأتي الإجراءات من الكتالوج ويؤخذ السعر منه ويحسب الخادم المدة النهائية.",
+      "empty": "لا توجد إجراءات لهذا الموعد.",
+      "addFromCatalog": "إضافة إجراء من الكتالوج",
+      "inactive": "غير نشط",
+      "saved": "محفوظ",
+      "pending": "لم يُحفظ بعد",
+      "willRemove": "سيتم إزالته",
+      "modified": "معدّل",
+      "remove": "إزالة",
+      "undoRemove": "تراجع",
+      "quantity": "الكمية",
+      "unitPrice": "سعر الوحدة",
+      "unitPriceHistoric": "سعر الوحدة (تاريخي)",
+      "duration": "المدة الإجمالية",
+      "amount": "مبلغ البند",
+      "notes": "ملاحظات",
+      "optional": "اختياري",
+      "notesPlaceholder": "ملاحظات هذا الإجراء",
+      "unknown": "—",
+      "minutes": "{count} دقيقة",
+      "quantityInvalid": "يجب أن تكون الكمية عددًا صحيحًا من 1 إلى {max}.",
+      "linesInvalid": "صحّح كميات الإجراءات قبل الحفظ.",
+      "lineError": "تعذّر حفظ \"{name}\": {message}",
+      "loadingDetails": "جارٍ تحميل الإجراءات...",
+      "loadDetailsError": "تعذّر تحميل إجراءات هذا الموعد.",
+      "noDetails": "لا توجد إجراءات لهذا الموعد.",
+      "retry": "إعادة المحاولة",
+      "close": "إغلاق",
+      "readOnlyLine": "الكمية: {quantity} · سعر الوحدة: {unitPrice} · المدة: {duration} دقيقة · المبلغ: {amount}",
+      "partial": {
+        "title": "تم إنشاء الموعد #{id} لكن بعض الإجراءات معلّقة",
+        "description": "تعذّر تسجيل {count} إجراء. لن يُنشأ الموعد مرة أخرى؛ يمكنك إعادة محاولة المعلّقة فقط.",
+        "retry": "إعادة محاولة الإجراءات المعلّقة"
+      },
+      "selector": {
+        "searchPlaceholder": "ابحث عن الإجراءات بالاسم أو الرمز",
+        "searchLabel": "البحث في الإجراءات",
+        "loading": "جارٍ تحميل الإجراءات...",
+        "loadError": "تعذّر تحميل كتالوج الإجراءات.",
+        "retry": "إعادة المحاولة",
+        "catalogEmpty": "لا توجد إجراءات نشطة في الكتالوج.",
+        "noResults": "لا يوجد إجراء نشط يطابق البحث.",
+        "add": "إضافة",
+        "added": "تمت الإضافة",
+        "minutes": "{count} دقيقة",
+        "refine": "عرض {shown} من {total}. حسّن البحث للعثور على آخرين."
+      },
+      "summary": {
+        "title": "ملخص الموعد",
+        "count": "الإجراءات",
+        "requiredDuration": "المدة المطلوبة",
+        "reservedDuration": "المدة المحجوزة",
+        "totalAmount": "الإجمالي المقدّر",
+        "minutes": "{count} دقيقة",
+        "unknown": "—",
+        "estimateNote": "المبالغ والمدد المعلّمة بـ ≈ تقديرية حتى الحفظ؛ يحسب الخادم القيم النهائية.",
+        "incomplete": "تنقص بيانات الكتالوج في بعض البنود، لذا فالإجماليات غير كاملة.",
+        "insufficient": "تتطلب الإجراءات {required} دقيقة لكن الموعد يحجز {reserved} دقيقة. عدّل وقت الانتهاء؛ سيتحقق الخادم من التوافر.",
+        "adjustEnd": "تعديل وقت الانتهاء",
+        "adjustImpossible": "لا يمكن تعديل وقت الانتهاء ضمن اليوم نفسه."
+      }
+    }
+  },
+  "procedures": {
+    "title": "الإجراءات",
+    "meta": {
+      "title": "الإجراءات | إدارة مواعيد طب الأسنان",
+      "description": "إدارة كتالوج إجراءات طب الأسنان: الأسعار والمدد والتسلسل الهرمي."
+    },
+    "create": "إجراء جديد",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ تحميل الإجراءات...",
+    "empty": "لا توجد إجراءات مسجلة بعد.",
+    "noResults": "لا يوجد إجراء يطابق البحث أو عوامل التصفية.",
+    "noValue": "—",
+    "minutes": "{count} دقيقة",
+    "columns": {
+      "id": "المعرّف",
+      "code": "الرمز",
+      "name": "الاسم",
+      "parent": "الإجراء الأب",
+      "basePrice": "السعر الأساسي",
+      "duration": "المدة المقدّرة",
+      "description": "الوصف",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء",
+      "updatedAt": "آخر تحديث",
+      "actions": "الإجراءات"
+    },
+    "actions": {
+      "view": "عرض",
+      "edit": "تعديل",
+      "activate": "تفعيل",
+      "deactivate": "إلغاء التفعيل"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط"
+    },
+    "notices": {
+      "created": "تم إنشاء الإجراء بنجاح.",
+      "updated": "تم تحديث الإجراء بنجاح.",
+      "activated": "تم تفعيل الإجراء بنجاح.",
+      "deactivated": "تم إلغاء تفعيل الإجراء بنجاح."
+    },
+    "filters": {
+      "searchPlaceholder": "ابحث بالاسم أو الرمز",
+      "searchLabel": "البحث في الإجراءات",
+      "statusLabel": "تصفية حسب الحالة",
+      "status": {
+        "all": "جميع الحالات",
+        "active": "نشطة",
+        "inactive": "غير نشطة"
+      },
+      "sortByLabel": "ترتيب حسب",
+      "sortBy": {
+        "id": "المعرّف",
+        "name": "الاسم",
+        "code": "الرمز",
+        "base_price": "السعر الأساسي",
+        "base_duration_minutes": "المدة",
+        "created_at": "تاريخ الإنشاء"
+      },
+      "orderLabel": "الترتيب",
+      "order": {
+        "asc": "تصاعدي",
+        "desc": "تنازلي"
+      },
+      "parent": "الإجراء الأب",
+      "allParents": "جميع الإجراءات",
+      "minPrice": "الحد الأدنى للسعر",
+      "maxPrice": "الحد الأقصى للسعر",
+      "priceInvalid": "أدخل مبلغًا صالحًا (حتى منزلتين عشريتين).",
+      "clear": "مسح عوامل التصفية"
+    },
+    "pagination": {
+      "summary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "activate": {
+        "title": "تفعيل الإجراء",
+        "description": "هل تريد تفعيل الإجراء \"{name}\"؟ سيصبح متاحًا مجددًا للمواعيد الجديدة.",
+        "confirm": "تفعيل"
+      },
+      "deactivate": {
+        "title": "إلغاء تفعيل الإجراء",
+        "description": "هل تريد إلغاء تفعيل الإجراء \"{name}\"؟ يبقى السجل محفوظًا ولن يُعرض للمواعيد الجديدة ولا تتغير تفاصيل المواعيد الحالية.",
+        "confirm": "إلغاء التفعيل"
+      }
+    },
+    "errors": {
+      "network": "تعذّر الاتصال بالخادم. حاول مرة أخرى.",
+      "notFound": "لم يتم العثور على الإجراء.",
+      "server": "واجه الخادم مشكلة غير متوقعة. حاول لاحقًا.",
+      "unexpected": "حدث خطأ غير متوقع."
+    },
+    "form": {
+      "createTitle": "إجراء جديد",
+      "createDescription": "سجّل إجراءً في الكتالوج. يُنشأ بحالة نشط.",
+      "editTitle": "تعديل الإجراء",
+      "create": "إنشاء الإجراء",
+      "save": "حفظ التغييرات",
+      "saving": "جارٍ الحفظ...",
+      "cancel": "إلغاء",
+      "backToList": "العودة إلى الإجراءات",
+      "noChanges": "لم تُجرِ أي تغيير.",
+      "historyNote": "تغيير السعر أو المدة لا يغيّر تفاصيل المواعيد الحالية: تحتفظ بقيمها التاريخية.",
+      "nameLabel": "الاسم",
+      "namePlaceholder": "مثال: تنظيف الأسنان",
+      "codeLabel": "الرمز",
+      "codePlaceholder": "مثال: PRO-001",
+      "priceLabel": "السعر الأساسي",
+      "pricePlaceholder": "0.00",
+      "priceHint": "صفر أو أكثر، حتى منزلتين عشريتين.",
+      "durationLabel": "المدة المقدّرة (بالدقائق)",
+      "durationPlaceholder": "30",
+      "durationHint": "عدد صحيح أكبر من صفر.",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "وصف اختياري للإجراء",
+      "parentSection": "الإجراء الأب",
+      "parentHint": "اختياري. يمكن أن تكون الإجراءات النشطة فقط أبًا. يرفض الخادم التسلسلات الدائرية.",
+      "selectedParent": "الأب المختار",
+      "noParent": "بدون أب"
+    },
+    "validation": {
+      "nameRequired": "أدخل الاسم.",
+      "nameTooLong": "يجب ألا يتجاوز الاسم 150 حرفًا.",
+      "codeBlank": "لا يمكن أن يكون الرمز مسافات فقط. اتركه فارغًا إن لم يوجد.",
+      "codeTooLong": "يجب ألا يتجاوز الرمز 50 حرفًا.",
+      "priceRequired": "أدخل السعر الأساسي.",
+      "priceInvalid": "أدخل مبلغًا صفرًا أو أكثر بحد أقصى منزلتين عشريتين.",
+      "durationRequired": "أدخل المدة.",
+      "durationInvalid": "أدخل عددًا صحيحًا من الدقائق أكبر من صفر.",
+      "durationTooLarge": "المدة كبيرة جدًا."
+    },
+    "parentSelector": {
+      "searchPlaceholder": "ابحث بالاسم أو الرمز",
+      "searchLabel": "البحث في الإجراءات الأب",
+      "none": "بدون أب",
+      "loadError": "تعذّر تحميل الإجراءات.",
+      "retry": "إعادة المحاولة",
+      "loading": "جارٍ تحميل الإجراءات...",
+      "noResults": "لم يتم العثور على إجراءات نشطة.",
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "refine": "عرض {shown} من {total}. حسّن البحث للعثور على آخرين."
+    },
+    "detail": {
+      "title": "تفاصيل الإجراء",
+      "inactiveNote": "هذا الإجراء غير نشط: يبقى محفوظًا ولكن لا يُعرض للمواعيد الجديدة.",
+      "historyNote": "تغييرات الكتالوج لا تعدّل أبدًا السعر والمدة التاريخيين المحفوظين في تفاصيل المواعيد الحالية."
+    },
+    "hierarchy": {
+      "title": "التسلسل الهرمي",
+      "loading": "جارٍ تحميل التسلسل الهرمي...",
+      "loadError": "تعذّر تحميل التسلسل الهرمي.",
+      "path": "الموقع في الكتالوج",
+      "children": "الإجراءات الفرعية المباشرة ({count})",
+      "noChildren": "لا توجد إجراءات فرعية لهذا الإجراء.",
+      "moreChildren": "عرض {shown} من {total} إجراء فرعي."
+    }
+  },
+  "conversations": {
+    "title": "المحادثات",
+    "meta": {
+      "title": "المحادثات | إدارة مواعيد طب الأسنان",
+      "description": "إدارة المحادثات مع الأشخاص ورسائلها والموظفين المعيّنين لها."
+    },
+    "newConversation": "محادثة جديدة",
+    "dismiss": "إغلاق",
+    "internalNote": "تُسجَّل المحادثات داخليًا في المنصة. لا يوجد اتصال مباشر بواتساب ولا تحديث فوري: استخدم «تحديث» لتحديث البيانات.",
+    "notices": {
+      "created": "تم إنشاء المحادثة بنجاح.",
+      "closed": "تم إغلاق المحادثة.",
+      "reopened": "أُعيد فتح المحادثة. لا يوجد موظف معيّن لها إلى أن تعيّن أحدًا.",
+      "assigned": "تم تعيين المحادثة.",
+      "transferred": "تم تحويل المحادثة.",
+      "ended": "انتهى التعيين. تبقى المحادثة مفتوحة وغير معيّنة."
+    },
+    "status": {
+      "open": "مفتوحة",
+      "closed": "مغلقة"
+    },
+    "channel": {
+      "whatsapp": "واتساب"
+    },
+    "list": {
+      "title": "المحادثات",
+      "loading": "جارٍ تحميل المحادثات...",
+      "retry": "إعادة المحاولة",
+      "empty": "لا توجد محادثات بعد.",
+      "noResults": "لا توجد محادثات تطابق عوامل التصفية.",
+      "page": "الصفحة {page} من {totalPages}",
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "filters": {
+      "allPeople": "جميع الأشخاص",
+      "channelLabel": "تصفية حسب القناة",
+      "allChannels": "جميع القنوات",
+      "statusLabel": "تصفية حسب الحالة",
+      "allStatuses": "جميع الحالات",
+      "clear": "مسح عوامل التصفية"
+    },
+    "selector": {
+      "searchPlaceholder": {
+        "person": "ابحث عن شخص بالاسم",
+        "staff": "ابحث عن موظف بالاسم"
+      },
+      "searchLabel": {
+        "person": "البحث عن الأشخاص",
+        "staff": "البحث عن الموظفين"
+      },
+      "loadError": {
+        "person": "تعذّر تحميل الأشخاص.",
+        "staff": "تعذّر تحميل الموظفين."
+      },
+      "loading": {
+        "person": "جارٍ تحميل الأشخاص...",
+        "staff": "جارٍ تحميل الموظفين..."
+      },
+      "noResults": {
+        "person": "لم يتم العثور على أشخاص نشطين.",
+        "staff": "لم يتم العثور على موظفين نشطين."
+      },
+      "retry": "إعادة المحاولة",
+      "select": "اختيار",
+      "selected": "تم الاختيار",
+      "refine": "عرض {shown} من {total}. حسّن البحث للعثور على آخرين."
+    },
+    "create": {
+      "title": "محادثة جديدة",
+      "description": "ابدأ محادثة داخلية مع شخص موجود.",
+      "personSection": "الشخص",
+      "personHint": "أي شخص مسجّل؛ ليس شرطًا أن يكون مريضًا.",
+      "selectedPerson": "الشخص المختار",
+      "personRequired": "اختر شخصًا.",
+      "channelSection": "القناة",
+      "internalNote": "تُسجَّل المحادثة داخليًا؛ لا تُرسل أي رسالة إلى واتساب.",
+      "cancel": "إلغاء",
+      "creating": "جارٍ الإنشاء...",
+      "submit": "إنشاء المحادثة"
+    },
+    "statusDialog": {
+      "cancel": "إلغاء",
+      "close": {
+        "title": "إغلاق المحادثة",
+        "description": "ستُغلق المحادثة. تبقى الرسائل وسجل التعيينات محفوظة، وينتهي التعيين النشط تلقائيًا.",
+        "confirm": "إغلاق المحادثة"
+      },
+      "reopen": {
+        "title": "إعادة فتح المحادثة",
+        "description": "ستُعاد المحادثة إلى الحالة المفتوحة. لا يُعيَّن أي موظف تلقائيًا.",
+        "confirm": "إعادة فتح المحادثة"
+      }
+    },
+    "chat": {
+      "loading": "جارٍ تحميل المحادثة...",
+      "backToList": "العودة إلى القائمة",
+      "retry": "إعادة المحاولة",
+      "closedNote": "هذه المحادثة مغلقة: السجل للقراءة فقط.",
+      "noSelection": "اختر محادثة",
+      "noSelectionHint": "اختر محادثة من القائمة أو أنشئ محادثة جديدة."
+    },
+    "header": {
+      "back": "العودة إلى القائمة",
+      "startedAt": "بدأت {date}",
+      "assignedTo": "معيّنة إلى {name}",
+      "refresh": "تحديث",
+      "close": "إغلاق",
+      "reopen": "إعادة فتح",
+      "toggleInfo": "إظهار المعلومات أو إخفاؤها",
+      "openInfo": "إظهار المعلومات"
+    },
+    "info": {
+      "title": "معلومات المحادثة",
+      "description": "بيانات الشخص والمحادثة والتعيين.",
+      "noValue": "—",
+      "personActive": "شخص نشط",
+      "personInactive": "شخص غير نشط",
+      "document": "الوثيقة",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "conversation": "المحادثة",
+      "id": "المعرّف",
+      "channel": "القناة",
+      "status": "الحالة",
+      "startedAt": "البدء",
+      "closedAt": "الإغلاق"
+    },
+    "messages": {
+      "retry": "إعادة المحاولة",
+      "loading": "جارٍ تحميل الرسائل...",
+      "historyLabel": "سجل الرسائل",
+      "loadOlder": "تحميل رسائل أقدم",
+      "empty": "لا توجد رسائل في هذه المحادثة بعد.",
+      "notConfirmed": "لم يُؤكَّد الإرسال بعد",
+      "failedNote": "تعذّر إرسال الرسالة.",
+      "sender": {
+        "person": "الشخص",
+        "staff": "الموظف",
+        "ai": "الذكاء الاصطناعي"
+      },
+      "delivery": {
+        "received": "مستلمة",
+        "queued": "في الانتظار، الإرسال معلّق",
+        "sent": "مُرسلة",
+        "delivered": "تم التسليم",
+        "read": "مقروءة",
+        "failed": "فشلت"
+      }
+    },
+    "composer": {
+      "closed": "المحادثة مغلقة. أعد فتحها لإرسال الرسائل.",
+      "empty": "اكتب رسالة قبل الإرسال.",
+      "tooLong": "يجب ألا تتجاوز الرسالة {max} حرفًا.",
+      "recovered": "انقطع الاتصال لكن الرسالة كانت قد سُجّلت. لم تُرسل مرة أخرى.",
+      "placeholder": "اكتب رسالة",
+      "label": "الرسالة",
+      "sending": "جارٍ الإرسال...",
+      "send": "إرسال",
+      "hint": "Enter للإرسال، Shift + Enter لسطر جديد"
+    },
+    "assignments": {
+      "title": "الموظف المعيّن",
+      "retry": "إعادة المحاولة",
+      "loading": "جارٍ تحميل التعيينات...",
+      "active": "نشط",
+      "assignedAt": "عُيّنت {date}",
+      "transfer": "تحويل",
+      "end": "إنهاء التعيين",
+      "unassigned": "غير معيّنة",
+      "assign": "تعيين موظف",
+      "closedNote": "المحادثة مغلقة: لا يمكن تعيينها لأحد.",
+      "history": "سجل التعيينات",
+      "historyEmpty": "لا توجد تعيينات لهذه المحادثة بعد.",
+      "finished": "منتهٍ",
+      "from": "من {date}",
+      "until": "حتى {date}",
+      "dialog": {
+        "cancel": "إلغاء",
+        "eligibilityNote": "تُعرض الموظفون النشطون فقط. يتحقق الخادم من الأهلية النهائية ويعرض رسالته إذا تعذّر تعيين الموظف.",
+        "assign": {
+          "title": "تعيين المحادثة",
+          "description": "اختر الموظف الذي سيتولى هذه المحادثة.",
+          "confirm": "تعيين",
+          "summary": "ستُعيَّن المحادثة إلى {to}."
+        },
+        "transfer": {
+          "title": "تحويل المحادثة",
+          "description": "اختر الموظف الذي سيتسلّم هذه المحادثة.",
+          "confirm": "تحويل",
+          "summary": "ستُحوَّل المحادثة من {from} إلى {to}."
+        },
+        "end": {
+          "title": "إنهاء التعيين",
+          "description": "هل تريد إنهاء تعيين {name}؟ تبقى المحادثة مفتوحة وغير معيّنة ويُحفظ السجل.",
+          "confirm": "إنهاء التعيين"
+        }
+      }
+    },
+    "errors": {
+      "unexpected": "حدث خطأ غير متوقع. حاول مرة أخرى.",
+      "network": "تعذّر الاتصال بالخادم. تحقق من اتصالك وحاول مرة أخرى.",
+      "notFound": "لم يتم العثور على المحادثة.",
+      "server": "تعذّر على الخادم إكمال الطلب. حاول لاحقًا."
+    }
+  }
+}
