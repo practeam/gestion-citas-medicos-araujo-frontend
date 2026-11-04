@@ -3326,5 +3326,53 @@
       "notFound": "No se encontró la conversación.",
       "server": "El servidor no pudo completar la solicitud. Inténtalo más tarde."
     }
+  },
+  "auth": {
+    "login": {
+      "meta": {
+        "title": "Iniciar sesión",
+        "description": "Accede al sistema de gestión de citas odontológicas"
+      },
+      "title": "Iniciar sesión",
+      "description": "Ingresa tu correo y contraseña para continuar.",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Ingresa tu contraseña",
+      "showPassword": "Mostrar contraseña",
+      "hidePassword": "Ocultar contraseña",
+      "submit": "Iniciar sesión",
+      "submitting": "Iniciando sesión...",
+      "validation": {
+        "emailRequired": "El correo es obligatorio",
+        "emailInvalid": "Ingresa un correo válido",
+        "passwordRequired": "La contraseña es obligatoria"
+      },
+      "errors": {
+        "invalidCredentials": "Credenciales inválidas.",
+        "network": "No se pudo conectar con el servidor. Inténtalo de nuevo.",
+        "server": "El servidor tuvo un problema. Inténtalo más tarde.",
+        "unexpected": "Ocurrió un error inesperado."
+      },
+      "notices": {
+        "expired": "Tu sesión ha expirado. Inicia sesión nuevamente para continuar.",
+        "unauthorized": "Tu sesión ya no es válida. Inicia sesión nuevamente para continuar."
+      }
+    },
+    "expiryWarning": {
+      "title": "Tu sesión está por expirar.",
+      "description": "Tu sesión finalizará en un minuto. Guarda tus cambios antes de continuar.",
+      "close": "Cerrar aviso"
+    },
+    "forbidden": {
+      "title": "Acceso denegado",
+      "description": "No tienes permiso para acceder a esta página.",
+      "back": "Volver al inicio"
+    },
+    "session": {
+      "loading": "Verificando sesión...",
+      "error": "No se pudo verificar tu sesión. Revisa tu conexión e inténtalo de nuevo.",
+      "retry": "Reintentar"
+    }
   }
 }
