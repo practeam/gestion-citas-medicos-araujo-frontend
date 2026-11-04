@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Can } from "@/modules/auth";
 import {
   Table,
   TableBody,
@@ -113,25 +114,29 @@ export function ScheduleOverridesTable({
                   >
                     {t("actions.view")}
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    nativeButton={false}
-                    render={
-                      <Link to={`/schedule-overrides/${override.id}/edit`} />
-                    }
-                  >
-                    {t("actions.edit")}
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    onClick={() => onToggleStatus(override)}
-                  >
-                    {override.is_active
-                      ? t("actions.deactivate")
-                      : t("actions.activate")}
-                  </Button>
+                  <Can permission="schedule_override.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      nativeButton={false}
+                      render={
+                        <Link to={`/schedule-overrides/${override.id}/edit`} />
+                      }
+                    >
+                      {t("actions.edit")}
+                    </Button>
+                  </Can>
+                  <Can permission="schedule_override.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => onToggleStatus(override)}
+                    >
+                      {override.is_active
+                        ? t("actions.deactivate")
+                        : t("actions.activate")}
+                    </Button>
+                  </Can>
                 </div>
               </TableCell>
             </TableRow>

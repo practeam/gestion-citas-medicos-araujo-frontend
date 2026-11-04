@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Can } from "@/modules/auth";
 import {
   Table,
   TableBody,
@@ -110,16 +111,20 @@ export function ScheduleExceptionsTable({
                   >
                     {t("actions.view")}
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    nativeButton={false}
-                    render={
-                      <Link to={`/schedule-exceptions/${exception.id}/edit`} />
-                    }
-                  >
-                    {t("actions.edit")}
-                  </Button>
+                  <Can permission="schedule_exception.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      nativeButton={false}
+                      render={
+                        <Link
+                          to={`/schedule-exceptions/${exception.id}/edit`}
+                        />
+                      }
+                    >
+                      {t("actions.edit")}
+                    </Button>
+                  </Can>
                 </div>
               </TableCell>
             </TableRow>

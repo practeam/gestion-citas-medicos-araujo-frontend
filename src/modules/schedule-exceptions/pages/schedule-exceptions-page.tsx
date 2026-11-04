@@ -1,4 +1,5 @@
 import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
+import { Can } from "@/modules/auth";
 import { PageMeta } from "@/components/shared/page-meta";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -72,13 +73,15 @@ export default function ScheduleExceptionsPage() {
                 onClear={clearFilters}
               />
             </div>
-            <Button
-              nativeButton={false}
-              render={<Link to="/schedule-exceptions/create" />}
-            >
-              <PlusIcon className="fill-current" />
-              {t("newException")}
-            </Button>
+            <Can permission="schedule_exception.create">
+              <Button
+                nativeButton={false}
+                render={<Link to="/schedule-exceptions/create" />}
+              >
+                <PlusIcon className="fill-current" />
+                {t("newException")}
+              </Button>
+            </Can>
           </div>
 
           <div className="border-t border-gray-100 dark:border-white/5">
