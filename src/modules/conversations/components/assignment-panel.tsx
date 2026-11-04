@@ -1,4 +1,5 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Can } from "@/modules/auth";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -101,22 +102,26 @@ export function AssignmentPanel({
               </p>
               {isOpen && (
                 <div className="flex flex-wrap gap-2">
-                  <Button
-                    size="xs"
-                    variant="outline"
-                    disabled={isPending}
-                    onClick={() => setDialog("transfer")}
-                  >
-                    {t("transfer")}
-                  </Button>
-                  <Button
-                    size="xs"
-                    variant="outline"
-                    disabled={isPending}
-                    onClick={() => setDialog("end")}
-                  >
-                    {t("end")}
-                  </Button>
+                  <Can permission="conversation.assign">
+                    <Button
+                      size="xs"
+                      variant="outline"
+                      disabled={isPending}
+                      onClick={() => setDialog("transfer")}
+                    >
+                      {t("transfer")}
+                    </Button>
+                  </Can>
+                  <Can permission="conversation.assign">
+                    <Button
+                      size="xs"
+                      variant="outline"
+                      disabled={isPending}
+                      onClick={() => setDialog("end")}
+                    >
+                      {t("end")}
+                    </Button>
+                  </Can>
                 </div>
               )}
             </div>
@@ -126,13 +131,15 @@ export function AssignmentPanel({
                 {t("unassigned")}
               </p>
               {isOpen ? (
-                <Button
-                  size="xs"
-                  disabled={isPending}
-                  onClick={() => setDialog("assign")}
-                >
-                  {t("assign")}
-                </Button>
+                <Can permission="conversation.assign">
+                  <Button
+                    size="xs"
+                    disabled={isPending}
+                    onClick={() => setDialog("assign")}
+                  >
+                    {t("assign")}
+                  </Button>
+                </Can>
               ) : (
                 <p className="text-xs text-gray-500 dark:text-gray-400">
                   {t("closedNote")}

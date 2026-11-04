@@ -1,4 +1,5 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Can } from "@/modules/auth";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -192,12 +193,14 @@ export function ConversationChat({
           onRetry={messages.refresh}
         />
 
-        <MessageComposer
-          disabled={conversation.status === "closed"}
-          isSending={messages.isSending}
-          onSend={messages.send}
-          onSent={() => setScrollToken((token) => token + 1)}
-        />
+        <Can permission="message.send">
+          <MessageComposer
+            disabled={conversation.status === "closed"}
+            isSending={messages.isSending}
+            onSend={messages.send}
+            onSent={() => setScrollToken((token) => token + 1)}
+          />
+        </Can>
       </div>
 
       {infoOpen && (

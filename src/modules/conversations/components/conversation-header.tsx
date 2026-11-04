@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Can } from "@/modules/auth";
 import { useLocale, useTranslations } from "@/i18n";
 import { ArrowLeftIcon, InfoIcon } from "@/icons";
 import { getPersonFullName } from "@/modules/persons";
@@ -91,14 +92,16 @@ export function ConversationHeader({
         >
           {t("refresh")}
         </Button>
-        <Button
-          type="button"
-          variant="outline"
-          size="xs"
-          onClick={() => onChangeStatus(isOpen ? "closed" : "open")}
-        >
-          {isOpen ? t("close") : t("reopen")}
-        </Button>
+        <Can permission="conversation.update">
+          <Button
+            type="button"
+            variant="outline"
+            size="xs"
+            onClick={() => onChangeStatus(isOpen ? "closed" : "open")}
+          >
+            {isOpen ? t("close") : t("reopen")}
+          </Button>
+        </Can>
         <Button
           type="button"
           variant="outline"

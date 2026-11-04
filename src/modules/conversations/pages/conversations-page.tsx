@@ -1,4 +1,5 @@
 import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
+import { Can } from "@/modules/auth";
 import { PageMeta } from "@/components/shared/page-meta";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -75,10 +76,12 @@ export default function ConversationsPage() {
               <h3 className="text-base font-semibold text-gray-800 dark:text-white/90">
                 {t("list.title")}
               </h3>
-              <Button size="sm" onClick={() => setCreateOpen(true)}>
-                <PlusIcon className="fill-current" />
-                {t("newConversation")}
-              </Button>
+              <Can permission="conversation.create">
+                <Button size="sm" onClick={() => setCreateOpen(true)}>
+                  <PlusIcon className="fill-current" />
+                  {t("newConversation")}
+                </Button>
+              </Can>
             </div>
             <ConversationFilters
               filters={list.filters}
@@ -111,10 +114,12 @@ export default function ConversationsPage() {
               <p className="max-w-sm text-sm text-gray-500 dark:text-gray-400">
                 {t("chat.noSelectionHint")}
               </p>
-              <Button onClick={() => setCreateOpen(true)}>
-                <PlusIcon className="fill-current" />
-                {t("newConversation")}
-              </Button>
+              <Can permission="conversation.create">
+                <Button onClick={() => setCreateOpen(true)}>
+                  <PlusIcon className="fill-current" />
+                  {t("newConversation")}
+                </Button>
+              </Can>
             </div>
           ) : (
             <ConversationChat
