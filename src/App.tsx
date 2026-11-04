@@ -1,4 +1,10 @@
 import AppLayout from "@/components/layout/app-layout";
+import {
+  LoginPage,
+  ProtectedRoute,
+  PublicOnlyRoute,
+  RequirePermission,
+} from "@/modules/auth";
 import { AppointmentsCalendarPage } from "@/modules/appointments";
 import { ConversationsPage } from "@/modules/conversations";
 import {
@@ -73,7 +79,7 @@ import FormElementsPage from "@/pages/main/forms/form-elements";
 import { BlankPage, Error404Page } from "@/pages/main/pages";
 import ProfilePage from "@/pages/main/profile";
 import BasicTablesPage from "@/pages/main/tables/basic-tables";
-import { AuthLayout, SignInPage, SignUpPage } from "@/pages/others/auth";
+import { AuthLayout } from "@/pages/others/auth";
 import BarChartPage from "@/pages/others/charts/bar-chart";
 import LineChartPage from "@/pages/others/charts/line-chart";
 import Alerts from "@/pages/others/ui-elements/alerts";
@@ -83,164 +89,291 @@ import Buttons from "@/pages/others/ui-elements/buttons";
 import Images from "@/pages/others/ui-elements/images";
 import Videos from "@/pages/others/ui-elements/videos";
 import "flatpickr/dist/flatpickr.css";
-import { Route, Routes } from "react-router";
+import type { ReactNode } from "react";
+import { Navigate, Route, Routes } from "react-router";
+
+/** Ruta protegida por permiso efectivo del backend (`<entidad>.<acción>`). */
+const guard = (permission: string, element: ReactNode) => (
+  <RequirePermission permission={permission}>{element}</RequirePermission>
+);
 
 export default function App() {
   return (
     <Routes>
-      {/* Dashboard Layout */}
-      <Route element={<AppLayout />}>
-        <Route index element={<EcommercePage />} />
+      {/* Rutas privadas: sesión obligatoria */}
+      <Route element={<ProtectedRoute />}>
+        <Route element={<AppLayout />}>
+          <Route index element={<EcommercePage />} />
 
-        {/* Roles */}
-        <Route path="/roles" element={<RolesPage />} />
-        <Route path="/roles/create" element={<RoleCreatePage />} />
-        <Route path="/roles/:roleId" element={<RoleDetailPage />} />
-        <Route path="/roles/:roleId/edit" element={<RoleEditPage />} />
+          {/* Roles */}
+          <Route path="/roles" element={guard("role.read", <RolesPage />)} />
+          <Route
+            path="/roles/create"
+            element={guard("role.create", <RoleCreatePage />)}
+          />
+          <Route
+            path="/roles/:roleId"
+            element={guard("role.read", <RoleDetailPage />)}
+          />
+          <Route
+            path="/roles/:roleId/edit"
+            element={guard("role.update", <RoleEditPage />)}
+          />
 
-        {/* Permissions */}
-        <Route path="/permissions" element={<PermissionsPage />} />
-        <Route path="/permissions/create" element={<PermissionCreatePage />} />
-        <Route
-          path="/permissions/:permissionId"
-          element={<PermissionDetailPage />}
-        />
-        <Route
-          path="/permissions/:permissionId/edit"
-          element={<PermissionEditPage />}
-        />
+          {/* Permissions */}
+          <Route
+            path="/permissions"
+            element={guard("permission.read", <PermissionsPage />)}
+          />
+          <Route
+            path="/permissions/create"
+            element={guard("permission.create", <PermissionCreatePage />)}
+          />
+          <Route
+            path="/permissions/:permissionId"
+            element={guard("permission.read", <PermissionDetailPage />)}
+          />
+          <Route
+            path="/permissions/:permissionId/edit"
+            element={guard("permission.update", <PermissionEditPage />)}
+          />
 
-        {/* Specialties */}
-        <Route path="/specialties" element={<SpecialtiesPage />} />
-        <Route path="/specialties/create" element={<SpecialtyCreatePage />} />
-        <Route
-          path="/specialties/:specialtyId"
-          element={<SpecialtyDetailPage />}
-        />
-        <Route
-          path="/specialties/:specialtyId/edit"
-          element={<SpecialtyEditPage />}
-        />
+          {/* Specialties */}
+          <Route
+            path="/specialties"
+            element={guard("specialty.read", <SpecialtiesPage />)}
+          />
+          <Route
+            path="/specialties/create"
+            element={guard("specialty.create", <SpecialtyCreatePage />)}
+          />
+          <Route
+            path="/specialties/:specialtyId"
+            element={guard("specialty.read", <SpecialtyDetailPage />)}
+          />
+          <Route
+            path="/specialties/:specialtyId/edit"
+            element={guard("specialty.update", <SpecialtyEditPage />)}
+          />
 
-        {/* Special conditions */}
-        <Route path="/special-conditions" element={<SpecialConditionsPage />} />
-        <Route
-          path="/special-conditions/create"
-          element={<SpecialConditionCreatePage />}
-        />
-        <Route
-          path="/special-conditions/:specialConditionId"
-          element={<SpecialConditionDetailPage />}
-        />
-        <Route
-          path="/special-conditions/:specialConditionId/edit"
-          element={<SpecialConditionEditPage />}
-        />
+          {/* Special conditions */}
+          <Route
+            path="/special-conditions"
+            element={guard("special_condition.read", <SpecialConditionsPage />)}
+          />
+          <Route
+            path="/special-conditions/create"
+            element={guard(
+              "special_condition.create",
+              <SpecialConditionCreatePage />,
+            )}
+          />
+          <Route
+            path="/special-conditions/:specialConditionId"
+            element={guard(
+              "special_condition.read",
+              <SpecialConditionDetailPage />,
+            )}
+          />
+          <Route
+            path="/special-conditions/:specialConditionId/edit"
+            element={guard(
+              "special_condition.update",
+              <SpecialConditionEditPage />,
+            )}
+          />
 
-        {/* Clinics */}
-        <Route path="/clinics" element={<ClinicsPage />} />
-        <Route path="/clinics/create" element={<ClinicCreatePage />} />
-        <Route path="/clinics/:clinicId" element={<ClinicDetailPage />} />
-        <Route path="/clinics/:clinicId/edit" element={<ClinicEditPage />} />
+          {/* Clinics */}
+          <Route
+            path="/clinics"
+            element={guard("clinic.read", <ClinicsPage />)}
+          />
+          <Route
+            path="/clinics/create"
+            element={guard("clinic.create", <ClinicCreatePage />)}
+          />
+          <Route
+            path="/clinics/:clinicId"
+            element={guard("clinic.read", <ClinicDetailPage />)}
+          />
+          <Route
+            path="/clinics/:clinicId/edit"
+            element={guard("clinic.update", <ClinicEditPage />)}
+          />
 
-        {/* Persons */}
-        <Route path="/persons" element={<PersonsPage />} />
-        <Route path="/persons/create" element={<PersonCreatePage />} />
-        <Route path="/persons/:personId" element={<PersonDetailPage />} />
-        <Route path="/persons/:personId/edit" element={<PersonEditPage />} />
+          {/* Persons */}
+          <Route
+            path="/persons"
+            element={guard("person.read", <PersonsPage />)}
+          />
+          <Route
+            path="/persons/create"
+            element={guard("person.create", <PersonCreatePage />)}
+          />
+          <Route
+            path="/persons/:personId"
+            element={guard("person.read", <PersonDetailPage />)}
+          />
+          <Route
+            path="/persons/:personId/edit"
+            element={guard("person.update", <PersonEditPage />)}
+          />
 
-        {/* Patients */}
-        <Route path="/patients" element={<PatientsPage />} />
-        <Route path="/patients/create" element={<PatientCreatePage />} />
-        <Route path="/patients/:patientId" element={<PatientDetailPage />} />
-        <Route path="/patients/:patientId/edit" element={<PatientEditPage />} />
+          {/* Patients */}
+          <Route
+            path="/patients"
+            element={guard("patient.read", <PatientsPage />)}
+          />
+          <Route
+            path="/patients/create"
+            element={guard("patient.create", <PatientCreatePage />)}
+          />
+          <Route
+            path="/patients/:patientId"
+            element={guard("patient.read", <PatientDetailPage />)}
+          />
+          <Route
+            path="/patients/:patientId/edit"
+            element={guard("patient.update", <PatientEditPage />)}
+          />
 
-        {/* Staff */}
-        <Route path="/staff" element={<StaffMembersPage />} />
-        <Route path="/staff/create" element={<StaffMemberCreatePage />} />
-        <Route path="/staff/:staffId" element={<StaffMemberDetailPage />} />
-        <Route path="/staff/:staffId/edit" element={<StaffMemberEditPage />} />
+          {/* Staff */}
+          <Route
+            path="/staff"
+            element={guard("staff_member.read", <StaffMembersPage />)}
+          />
+          <Route
+            path="/staff/create"
+            element={guard("staff_member.create", <StaffMemberCreatePage />)}
+          />
+          <Route
+            path="/staff/:staffId"
+            element={guard("staff_member.read", <StaffMemberDetailPage />)}
+          />
+          <Route
+            path="/staff/:staffId/edit"
+            element={guard("staff_member.update", <StaffMemberEditPage />)}
+          />
 
-        {/* Schedule exceptions */}
-        <Route
-          path="/schedule-exceptions"
-          element={<ScheduleExceptionsPage />}
-        />
-        <Route
-          path="/schedule-exceptions/create"
-          element={<ScheduleExceptionCreatePage />}
-        />
-        <Route
-          path="/schedule-exceptions/:exceptionId"
-          element={<ScheduleExceptionDetailPage />}
-        />
-        <Route
-          path="/schedule-exceptions/:exceptionId/edit"
-          element={<ScheduleExceptionEditPage />}
-        />
+          {/* Schedule exceptions */}
+          <Route
+            path="/schedule-exceptions"
+            element={guard(
+              "schedule_exception.read",
+              <ScheduleExceptionsPage />,
+            )}
+          />
+          <Route
+            path="/schedule-exceptions/create"
+            element={guard(
+              "schedule_exception.create",
+              <ScheduleExceptionCreatePage />,
+            )}
+          />
+          <Route
+            path="/schedule-exceptions/:exceptionId"
+            element={guard(
+              "schedule_exception.read",
+              <ScheduleExceptionDetailPage />,
+            )}
+          />
+          <Route
+            path="/schedule-exceptions/:exceptionId/edit"
+            element={guard(
+              "schedule_exception.update",
+              <ScheduleExceptionEditPage />,
+            )}
+          />
 
-        {/* Schedule overrides */}
-        <Route path="/schedule-overrides" element={<ScheduleOverridesPage />} />
-        <Route
-          path="/schedule-overrides/create"
-          element={<ScheduleOverrideCreatePage />}
-        />
-        <Route
-          path="/schedule-overrides/:overrideId"
-          element={<ScheduleOverrideDetailPage />}
-        />
-        <Route
-          path="/schedule-overrides/:overrideId/edit"
-          element={<ScheduleOverrideEditPage />}
-        />
+          {/* Schedule overrides */}
+          <Route
+            path="/schedule-overrides"
+            element={guard("schedule_override.read", <ScheduleOverridesPage />)}
+          />
+          <Route
+            path="/schedule-overrides/create"
+            element={guard(
+              "schedule_override.create",
+              <ScheduleOverrideCreatePage />,
+            )}
+          />
+          <Route
+            path="/schedule-overrides/:overrideId"
+            element={guard(
+              "schedule_override.read",
+              <ScheduleOverrideDetailPage />,
+            )}
+          />
+          <Route
+            path="/schedule-overrides/:overrideId/edit"
+            element={guard(
+              "schedule_override.update",
+              <ScheduleOverrideEditPage />,
+            )}
+          />
 
-        {/* Procedures */}
-        <Route path="/procedures" element={<ProceduresPage />} />
-        <Route path="/procedures/create" element={<ProcedureCreatePage />} />
-        <Route
-          path="/procedures/:procedureId"
-          element={<ProcedureDetailPage />}
-        />
-        <Route
-          path="/procedures/:procedureId/edit"
-          element={<ProcedureEditPage />}
-        />
+          {/* Procedures */}
+          <Route
+            path="/procedures"
+            element={guard("procedure.read", <ProceduresPage />)}
+          />
+          <Route
+            path="/procedures/create"
+            element={guard("procedure.create", <ProcedureCreatePage />)}
+          />
+          <Route
+            path="/procedures/:procedureId"
+            element={guard("procedure.read", <ProcedureDetailPage />)}
+          />
+          <Route
+            path="/procedures/:procedureId/edit"
+            element={guard("procedure.update", <ProcedureEditPage />)}
+          />
 
-        {/* Conversations */}
-        <Route path="/conversations" element={<ConversationsPage />} />
+          {/* Conversations */}
+          <Route
+            path="/conversations"
+            element={guard("conversation.read", <ConversationsPage />)}
+          />
 
-        {/* Appointments */}
-        <Route path="/appointments" element={<AppointmentsCalendarPage />} />
+          {/* Appointments */}
+          <Route
+            path="/appointments"
+            element={guard("appointment.read", <AppointmentsCalendarPage />)}
+          />
 
-        {/* Others Page */}
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/calendar" element={<CalendarPage />} />
-        <Route path="/blank" element={<BlankPage />} />
+          {/* Others Page */}
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/blank" element={<BlankPage />} />
 
-        {/* Forms */}
-        <Route path="/form-elements" element={<FormElementsPage />} />
+          {/* Forms */}
+          <Route path="/form-elements" element={<FormElementsPage />} />
 
-        {/* Tables */}
-        <Route path="/basic-tables" element={<BasicTablesPage />} />
+          {/* Tables */}
+          <Route path="/basic-tables" element={<BasicTablesPage />} />
 
-        {/* Ui Elements */}
-        <Route path="/alerts" element={<Alerts />} />
-        <Route path="/avatars" element={<Avatars />} />
-        <Route path="/badge" element={<Badges />} />
-        <Route path="/buttons" element={<Buttons />} />
-        <Route path="/images" element={<Images />} />
-        <Route path="/videos" element={<Videos />} />
+          {/* Ui Elements */}
+          <Route path="/alerts" element={<Alerts />} />
+          <Route path="/avatars" element={<Avatars />} />
+          <Route path="/badge" element={<Badges />} />
+          <Route path="/buttons" element={<Buttons />} />
+          <Route path="/images" element={<Images />} />
+          <Route path="/videos" element={<Videos />} />
 
-        {/* Charts */}
-        <Route path="/line-chart" element={<LineChartPage />} />
-        <Route path="/bar-chart" element={<BarChartPage />} />
+          {/* Charts */}
+          <Route path="/line-chart" element={<LineChartPage />} />
+          <Route path="/bar-chart" element={<BarChartPage />} />
+        </Route>
       </Route>
 
-      {/* Auth Layout */}
-      <Route element={<AuthLayout />}>
-        <Route path="/signin" element={<SignInPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
+      {/* Ruta pública */}
+      <Route element={<PublicOnlyRoute />}>
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<LoginPage />} />
+        </Route>
       </Route>
+      <Route path="/signin" element={<Navigate to="/login" replace />} />
 
       {/* Full-width / Error / Status Pages */}
       <Route path="/error-404" element={<Error404Page />} />
