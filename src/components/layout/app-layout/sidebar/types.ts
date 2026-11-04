@@ -18,5 +18,7 @@ export interface NavItem {
   path?: string;
   new?: boolean;
   target?: string;
+  /** Permiso efectivo requerido (opciones sin subitems). */
+  permission?: string;
   subItems?: SubItem[];
 }

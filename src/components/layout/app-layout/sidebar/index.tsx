@@ -33,7 +33,9 @@ function filterByPermissions(
   return sections.map((section) => ({
     ...section,
     items: section.items.flatMap((item) => {
-      if (!item.subItems) return [item];
+      if (!item.subItems) {
+        return !item.permission || can(item.permission) ? [item] : [];
+      }
       const subItems = item.subItems.filter(
         (sub) => !sub.permission || can(sub.permission),
       );

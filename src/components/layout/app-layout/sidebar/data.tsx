@@ -20,7 +20,8 @@ export const navItems: NavItem[] = [
   {
     icon: <LayoutGridIcon className="size-6" />,
     key: "dashboard",
-    subItems: [{ key: "ecommerceHome", path: "/" }],
+    path: "/",
+    permission: "dashboard.read",
   },
   {
     icon: <LockIcon className="size-6" />,

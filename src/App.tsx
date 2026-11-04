@@ -5,6 +5,7 @@ import {
   PublicOnlyRoute,
   RequirePermission,
 } from "@/modules/auth";
+import { DashboardPage } from "@/modules/dashboard";
 import { AppointmentsCalendarPage } from "@/modules/appointments";
 import { ConversationsPage } from "@/modules/conversations";
 import {
@@ -74,7 +75,6 @@ import {
   SpecialtyEditPage,
 } from "@/modules/specialties";
 import CalendarPage from "@/pages/main/calendar";
-import EcommercePage from "@/pages/main/dashboard/ecommerce";
 import FormElementsPage from "@/pages/main/forms/form-elements";
 import { BlankPage, Error404Page } from "@/pages/main/pages";
 import ProfilePage from "@/pages/main/profile";
@@ -103,7 +103,7 @@ export default function App() {
       {/* Rutas privadas: sesión obligatoria */}
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
-          <Route index element={<EcommercePage />} />
+          <Route index element={guard("dashboard.read", <DashboardPage />)} />
 
           {/* Roles */}
           <Route path="/roles" element={guard("role.read", <RolesPage />)} />
