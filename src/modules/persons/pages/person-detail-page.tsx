@@ -1,4 +1,5 @@
 import { ComponentCard } from "@/components/shared/component-card";
+import { Can } from "@/modules/auth";
 import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
 import { PageMeta } from "@/components/shared/page-meta";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -129,12 +130,14 @@ export default function PersonDetailPage() {
             >
               {t("form.backToList")}
             </Button>
-            <Button
-              nativeButton={false}
-              render={<Link to={`/persons/${person.id}/edit`} />}
-            >
-              {t("actions.edit")}
-            </Button>
+            <Can permission="person.update">
+              <Button
+                nativeButton={false}
+                render={<Link to={`/persons/${person.id}/edit`} />}
+              >
+                {t("actions.edit")}
+              </Button>
+            </Can>
           </div>
         </ComponentCard>
       )}
