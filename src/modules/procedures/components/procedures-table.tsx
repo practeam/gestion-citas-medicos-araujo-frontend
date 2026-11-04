@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Can } from "@/modules/auth";
 import {
   Table,
   TableBody,
@@ -117,23 +118,27 @@ export function ProceduresTable({
                   >
                     {t("actions.view")}
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    nativeButton={false}
-                    render={<Link to={`/procedures/${procedure.id}/edit`} />}
-                  >
-                    {t("actions.edit")}
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    onClick={() => onToggleStatus(procedure)}
-                  >
-                    {procedure.is_active
-                      ? t("actions.deactivate")
-                      : t("actions.activate")}
-                  </Button>
+                  <Can permission="procedure.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      nativeButton={false}
+                      render={<Link to={`/procedures/${procedure.id}/edit`} />}
+                    >
+                      {t("actions.edit")}
+                    </Button>
+                  </Can>
+                  <Can permission="procedure.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => onToggleStatus(procedure)}
+                    >
+                      {procedure.is_active
+                        ? t("actions.deactivate")
+                        : t("actions.activate")}
+                    </Button>
+                  </Can>
                 </div>
               </TableCell>
             </TableRow>

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Can } from "@/modules/auth";
 import {
   Table,
   TableBody,
@@ -105,23 +106,27 @@ export function ClinicsTable({ clinics, onToggleStatus }: ClinicsTableProps) {
                   >
                     {t("actions.view")}
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    nativeButton={false}
-                    render={<Link to={`/clinics/${clinic.id}/edit`} />}
-                  >
-                    {t("actions.edit")}
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    onClick={() => onToggleStatus(clinic)}
-                  >
-                    {clinic.is_active
-                      ? t("actions.deactivate")
-                      : t("actions.activate")}
-                  </Button>
+                  <Can permission="clinic.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      nativeButton={false}
+                      render={<Link to={`/clinics/${clinic.id}/edit`} />}
+                    >
+                      {t("actions.edit")}
+                    </Button>
+                  </Can>
+                  <Can permission="clinic.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => onToggleStatus(clinic)}
+                    >
+                      {clinic.is_active
+                        ? t("actions.deactivate")
+                        : t("actions.activate")}
+                    </Button>
+                  </Can>
                 </div>
               </TableCell>
             </TableRow>
