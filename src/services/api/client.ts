@@ -12,6 +12,24 @@ interface RequestOptions {
   params?: Record<string, QueryValue>;
   body?: unknown;
   signal?: AbortSignal;
+  /** No adjunta el token (p. ej. el login, que es público). */
+  skipAuth?: boolean;
+}
+
+/**
+ * Enlace con la sesión. Lo registra el AuthProvider; el cliente no conoce
+ * React ni el almacenamiento del token.
+ */
+interface AuthHandlers {
+  getToken: () => string | null;
+  /** 401 recibido con un token adjunto (se informa el token usado). */
+  onUnauthorized: (token: string) => void;
+}
+
+let authHandlers: AuthHandlers | null = null;
+
+export function configureApiAuth(handlers: AuthHandlers | null) {
+  authHandlers = handlers;
 }
 
 function buildUrl(path: string, params?: Record<string, QueryValue>) {
@@ -40,8 +58,9 @@ async function parseBody<T>(
 async function request<T>(
   method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE",
   path: string,
-  { params, body, signal }: RequestOptions = {},
+  { params, body, signal, skipAuth }: RequestOptions = {},
 ): Promise<T> {
+  const token = skipAuth ? null : (authHandlers?.getToken() ?? null);
   let response: Response;
   try {
     response = await fetch(buildUrl(path, params), {
@@ -49,6 +68,7 @@ async function request<T>(
       signal,
       headers: {
         Accept: "application/json",
+        ...(token && { Authorization: `Bearer ${token}` }),
         ...(body !== undefined && { "Content-Type": "application/json" }),
       },
       body: body !== undefined ? JSON.stringify(body) : undefined,
@@ -61,6 +81,9 @@ async function request<T>(
   }
 
   const payload = await parseBody<T>(response);
+
+  // 401 con token: sesión inválida o expirada. 403 no toca la sesión.
+  if (response.status === 401 && token) authHandlers?.onUnauthorized(token);
 
   if (!response.ok || payload?.error) {
     throw new ApiError(
