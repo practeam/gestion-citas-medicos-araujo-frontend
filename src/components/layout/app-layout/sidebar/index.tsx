@@ -4,7 +4,8 @@ import {
   SidebarFooter,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { useState } from "react";
+import { useAuth } from "@/modules/auth";
+import { useMemo, useState } from "react";
 import { useLocation } from "react-router";
 import { navItems, othersItems, supportItems } from "./data";
 import AppSidebarHeader from "./sidebar-header";
@@ -12,13 +13,36 @@ import SidebarNavGroup from "./sidebar-nav-group";
 import SidebarWidget from "./sidebar-widget";
 import type { MenuType, NavItem } from "./types";
 
-const menuSections: { type: MenuType; labelKey: string; items: NavItem[] }[] = [
+interface MenuSection {
+  type: MenuType;
+  labelKey: string;
+  items: NavItem[];
+}
+
+const allSections: MenuSection[] = [
   { type: "main", labelKey: "groups.menu", items: navItems },
   { type: "support", labelKey: "groups.support", items: supportItems },
   { type: "others", labelKey: "groups.others", items: othersItems },
 ];
 
-const findMatchingSubmenu = (path: string) => {
+/** Deja solo las opciones autorizadas; un grupo sin opciones visibles se oculta. */
+function filterByPermissions(
+  sections: MenuSection[],
+  can: (permission: string) => boolean,
+): MenuSection[] {
+  return sections.map((section) => ({
+    ...section,
+    items: section.items.flatMap((item) => {
+      if (!item.subItems) return [item];
+      const subItems = item.subItems.filter(
+        (sub) => !sub.permission || can(sub.permission),
+      );
+      return subItems.length > 0 ? [{ ...item, subItems }] : [];
+    }),
+  }));
+}
+
+const findMatchingSubmenu = (path: string, menuSections: MenuSection[]) => {
   for (const section of menuSections) {
     for (let index = 0; index < section.items.length; index++) {
       const nav = section.items[index];
@@ -40,18 +64,23 @@ const findMatchingSubmenu = (path: string) => {
 export default function AppSidebar() {
   const { open, isMobile, isHovered } = useSidebar();
   const { pathname } = useLocation();
+  const { can } = useAuth();
+  const menuSections = useMemo(
+    () => filterByPermissions(allSections, can),
+    [can],
+  );
 
   const showContent = open || isHovered || isMobile;
 
   const [openSubmenu, setOpenSubmenu] = useState<{
     type: MenuType;
     index: number;
-  } | null>(() => findMatchingSubmenu(pathname));
+  } | null>(() => findMatchingSubmenu(pathname, menuSections));
 
   const [prevPathname, setPrevPathname] = useState(pathname);
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
-    setOpenSubmenu(findMatchingSubmenu(pathname));
+    setOpenSubmenu(findMatchingSubmenu(pathname, menuSections));
   }
 
   const handleSubmenuToggle = (index: number, menuType: MenuType) => {

@@ -8,6 +8,8 @@ export interface SubItem {
   pro?: boolean;
   new?: boolean;
   target?: string;
+  /** Permiso efectivo requerido para ver la opción; sin él, siempre visible. */
+  permission?: string;
 }
 
 export interface NavItem {

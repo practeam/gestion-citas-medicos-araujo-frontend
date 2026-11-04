@@ -9,7 +9,6 @@ import {
   LockIcon,
   PageIcon,
   PieChartIcon,
-  PluginIcon,
   TaskIcon,
   UsersIcon,
   TableIcon,
@@ -27,55 +26,94 @@ export const navItems: NavItem[] = [
     icon: <LockIcon className="size-6" />,
     key: "administration",
     subItems: [
-      { key: "roles", path: "/roles" },
-      { key: "permissions", path: "/permissions" },
+      { key: "roles", path: "/roles", permission: "role.read" },
+      {
+        key: "permissions",
+        path: "/permissions",
+        permission: "permission.read",
+      },
     ],
   },
   {
     icon: <UsersIcon className="size-6" />,
     key: "peopleManagement",
-    subItems: [{ key: "persons", path: "/persons" }],
+    subItems: [{ key: "persons", path: "/persons", permission: "person.read" }],
   },
   {
     icon: <UserIcon className="size-6" />,
     key: "patientManagement",
-    subItems: [{ key: "patients", path: "/patients" },       { key: "specialConditions", path: "/special-conditions" },],
+    subItems: [
+      { key: "patients", path: "/patients", permission: "patient.read" },
+      {
+        key: "specialConditions",
+        path: "/special-conditions",
+        permission: "special_condition.read",
+      },
+    ],
   },
   {
     icon: <UserCircleIcon className="size-6" />,
     key: "staffManagement",
-    subItems: [{ key: "staff", path: "/staff" }],
+    subItems: [
+      { key: "staff", path: "/staff", permission: "staff_member.read" },
+    ],
   },
   {
     icon: <TaskIcon className="size-6" />,
     key: "clinicalManagement",
     subItems: [
-      { key: "clinics", path: "/clinics" },
-      { key: "specialties", path: "/specialties" },
+      { key: "clinics", path: "/clinics", permission: "clinic.read" },
+      {
+        key: "specialties",
+        path: "/specialties",
+        permission: "specialty.read",
+      },
     ],
   },
   {
     icon: <BoxIcon className="size-6" />,
     key: "serviceManagement",
-    subItems: [{ key: "procedures", path: "/procedures" }],
+    subItems: [
+      { key: "procedures", path: "/procedures", permission: "procedure.read" },
+    ],
   },
   {
     icon: <ClockIcon className="size-6" />,
     key: "scheduleManagement",
     subItems: [
-      { key: "scheduleExceptions", path: "/schedule-exceptions" },
-      { key: "scheduleOverrides", path: "/schedule-overrides" },
+      {
+        key: "scheduleExceptions",
+        path: "/schedule-exceptions",
+        permission: "schedule_exception.read",
+      },
+      {
+        key: "scheduleOverrides",
+        path: "/schedule-overrides",
+        permission: "schedule_override.read",
+      },
     ],
   },
   {
     icon: <ChatIcon className="size-6" />,
     key: "communication",
-    subItems: [{ key: "conversations", path: "/conversations" }],
+    subItems: [
+      {
+        key: "conversations",
+        path: "/conversations",
+        permission: "conversation.read",
+      },
+    ],
   },
   {
     icon: <CalendarIcon className="size-6" />,
     key: "appointmentManagement",
-    subItems: [{ key: "appointmentsAgenda", path: "/appointments" }],
+    subItems: [
+      {
+        key: "appointmentsAgenda",
+        path: "/appointments",
+        permission: "appointment.read",
+      },
+    ],
   },
   {
     icon: <CalendarIcon className="size-6" />,
@@ -126,14 +164,6 @@ export const othersItems: NavItem[] = [
       { key: "buttons", path: "/buttons" },
       { key: "images", path: "/images" },
       { key: "videos", path: "/videos" },
-    ],
-  },
-  {
-    icon: <PluginIcon className="size-6" />,
-    key: "authentication",
-    subItems: [
-      { key: "signIn", path: "/signin", pro: false },
-      { key: "signUp", path: "/signup", pro: false },
     ],
   },
 ];

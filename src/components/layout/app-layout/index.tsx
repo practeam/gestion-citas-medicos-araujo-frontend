@@ -1,6 +1,7 @@
 import AppHeader from "@/components/layout/app-layout/header";
 import AppSidebar from "@/components/layout/app-layout/sidebar";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
+import { SessionExpiryAlert } from "@/modules/auth";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { cn } from "@/utils";
 import React from "react";
@@ -34,6 +35,7 @@ export default function AppLayout({
         <div className={getRouteSpecificStyles()}>{children ?? <Outlet />}</div>
       </SidebarInset>
       <ScrollToTop />
+      <SessionExpiryAlert />
     </SidebarProvider>
   );
 }
