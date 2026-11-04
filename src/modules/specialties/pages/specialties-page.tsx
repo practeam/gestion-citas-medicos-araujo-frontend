@@ -1,4 +1,5 @@
 import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
+import { Can } from "@/modules/auth";
 import { PageMeta } from "@/components/shared/page-meta";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -100,13 +101,15 @@ export default function SpecialtiesPage() {
               onSortByChange={setSortBy}
               onOrderChange={setOrder}
             />
-            <Button
-              nativeButton={false}
-              render={<Link to="/specialties/create" />}
-            >
-              <PlusIcon className="fill-current" />
-              {t("create")}
-            </Button>
+            <Can permission="specialty.create">
+              <Button
+                nativeButton={false}
+                render={<Link to="/specialties/create" />}
+              >
+                <PlusIcon className="fill-current" />
+                {t("create")}
+              </Button>
+            </Can>
           </div>
 
           <div className="border-t border-gray-100 dark:border-white/5">

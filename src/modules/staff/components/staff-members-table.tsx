@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Can } from "@/modules/auth";
 import {
   Table,
   TableBody,
@@ -104,23 +105,27 @@ export function StaffMembersTable({
                   >
                     {t("actions.view")}
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    nativeButton={false}
-                    render={<Link to={`/staff/${staffMember.id}/edit`} />}
-                  >
-                    {t("actions.edit")}
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="xs"
-                    onClick={() => onToggleStatus(staffMember)}
-                  >
-                    {staffMember.is_active
-                      ? t("actions.deactivate")
-                      : t("actions.activate")}
-                  </Button>
+                  <Can permission="staff_member.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      nativeButton={false}
+                      render={<Link to={`/staff/${staffMember.id}/edit`} />}
+                    >
+                      {t("actions.edit")}
+                    </Button>
+                  </Can>
+                  <Can permission="staff_member.update">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      onClick={() => onToggleStatus(staffMember)}
+                    >
+                      {staffMember.is_active
+                        ? t("actions.deactivate")
+                        : t("actions.activate")}
+                    </Button>
+                  </Can>
                 </div>
               </TableCell>
             </TableRow>

@@ -1,4 +1,5 @@
 import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
+import { Can } from "@/modules/auth";
 import { PageMeta } from "@/components/shared/page-meta";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -89,10 +90,12 @@ export default function StaffMembersPage() {
         <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/3">
           <div className="flex flex-col gap-4 p-4 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
             <StaffMembersFilters filters={filters} onChange={updateFilters} />
-            <Button nativeButton={false} render={<Link to="/staff/create" />}>
-              <PlusIcon className="fill-current" />
-              {t("newStaffMember")}
-            </Button>
+            <Can permission="staff_member.create">
+              <Button nativeButton={false} render={<Link to="/staff/create" />}>
+                <PlusIcon className="fill-current" />
+                {t("newStaffMember")}
+              </Button>
+            </Can>
           </div>
 
           <div className="border-t border-gray-100 dark:border-white/5">
