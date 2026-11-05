@@ -14,7 +14,7 @@ export function normalizeEmployeeNumber(value: string) {
  * empleado y fecha de contratación son opcionales; la unicidad del número la
  * decide el backend, y no se asumen reglas adicionales sobre la fecha.
  */
-export const staffMemberFormSchema = z.object({
+const staffMemberBaseShape = {
   employee_number: z.string().refine((value) => {
     const number = value.trim();
     return (
@@ -30,11 +30,45 @@ export const staffMemberFormSchema = z.object({
       !Number.isNaN(new Date(`${value}T00:00:00`).getTime())
     );
   }, "hireDateInvalid"),
+};
+
+export const PASSWORD_MIN_LENGTH = 8;
+export const PASSWORD_MAX_LENGTH = 128;
+
+/** Sin trim: los espacios forman parte de la contraseña (igual que el backend). */
+const isValidPasswordLength = (value: string) =>
+  value.length >= PASSWORD_MIN_LENGTH && value.length <= PASSWORD_MAX_LENGTH;
+
+/** Alta: correo de inicio de sesión y contraseña obligatorios. */
+export const staffMemberCreateSchema = z.object({
+  ...staffMemberBaseShape,
+  email: z.string().trim().min(1, "emailRequired").email("emailInvalid"),
+  password: z
+    .string()
+    .min(1, "passwordRequired")
+    .refine(isValidPasswordLength, "passwordLength"),
 });
 
-export type StaffMemberFormValues = z.infer<typeof staffMemberFormSchema>;
+/**
+ * Edición: el correo no se edita aquí y la contraseña es opcional (vacía = no
+ * se cambia); si se escribe, debe cumplir la longitud del backend.
+ */
+export const staffMemberEditSchema = z.object({
+  ...staffMemberBaseShape,
+  email: z.string(),
+  password: z
+    .string()
+    .refine(
+      (value) => !value || isValidPasswordLength(value),
+      "passwordLength",
+    ),
+});
+
+export type StaffMemberFormValues = z.infer<typeof staffMemberCreateSchema>;
 
 export const EMPTY_STAFF_MEMBER_FORM_VALUES: StaffMemberFormValues = {
   employee_number: "",
   hire_date: "",
+  email: "",
+  password: "",
 };

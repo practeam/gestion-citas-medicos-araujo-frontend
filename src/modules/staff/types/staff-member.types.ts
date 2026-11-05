@@ -22,17 +22,23 @@ export interface StaffMember {
   person: StaffMemberPerson;
 }
 
-/** `StaffMemberCreateRequest`: solo `person_id` es obligatorio. */
+/** `StaffMemberCreateRequest`: `person_id`, `email` y `password` son obligatorios. */
 export interface StaffMemberCreateRequest {
   person_id: number;
+  /** Correo de inicio de sesión; el backend lo guarda en la persona. */
+  email: string;
+  /** 8 a 128 caracteres; nunca se devuelve ni se muestra. */
+  password: string;
   employee_number?: string | null;
   hire_date?: string | null;
 }
 
-/** `StaffMemberUpdateRequest`: parcial; no incluye `person_id` ni datos personales. */
+/** `StaffMemberUpdateRequest`: parcial; no incluye `person_id`, correo ni datos personales. */
 export interface StaffMemberUpdateRequest {
   employee_number?: string | null;
   hire_date?: string | null;
+  /** Nueva contraseña, opcional; no puede ser `null`. */
+  password?: string;
 }
 
 export interface StaffMemberStatusRequest {

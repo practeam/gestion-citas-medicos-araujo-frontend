@@ -28,7 +28,7 @@ import { StaffSchedulesDrafts } from "../components/staff-schedules-drafts";
 import { StaffSpecialtyPicker } from "../components/staff-specialty-picker";
 import {
   EMPTY_STAFF_MEMBER_FORM_VALUES,
-  staffMemberFormSchema,
+  staffMemberCreateSchema,
   type StaffMemberFormValues,
 } from "../schemas/staff-member-schema";
 import { staffMemberApi } from "../services/staff-member-api";
@@ -111,7 +111,7 @@ export default function StaffMemberCreatePage() {
     getValues,
     formState: { errors },
   } = useForm<StaffMemberFormValues>({
-    resolver: zodResolver(staffMemberFormSchema),
+    resolver: zodResolver(staffMemberCreateSchema),
     defaultValues: EMPTY_STAFF_MEMBER_FORM_VALUES,
     mode: "onTouched",
   });
@@ -256,9 +256,9 @@ export default function StaffMemberCreatePage() {
           isApiError(error) && error.status === 422
             ? getFieldErrors(error.details)
             : {};
-        const mapped = (["employee_number", "hire_date"] as const).filter(
-          (field) => fieldErrors[field],
-        );
+        const mapped = (
+          ["employee_number", "hire_date", "email", "password"] as const
+        ).filter((field) => fieldErrors[field]);
         if (mapped.length > 0) {
           for (const field of mapped) {
             setError(field, { type: "server", message: fieldErrors[field] });
@@ -339,7 +339,7 @@ export default function StaffMemberCreatePage() {
           {t("create.staffMemberSectionHint")}
         </p>
       </div>
-      <StaffMemberFields register={register} errors={errors} />
+      <StaffMemberFields mode="create" register={register} errors={errors} />
     </section>
   );
 

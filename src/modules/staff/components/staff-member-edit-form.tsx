@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import {
-  staffMemberFormSchema,
+  staffMemberEditSchema,
   type StaffMemberFormValues,
 } from "../schemas/staff-member-schema";
 import { getStaffMemberErrorMessage } from "../utils/staff-member-error.utils";
@@ -35,7 +35,7 @@ export function StaffMemberEditForm({
     setError,
     formState: { errors, isSubmitting },
   } = useForm<StaffMemberFormValues>({
-    resolver: zodResolver(staffMemberFormSchema),
+    resolver: zodResolver(staffMemberEditSchema),
     defaultValues,
     mode: "onTouched",
   });
@@ -55,7 +55,11 @@ export function StaffMemberEditForm({
         // En edición el único conflicto posible es el número de empleado duplicado.
         setError("employee_number", { type: "server", message });
       } else if (Object.keys(serverFieldErrors).length > 0) {
-        for (const field of ["employee_number", "hire_date"] as const) {
+        for (const field of [
+          "employee_number",
+          "hire_date",
+          "password",
+        ] as const) {
           const fieldMessage = serverFieldErrors[field];
           if (fieldMessage) {
             setError(field, { type: "server", message: fieldMessage });
@@ -74,7 +78,7 @@ export function StaffMemberEditForm({
           <AlertDescription>{formError}</AlertDescription>
         </Alert>
       )}
-      <StaffMemberFields register={register} errors={errors} />
+      <StaffMemberFields mode="edit" register={register} errors={errors} />
       <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
         <Button
           variant="outline"
