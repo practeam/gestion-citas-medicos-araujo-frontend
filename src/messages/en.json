@@ -2186,7 +2186,13 @@
       "backToList": "Back to staff",
       "noChanges": "There are no changes to save.",
       "editPersonLink": "Edit personal data",
-      "personDataHint": "Personal data is managed in the Persons module. Here you can only edit the employee number and the hire date."
+      "personDataHint": "Personal data is managed in the Persons module. Here you can edit the employee number, hire date and, if needed, the password.",
+      "emailLabel": "Sign-in email",
+      "emailPlaceholder": "email@example.com",
+      "passwordLabel": "Password",
+      "newPasswordLabel": "New password",
+      "passwordPlaceholder": "At least 8 characters",
+      "passwordEditHint": "Leave empty to keep the current password."
     },
     "create": {
       "personSection": "1. Person",
@@ -2227,7 +2233,11 @@
     },
     "validation": {
       "employeeNumberInvalid": "Use up to 30 letters, numbers and the characters . _ / -",
-      "hireDateInvalid": "Enter a valid date."
+      "hireDateInvalid": "Enter a valid date.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Enter a valid email address.",
+      "passwordRequired": "Password is required.",
+      "passwordLength": "Password must be between 8 and 128 characters."
     },
     "notices": {
       "created": "Staff member registered successfully.",
@@ -3373,6 +3383,87 @@
       "loading": "Checking session...",
       "error": "Could not verify your session. Check your connection and try again.",
       "retry": "Retry"
+    }
+  },
+  "dashboard": {
+    "meta": {
+      "title": "Dashboard",
+      "description": "Overview of the clinic's activity"
+    },
+    "title": "Dashboard",
+    "description": "Overview of the clinic's activity",
+    "period": {
+      "label": "Period",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "options": {
+        "current_month": "Current month",
+        "last_30_days": "Last 30 days",
+        "last_6_months": "Last 6 months",
+        "current_year": "Current year",
+        "custom": "Custom range"
+      },
+      "errors": {
+        "required": "Select both the start and end dates.",
+        "order": "The start date cannot be after the end date."
+      }
+    },
+    "cards": {
+      "totalPatients": {
+        "title": "Total patients",
+        "description": "Registered up to the end of the period"
+      },
+      "newPatients": {
+        "title": "New patients",
+        "description": "Registered in the period"
+      },
+      "totalAppointments": {
+        "title": "Total appointments",
+        "description": "Scheduled in the period, all statuses"
+      },
+      "appointmentsToday": {
+        "title": "Today's appointments",
+        "description": "Current day, regardless of the period"
+      }
+    },
+    "charts": {
+      "appointmentsEvolution": {
+        "title": "Appointments trend",
+        "description": "Appointments scheduled over the period",
+        "series": "Appointments"
+      },
+      "patientsEvolution": {
+        "title": "Patients trend",
+        "description": "New patients registered over the period",
+        "series": "New patients"
+      },
+      "appointmentsByStatus": {
+        "title": "Appointments by status",
+        "description": "Distribution of the period's appointments"
+      },
+      "patientsByMonth": {
+        "title": "Patients registered per month",
+        "description": "New patients per month",
+        "series": "Patients"
+      },
+      "appointmentsByMonth": {
+        "title": "Appointments per month",
+        "description": "Appointments scheduled per month, all statuses",
+        "series": "Appointments"
+      }
+    },
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "states": {
+      "error": "The dashboard could not be loaded. Please try again.",
+      "network": "Could not connect to the server. Please try again.",
+      "forbidden": "You do not have permission to view this information.",
+      "retry": "Retry",
+      "empty": "No data for this period."
     }
   }
 }

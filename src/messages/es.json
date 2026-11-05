@@ -2186,7 +2186,13 @@
       "backToList": "Volver a personal",
       "noChanges": "No hay cambios para guardar.",
       "editPersonLink": "Editar datos personales",
-      "personDataHint": "Los datos personales se administran en el módulo Personas. Aquí solo puedes editar el número de empleado y la fecha de contratación."
+      "personDataHint": "Los datos personales se administran en el módulo Personas. Aquí puedes editar el número de empleado, la fecha de contratación y, si lo necesitas, la contraseña.",
+      "emailLabel": "Correo de inicio de sesión",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "passwordLabel": "Contraseña",
+      "newPasswordLabel": "Nueva contraseña",
+      "passwordPlaceholder": "Mínimo 8 caracteres",
+      "passwordEditHint": "Déjala vacía para conservar la contraseña actual."
     },
     "create": {
       "personSection": "1. Persona",
@@ -2227,7 +2233,11 @@
     },
     "validation": {
       "employeeNumberInvalid": "Usa hasta 30 letras, números y los caracteres . _ / -",
-      "hireDateInvalid": "Ingresa una fecha válida."
+      "hireDateInvalid": "Ingresa una fecha válida.",
+      "emailRequired": "El correo es obligatorio.",
+      "emailInvalid": "Ingresa un correo válido.",
+      "passwordRequired": "La contraseña es obligatoria.",
+      "passwordLength": "La contraseña debe tener entre 8 y 128 caracteres."
     },
     "notices": {
       "created": "Integrante registrado correctamente.",
@@ -3373,6 +3383,87 @@
       "loading": "Verificando sesión...",
       "error": "No se pudo verificar tu sesión. Revisa tu conexión e inténtalo de nuevo.",
       "retry": "Reintentar"
+    }
+  },
+  "dashboard": {
+    "meta": {
+      "title": "Dashboard",
+      "description": "Resumen general de la actividad de la clínica"
+    },
+    "title": "Dashboard",
+    "description": "Resumen general de la actividad de la clínica",
+    "period": {
+      "label": "Periodo",
+      "startDate": "Fecha inicial",
+      "endDate": "Fecha final",
+      "options": {
+        "current_month": "Mes actual",
+        "last_30_days": "Últimos 30 días",
+        "last_6_months": "Últimos 6 meses",
+        "current_year": "Año actual",
+        "custom": "Rango personalizado"
+      },
+      "errors": {
+        "required": "Selecciona la fecha inicial y la final.",
+        "order": "La fecha inicial no puede ser posterior a la final."
+      }
+    },
+    "cards": {
+      "totalPatients": {
+        "title": "Total de pacientes",
+        "description": "Registrados hasta el fin del periodo"
+      },
+      "newPatients": {
+        "title": "Nuevos pacientes",
+        "description": "Registrados en el periodo"
+      },
+      "totalAppointments": {
+        "title": "Total de citas",
+        "description": "Programadas en el periodo, todos los estados"
+      },
+      "appointmentsToday": {
+        "title": "Citas de hoy",
+        "description": "Del día actual, sin importar el periodo"
+      }
+    },
+    "charts": {
+      "appointmentsEvolution": {
+        "title": "Evolución de citas",
+        "description": "Citas programadas a lo largo del periodo",
+        "series": "Citas"
+      },
+      "patientsEvolution": {
+        "title": "Evolución de pacientes",
+        "description": "Nuevos pacientes registrados a lo largo del periodo",
+        "series": "Nuevos pacientes"
+      },
+      "appointmentsByStatus": {
+        "title": "Citas por estado",
+        "description": "Distribución de las citas del periodo"
+      },
+      "patientsByMonth": {
+        "title": "Pacientes registrados por mes",
+        "description": "Nuevos pacientes por mes",
+        "series": "Pacientes"
+      },
+      "appointmentsByMonth": {
+        "title": "Citas por mes",
+        "description": "Citas programadas por mes, todos los estados",
+        "series": "Citas"
+      }
+    },
+    "status": {
+      "pending": "Pendiente",
+      "confirmed": "Confirmada",
+      "completed": "Completada",
+      "cancelled": "Cancelada"
+    },
+    "states": {
+      "error": "No se pudo cargar el dashboard. Inténtalo de nuevo.",
+      "network": "No se pudo conectar con el servidor. Inténtalo de nuevo.",
+      "forbidden": "No tienes permiso para ver esta información.",
+      "retry": "Reintentar",
+      "empty": "No hay información para este periodo."
     }
   }
 }
