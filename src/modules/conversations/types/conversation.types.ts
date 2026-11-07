@@ -18,6 +18,12 @@ export interface Conversation {
   /** `date-time` con zona (UTC). */
   started_at: string;
   closed_at: string | null;
+  /** Identificador del contacto en WhatsApp. */
+  external_contact_id: string | null;
+  /** Último mensaje (cualquier dirección); `null` si aún no hay. */
+  last_message_at: string | null;
+  /** Último mensaje del contacto: abre la ventana de respuesta de 24 h. */
+  last_inbound_at: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -61,4 +67,51 @@ export interface EntityOption {
 export interface AssignedConversation extends Conversation {
   assignment_id: number;
   assigned_at: string;
+}
+
+/** Filtro de asignación de la bandeja (`assignment` de OpenAPI). */
+export const INBOX_ASSIGNMENTS = ["all", "unassigned", "mine"] as const;
+export type InboxAssignmentFilter = (typeof INBOX_ASSIGNMENTS)[number];
+
+/** `InboxLastMessage` de OpenAPI: vista previa del último mensaje. */
+export interface InboxLastMessage {
+  id: number;
+  direction: string;
+  message_type: string;
+  content: string;
+  delivery_status: string;
+  created_at: string;
+}
+
+/** `InboxItem` de OpenAPI: conversación + contacto + asignación + último mensaje. */
+export interface InboxItem {
+  id: number;
+  person_id: number;
+  channel: ConversationChannel;
+  status: ConversationStatus;
+  contact_name: string;
+  contact_phone: string | null;
+  external_contact_id: string | null;
+  assigned_staff_member_id: number | null;
+  last_message_at: string | null;
+  last_inbound_at: string | null;
+  /** Se puede enviar texto/archivos libres; si es `false`, solo plantillas. */
+  reply_window_open: boolean;
+  reply_window_expires_at: string | null;
+  last_message: InboxLastMessage | null;
+}
+
+/** Filtros de la bandeja: los únicos que admite `GET /conversations/inbox`. */
+export interface InboxFilters {
+  status: ConversationStatusFilter;
+  assignment: InboxAssignmentFilter;
+}
+
+/** Parámetros de `GET /conversations/inbox`. */
+export interface InboxParams {
+  status?: ConversationStatus;
+  channel?: ConversationChannel;
+  assignment?: InboxAssignmentFilter;
+  limit?: number;
+  cursor?: string;
 }

@@ -1,10 +1,12 @@
-import { apiClient, type PageResult } from "@/services/api";
+import { apiClient, type CursorPage, type PageResult } from "@/services/api";
 import type {
   AssignedConversation,
   Conversation,
   ConversationCreateRequest,
   ConversationListParams,
   ConversationStatus,
+  InboxItem,
+  InboxParams,
 } from "../types/conversation.types";
 
 interface Options {
@@ -16,6 +18,16 @@ interface Options {
  * reabren con `/status`; el backend termina la asignación activa al cerrar.
  */
 export const conversationApi = {
+  /**
+   * Bandeja de atención. Sin `cursor` devuelve la actividad de las últimas 24 h
+   * (más reciente primero); `next_cursor` permite retroceder.
+   */
+  inbox: (params: InboxParams, { signal }: Options = {}) =>
+    apiClient.get<CursorPage<InboxItem>>("/conversations/inbox", {
+      params: { ...params },
+      signal,
+    }),
+
   list: (params: ConversationListParams, { signal }: Options = {}) =>
     apiClient.get<PageResult<Conversation>>("/conversations", {
       params: { ...params },
