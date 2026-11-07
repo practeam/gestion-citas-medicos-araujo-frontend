@@ -14,7 +14,7 @@ import {
 import { ConversationCreateModal } from "../components/conversation-create-modal";
 import { ConversationFilters } from "../components/conversation-filters";
 import { ConversationsList } from "../components/conversations-list";
-import { useConversations } from "../hooks/use-conversations";
+import { useInbox } from "../hooks/use-inbox";
 
 type Notice = ChatNotice | "created";
 
@@ -28,13 +28,13 @@ function parseId(value: string | null): number | null {
  * búsqueda y filtros) a la izquierda, la conversación con sus mensajes en el
  * centro y la información de la persona y la asignación a la derecha. La
  * conversación seleccionada se guarda en `?conversation=` (sin rutas propias
- * para mensajes ni asignaciones). No hay tiempo real: se actualiza a petición.
+ * para mensajes ni asignaciones). La bandeja y el historial se consultan por cursor y se actualizan periódicamente.
  */
 export default function ConversationsPage() {
   const t = useTranslations("conversations");
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedId = parseId(searchParams.get("conversation"));
-  const list = useConversations();
+  const list = useInbox();
   const [createOpen, setCreateOpen] = useState(false);
   const [notice, setNotice] = useState<Notice | null>(null);
 
@@ -91,14 +91,15 @@ export default function ConversationsPage() {
             />
           </div>
           <ConversationsList
-            data={list.data}
+            items={list.items}
             error={list.error}
             isLoading={list.isLoading}
             hasFilters={list.hasFilters}
-            page={list.page}
+            hasMore={list.hasMore}
+            isLoadingMore={list.isLoadingMore}
             selectedId={selectedId}
             onSelect={select}
-            onPageChange={list.setPage}
+            onLoadMore={() => void list.loadMore()}
             onRetry={list.reload}
           />
         </aside>

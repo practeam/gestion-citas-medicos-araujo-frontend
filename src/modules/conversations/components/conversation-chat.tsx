@@ -12,6 +12,9 @@ import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
 import { getPersonFullName } from "@/modules/persons";
 import { useState } from "react";
+import { useNow } from "../hooks/use-now";
+import { usePolling } from "../hooks/use-polling";
+import { getReplyWindow } from "../utils/reply-window.utils";
 import { useAssignments } from "../hooks/use-assignments";
 import { useConversation } from "../hooks/use-conversation";
 import { usePeople, useStaffMembers } from "../hooks/use-lookup";
@@ -69,6 +72,15 @@ export function ConversationChat({
         ? getPersonFullName(assignedMember.person)
         : `#${assignments.active.staff_member_id}`
       : null;
+
+  // La conversación se vuelve a consultar para detectar un nuevo mensaje del
+  // contacto (abre la ventana de respuesta de 24 h).
+  usePolling(detail.reload, 20_000);
+  const now = useNow(30_000);
+  const replyWindow = getReplyWindow(
+    conversation?.last_inbound_at ?? null,
+    now,
+  );
 
   const [infoOpen, setInfoOpen] = useState(true);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -196,8 +208,11 @@ export function ConversationChat({
         <Can permission="message.send">
           <MessageComposer
             disabled={conversation.status === "closed"}
+            replyWindow={replyWindow}
             isSending={messages.isSending}
             onSend={messages.send}
+            onSendMedia={messages.sendMedia}
+            onSendTemplate={messages.sendTemplate}
             onSent={() => setScrollToken((token) => token + 1)}
           />
         </Can>

@@ -3,6 +3,7 @@ import { cn } from "@/utils";
 import type { Message, MessageDeliveryStatus } from "../types/message.types";
 import { formatTime } from "../utils/conversation-datetime.utils";
 import { getMessageTimestamp } from "../utils/message.utils";
+import { MessageMediaView } from "./message-media";
 
 const DELIVERY_SYMBOLS: Record<
   Exclude<MessageDeliveryStatus, "received">,
@@ -68,8 +69,24 @@ export function MessageBubble({ message }: { message: Message }) {
         >
           {sender}
         </p>
-        {/* Texto plano: React lo escapa; nunca se interpreta como HTML. */}
-        <p className="break-words whitespace-pre-wrap">{message.content}</p>
+        {message.message_type === "template" && (
+          <p className="mb-0.5 text-[11px] italic opacity-80">
+            {t("templateLabel")}
+          </p>
+        )}
+        {message.media && (
+          <div className="mb-1">
+            <MessageMediaView message={message} media={message.media} />
+          </div>
+        )}
+        {/* Texto plano (o pie de archivo): React lo escapa; nunca se interpreta como HTML. */}
+        {message.message_type === "unsupported" ? (
+          <p className="text-xs italic opacity-80">{t("unsupported")}</p>
+        ) : (
+          message.content && (
+            <p className="break-words whitespace-pre-wrap">{message.content}</p>
+          )
+        )}
         <div className="mt-1 flex items-center justify-end gap-1.5 text-[11px] opacity-80">
           <time
             dateTime={timestamp}
