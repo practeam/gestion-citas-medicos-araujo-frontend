@@ -51,27 +51,34 @@ async function parseBody<T>(
   }
 }
 
+type Method = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+
 /**
- * Cliente HTTP único del frontend. Devuelve `data.result` del envoltorio
- * `ApiResponse` y lanza `ApiError` ante cualquier fallo.
+ * Una petición con token y manejo común de red y 401. Un `FormData` se envía
+ * tal cual (el navegador fija el `Content-Type` multipart con su boundary);
+ * cualquier otro cuerpo se serializa como JSON.
  */
-async function request<T>(
-  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE",
+async function send(
+  method: Method,
   path: string,
-  { params, body, signal, skipAuth }: RequestOptions = {},
-): Promise<T> {
+  { params, body, signal, skipAuth }: RequestOptions,
+  accept = "application/json",
+): Promise<{ response: Response }> {
   const token = skipAuth ? null : (authHandlers?.getToken() ?? null);
+  const isForm = body instanceof FormData;
   let response: Response;
   try {
     response = await fetch(buildUrl(path, params), {
       method,
       signal,
       headers: {
-        Accept: "application/json",
+        Accept: accept,
         ...(token && { Authorization: `Bearer ${token}` }),
-        ...(body !== undefined && { "Content-Type": "application/json" }),
+        ...(body !== undefined &&
+          !isForm && { "Content-Type": "application/json" }),
       },
-      body: body !== undefined ? JSON.stringify(body) : undefined,
+      body:
+        body === undefined ? undefined : isForm ? body : JSON.stringify(body),
     });
   } catch (error) {
     if (error instanceof DOMException && error.name === "AbortError") {
@@ -80,10 +87,46 @@ async function request<T>(
     throw new ApiError("network", 0, "No se pudo conectar con el servidor");
   }
 
-  const payload = await parseBody<T>(response);
-
   // 401 con token: sesión inválida o expirada. 403 no toca la sesión.
   if (response.status === 401 && token) authHandlers?.onUnauthorized(token);
+
+  return { response };
+}
+
+/** Descarga un binario protegido (la cabecera `Authorization` no viaja en `<img src>`). */
+async function requestBlob(
+  path: string,
+  { signal }: { signal?: AbortSignal } = {},
+): Promise<Blob> {
+  const { response } = await send("GET", path, { signal }, "*/*");
+  if (!response.ok) {
+    const payload = await parseBody<unknown>(response);
+    throw new ApiError(
+      "http",
+      response.status,
+      payload?.message || response.statusText,
+      payload?.data?.details ?? null,
+    );
+  }
+  return response.blob();
+}
+
+/**
+ * Cliente HTTP único del frontend. Devuelve `data.result` del envoltorio
+ * `ApiResponse` y lanza `ApiError` ante cualquier fallo.
+ */
+async function request<T>(
+  method: Method,
+  path: string,
+  { params, body, signal, skipAuth }: RequestOptions = {},
+): Promise<T> {
+  const { response } = await send(method, path, {
+    params,
+    body,
+    signal,
+    skipAuth,
+  });
+  const payload = await parseBody<T>(response);
 
   if (!response.ok || payload?.error) {
     throw new ApiError(
@@ -116,4 +159,5 @@ export const apiClient = {
     request<T>("PATCH", path, { ...options, body }),
   delete: <T>(path: string, options?: Omit<RequestOptions, "body">) =>
     request<T>("DELETE", path, options),
+  blob: requestBlob,
 };
