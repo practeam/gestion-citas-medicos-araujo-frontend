@@ -3139,7 +3139,7 @@
     },
     "newConversation": "Nueva conversación",
     "dismiss": "Cerrar",
-    "internalNote": "Las conversaciones se registran internamente en la plataforma. No hay conexión en vivo con WhatsApp ni actualización en tiempo real: usa «Actualizar» para refrescar los datos.",
+    "internalNote": "Los mensajes se envían por WhatsApp. La bandeja y el historial muestran la actividad de las últimas 24 horas y se actualizan periódicamente; usa «Cargar anteriores» para retroceder.",
     "notices": {
       "created": "Conversación creada correctamente.",
       "closed": "Conversación cerrada.",
@@ -3163,7 +3163,21 @@
       "noResults": "Ninguna conversación coincide con los filtros.",
       "page": "Página {page} de {totalPages}",
       "previous": "Anterior",
-      "next": "Siguiente"
+      "next": "Siguiente",
+      "emptyRecent": "No hay conversaciones con actividad en las últimas 24 horas.",
+      "loadOlder": "Cargar conversaciones anteriores",
+      "unassigned": "Sin asignar",
+      "assigned": "Asignada",
+      "templateOnly": "Solo plantilla",
+      "preview": {
+        "none": "Sin mensajes",
+        "you": "Tú",
+        "image": "📷 Imagen",
+        "audio": "🎤 Audio",
+        "document": "📄 Documento",
+        "template": "Plantilla",
+        "unsupported": "Mensaje no compatible"
+      }
     },
     "filters": {
       "allPeople": "Todas las personas",
@@ -3171,7 +3185,13 @@
       "allChannels": "Todos los canales",
       "statusLabel": "Filtrar por estado",
       "allStatuses": "Todos los estados",
-      "clear": "Limpiar filtros"
+      "clear": "Limpiar filtros",
+      "assignmentLabel": "Filtrar por asignación",
+      "assignment": {
+        "all": "Todas",
+        "unassigned": "Sin asignar",
+        "mine": "Mías"
+      }
     },
     "selector": {
       "searchPlaceholder": {
@@ -3207,7 +3227,7 @@
       "selectedPerson": "Persona seleccionada",
       "personRequired": "Selecciona una persona.",
       "channelSection": "Canal",
-      "internalNote": "La conversación se registra internamente; no se envía ningún mensaje a WhatsApp.",
+      "internalNote": "Crear la conversación no envía ningún mensaje; los mensajes se envían desde el chat.",
       "cancel": "Cancelar",
       "creating": "Creando...",
       "submit": "Crear conversación"
@@ -3279,7 +3299,9 @@
         "delivered": "Entregado",
         "read": "Leído",
         "failed": "Fallido"
-      }
+      },
+      "templateLabel": "Plantilla",
+      "unsupported": "Mensaje no compatible (no se puede mostrar este tipo de contenido)."
     },
     "composer": {
       "closed": "La conversación está cerrada. Reábrela para enviar mensajes.",
@@ -3290,7 +3312,15 @@
       "label": "Mensaje",
       "sending": "Enviando...",
       "send": "Enviar",
-      "hint": "Enter para enviar, Mayús + Enter para salto de línea"
+      "hint": "Enter para enviar, Mayús + Enter para salto de línea",
+      "captionTooLong": "El pie no puede superar los {max} caracteres.",
+      "windowClosedAt": "La ventana de 24 horas para responder se cerró el {date}. Solo puedes enviar una plantilla aprobada.",
+      "windowNeverOpened": "El contacto aún no ha escrito: solo puedes enviar una plantilla aprobada.",
+      "sendTemplate": "Enviar plantilla",
+      "template": "Plantilla",
+      "noCaptionForAudio": "Los audios no admiten texto",
+      "captionPlaceholder": "Pie del archivo (opcional)",
+      "captionLabel": "Pie del archivo"
     },
     "assignments": {
       "title": "Personal asignado",
@@ -3335,6 +3365,49 @@
       "network": "No se pudo conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.",
       "notFound": "No se encontró la conversación.",
       "server": "El servidor no pudo completar la solicitud. Inténtalo más tarde."
+    },
+    "media": {
+      "attach": "Adjuntar archivo",
+      "remove": "Quitar",
+      "loading": "Cargando archivo...",
+      "notStored": "El archivo aún no está disponible.",
+      "retry": "Reintentar",
+      "loadAudio": "Cargar audio",
+      "download": "Descargar",
+      "defaultName": {
+        "image": "Imagen",
+        "audio": "Audio",
+        "document": "Documento"
+      },
+      "errors": {
+        "unavailable": "El archivo no está disponible o ya no se puede recuperar.",
+        "network": "No se pudo conectar con el servidor.",
+        "unexpected": "No se pudo cargar el archivo."
+      },
+      "validation": {
+        "unsupported": "Tipo de archivo no admitido. Usa imagen (JPEG, PNG, WebP), audio (AAC, AMR, MP3, MP4, OGG) o documento (PDF, Office, TXT).",
+        "tooLarge": "El archivo supera el tamaño máximo (imagen 5 MB, audio 16 MB, documento 100 MB).",
+        "empty": "El archivo está vacío."
+      }
+    },
+    "template": {
+      "title": "Enviar plantilla",
+      "description": "Las plantillas aprobadas en Meta pueden enviarse en cualquier momento, también fuera de la ventana de 24 horas.",
+      "name": "Nombre de la plantilla",
+      "namePlaceholder": "p. ej. recordatorio_cita",
+      "nameInvalid": "Usa solo minúsculas, números y guion bajo.",
+      "language": "Idioma",
+      "languagePlaceholder": "es",
+      "languageInvalid": "Formato de idioma no válido (p. ej. es o es_PE).",
+      "parameters": "Variables del cuerpo",
+      "parametersHint": "Solo si la plantilla usa variables {{1}}, {{2}}…: agrégalas en orden.",
+      "parameterPlaceholder": "Valor de la variable {n}",
+      "removeParameter": "Quitar",
+      "addParameter": "Agregar variable",
+      "parameterEmpty": "Completa o quita las variables vacías.",
+      "cancel": "Cancelar",
+      "sending": "Enviando...",
+      "send": "Enviar plantilla"
     }
   },
   "auth": {

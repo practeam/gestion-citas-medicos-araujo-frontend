@@ -3139,7 +3139,7 @@
     },
     "newConversation": "New conversation",
     "dismiss": "Dismiss",
-    "internalNote": "Conversations are registered internally in the platform. There is no live connection to WhatsApp or real-time updates: use “Refresh” to update the data.",
+    "internalNote": "Messages are sent through WhatsApp. The inbox and history show the last 24 hours of activity and refresh periodically; use “Load older” to go back.",
     "notices": {
       "created": "Conversation created successfully.",
       "closed": "Conversation closed.",
@@ -3163,7 +3163,21 @@
       "noResults": "No conversations match the filters.",
       "page": "Page {page} of {totalPages}",
       "previous": "Previous",
-      "next": "Next"
+      "next": "Next",
+      "emptyRecent": "No conversations with activity in the last 24 hours.",
+      "loadOlder": "Load older conversations",
+      "unassigned": "Unassigned",
+      "assigned": "Assigned",
+      "templateOnly": "Template only",
+      "preview": {
+        "none": "No messages",
+        "you": "You",
+        "image": "📷 Image",
+        "audio": "🎤 Audio",
+        "document": "📄 Document",
+        "template": "Template",
+        "unsupported": "Unsupported message"
+      }
     },
     "filters": {
       "allPeople": "All people",
@@ -3171,7 +3185,13 @@
       "allChannels": "All channels",
       "statusLabel": "Filter by status",
       "allStatuses": "All statuses",
-      "clear": "Clear filters"
+      "clear": "Clear filters",
+      "assignmentLabel": "Filter by assignment",
+      "assignment": {
+        "all": "All",
+        "unassigned": "Unassigned",
+        "mine": "Mine"
+      }
     },
     "selector": {
       "searchPlaceholder": {
@@ -3207,7 +3227,7 @@
       "selectedPerson": "Selected person",
       "personRequired": "Select a person.",
       "channelSection": "Channel",
-      "internalNote": "The conversation is registered internally; no message is sent to WhatsApp.",
+      "internalNote": "Creating the conversation does not send any message; messages are sent from the chat.",
       "cancel": "Cancel",
       "creating": "Creating...",
       "submit": "Create conversation"
@@ -3279,7 +3299,9 @@
         "delivered": "Delivered",
         "read": "Read",
         "failed": "Failed"
-      }
+      },
+      "templateLabel": "Template",
+      "unsupported": "Unsupported message (this type of content cannot be displayed)."
     },
     "composer": {
       "closed": "The conversation is closed. Reopen it to send messages.",
@@ -3290,7 +3312,15 @@
       "label": "Message",
       "sending": "Sending...",
       "send": "Send",
-      "hint": "Enter to send, Shift + Enter for a new line"
+      "hint": "Enter to send, Shift + Enter for a new line",
+      "captionTooLong": "The caption cannot exceed {max} characters.",
+      "windowClosedAt": "The 24-hour reply window closed on {date}. You can only send an approved template.",
+      "windowNeverOpened": "The contact has not written yet: you can only send an approved template.",
+      "sendTemplate": "Send template",
+      "template": "Template",
+      "noCaptionForAudio": "Audio files do not support text",
+      "captionPlaceholder": "File caption (optional)",
+      "captionLabel": "File caption"
     },
     "assignments": {
       "title": "Assigned staff",
@@ -3335,6 +3365,49 @@
       "network": "Could not reach the server. Check your connection and try again.",
       "notFound": "The conversation was not found.",
       "server": "The server could not complete the request. Please try again later."
+    },
+    "media": {
+      "attach": "Attach file",
+      "remove": "Remove",
+      "loading": "Loading file...",
+      "notStored": "The file is not available yet.",
+      "retry": "Retry",
+      "loadAudio": "Load audio",
+      "download": "Download",
+      "defaultName": {
+        "image": "Image",
+        "audio": "Audio",
+        "document": "Document"
+      },
+      "errors": {
+        "unavailable": "The file is unavailable or can no longer be retrieved.",
+        "network": "Could not reach the server.",
+        "unexpected": "The file could not be loaded."
+      },
+      "validation": {
+        "unsupported": "Unsupported file type. Use an image (JPEG, PNG, WebP), audio (AAC, AMR, MP3, MP4, OGG) or document (PDF, Office, TXT).",
+        "tooLarge": "The file exceeds the maximum size (image 5 MB, audio 16 MB, document 100 MB).",
+        "empty": "The file is empty."
+      }
+    },
+    "template": {
+      "title": "Send template",
+      "description": "Templates approved in Meta can be sent at any time, including outside the 24-hour window.",
+      "name": "Template name",
+      "namePlaceholder": "e.g. appointment_reminder",
+      "nameInvalid": "Use only lowercase letters, numbers and underscores.",
+      "language": "Language",
+      "languagePlaceholder": "en",
+      "languageInvalid": "Invalid language format (e.g. en or en_US).",
+      "parameters": "Body variables",
+      "parametersHint": "Only if the template uses {{1}}, {{2}}… variables: add them in order.",
+      "parameterPlaceholder": "Value of variable {n}",
+      "removeParameter": "Remove",
+      "addParameter": "Add variable",
+      "parameterEmpty": "Fill in or remove the empty variables.",
+      "cancel": "Cancel",
+      "sending": "Sending...",
+      "send": "Send template"
     }
   },
   "auth": {
