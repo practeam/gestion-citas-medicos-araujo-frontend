@@ -1,29 +1,33 @@
 import { isAbortError, isApiError } from "@/services/api";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { messageApi } from "../services/message-api";
-import type { Message } from "../types/message.types";
+import type { Message, TemplateMessageRequest } from "../types/message.types";
 import { mergeMessages } from "../utils/message.utils";
+import { usePolling } from "./use-polling";
 
 export const MESSAGES_PAGE_SIZE = 50;
+const POLL_INTERVAL_MS = 10_000;
 /** Margen para reconocer un mensaje propio ya registrado tras un fallo de conexión. */
 const RECOVERY_WINDOW_MS = 60_000;
 
 interface MessagesState {
   conversationId: number;
   messages: Message[];
-  loadedPages: number;
-  total: number;
+  /** Cursor para pedir mensajes más antiguos. */
+  nextCursor: string | null;
+  hasOlder: boolean;
 }
 
 export type SendResult =
   { ok: true; recovered: boolean } | { ok: false; error: unknown };
 
 /**
- * Historial de una conversación. Se pide la página más reciente (`order=desc`)
- * y se muestra en orden cronológico; "cargar anteriores" pide la siguiente
- * página. Los mensajes se agrupan por conversación: al cambiar de conversación
- * no se muestra nada de la anterior. No hay tiempo real: se actualiza al abrir,
- * al enviar y a petición (`refresh`).
+ * Historial de una conversación con la paginación por cursor del backend: la
+ * primera página trae las últimas 24 h y `loadOlder` retrocede con
+ * `next_cursor`, incorporando los mensajes antiguos al inicio. Se actualiza
+ * periódicamente (la primera página se funde por id, así cambian los estados de
+ * entrega) y al enviar. Al cambiar de conversación no se muestra nada de la
+ * anterior.
  */
 export function useMessages(conversationId: number | null) {
   const [reloadToken, setReloadToken] = useState(0);
@@ -34,31 +38,29 @@ export function useMessages(conversationId: number | null) {
   const [isLoadingOlder, setIsLoadingOlder] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const sendingRef = useRef(false);
-  const requestKey = `${conversationId}|${reloadToken}`;
 
   useEffect(() => {
     if (conversationId === null) return;
     const controller = new AbortController();
 
     messageApi
-      .list(
+      .history(
         conversationId,
-        { page: 1, page_size: MESSAGES_PAGE_SIZE, order: "desc" },
+        { limit: MESSAGES_PAGE_SIZE },
         { signal: controller.signal },
       )
       .then((page) => {
         setError(null);
-        setState((prev) => ({
-          conversationId,
-          // Al recargar la misma conversación se conservan las páginas anteriores ya cargadas.
-          messages: mergeMessages(
-            prev?.conversationId === conversationId ? prev.messages : [],
-            page.items,
-          ),
-          loadedPages:
-            prev?.conversationId === conversationId ? prev.loadedPages : 1,
-          total: page.total,
-        }));
+        setState((prev) => {
+          const same = prev?.conversationId === conversationId ? prev : null;
+          return {
+            conversationId,
+            // Al recargar se conservan los mensajes anteriores ya cargados.
+            messages: mergeMessages(same?.messages ?? [], page.items),
+            nextCursor: same ? same.nextCursor : page.next_cursor,
+            hasOlder: same ? same.hasOlder : page.has_more,
+          };
+        });
       })
       .catch((caught: unknown) => {
         if (isAbortError(caught)) return;
@@ -66,7 +68,7 @@ export function useMessages(conversationId: number | null) {
       });
 
     return () => controller.abort();
-  }, [conversationId, requestKey]);
+  }, [conversationId, reloadToken]);
 
   const current =
     state && state.conversationId === conversationId ? state : null;
@@ -75,22 +77,43 @@ export function useMessages(conversationId: number | null) {
 
   const refresh = useCallback(() => setReloadToken((token) => token + 1), []);
 
+  // Actualización silenciosa: no toca el cursor ni muestra errores.
+  usePolling(() => {
+    if (conversationId === null || !current) return;
+    messageApi
+      .history(conversationId, { limit: MESSAGES_PAGE_SIZE })
+      .then((page) =>
+        setState((prev) =>
+          prev && prev.conversationId === conversationId
+            ? { ...prev, messages: mergeMessages(prev.messages, page.items) }
+            : prev,
+        ),
+      )
+      .catch(() => undefined);
+  }, POLL_INTERVAL_MS);
+
   const loadOlder = useCallback(async () => {
-    if (conversationId === null || !current || isLoadingOlder) return;
+    if (
+      conversationId === null ||
+      !current ||
+      !current.hasOlder ||
+      !current.nextCursor ||
+      isLoadingOlder
+    )
+      return;
     setIsLoadingOlder(true);
     try {
-      const page = await messageApi.list(conversationId, {
-        page: current.loadedPages + 1,
-        page_size: MESSAGES_PAGE_SIZE,
-        order: "desc",
+      const page = await messageApi.history(conversationId, {
+        limit: MESSAGES_PAGE_SIZE,
+        cursor: current.nextCursor,
       });
       setState((prev) =>
         prev && prev.conversationId === conversationId
           ? {
               ...prev,
               messages: mergeMessages(prev.messages, page.items),
-              loadedPages: prev.loadedPages + 1,
-              total: page.total,
+              nextCursor: page.next_cursor,
+              hasOlder: page.has_more,
             }
           : prev,
       );
@@ -103,12 +126,15 @@ export function useMessages(conversationId: number | null) {
   }, [conversationId, current, isLoadingOlder]);
 
   /**
-   * Registra un mensaje saliente de personal. Si la conexión se pierde y no se
-   * sabe si el backend lo registró, se consulta el historial antes de dar el
-   * envío por fallido (para no duplicar al reintentar).
+   * Envía algo y lo incorpora al historial. Un envío a la vez. Si falla por
+   * conexión y `recover` está definido, se consulta el historial antes de dar
+   * el envío por fallido (para no duplicar al reintentar).
    */
-  const send = useCallback(
-    async (content: string): Promise<SendResult> => {
+  const run = useCallback(
+    async (
+      action: (conversationId: number) => Promise<Message>,
+      recover?: (items: Message[], startedAt: number) => boolean,
+    ): Promise<SendResult> => {
       if (conversationId === null || sendingRef.current)
         return { ok: false, error: new Error("busy") };
       sendingRef.current = true;
@@ -121,30 +147,17 @@ export function useMessages(conversationId: number | null) {
             : prev,
         );
       try {
-        const message = await messageApi.create(conversationId, {
-          content,
-          sender_type: "staff",
-        });
-        incorporate([message]);
+        incorporate([await action(conversationId)]);
         return { ok: true, recovered: false };
       } catch (caught) {
-        if (isApiError(caught) && caught.kind === "network") {
+        if (recover && isApiError(caught) && caught.kind === "network") {
           try {
-            const page = await messageApi.list(conversationId, {
-              page: 1,
-              page_size: 20,
-              order: "desc",
+            const page = await messageApi.history(conversationId, {
+              limit: 20,
             });
             incorporate(page.items);
-            const found = page.items.some(
-              (message) =>
-                message.direction === "outbound" &&
-                message.sender_type === "staff" &&
-                message.content === content &&
-                Date.parse(message.created_at) >=
-                  startedAt - RECOVERY_WINDOW_MS,
-            );
-            if (found) return { ok: true, recovered: true };
+            if (recover(page.items, startedAt))
+              return { ok: true, recovered: true };
           } catch {
             // Sin conexión también para consultar: se informa el error original.
           }
@@ -158,10 +171,38 @@ export function useMessages(conversationId: number | null) {
     [conversationId],
   );
 
+  const send = useCallback(
+    (content: string) =>
+      run(
+        (id) => messageApi.create(id, { content, sender_type: "staff" }),
+        (items, startedAt) =>
+          items.some(
+            (message) =>
+              message.direction === "outbound" &&
+              message.sender_type === "staff" &&
+              message.message_type === "text" &&
+              message.content === content &&
+              Date.parse(message.created_at) >= startedAt - RECOVERY_WINDOW_MS,
+          ),
+      ),
+    [run],
+  );
+
+  const sendMedia = useCallback(
+    (file: File, caption?: string) =>
+      run((id) => messageApi.sendMedia(id, file, caption)),
+    [run],
+  );
+
+  const sendTemplate = useCallback(
+    (body: TemplateMessageRequest) =>
+      run((id) => messageApi.sendTemplate(id, body)),
+    [run],
+  );
+
   return {
     messages: current?.messages ?? [],
-    total: current?.total ?? 0,
-    hasOlder: current ? current.messages.length < current.total : false,
+    hasOlder: current?.hasOlder ?? false,
     error: currentError,
     isLoading: conversationId !== null && current === null && !currentError,
     isLoadingOlder,
@@ -169,5 +210,7 @@ export function useMessages(conversationId: number | null) {
     refresh,
     loadOlder,
     send,
+    sendMedia,
+    sendTemplate,
   };
 }
