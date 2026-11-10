@@ -1786,7 +1786,8 @@
       "order": {
         "asc": "Ascendente",
         "desc": "Descendente"
-      }
+      },
+      "allDocumentTypes": "Todos los tipos"
     },
     "actions": {
       "view": "Ver",
@@ -1828,7 +1829,7 @@
       "maternal_last_nameLabel": "Apellido materno",
       "maternal_last_namePlaceholder": "Ej. López",
       "document_typeLabel": "Tipo de documento",
-      "document_typePlaceholder": "Ej. DNI",
+      "document_typePlaceholder": "Seleccionar tipo",
       "document_numberLabel": "Número de documento",
       "document_numberPlaceholder": "Ej. 12345678",
       "birth_dateLabel": "Fecha de nacimiento",
@@ -1873,7 +1874,8 @@
       "noDocument": "Sin documento",
       "select": "Seleccionar",
       "selected": "Seleccionada",
-      "refine": "Mostrando {shown} de {total} resultados. Afina la búsqueda para reducirlos."
+      "refine": "Mostrando {shown} de {total} resultados. Afina la búsqueda para reducirlos.",
+      "anyDocumentType": "Cualquier tipo"
     },
     "notices": {
       "created": "Persona registrada correctamente.",
@@ -1886,6 +1888,12 @@
       "notFound": "No se encontró la persona.",
       "server": "El servidor tuvo un problema inesperado. Inténtalo más tarde.",
       "unexpected": "Ocurrió un error inesperado."
+    },
+    "documentTypes": {
+      "DNI": "DNI",
+      "CE": "Carné de extranjería (CE)",
+      "PASAPORTE": "Pasaporte",
+      "PTP": "Permiso Temporal de Permanencia (PTP)"
     }
   },
   "patients": {

@@ -1786,7 +1786,8 @@
       "order": {
         "asc": "Ascending",
         "desc": "Descending"
-      }
+      },
+      "allDocumentTypes": "All types"
     },
     "actions": {
       "view": "View",
@@ -1828,7 +1829,7 @@
       "maternal_last_nameLabel": "Second last name",
       "maternal_last_namePlaceholder": "e.g. Lopez",
       "document_typeLabel": "Document type",
-      "document_typePlaceholder": "e.g. DNI",
+      "document_typePlaceholder": "Select type",
       "document_numberLabel": "Document number",
       "document_numberPlaceholder": "e.g. 12345678",
       "birth_dateLabel": "Date of birth",
@@ -1873,7 +1874,8 @@
       "noDocument": "No document",
       "select": "Select",
       "selected": "Selected",
-      "refine": "Showing {shown} of {total} results. Refine your search to narrow them down."
+      "refine": "Showing {shown} of {total} results. Refine your search to narrow them down.",
+      "anyDocumentType": "Any type"
     },
     "notices": {
       "created": "Person registered successfully.",
@@ -1886,6 +1888,12 @@
       "notFound": "The person was not found.",
       "server": "The server had an unexpected problem. Please try again later.",
       "unexpected": "An unexpected error occurred."
+    },
+    "documentTypes": {
+      "DNI": "DNI (national ID)",
+      "CE": "Foreigner card (CE)",
+      "PASAPORTE": "Passport",
+      "PTP": "Temporary Stay Permit (PTP)"
     }
   },
   "patients": {
