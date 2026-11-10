@@ -17,6 +17,7 @@ import {
   getPersonDocument,
   getPersonFullName,
 } from "../utils/person-payload.utils";
+import { DocumentTypeSelect } from "./document-type-select";
 import { PersonStatusBadge } from "./person-status-badge";
 
 const RESULTS_PAGE_SIZE = 10;
@@ -110,14 +111,12 @@ export function PersonSelector({
           className="sm:max-w-xs"
           autoComplete="off"
         />
-        <Input
+        <DocumentTypeSelect
           value={documentType}
-          onChange={(event) => setDocumentType(event.target.value)}
-          placeholder={t("documentTypePlaceholder")}
-          aria-label={t("documentTypeLabel")}
-          maxLength={PERSON_DOCUMENT_MAX_LENGTH}
-          className="uppercase sm:w-36"
-          autoComplete="off"
+          onChange={setDocumentType}
+          emptyLabel={t("anyDocumentType")}
+          ariaLabel={t("documentTypeLabel")}
+          className="sm:w-48"
         />
         <Input
           value={documentNumber}

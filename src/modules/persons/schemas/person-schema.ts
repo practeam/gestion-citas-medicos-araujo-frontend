@@ -5,6 +5,12 @@ export const PERSON_DOCUMENT_MAX_LENGTH = 30;
 export const PERSON_PHONE_MAX_LENGTH = 30;
 export const PERSON_ADDRESS_MAX_LENGTH = 255;
 
+/**
+ * Tipos de documento ofrecidos en la interfaz (valores en mayúsculas, tal como
+ * se guardan): DNI y los documentos de identificación más comunes en Perú.
+ */
+export const PERSON_DOCUMENT_TYPES = ["DNI", "CE", "PASAPORTE", "PTP"] as const;
+
 const DOCUMENT_TYPE_PATTERN = /^[A-Za-z0-9_]+$/;
 /** Mismo patrón que el backend; además se exigen entre 6 y 15 dígitos. */
 const PHONE_PATTERN = /^\+?\(?[0-9][0-9\s().-]*$/;

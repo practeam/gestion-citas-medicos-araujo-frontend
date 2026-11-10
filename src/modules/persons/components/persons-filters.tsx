@@ -15,6 +15,7 @@ import {
   normalizeDocumentType,
 } from "../schemas/person-schema";
 import type { PersonsFilters as Filters } from "../hooks/use-persons";
+import { DocumentTypeSelect } from "./document-type-select";
 import type {
   PersonSortField,
   PersonStatusFilter,
@@ -71,14 +72,12 @@ export function PersonsFilters({ filters, onChange }: PersonsFiltersProps) {
           autoComplete="off"
         />
       </div>
-      <Input
+      <DocumentTypeSelect
         value={documentType}
-        maxLength={PERSON_DOCUMENT_MAX_LENGTH}
-        onChange={(event) => setDocumentType(event.target.value)}
-        placeholder={t("documentTypePlaceholder")}
-        aria-label={t("documentTypeLabel")}
-        className="sm:w-36"
-        autoComplete="off"
+        onChange={setDocumentType}
+        emptyLabel={t("allDocumentTypes")}
+        ariaLabel={t("documentTypeLabel")}
+        className="sm:w-48"
       />
       <Input
         value={documentNumber}

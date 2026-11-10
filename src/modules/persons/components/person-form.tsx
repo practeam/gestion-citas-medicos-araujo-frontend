@@ -7,7 +7,7 @@ import { useTranslations } from "@/i18n";
 import { getFieldErrors, isApiError } from "@/services/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { Link } from "react-router";
 import {
   PERSON_ADDRESS_MAX_LENGTH,
@@ -19,6 +19,7 @@ import {
   type PersonFormValues,
 } from "../schemas/person-schema";
 import { getPersonErrorMessage } from "../utils/person-error.utils";
+import { DocumentTypeSelect } from "./document-type-select";
 
 type FieldName = keyof PersonFormValues;
 
@@ -69,6 +70,7 @@ export function PersonForm({
 
   const {
     register,
+    control,
     handleSubmit,
     setError,
     formState: { errors, isSubmitting },
@@ -174,10 +176,29 @@ export function PersonForm({
           maxLength: PERSON_NAME_MAX_LENGTH + 20,
         })}
         {renderField("birth_date", { type: "date", max: todayIsoDate() })}
-        {renderField("document_type", {
-          maxLength: PERSON_DOCUMENT_MAX_LENGTH,
-          uppercase: true,
-        })}
+        <Field data-invalid={Boolean(errors.document_type)}>
+          <FieldLabel className="mb-1.5 block">
+            {t("document_typeLabel")}{" "}
+            <span className="text-xs font-normal text-gray-400">
+              ({t("optional")})
+            </span>
+          </FieldLabel>
+          <Controller
+            control={control}
+            name="document_type"
+            render={({ field }) => (
+              <DocumentTypeSelect
+                value={field.value}
+                onChange={field.onChange}
+                emptyLabel={t("document_typePlaceholder")}
+                ariaLabel={t("document_typeLabel")}
+                invalid={Boolean(errors.document_type)}
+                className="w-full"
+              />
+            )}
+          />
+          <FieldError errors={toFieldErrors(errors.document_type)} />
+        </Field>
         {renderField("document_number", {
           maxLength: PERSON_DOCUMENT_MAX_LENGTH + 10,
           uppercase: true,
