@@ -32,6 +32,8 @@ export interface AppointmentLine {
   key: string;
   procedure: ProcedureInfo;
   quantity: string;
+  /** Precio de la línea tal como se escribe (decimal con hasta 2 decimales). */
+  unitPrice: string;
   notes: string;
   saved: AppointmentDetail | null;
   removed: boolean;
@@ -57,6 +59,7 @@ export function createLine(
     key: saved ? `detail-${saved.id}` : `new-${procedure.id}-${Date.now()}`,
     procedure,
     quantity: String(saved?.quantity ?? 1),
+    unitPrice: saved?.unit_price ?? procedure.basePrice ?? "",
     notes: saved?.notes ?? "",
     saved,
     removed: false,
@@ -64,17 +67,33 @@ export function createLine(
   };
 }
 
+/** Precio válido (decimal no negativo con hasta 2 decimales). */
+export function isPriceValid(line: AppointmentLine): boolean {
+  return priceToCents(line.unitPrice) !== null;
+}
+
+/** El precio escrito es válido y distinto del precio guardado del detalle. */
+function isPriceChanged(line: AppointmentLine): boolean {
+  if (!line.saved) return false;
+  const cents = priceToCents(line.unitPrice);
+  return cents !== null && cents !== priceToCents(line.saved.unit_price);
+}
+
 export function getLineOperation(line: AppointmentLine): LineOperation {
   if (line.removed) return line.saved ? "delete" : "none";
   if (!line.saved) return "create";
   const quantity = parseQuantity(line.quantity);
   const notesChanged = line.notes.trim() !== (line.saved.notes ?? "");
-  return quantity !== line.saved.quantity || notesChanged ? "update" : "none";
+  return quantity !== line.saved.quantity ||
+    notesChanged ||
+    isPriceChanged(line)
+    ? "update"
+    : "none";
 }
 
-/** Precio unitario aplicado: el histórico del detalle o el del catálogo para líneas nuevas. */
+/** Precio unitario de la línea: el que se escribió, si es válido. */
 export function getUnitPrice(line: AppointmentLine): string | null {
-  return line.saved?.unit_price ?? line.procedure.basePrice;
+  return isPriceValid(line) ? line.unitPrice.trim() : null;
 }
 
 /**
@@ -96,7 +115,11 @@ export function getLineDuration(line: AppointmentLine): number | null {
 /** Importe de la línea (`unit_price × quantity`) en céntimos exactos, sin `float`. */
 export function getLineAmount(line: AppointmentLine): string | null {
   const quantity = parseQuantity(line.quantity);
-  if (line.saved && (quantity === null || quantity === line.saved.quantity))
+  if (
+    line.saved &&
+    !isPriceChanged(line) &&
+    (quantity === null || quantity === line.saved.quantity)
+  )
     return line.saved.line_amount;
   const unitPrice = getUnitPrice(line);
   if (unitPrice === null || quantity === null) return null;
@@ -106,7 +129,11 @@ export function getLineAmount(line: AppointmentLine): string | null {
 /** `true` si el importe o la duración mostrados son estimaciones locales. */
 export function isEstimate(line: AppointmentLine): boolean {
   const quantity = parseQuantity(line.quantity);
-  return !line.saved || (quantity !== null && quantity !== line.saved.quantity);
+  return (
+    !line.saved ||
+    isPriceChanged(line) ||
+    (quantity !== null && quantity !== line.saved.quantity)
+  );
 }
 
 export interface LinesSummary {
@@ -150,14 +177,22 @@ export function toCreateDetailPayload(
   line: AppointmentLine,
 ): AppointmentDetailCreateRequest {
   const notes = line.notes.trim();
+  // El precio se envía solo si el usuario lo cambió respecto al del catálogo.
+  const cents = priceToCents(line.unitPrice);
+  const baseCents =
+    line.procedure.basePrice === null
+      ? null
+      : priceToCents(line.procedure.basePrice);
+  const customPrice = cents !== null && cents !== baseCents;
   return {
     procedure_id: line.procedure.id,
     quantity: parseQuantity(line.quantity) ?? 1,
+    ...(customPrice && { unit_price: centsToPrice(cents) }),
     ...(notes && { notes }),
   };
 }
 
-/** Solo lo modificado; las notas vaciadas se envían como `null`. */
+/** Solo lo modificado (cantidad, precio, notas); las notas vaciadas se envían como `null`. */
 export function toUpdateDetailPayload(
   line: AppointmentLine,
 ): AppointmentDetailUpdateRequest {
@@ -166,6 +201,8 @@ export function toUpdateDetailPayload(
   const quantity = parseQuantity(line.quantity);
   if (quantity !== null && quantity !== saved.quantity)
     payload.quantity = quantity;
+  if (isPriceChanged(line))
+    payload.unit_price = centsToPrice(priceToCents(line.unitPrice)!);
   const notes = line.notes.trim();
   if (notes !== (saved.notes ?? "")) payload.notes = notes || null;
   return payload;

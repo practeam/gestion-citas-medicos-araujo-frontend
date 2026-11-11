@@ -101,18 +101,21 @@ export interface AppointmentDetail {
 }
 
 /**
- * `AppointmentDetailCreateRequest`. No se envían `duration_minutes` (lo calcula
- * el backend) ni `unit_price` (el precio sale del catálogo; no hay precios
- * personalizados en esta fase).
+ * `AppointmentDetailCreateRequest`. No se envía `duration_minutes` (lo calcula
+ * el backend). `unit_price` es opcional y solo se envía cuando el precio se
+ * editó respecto al del catálogo (precio acordado para esa cita).
  */
 export interface AppointmentDetailCreateRequest {
   procedure_id: number;
   quantity: number;
+  /** Decimal con 2 decimales (`"150.00"`). */
+  unit_price?: string;
   notes?: string;
 }
 
-/** `AppointmentDetailUpdateRequest`: solo cantidad y notas. */
+/** `AppointmentDetailUpdateRequest`: cantidad, precio unitario y notas. */
 export interface AppointmentDetailUpdateRequest {
   quantity?: number;
+  unit_price?: string;
   notes?: string | null;
 }

@@ -10,10 +10,8 @@ import {
   getLineAmount,
   getLineDuration,
   getLineOperation,
-  getUnitPrice,
   isEstimate,
-  MAX_QUANTITY,
-  parseQuantity,
+  isPriceValid,
   summarizeLines,
   type AppointmentLine,
 } from "../utils/appointment-lines.utils";
@@ -95,8 +93,7 @@ export function AppointmentProceduresSection({
       ) : (
         <ul className="space-y-3">
           {lines.map((line) => {
-            const quantityValid = parseQuantity(line.quantity) !== null;
-            const unitPrice = getUnitPrice(line);
+            const priceValid = isPriceValid(line);
             const duration = getLineDuration(line);
             const amount = getLineAmount(line);
             const operation = getLineOperation(line);
@@ -165,27 +162,20 @@ export function AppointmentProceduresSection({
 
                 {!line.removed && (
                   <>
-                    <div className="grid gap-3 sm:grid-cols-4">
+                    <div className="grid gap-3 sm:grid-cols-3">
                       <label className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
-                        <span>{t("quantity")}</span>
+                        <span>{t("unitPrice")}</span>
                         <Input
-                          inputMode="numeric"
-                          value={line.quantity}
+                          inputMode="decimal"
+                          value={line.unitPrice}
                           disabled={disabled}
-                          aria-invalid={quantityValid ? undefined : "true"}
+                          placeholder="0.00"
+                          aria-invalid={priceValid ? undefined : "true"}
                           onChange={(event) =>
-                            update(line.key, { quantity: event.target.value })
+                            update(line.key, { unitPrice: event.target.value })
                           }
                         />
                       </label>
-                      <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
-                        <p>
-                          {line.saved ? t("unitPriceHistoric") : t("unitPrice")}
-                        </p>
-                        <p className="text-sm text-gray-800 dark:text-white/90">
-                          {unitPrice ?? t("unknown")}
-                        </p>
-                      </div>
                       <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
                         <p>{t("duration")}</p>
                         <p className="text-sm text-gray-800 dark:text-white/90">
@@ -203,9 +193,9 @@ export function AppointmentProceduresSection({
                         </p>
                       </div>
                     </div>
-                    {!quantityValid && (
+                    {!priceValid && (
                       <p className="text-xs text-red-500">
-                        {t("quantityInvalid", { max: MAX_QUANTITY })}
+                        {t("priceInvalid")}
                       </p>
                     )}
                     <label className="block space-y-1 text-xs text-gray-500 dark:text-gray-400">

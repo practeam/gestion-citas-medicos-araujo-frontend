@@ -43,6 +43,7 @@ import {
   createLine,
   getLineOperation,
   getReservedMinutes,
+  isPriceValid,
   parseQuantity,
   toCreateDetailPayload,
   toUpdateDetailPayload,
@@ -345,6 +346,7 @@ function AppointmentForm({
           apply(line.key, {
             saved,
             quantity: String(saved.quantity),
+            unitPrice: saved.unit_price,
             notes: saved.notes ?? "",
             error: null,
           });
@@ -362,7 +364,9 @@ function AppointmentForm({
     setFormError(null);
 
     const invalid = lines.filter(
-      (line) => !line.removed && parseQuantity(line.quantity) === null,
+      (line) =>
+        !line.removed &&
+        (parseQuantity(line.quantity) === null || !isPriceValid(line)),
     );
     if (invalid.length > 0) {
       setFormError(tProcedures("linesInvalid"));
