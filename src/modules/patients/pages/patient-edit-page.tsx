@@ -5,6 +5,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import { GuardiansSection } from "@/modules/guardians";
 import { getPersonFullName } from "@/modules/persons";
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
@@ -211,6 +212,7 @@ export default function PatientEditPage() {
               />
             </section>
           </PatientEditForm>
+          <GuardiansSection patientId={patient.id} manage />
         </ComponentCard>
       )}
     </div>

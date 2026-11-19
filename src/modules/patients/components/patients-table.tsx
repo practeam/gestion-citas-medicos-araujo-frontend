@@ -29,6 +29,7 @@ export function PatientsTable({
   onToggleStatus,
 }: PatientsTableProps) {
   const t = useTranslations("patients");
+  const tGuardians = useTranslations("guardians");
   const locale = useLocale();
 
   return (
@@ -95,6 +96,16 @@ export function PatientsTable({
                   >
                     {t("actions.view")}
                   </Button>
+                  <Can permission="patient_guardian.read">
+                    <Button
+                      variant="outline"
+                      size="xs"
+                      nativeButton={false}
+                      render={<Link to={`/patients/${patient.id}#guardians`} />}
+                    >
+                      {tGuardians("section.title")}
+                    </Button>
+                  </Can>
                   <Can permission="patient.update">
                     <Button
                       variant="outline"

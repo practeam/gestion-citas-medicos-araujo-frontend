@@ -8,6 +8,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { useLocale, useTranslations } from "@/i18n";
 import { getPersonDocument, getPersonFullName } from "@/modules/persons";
 import { AppointmentsSection } from "@/modules/appointments";
+import { GuardiansSection } from "@/modules/guardians";
 import { Link, useParams } from "react-router";
 import { PatientConditionsList } from "../components/patient-conditions-list";
 import { PatientStatusBadge } from "../components/patient-status-badge";
@@ -139,6 +140,8 @@ export default function PatientDetailPage() {
             </div>
             <PatientConditionsList patientId={patient.id} />
           </section>
+
+          <GuardiansSection patientId={patient.id} manage />
 
           <AppointmentsSection owner={{ type: "patient", id: patient.id }} />
 

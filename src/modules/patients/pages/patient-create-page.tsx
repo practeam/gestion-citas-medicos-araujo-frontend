@@ -4,6 +4,14 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import { useAuth } from "@/modules/auth";
+import {
+  GuardiansPicker,
+  getGuardianErrorMessage,
+  runGuardianAssociations,
+  type GuardianAssociationResult,
+  type StagedGuardian,
+} from "@/modules/guardians";
 import {
   EMPTY_PERSON_FORM_VALUES,
   PersonForm,
@@ -49,10 +57,20 @@ interface ConditionOutcome {
   failed: ConditionOperationResult[];
 }
 
+/** Resultado de asociar apoderados tras crear el paciente. */
+interface GuardianOutcome {
+  associated: StagedGuardian[];
+  failed: GuardianAssociationResult[];
+}
+
 export default function PatientCreatePage() {
   const t = useTranslations("patients");
   const tErrors = useTranslations("patients.errors");
   const tConditionErrors = useTranslations("patients.conditions.errors");
+  const tGuardians = useTranslations("guardians");
+  const tGuardianErrors = useTranslations("guardians.errors");
+  const { can } = useAuth();
+  const canAssociateGuardians = can("patient_guardian.create");
   const navigate = useNavigate();
 
   const [mode, setMode] = useState<PersonMode>("existing");
@@ -62,6 +80,10 @@ export default function PatientCreatePage() {
   const [selectedConditions, setSelectedConditions] = useState<
     SelectedCondition[]
   >([]);
+  // Apoderados elegidos (personas ya registradas); se asocian tras crear el paciente.
+  const [guardians, setGuardians] = useState<StagedGuardian[]>([]);
+  const [guardianOutcome, setGuardianOutcome] =
+    useState<GuardianOutcome | null>(null);
   // Paciente ya creado en este flujo: no debe volver a crearse.
   const [createdPatient, setCreatedPatient] = useState<Patient | null>(null);
   const [conditionOutcome, setConditionOutcome] =
@@ -86,38 +108,57 @@ export default function PatientCreatePage() {
     void navigate("/patients", { state: { notice: "created" } });
 
   /**
-   * Asocia las condiciones indicadas (un PUT por condición, secuencial) sin
-   * repetir las ya resueltas. Si todo se resuelve termina el flujo; si no, deja
-   * el detalle de lo asociado y lo fallido —con sus notas— para reintentar solo
-   * lo pendiente.
+   * Asocia las condiciones (un PUT por condición) y los apoderados (un POST por
+   * apoderado), de forma secuencial y sin repetir lo ya resuelto. Si todo se
+   * resuelve termina el flujo; si no, deja el detalle de lo asociado y lo
+   * fallido para reintentar solo lo pendiente. El paciente nunca se vuelve a
+   * crear y las personas ya registradas no se duplican.
    */
-  const assignConditions = async (
+  const associate = async (
     patientId: number,
     conditions: SelectedCondition[],
-    alreadyAssigned: SelectedCondition[],
+    conditionsDone: SelectedCondition[],
+    staged: StagedGuardian[],
+    guardiansDone: StagedGuardian[],
   ) => {
-    if (conditions.length === 0) {
+    if (conditions.length === 0 && staged.length === 0) {
       finish();
       return;
     }
-    const results = await runConditionOperations(
-      patientId,
-      toAssignOperations(conditions),
-    );
-    const failed = results.filter((result) => result.error);
-    if (failed.length === 0) {
+    const conditionResults =
+      conditions.length > 0
+        ? await runConditionOperations(
+            patientId,
+            toAssignOperations(conditions),
+          )
+        : [];
+    const guardianResults =
+      staged.length > 0 ? await runGuardianAssociations(patientId, staged) : [];
+
+    const conditionsFailed = conditionResults.filter((result) => result.error);
+    const guardiansFailed = guardianResults.filter((result) => result.error);
+    if (conditionsFailed.length === 0 && guardiansFailed.length === 0) {
       finish();
       return;
     }
-    const succeeded = conditions.filter(({ condition }) =>
-      results.some(
+    const conditionsSucceeded = conditions.filter(({ condition }) =>
+      conditionResults.some(
         (result) =>
           !result.error && result.operation.condition.id === condition.id,
       ),
     );
     setConditionOutcome({
-      assigned: [...alreadyAssigned, ...succeeded],
-      failed,
+      assigned: [...conditionsDone, ...conditionsSucceeded],
+      failed: conditionsFailed,
+    });
+    setGuardianOutcome({
+      associated: [
+        ...guardiansDone,
+        ...guardianResults
+          .filter((result) => !result.error)
+          .map((result) => result.guardian),
+      ],
+      failed: guardiansFailed,
     });
   };
 
@@ -152,24 +193,26 @@ export default function PatientCreatePage() {
         return;
       }
       setCreatedPatient(created);
-      await assignConditions(created.id, selectedConditions, []);
+      await associate(created.id, selectedConditions, [], guardians, []);
     } finally {
       setIsSaving(false);
     }
   };
 
   /** Reintenta únicamente las asociaciones fallidas del paciente ya creado. */
-  const retryConditions = async () => {
+  const retryAssociations = async () => {
     if (!createdPatient || !conditionOutcome || isSaving) return;
     setIsSaving(true);
     try {
-      await assignConditions(
+      await associate(
         createdPatient.id,
         conditionOutcome.failed.map(({ operation }) => ({
           condition: operation.condition,
           notes: operation.notes ?? "",
         })),
         conditionOutcome.assigned,
+        (guardianOutcome?.failed ?? []).map(({ guardian }) => guardian),
+        guardianOutcome?.associated ?? [],
       );
     } finally {
       setIsSaving(false);
@@ -228,6 +271,33 @@ export default function PatientCreatePage() {
     </section>
   );
 
+  const guardiansSection = !canAssociateGuardians ? (
+    <section className="space-y-2 border-t border-gray-100 pt-6 dark:border-gray-800">
+      <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+        {tGuardians("create.section")}
+      </h4>
+      <p className="text-sm text-gray-500 dark:text-gray-400">
+        {tGuardians("create.noPermission")}
+      </p>
+    </section>
+  ) : (
+    <section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
+      <div>
+        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+          {tGuardians("create.section")}
+        </h4>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {tGuardians("create.sectionHint")}
+        </p>
+      </div>
+      <GuardiansPicker
+        value={guardians}
+        onChange={setGuardians}
+        disabled={isSaving}
+      />
+    </section>
+  );
+
   const errorAlert = submitError && (
     <Alert variant="destructive">
       <AlertDescription>{submitError}</AlertDescription>
@@ -263,14 +333,28 @@ export default function PatientCreatePage() {
               </div>
             ) : (
               <>
-                <Alert variant="warning">
-                  <AlertTitle>{t("create.conditionsPartialTitle")}</AlertTitle>
-                  <AlertDescription>
-                    {t("create.conditionsPartialDescription", {
-                      name: getPersonFullName(createdPatient.person),
-                    })}
-                  </AlertDescription>
-                </Alert>
+                {conditionOutcome.failed.length > 0 && (
+                  <Alert variant="warning">
+                    <AlertTitle>
+                      {t("create.conditionsPartialTitle")}
+                    </AlertTitle>
+                    <AlertDescription>
+                      {t("create.conditionsPartialDescription", {
+                        name: getPersonFullName(createdPatient.person),
+                      })}
+                    </AlertDescription>
+                  </Alert>
+                )}
+                {guardianOutcome && guardianOutcome.failed.length > 0 && (
+                  <Alert variant="warning">
+                    <AlertTitle>{tGuardians("create.partialTitle")}</AlertTitle>
+                    <AlertDescription>
+                      {tGuardians("create.partialDescription", {
+                        name: getPersonFullName(createdPatient.person),
+                      })}
+                    </AlertDescription>
+                  </Alert>
+                )}
                 {conditionOutcome.assigned.length > 0 && (
                   <section className="space-y-2">
                     <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
@@ -283,7 +367,43 @@ export default function PatientCreatePage() {
                     </ul>
                   </section>
                 )}
-                <section className="space-y-2">
+                {guardianOutcome && guardianOutcome.associated.length > 0 && (
+                  <section className="space-y-2">
+                    <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+                      {tGuardians("create.associated")}
+                    </h4>
+                    <ul className="list-disc ps-5 text-sm text-gray-700 dark:text-gray-300">
+                      {guardianOutcome.associated.map(({ person }) => (
+                        <li key={person.id}>{getPersonFullName(person)}</li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+                {guardianOutcome && guardianOutcome.failed.length > 0 && (
+                  <section className="space-y-2">
+                    <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+                      {tGuardians("create.failed")}
+                    </h4>
+                    <ul className="list-disc ps-5 text-sm text-gray-700 dark:text-gray-300">
+                      {guardianOutcome.failed.map((result) => (
+                        <li key={result.guardian.person.id}>
+                          <strong>
+                            {getPersonFullName(result.guardian.person)}
+                          </strong>
+                          :{" "}
+                          {getGuardianErrorMessage(
+                            result.error,
+                            tGuardianErrors,
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+                <section
+                  className="space-y-2"
+                  hidden={conditionOutcome.failed.length === 0}
+                >
                   <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
                     {t("create.conditionsFailed")}
                   </h4>
@@ -319,10 +439,12 @@ export default function PatientCreatePage() {
                   </Button>
                   <Button
                     disabled={isSaving}
-                    onClick={() => void retryConditions()}
+                    onClick={() => void retryAssociations()}
                   >
                     {isSaving && <Spinner />}
-                    {isSaving ? t("form.saving") : t("create.conditionsRetry")}
+                    {isSaving
+                      ? t("form.saving")
+                      : tGuardians("create.retryPending")}
                   </Button>
                 </div>
               </>
@@ -341,6 +463,7 @@ export default function PatientCreatePage() {
             {errorAlert}
             {patientSection}
             {conditionsSection}
+            {guardiansSection}
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
               {cancelButton}
               <Button disabled={isSaving} onClick={() => void retryPending()}>
@@ -402,6 +525,7 @@ export default function PatientCreatePage() {
                 )}
                 {patientSection}
                 {conditionsSection}
+                {guardiansSection}
                 <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
                   {cancelButton}
                   <Button
@@ -422,6 +546,7 @@ export default function PatientCreatePage() {
               >
                 {patientSection}
                 {conditionsSection}
+                {guardiansSection}
               </PersonForm>
             )}
           </>

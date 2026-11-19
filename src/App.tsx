@@ -1,4 +1,5 @@
 import AppLayout from "@/components/layout/app-layout";
+import { GuardiansPage } from "@/modules/guardians";
 import {
   LoginPage,
   ProtectedRoute,
@@ -235,6 +236,12 @@ export default function App() {
           <Route
             path="/patients/:patientId/edit"
             element={guard("patient.update", <PatientEditPage />)}
+          />
+
+          {/* Guardians */}
+          <Route
+            path="/guardians"
+            element={guard("patient_guardian.read", <GuardiansPage />)}
           />
 
           {/* Staff */}

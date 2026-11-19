@@ -24,14 +24,19 @@ export const navItems: NavItem[] = [
     permission: "dashboard.read",
   },
   {
-    icon: <LockIcon className="size-6" />,
-    key: "administration",
+    icon: <CalendarIcon className="size-6" />,
+    key: "appointmentManagement",
+    path: "/appointments",
+    permission: "appointment.read",
+  },
+  {
+    icon: <ChatIcon className="size-6" />,
+    key: "communication",
     subItems: [
-      { key: "roles", path: "/roles", permission: "role.read" },
       {
-        key: "permissions",
-        path: "/permissions",
-        permission: "permission.read",
+        key: "conversations",
+        path: "/conversations",
+        permission: "conversation.read",
       },
     ],
   },
@@ -45,6 +50,11 @@ export const navItems: NavItem[] = [
     key: "patientManagement",
     subItems: [
       { key: "patients", path: "/patients", permission: "patient.read" },
+      {
+        key: "guardians",
+        path: "/guardians",
+        permission: "patient_guardian.read",
+      },
       {
         key: "specialConditions",
         path: "/special-conditions",
@@ -95,24 +105,14 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    icon: <ChatIcon className="size-6" />,
-    key: "communication",
+    icon: <LockIcon className="size-6" />,
+    key: "administration",
     subItems: [
+      { key: "roles", path: "/roles", permission: "role.read" },
       {
-        key: "conversations",
-        path: "/conversations",
-        permission: "conversation.read",
-      },
-    ],
-  },
-  {
-    icon: <CalendarIcon className="size-6" />,
-    key: "appointmentManagement",
-    subItems: [
-      {
-        key: "appointmentsAgenda",
-        path: "/appointments",
-        permission: "appointment.read",
+        key: "permissions",
+        path: "/permissions",
+        permission: "permission.read",
       },
     ],
   },
