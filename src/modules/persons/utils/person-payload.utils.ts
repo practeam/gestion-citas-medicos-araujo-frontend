@@ -1,6 +1,7 @@
 import {
   normalizeDocumentNumber,
   normalizeDocumentType,
+  normalizePhone,
   type PersonFormValues,
 } from "../schemas/person-schema";
 import type {
@@ -15,6 +16,7 @@ type OptionalField =
   | "document_number"
   | "birth_date"
   | "phone"
+  | "phone_whatsapp"
   | "email"
   | "address";
 
@@ -24,6 +26,7 @@ const OPTIONAL_FIELDS: OptionalField[] = [
   "document_number",
   "birth_date",
   "phone",
+  "phone_whatsapp",
   "email",
   "address",
 ];
@@ -37,7 +40,8 @@ function normalize(values: PersonFormValues): PersonFormValues {
     document_type: normalizeDocumentType(values.document_type),
     document_number: normalizeDocumentNumber(values.document_number),
     birth_date: values.birth_date,
-    phone: values.phone.trim(),
+    phone: normalizePhone(values.phone),
+    phone_whatsapp: normalizePhone(values.phone_whatsapp),
     email: values.email.trim(),
     address: values.address.trim(),
   };
@@ -75,7 +79,12 @@ export function toUpdatePayload(
     payload.last_name = normalized.last_name;
   }
   for (const field of OPTIONAL_FIELDS) {
-    if (normalized[field] !== (person[field] ?? "")) {
+    // Los teléfonos se comparan como dígitos: "987 654 321" y "987654321" son el mismo número.
+    const current =
+      field === "phone" || field === "phone_whatsapp"
+        ? normalizePhone(person[field])
+        : (person[field] ?? "");
+    if (normalized[field] !== current) {
       payload[field] = normalized[field] || null;
     }
   }
@@ -96,6 +105,7 @@ export function toFormValues(person: Person): PersonFormValues {
     document_number: person.document_number ?? "",
     birth_date: person.birth_date ?? "",
     phone: person.phone ?? "",
+    phone_whatsapp: person.phone_whatsapp ?? "",
     email: person.email ?? "",
     address: person.address ?? "",
   };

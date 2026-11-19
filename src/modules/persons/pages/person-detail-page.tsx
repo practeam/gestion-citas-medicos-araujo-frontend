@@ -95,6 +95,9 @@ export default function PersonDetailPage() {
               <DetailRow label={t("form.phoneLabel")}>
                 {person.phone ?? empty}
               </DetailRow>
+              <DetailRow label={t("form.phone_whatsappLabel")}>
+                {person.phone_whatsapp ?? empty}
+              </DetailRow>
               <DetailRow label={t("form.emailLabel")}>
                 {person.email ?? empty}
               </DetailRow>

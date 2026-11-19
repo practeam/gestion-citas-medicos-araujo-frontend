@@ -73,6 +73,9 @@ export function ConversationInfoPanel({
             {(person && getPersonDocument(person)) ?? empty}
           </InfoRow>
           <InfoRow label={t("phone")}>{person?.phone ?? empty}</InfoRow>
+          <InfoRow label={t("whatsapp")}>
+            {person?.phone_whatsapp ?? empty}
+          </InfoRow>
           <InfoRow label={t("email")}>{person?.email ?? empty}</InfoRow>
         </dl>
       </section>

@@ -3,6 +3,8 @@ import { z } from "zod";
 export const PERSON_NAME_MAX_LENGTH = 100;
 export const PERSON_DOCUMENT_MAX_LENGTH = 30;
 export const PERSON_PHONE_MAX_LENGTH = 30;
+/** Dígitos máximos de un número (E.164); el teléfono se escribe sin código de país. */
+export const PERSON_PHONE_MAX_DIGITS = 15;
 export const PERSON_ADDRESS_MAX_LENGTH = 255;
 
 /**
@@ -48,6 +50,38 @@ const requiredName = (required: string, tooLong: string) =>
  * Los mensajes son claves relativas a `persons.validation` (i18n). Se valida el
  * valor recortado; la unicidad del documento la decide el backend.
  */
+/**
+ * Teléfono (llamadas y WhatsApp): solo dígitos, **sin código de país** (no se
+ * escribe "+51"). El campo del formulario filtra lo que no sea un dígito; aquí
+ * también se rechazan valores heredados con "+" y se exigen 6 a 15 dígitos.
+ */
+export function sanitizePhoneInput(value: string): string {
+  return value.replace(/\D/g, "").slice(0, PERSON_PHONE_MAX_DIGITS);
+}
+
+/** Valor enviado al backend: solo dígitos. */
+export function normalizePhone(value: string | null | undefined): string {
+  return (value ?? "").replace(/\D/g, "");
+}
+
+const phoneSchema = z.string().superRefine((value, ctx) => {
+  const phone = value.trim();
+  if (!phone) return;
+  if (phone.startsWith("+")) {
+    ctx.addIssue({ code: "custom", message: "phoneNoCountryCode" });
+    return;
+  }
+  const digits = phone.replace(/\D/g, "").length;
+  if (
+    phone.length > PERSON_PHONE_MAX_LENGTH ||
+    !PHONE_PATTERN.test(phone) ||
+    digits < PHONE_MIN_DIGITS ||
+    digits > PHONE_MAX_DIGITS
+  ) {
+    ctx.addIssue({ code: "custom", message: "phoneInvalid" });
+  }
+});
+
 export const personFormSchema = z
   .object({
     first_name: requiredName("firstNameRequired", "nameTooLong"),
@@ -75,17 +109,8 @@ export const personFormSchema = z
         !Number.isNaN(new Date(`${value}T00:00:00`).getTime());
       return isDate && value <= todayIsoDate();
     }, "birthDateInvalid"),
-    phone: z.string().refine((value) => {
-      const phone = value.trim();
-      if (!phone) return true;
-      const digits = phone.replace(/\D/g, "").length;
-      return (
-        phone.length <= PERSON_PHONE_MAX_LENGTH &&
-        PHONE_PATTERN.test(phone) &&
-        digits >= PHONE_MIN_DIGITS &&
-        digits <= PHONE_MAX_DIGITS
-      );
-    }, "phoneInvalid"),
+    phone: phoneSchema,
+    phone_whatsapp: phoneSchema,
     email: z.string().refine((value) => {
       const email = value.trim();
       return !email || emailSchema.safeParse(email).success;
@@ -121,6 +146,7 @@ export const EMPTY_PERSON_FORM_VALUES: PersonFormValues = {
   document_number: "",
   birth_date: "",
   phone: "",
+  phone_whatsapp: "",
   email: "",
   address: "",
 };

@@ -151,7 +151,8 @@
       "serviceManagement": "Gestión de servicios",
       "procedures": "Procedimientos",
       "communication": "Comunicación",
-      "conversations": "Conversaciones"
+      "conversations": "Conversaciones",
+      "guardians": "Apoderados"
     },
     "widget": {
       "title": "Panel n.º 1 de Tailwind CSS",
@@ -1835,7 +1836,7 @@
       "birth_dateLabel": "Fecha de nacimiento",
       "birth_datePlaceholder": "",
       "phoneLabel": "Teléfono",
-      "phonePlaceholder": "Ej. +51 976 543 210",
+      "phonePlaceholder": "Ej. 976543210",
       "emailLabel": "Correo electrónico",
       "emailPlaceholder": "Ej. nombre@ejemplo.com",
       "addressLabel": "Dirección",
@@ -1845,7 +1846,11 @@
       "saving": "Guardando...",
       "cancel": "Cancelar",
       "backToList": "Volver a personas",
-      "noChanges": "No hay cambios para guardar."
+      "noChanges": "No hay cambios para guardar.",
+      "phoneHint": "Solo dígitos, sin código de país (sin +51).",
+      "phone_whatsappLabel": "WhatsApp",
+      "phone_whatsappPlaceholder": "Ej. 976543210",
+      "phone_whatsappHint": "Número de WhatsApp: solo dígitos, sin código de país (sin +51)."
     },
     "validation": {
       "firstNameRequired": "Los nombres son obligatorios.",
@@ -1856,9 +1861,10 @@
       "documentNumberRequired": "Ingresa el número de documento o borra el tipo de documento.",
       "documentNumberTooLong": "El número de documento no puede superar los 30 caracteres.",
       "birthDateInvalid": "Ingresa una fecha válida que no sea futura.",
-      "phoneInvalid": "Ingresa un teléfono válido de 6 a 15 dígitos (se admite un + inicial).",
+      "phoneInvalid": "Ingresa un teléfono válido de 6 a 15 dígitos, sin código de país.",
       "emailInvalid": "Ingresa un correo electrónico con formato válido.",
-      "addressTooLong": "La dirección no puede superar los 255 caracteres."
+      "addressTooLong": "La dirección no puede superar los 255 caracteres.",
+      "phoneNoCountryCode": "No incluyas el código de país (sin +51): escribe solo el número."
     },
     "selector": {
       "namePlaceholder": "Nombre o apellido",
@@ -2974,7 +2980,8 @@
         "insufficient": "Los procedimientos requieren {required} min pero la cita reserva {reserved} min. Ajusta la hora de fin; el servidor validará la disponibilidad.",
         "adjustEnd": "Ajustar hora de fin",
         "adjustImpossible": "No se puede ajustar la hora de fin dentro del mismo día."
-      }
+      },
+      "priceInvalid": "El precio debe ser un número mayor o igual a 0 con hasta 2 decimales."
     }
   },
   "procedures": {
@@ -3285,7 +3292,8 @@
       "channel": "Canal",
       "status": "Estado",
       "startedAt": "Inicio",
-      "closedAt": "Cierre"
+      "closedAt": "Cierre",
+      "whatsapp": "WhatsApp"
     },
     "messages": {
       "retry": "Reintentar",
@@ -3545,6 +3553,139 @@
       "forbidden": "No tienes permiso para ver esta información.",
       "retry": "Reintentar",
       "empty": "No hay información para este periodo."
+    }
+  },
+  "guardians": {
+    "noValue": "—",
+    "relationshipPlaceholder": "Selecciona el parentesco",
+    "relationship": {
+      "mother": "Madre",
+      "father": "Padre",
+      "brother": "Hermano",
+      "sister": "Hermana",
+      "grandfather": "Abuelo",
+      "grandmother": "Abuela",
+      "uncle": "Tío",
+      "aunt": "Tía",
+      "husband": "Esposo",
+      "wife": "Esposa",
+      "son": "Hijo",
+      "daughter": "Hija",
+      "legal_guardian": "Tutor legal",
+      "other": "Otro"
+    },
+    "page": {
+      "title": "Apoderados",
+      "meta": {
+        "title": "Apoderados | Gestión de Citas Odontológicas",
+        "description": "Consulta el rol de apoderado de una persona y los pacientes a los que está asociada."
+      },
+      "limitation": "El sistema no tiene un listado general de apoderados: los apoderados se asocian a cada paciente. Busca una persona para ver los pacientes de los que es apoderada. Para asociar un apoderado, abre el paciente y usa la sección Apoderados. Los datos personales se administran en Personas.",
+      "searchTitle": "Buscar una persona",
+      "selectPerson": "Selecciona una persona para ver los pacientes de los que es apoderada.",
+      "personTitle": "Persona",
+      "viewPerson": "Ver persona",
+      "patientsTitle": "Pacientes de los que es apoderada"
+    },
+    "guardedPatients": {
+      "retry": "Reintentar",
+      "loading": "Cargando pacientes...",
+      "empty": "Esta persona no es apoderada de ningún paciente.",
+      "noValue": "—",
+      "active": "Paciente activo",
+      "inactive": "Paciente inactivo",
+      "viewPatient": "Ver paciente",
+      "page": "Página {page} de {totalPages}",
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "detail": {
+      "title": "Detalle del apoderado",
+      "description": "Datos personales y de contacto, y pacientes a los que está asociado.",
+      "relationship": "Parentesco",
+      "loading": "Cargando persona...",
+      "personError": "No se pudieron cargar los datos de la persona.",
+      "name": "Nombre",
+      "document": "Documento",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "status": "Estado",
+      "active": "Activa",
+      "inactive": "Inactiva",
+      "noValue": "—",
+      "patients": "Pacientes de los que es apoderado",
+      "close": "Cerrar",
+      "editPerson": "Editar datos personales",
+      "whatsapp": "WhatsApp"
+    },
+    "section": {
+      "title": "Apoderados",
+      "add": "Agregar apoderado",
+      "retry": "Reintentar",
+      "loading": "Cargando apoderados...",
+      "empty": "Este paciente no tiene apoderados.",
+      "emptyManage": "Este paciente no tiene apoderados. Agrega uno con «Agregar apoderado».",
+      "noValue": "—",
+      "personInactive": "Persona inactiva",
+      "view": "Consultar",
+      "editRelationship": "Cambiar parentesco",
+      "remove": "Desasociar",
+      "notices": {
+        "added": "Apoderado asociado correctamente.",
+        "updated": "Parentesco actualizado correctamente.",
+        "removed": "Apoderado desasociado. La persona sigue registrada."
+      },
+      "noPermission": "No tienes permiso para consultar apoderados (patient_guardian.read). Pide a un administrador que lo asigne a tu rol e inicia sesión de nuevo."
+    },
+    "picker": {
+      "empty": "No hay apoderados agregados. Los apoderados son opcionales.",
+      "add": "Agregar apoderado",
+      "remove": "Quitar",
+      "unexpected": "No se pudo agregar el apoderado."
+    },
+    "addDialog": {
+      "title": "Agregar apoderado",
+      "description": "Busca una persona existente o registra una nueva, y elige el parentesco con el paciente.",
+      "modeExisting": "Persona existente",
+      "modeNew": "Persona nueva",
+      "relationshipLabel": "Parentesco con el paciente",
+      "relationshipRequired": "Selecciona el parentesco.",
+      "selectedPerson": "Persona seleccionada",
+      "selectPersonFirst": "Busca y selecciona una persona.",
+      "duplicate": "Esta persona ya es apoderada del paciente.",
+      "confirm": "Agregar apoderado",
+      "confirmNew": "Registrar y agregar",
+      "adding": "Agregando...",
+      "cancel": "Cancelar"
+    },
+    "relationshipDialog": {
+      "title": "Cambiar parentesco",
+      "description": "Elige el nuevo parentesco de {name} con el paciente.",
+      "label": "Parentesco",
+      "save": "Guardar",
+      "cancel": "Cancelar"
+    },
+    "removeDialog": {
+      "title": "Desasociar apoderado",
+      "description": "¿Deseas desasociar a {name} como apoderado de este paciente? Solo se elimina la asociación: la persona sigue registrada.",
+      "confirm": "Desasociar",
+      "cancel": "Cancelar"
+    },
+    "create": {
+      "section": "Apoderados",
+      "sectionHint": "Opcional. Agrega uno o más apoderados: busca una persona existente o registra una nueva. Se asocian cuando se crea el paciente.",
+      "partialTitle": "El paciente se creó, pero hay apoderados pendientes",
+      "partialDescription": "El paciente \"{name}\" se creó, pero no se pudieron asociar algunos apoderados. No se volverá a crear el paciente ni se duplicarán las personas registradas; reintenta solo los pendientes.",
+      "associated": "Apoderados asociados",
+      "failed": "Apoderados pendientes",
+      "retryPending": "Reintentar asociaciones pendientes",
+      "noPermission": "No tienes permiso para asociar apoderados (patient_guardian.create). Pide a un administrador que lo asigne a tu rol e inicia sesión de nuevo."
+    },
+    "errors": {
+      "unexpected": "Ocurrió un error inesperado.",
+      "network": "No se pudo conectar con el servidor. Inténtalo de nuevo.",
+      "notFound": "No se encontró el paciente, la persona o la asociación.",
+      "server": "El servidor tuvo un problema inesperado. Inténtalo más tarde."
     }
   }
 }

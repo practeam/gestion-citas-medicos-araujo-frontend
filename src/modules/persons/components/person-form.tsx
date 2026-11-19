@@ -13,8 +13,9 @@ import {
   PERSON_ADDRESS_MAX_LENGTH,
   PERSON_DOCUMENT_MAX_LENGTH,
   PERSON_NAME_MAX_LENGTH,
-  PERSON_PHONE_MAX_LENGTH,
+  PERSON_PHONE_MAX_DIGITS,
   personFormSchema,
+  sanitizePhoneInput,
   todayIsoDate,
   type PersonFormValues,
 } from "../schemas/person-schema";
@@ -31,6 +32,7 @@ const FIELD_NAMES: FieldName[] = [
   "document_number",
   "birth_date",
   "phone",
+  "phone_whatsapp",
   "email",
   "address",
 ];
@@ -155,6 +157,47 @@ export function PersonForm({
     </Field>
   );
 
+  /**
+   * Teléfono: campo de tipo teléfono que solo admite dígitos y se escribe sin
+   * código de país (sin "+51"). Se usa para el teléfono de contacto y para el
+   * número de WhatsApp.
+   */
+  const renderPhoneField = (name: "phone" | "phone_whatsapp") => (
+    <Field data-invalid={Boolean(errors[name])}>
+      <FieldLabel className="mb-1.5 block">
+        {t(`${name}Label`)}{" "}
+        <span className="text-xs font-normal text-gray-400">
+          ({t("optional")})
+        </span>
+      </FieldLabel>
+      <Controller
+        control={control}
+        name={name}
+        render={({ field }) => (
+          <Input
+            ref={field.ref}
+            name={field.name}
+            onBlur={field.onBlur}
+            value={field.value}
+            onChange={(event) =>
+              field.onChange(sanitizePhoneInput(event.target.value))
+            }
+            type="tel"
+            inputMode="tel"
+            autoComplete="off"
+            maxLength={PERSON_PHONE_MAX_DIGITS}
+            placeholder={t(`${name}Placeholder`)}
+            aria-invalid={errors[name] ? "true" : undefined}
+          />
+        )}
+      />
+      <p className="text-xs text-gray-500 dark:text-gray-400">
+        {t(`${name}Hint`)}
+      </p>
+      <FieldError errors={toFieldErrors(errors[name])} />
+    </Field>
+  );
+
   return (
     <form onSubmit={handleSubmit(submit)} className="space-y-6" noValidate>
       {formError && (
@@ -203,10 +246,8 @@ export function PersonForm({
           maxLength: PERSON_DOCUMENT_MAX_LENGTH + 10,
           uppercase: true,
         })}
-        {renderField("phone", {
-          type: "tel",
-          maxLength: PERSON_PHONE_MAX_LENGTH + 10,
-        })}
+        {renderPhoneField("phone")}
+        {renderPhoneField("phone_whatsapp")}
         {renderField("email", { type: "email" })}
         <div className="sm:col-span-2">
           {renderField("address", {

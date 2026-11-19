@@ -10,6 +10,7 @@ export interface Person {
   /** `YYYY-MM-DD` */
   birth_date: string | null;
   phone: string | null;
+  phone_whatsapp: string | null;
   email: string | null;
   address: string | null;
   created_at: string;
@@ -25,6 +26,7 @@ export interface PersonCreateRequest {
   document_number?: string | null;
   birth_date?: string | null;
   phone?: string | null;
+  phone_whatsapp?: string | null;
   email?: string | null;
   address?: string | null;
 }
@@ -38,6 +40,7 @@ export interface PersonUpdateRequest {
   document_number?: string | null;
   birth_date?: string | null;
   phone?: string | null;
+  phone_whatsapp?: string | null;
   email?: string | null;
   address?: string | null;
 }

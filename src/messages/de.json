@@ -151,7 +151,8 @@
       "serviceManagement": "Leistungsverwaltung",
       "procedures": "Behandlungen",
       "communication": "Kommunikation",
-      "conversations": "Konversationen"
+      "conversations": "Konversationen",
+      "guardians": "Erziehungsberechtigte"
     },
     "widget": {
       "title": "#1 Tailwind CSS Dashboard",
@@ -1834,7 +1835,7 @@
       "birth_dateLabel": "Geburtsdatum",
       "birth_datePlaceholder": "",
       "phoneLabel": "Telefon",
-      "phonePlaceholder": "z. B. +51 976 543 210",
+      "phonePlaceholder": "z. B. 976543210",
       "emailLabel": "E-Mail",
       "emailPlaceholder": "z. B. name@beispiel.de",
       "addressLabel": "Adresse",
@@ -1844,7 +1845,11 @@
       "saving": "Wird gespeichert...",
       "cancel": "Abbrechen",
       "backToList": "Zurück zu den Personen",
-      "noChanges": "Es gibt keine Änderungen zu speichern."
+      "noChanges": "Es gibt keine Änderungen zu speichern.",
+      "phoneHint": "Nur Ziffern, ohne Ländervorwahl (ohne +51).",
+      "phone_whatsappLabel": "WhatsApp",
+      "phone_whatsappPlaceholder": "z. B. 976543210",
+      "phone_whatsappHint": "WhatsApp-Nummer: nur Ziffern, ohne Ländervorwahl (ohne +51)."
     },
     "validation": {
       "firstNameRequired": "Der Vorname ist erforderlich.",
@@ -1855,9 +1860,10 @@
       "documentNumberRequired": "Geben Sie die Dokumentnummer ein oder löschen Sie die Dokumentart.",
       "documentNumberTooLong": "Die Dokumentnummer darf höchstens 30 Zeichen lang sein.",
       "birthDateInvalid": "Geben Sie ein gültiges Datum ein, das nicht in der Zukunft liegt.",
-      "phoneInvalid": "Geben Sie eine gültige Telefonnummer mit 6 bis 15 Ziffern ein (ein führendes + ist erlaubt).",
+      "phoneInvalid": "Geben Sie eine gültige Telefonnummer mit 6 bis 15 Ziffern ohne Ländervorwahl ein.",
       "emailInvalid": "Geben Sie ein gültiges E-Mail-Format ein.",
-      "addressTooLong": "Die Adresse darf höchstens 255 Zeichen lang sein."
+      "addressTooLong": "Die Adresse darf höchstens 255 Zeichen lang sein.",
+      "phoneNoCountryCode": "Geben Sie keine Ländervorwahl an (ohne +51): nur die Nummer."
     },
     "selector": {
       "namePlaceholder": "Vor- oder Nachname",
@@ -3247,7 +3253,8 @@
       "channel": "Kanal",
       "status": "Status",
       "startedAt": "Beginn",
-      "closedAt": "Geschlossen"
+      "closedAt": "Geschlossen",
+      "whatsapp": "WhatsApp"
     },
     "messages": {
       "retry": "Erneut versuchen",
@@ -3325,6 +3332,139 @@
       "network": "Der Server ist nicht erreichbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
       "notFound": "Die Konversation wurde nicht gefunden.",
       "server": "Der Server konnte die Anfrage nicht abschließen. Bitte versuchen Sie es später erneut."
+    }
+  },
+  "guardians": {
+    "noValue": "—",
+    "relationshipPlaceholder": "Verwandtschaftsverhältnis wählen",
+    "relationship": {
+      "mother": "Mutter",
+      "father": "Vater",
+      "brother": "Bruder",
+      "sister": "Schwester",
+      "grandfather": "Großvater",
+      "grandmother": "Großmutter",
+      "uncle": "Onkel",
+      "aunt": "Tante",
+      "husband": "Ehemann",
+      "wife": "Ehefrau",
+      "son": "Sohn",
+      "daughter": "Tochter",
+      "legal_guardian": "Gesetzlicher Vormund",
+      "other": "Andere"
+    },
+    "page": {
+      "title": "Erziehungsberechtigte",
+      "meta": {
+        "title": "Erziehungsberechtigte | Zahnarzt-Terminverwaltung",
+        "description": "Die Rolle einer Person als Erziehungsberechtigte und die zugeordneten Patienten nachschlagen."
+      },
+      "limitation": "Das System hat keine allgemeine Liste der Erziehungsberechtigten: Sie werden jedem Patienten zugeordnet. Suchen Sie eine Person, um die Patienten zu sehen, für die sie erziehungsberechtigt ist. Um eine Person zuzuordnen, öffnen Sie den Patienten und nutzen Sie den Bereich Erziehungsberechtigte. Persönliche Daten werden unter Personen verwaltet.",
+      "searchTitle": "Person suchen",
+      "selectPerson": "Wählen Sie eine Person, um die Patienten zu sehen, für die sie erziehungsberechtigt ist.",
+      "personTitle": "Person",
+      "viewPerson": "Person ansehen",
+      "patientsTitle": "Patienten, für die sie erziehungsberechtigt ist"
+    },
+    "guardedPatients": {
+      "retry": "Erneut versuchen",
+      "loading": "Patienten werden geladen...",
+      "empty": "Diese Person ist für keinen Patienten erziehungsberechtigt.",
+      "noValue": "—",
+      "active": "Aktiver Patient",
+      "inactive": "Inaktiver Patient",
+      "viewPatient": "Patient ansehen",
+      "page": "Seite {page} von {totalPages}",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "detail": {
+      "title": "Details zur erziehungsberechtigten Person",
+      "description": "Persönliche Daten und Kontaktdaten sowie zugeordnete Patienten.",
+      "relationship": "Verwandtschaftsverhältnis",
+      "loading": "Person wird geladen...",
+      "personError": "Die Daten der Person konnten nicht geladen werden.",
+      "name": "Name",
+      "document": "Dokument",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "status": "Status",
+      "active": "Aktiv",
+      "inactive": "Inaktiv",
+      "noValue": "—",
+      "patients": "Patienten, für die sie erziehungsberechtigt ist",
+      "close": "Schließen",
+      "editPerson": "Persönliche Daten bearbeiten",
+      "whatsapp": "WhatsApp"
+    },
+    "section": {
+      "title": "Erziehungsberechtigte",
+      "add": "Erziehungsberechtigte hinzufügen",
+      "retry": "Erneut versuchen",
+      "loading": "Erziehungsberechtigte werden geladen...",
+      "empty": "Dieser Patient hat keine Erziehungsberechtigten.",
+      "emptyManage": "Dieser Patient hat keine Erziehungsberechtigten. Fügen Sie mit „Erziehungsberechtigte hinzufügen“ eine hinzu.",
+      "noValue": "—",
+      "personInactive": "Inaktive Person",
+      "view": "Ansehen",
+      "editRelationship": "Verhältnis ändern",
+      "remove": "Entfernen",
+      "notices": {
+        "added": "Erziehungsberechtigte erfolgreich zugeordnet.",
+        "updated": "Verwandtschaftsverhältnis erfolgreich aktualisiert.",
+        "removed": "Zuordnung entfernt. Die Person bleibt registriert."
+      },
+      "noPermission": "Sie haben keine Berechtigung, Erziehungsberechtigte anzusehen (patient_guardian.read). Bitten Sie eine Administration, sie Ihrer Rolle zuzuweisen, und melden Sie sich erneut an."
+    },
+    "picker": {
+      "empty": "Keine Erziehungsberechtigten hinzugefügt. Sie sind optional.",
+      "add": "Erziehungsberechtigte hinzufügen",
+      "remove": "Entfernen",
+      "unexpected": "Die Erziehungsberechtigte konnte nicht hinzugefügt werden."
+    },
+    "addDialog": {
+      "title": "Erziehungsberechtigte hinzufügen",
+      "description": "Suchen Sie eine vorhandene Person oder registrieren Sie eine neue und wählen Sie das Verhältnis zum Patienten.",
+      "modeExisting": "Vorhandene Person",
+      "modeNew": "Neue Person",
+      "relationshipLabel": "Verhältnis zum Patienten",
+      "relationshipRequired": "Wählen Sie das Verhältnis.",
+      "selectedPerson": "Ausgewählte Person",
+      "selectPersonFirst": "Suchen und wählen Sie eine Person.",
+      "duplicate": "Diese Person ist bereits erziehungsberechtigt für den Patienten.",
+      "confirm": "Hinzufügen",
+      "confirmNew": "Registrieren und hinzufügen",
+      "adding": "Wird hinzugefügt...",
+      "cancel": "Abbrechen"
+    },
+    "relationshipDialog": {
+      "title": "Verhältnis ändern",
+      "description": "Wählen Sie das neue Verhältnis von {name} zum Patienten.",
+      "label": "Verhältnis",
+      "save": "Speichern",
+      "cancel": "Abbrechen"
+    },
+    "removeDialog": {
+      "title": "Zuordnung entfernen",
+      "description": "Möchten Sie {name} als Erziehungsberechtigte dieses Patienten entfernen? Nur die Zuordnung wird entfernt: Die Person bleibt registriert.",
+      "confirm": "Entfernen",
+      "cancel": "Abbrechen"
+    },
+    "create": {
+      "section": "Erziehungsberechtigte",
+      "sectionHint": "Optional. Fügen Sie eine oder mehrere Personen hinzu: Suchen Sie eine vorhandene Person oder registrieren Sie eine neue. Sie werden zugeordnet, sobald der Patient erstellt ist.",
+      "partialTitle": "Der Patient wurde erstellt, aber einige Erziehungsberechtigte stehen noch aus",
+      "partialDescription": "Der Patient „{name}“ wurde erstellt, aber einige Erziehungsberechtigte konnten nicht zugeordnet werden. Der Patient wird nicht erneut erstellt und registrierte Personen werden nicht dupliziert; versuchen Sie nur die ausstehenden erneut.",
+      "associated": "Zugeordnete Erziehungsberechtigte",
+      "failed": "Ausstehende Erziehungsberechtigte",
+      "retryPending": "Ausstehende Zuordnungen erneut versuchen",
+      "noPermission": "Sie haben keine Berechtigung, Erziehungsberechtigte zuzuordnen (patient_guardian.create). Bitten Sie eine Administration, sie Ihrer Rolle zuzuweisen, und melden Sie sich erneut an."
+    },
+    "errors": {
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+      "network": "Verbindung zum Server fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "notFound": "Der Patient, die Person oder die Zuordnung wurde nicht gefunden.",
+      "server": "Der Server hatte ein unerwartetes Problem. Bitte versuchen Sie es später erneut."
     }
   }
 }

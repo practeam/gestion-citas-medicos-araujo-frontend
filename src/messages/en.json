@@ -151,7 +151,8 @@
       "serviceManagement": "Service management",
       "procedures": "Procedures",
       "communication": "Communication",
-      "conversations": "Conversations"
+      "conversations": "Conversations",
+      "guardians": "Guardians"
     },
     "widget": {
       "title": "#1 Tailwind CSS Dashboard",
@@ -1835,7 +1836,7 @@
       "birth_dateLabel": "Date of birth",
       "birth_datePlaceholder": "",
       "phoneLabel": "Phone",
-      "phonePlaceholder": "e.g. +51 976 543 210",
+      "phonePlaceholder": "e.g. 976543210",
       "emailLabel": "Email",
       "emailPlaceholder": "e.g. name@example.com",
       "addressLabel": "Address",
@@ -1845,7 +1846,11 @@
       "saving": "Saving...",
       "cancel": "Cancel",
       "backToList": "Back to persons",
-      "noChanges": "There are no changes to save."
+      "noChanges": "There are no changes to save.",
+      "phoneHint": "Digits only, without the country code (no +51).",
+      "phone_whatsappLabel": "WhatsApp",
+      "phone_whatsappPlaceholder": "e.g. 976543210",
+      "phone_whatsappHint": "WhatsApp number: digits only, without the country code (no +51)."
     },
     "validation": {
       "firstNameRequired": "The first name is required.",
@@ -1856,9 +1861,10 @@
       "documentNumberRequired": "Enter the document number or clear the document type.",
       "documentNumberTooLong": "The document number cannot exceed 30 characters.",
       "birthDateInvalid": "Enter a valid date that is not in the future.",
-      "phoneInvalid": "Enter a valid phone number with 6 to 15 digits (an initial + is allowed).",
+      "phoneInvalid": "Enter a valid phone number of 6 to 15 digits, without the country code.",
       "emailInvalid": "Enter a valid email address format.",
-      "addressTooLong": "The address cannot exceed 255 characters."
+      "addressTooLong": "The address cannot exceed 255 characters.",
+      "phoneNoCountryCode": "Do not include the country code (no +51): enter only the number."
     },
     "selector": {
       "namePlaceholder": "Name or surname",
@@ -2974,7 +2980,8 @@
         "insufficient": "The procedures require {required} min but the appointment reserves {reserved} min. Adjust the end time; the server will validate availability.",
         "adjustEnd": "Adjust end time",
         "adjustImpossible": "The end time cannot be adjusted within the same day."
-      }
+      },
+      "priceInvalid": "The price must be a number greater than or equal to 0 with up to 2 decimals."
     }
   },
   "procedures": {
@@ -3285,7 +3292,8 @@
       "channel": "Channel",
       "status": "Status",
       "startedAt": "Started",
-      "closedAt": "Closed"
+      "closedAt": "Closed",
+      "whatsapp": "WhatsApp"
     },
     "messages": {
       "retry": "Retry",
@@ -3545,6 +3553,139 @@
       "forbidden": "You do not have permission to view this information.",
       "retry": "Retry",
       "empty": "No data for this period."
+    }
+  },
+  "guardians": {
+    "noValue": "—",
+    "relationshipPlaceholder": "Select the relationship",
+    "relationship": {
+      "mother": "Mother",
+      "father": "Father",
+      "brother": "Brother",
+      "sister": "Sister",
+      "grandfather": "Grandfather",
+      "grandmother": "Grandmother",
+      "uncle": "Uncle",
+      "aunt": "Aunt",
+      "husband": "Husband",
+      "wife": "Wife",
+      "son": "Son",
+      "daughter": "Daughter",
+      "legal_guardian": "Legal guardian",
+      "other": "Other"
+    },
+    "page": {
+      "title": "Guardians",
+      "meta": {
+        "title": "Guardians | Dental Appointment Management",
+        "description": "Look up a person's role as guardian and the patients they are associated with."
+      },
+      "limitation": "The system has no general list of guardians: guardians are associated with each patient. Search for a person to see the patients they are a guardian of. To associate a guardian, open the patient and use the Guardians section. Personal data is managed in People.",
+      "searchTitle": "Search for a person",
+      "selectPerson": "Select a person to see the patients they are a guardian of.",
+      "personTitle": "Person",
+      "viewPerson": "View person",
+      "patientsTitle": "Patients they are a guardian of"
+    },
+    "guardedPatients": {
+      "retry": "Retry",
+      "loading": "Loading patients...",
+      "empty": "This person is not a guardian of any patient.",
+      "noValue": "—",
+      "active": "Active patient",
+      "inactive": "Inactive patient",
+      "viewPatient": "View patient",
+      "page": "Page {page} of {totalPages}",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "detail": {
+      "title": "Guardian details",
+      "description": "Personal and contact data, and the patients they are associated with.",
+      "relationship": "Relationship",
+      "loading": "Loading person...",
+      "personError": "The person's data could not be loaded.",
+      "name": "Name",
+      "document": "Document",
+      "phone": "Phone",
+      "email": "Email",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "noValue": "—",
+      "patients": "Patients they are a guardian of",
+      "close": "Close",
+      "editPerson": "Edit personal data",
+      "whatsapp": "WhatsApp"
+    },
+    "section": {
+      "title": "Guardians",
+      "add": "Add guardian",
+      "retry": "Retry",
+      "loading": "Loading guardians...",
+      "empty": "This patient has no guardians.",
+      "emptyManage": "This patient has no guardians. Add one with “Add guardian”.",
+      "noValue": "—",
+      "personInactive": "Inactive person",
+      "view": "View",
+      "editRelationship": "Change relationship",
+      "remove": "Remove",
+      "notices": {
+        "added": "Guardian associated successfully.",
+        "updated": "Relationship updated successfully.",
+        "removed": "Guardian removed. The person remains registered."
+      },
+      "noPermission": "You do not have permission to view guardians (patient_guardian.read). Ask an administrator to assign it to your role, then sign in again."
+    },
+    "picker": {
+      "empty": "No guardians added. Guardians are optional.",
+      "add": "Add guardian",
+      "remove": "Remove",
+      "unexpected": "The guardian could not be added."
+    },
+    "addDialog": {
+      "title": "Add guardian",
+      "description": "Search for an existing person or register a new one, and choose the relationship with the patient.",
+      "modeExisting": "Existing person",
+      "modeNew": "New person",
+      "relationshipLabel": "Relationship with the patient",
+      "relationshipRequired": "Select the relationship.",
+      "selectedPerson": "Selected person",
+      "selectPersonFirst": "Search for and select a person.",
+      "duplicate": "This person is already a guardian of the patient.",
+      "confirm": "Add guardian",
+      "confirmNew": "Register and add",
+      "adding": "Adding...",
+      "cancel": "Cancel"
+    },
+    "relationshipDialog": {
+      "title": "Change relationship",
+      "description": "Choose the new relationship of {name} with the patient.",
+      "label": "Relationship",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "removeDialog": {
+      "title": "Remove guardian",
+      "description": "Do you want to remove {name} as a guardian of this patient? Only the association is removed: the person remains registered.",
+      "confirm": "Remove",
+      "cancel": "Cancel"
+    },
+    "create": {
+      "section": "Guardians",
+      "sectionHint": "Optional. Add one or more guardians: search for an existing person or register a new one. They are associated once the patient is created.",
+      "partialTitle": "The patient was created, but some guardians are pending",
+      "partialDescription": "The patient \"{name}\" was created, but some guardians could not be associated. The patient will not be created again and registered people will not be duplicated; retry only the pending ones.",
+      "associated": "Guardians associated",
+      "failed": "Guardians pending",
+      "retryPending": "Retry pending associations",
+      "noPermission": "You do not have permission to associate guardians (patient_guardian.create). Ask an administrator to assign it to your role, then sign in again."
+    },
+    "errors": {
+      "unexpected": "An unexpected error occurred.",
+      "network": "Could not connect to the server. Please try again.",
+      "notFound": "The patient, person or association was not found.",
+      "server": "The server had an unexpected problem. Please try again later."
     }
   }
 }
