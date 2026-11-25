@@ -1,0 +1,3470 @@
+{
+  "common": {
+    "home": "Startseite",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "saveChanges": "Änderungen speichern",
+    "viewMore": "Mehr anzeigen",
+    "delete": "Löschen",
+    "filter": "Filter",
+    "seeAll": "Alle anzeigen",
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen"
+  },
+  "sidebar": {
+    "groups": {
+      "menu": "Menü",
+      "support": "Support",
+      "others": "Weitere"
+    },
+    "badges": {
+      "new": "neu",
+      "pro": "pro"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "ecommerceHome": "E-Commerce",
+      "analytics": "Analytik",
+      "marketing": "Marketing",
+      "crm": "CRM",
+      "stocks": "Aktien",
+      "saas": "SaaS",
+      "logistics": "Logistik",
+      "ai": "KI",
+      "sales": "Vertrieb",
+      "finance": "Finanzen",
+      "aiAssistant": "KI-Assistent",
+      "textGenerator": "Textgenerator",
+      "imageGenerator": "Bildgenerator",
+      "codeGenerator": "Codegenerator",
+      "videoGenerator": "Videogenerator",
+      "aiSettings": "KI-Einstellungen",
+      "ecommerce": "E-Commerce",
+      "products": "Produkte",
+      "addProduct": "Produkt hinzufügen",
+      "billing": "Abrechnung",
+      "invoices": "Rechnungen",
+      "singleInvoice": "Einzelne Rechnung",
+      "createInvoice": "Rechnung erstellen",
+      "transactions": "Transaktionen",
+      "singleTransaction": "Einzelne Transaktion",
+      "calendar": "Kalender",
+      "userProfile": "Benutzerprofil",
+      "task": "Aufgaben",
+      "taskList": "Liste",
+      "kanban": "Kanban",
+      "forms": "Formulare",
+      "formElements": "Formularelemente",
+      "formLayout": "Formularlayout",
+      "tables": "Tabellen",
+      "basicTables": "Basis-Tabellen",
+      "dataTables": "Datentabellen",
+      "pages": "Seiten",
+      "fileManager": "Dateimanager",
+      "pricingTables": "Preistabellen",
+      "faq": "FAQ",
+      "apiKeys": "API-Schlüssel",
+      "integrations": "Integrationen",
+      "blankPage": "Leere Seite",
+      "error404": "404-Fehler",
+      "error500": "500-Fehler",
+      "error503": "503-Fehler",
+      "comingSoon": "Demnächst",
+      "maintenance": "Wartung",
+      "successPage": "Erfolg",
+      "layouts": "Layouts",
+      "layoutOne": "Layout Eins",
+      "layoutTwo": "Layout Zwei",
+      "layoutThree": "Layout Drei",
+      "layoutFour": "Layout Vier",
+      "layoutFive": "Layout Fünf",
+      "layoutSix": "Layout Sechs",
+      "charts": "Diagramme",
+      "lineChart": "Liniendiagramm",
+      "barChart": "Balkendiagramm",
+      "pieChart": "Kreisdiagramm",
+      "radarChart": "Radardiagramm",
+      "radialChart": "Radiales Diagramm",
+      "maps": "Karten",
+      "mapsGoogle": "Karten",
+      "vectorMap": "Vektorkarte",
+      "uiElements": "UI-Elemente",
+      "alerts": "Hinweise",
+      "avatar": "Avatar",
+      "badge": "Abzeichen",
+      "breadcrumb": "Brotkrume",
+      "buttons": "Schaltflächen",
+      "buttonsGroup": "Schaltflächengruppen",
+      "cards": "Karten",
+      "carousel": "Karussell",
+      "dropdowns": "Dropdowns",
+      "images": "Bilder",
+      "links": "Links",
+      "listView": "Liste",
+      "dialogs": "Dialoge",
+      "notificationUi": "Benachrichtigung",
+      "pagination": "Paginierung",
+      "popovers": "Popovers",
+      "progressbar": "Fortschrittsbalken",
+      "ribbons": "Bänder",
+      "spinners": "Ladeanimationen",
+      "tabs": "Registerkarten",
+      "tooltips": "Tooltips",
+      "videos": "Videos",
+      "authentication": "Authentifizierung",
+      "signIn": "Anmelden",
+      "signUp": "Registrieren",
+      "resetPassword": "Passwort zurücksetzen",
+      "twoStepVerification": "Zwei-Schritt-Verifizierung",
+      "chat": "Chat",
+      "supportMenu": "Support",
+      "supportList": "Support-Liste",
+      "supportReply": "Support-Antwort",
+      "email": "E-Mail",
+      "inbox": "Posteingang",
+      "inboxDetails": "Details",
+      "hr": "Personalwesen",
+      "emptyState": "Leerer Zustand",
+      "variants01": "Varianten 01",
+      "variants02": "Varianten 02",
+      "variants03": "Varianten 03",
+      "variants04": "Varianten 04",
+      "variants05": "Varianten 05",
+      "roles": "Rollen",
+      "administration": "Verwaltung",
+      "permissions": "Berechtigungen",
+      "clinicalManagement": "Klinische Verwaltung",
+      "specialties": "Fachgebiete",
+      "specialConditions": "Sonderbedingungen",
+      "clinics": "Kliniken",
+      "peopleManagement": "Personenverwaltung",
+      "persons": "Personen",
+      "patientManagement": "Patientenverwaltung",
+      "patients": "Patienten",
+      "staffManagement": "Personalverwaltung",
+      "staff": "Personal",
+      "scheduleManagement": "Terminplanverwaltung",
+      "scheduleExceptions": "Zeitplanausnahmen",
+      "scheduleOverrides": "Punktuelle Änderungen",
+      "appointmentManagement": "Terminverwaltung",
+      "appointmentsAgenda": "Terminkalender",
+      "serviceManagement": "Leistungsverwaltung",
+      "procedures": "Behandlungen",
+      "communication": "Kommunikation",
+      "conversations": "Konversationen",
+      "guardians": "Erziehungsberechtigte"
+    },
+    "widget": {
+      "title": "#1 Tailwind CSS Dashboard",
+      "description": "Führendes Tailwind CSS Admin-Template mit über 500 UI-Komponenten und Seiten.",
+      "purchasePlan": "Plan kaufen"
+    }
+  },
+  "header": {
+    "searchPlaceholder": "Suchen oder Befehl eingeben...",
+    "toggleSidebar": "Seitenleiste umschalten",
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "requestsPermission": "bittet um Erlaubnis zur Änderung von",
+      "project": "Projekt",
+      "minAgo": "vor {count} Min.",
+      "hrAgo": "vor {count} Std.",
+      "viewAll": "Alle Benachrichtigungen anzeigen"
+    }
+  },
+  "userDropdown": {
+    "editProfile": "Profil bearbeiten",
+    "accountSettings": "Kontoeinstellungen",
+    "support": "Support",
+    "language": "Sprache",
+    "signOut": "Abmelden"
+  },
+  "ecommerce": {
+    "title": "E-Commerce-Dashboard",
+    "metrics": {
+      "customers": "Kunden",
+      "orders": "Bestellungen"
+    },
+    "months": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dec"
+    },
+    "monthlySales": {
+      "title": "Monatliche Verkäufe",
+      "series": "Verkäufe"
+    },
+    "monthlyTarget": {
+      "title": "Monatsziel",
+      "subtitle": "Das Ziel, das Sie für jeden Monat festgelegt haben",
+      "earned": "Sie haben heute {amount} verdient, das ist mehr als im letzten Monat. Weiter so!",
+      "target": "Ziel",
+      "revenue": "Umsatz",
+      "today": "Heute"
+    },
+    "statistics": {
+      "title": "Statistiken",
+      "subtitle": "Das Ziel, das Sie für jeden Monat festgelegt haben",
+      "overview": "Übersicht",
+      "sales": "Verkäufe",
+      "revenue": "Umsatz",
+      "monthly": "Monatlich",
+      "quarterly": "Vierteljährlich",
+      "annually": "Jährlich",
+      "selectDateRange": "Zeitraum auswählen"
+    },
+    "recentOrders": {
+      "title": "Letzte Bestellungen",
+      "products": "Produkte",
+      "category": "Kategorie",
+      "price": "Preis",
+      "status": "Status",
+      "variants": "{count, plural, one {# Variante} other {# Varianten}}",
+      "categories": {
+        "laptop": "Laptop",
+        "watch": "Uhr",
+        "smartphone": "Smartphone",
+        "electronics": "Elektronik",
+        "accessories": "Zubehör"
+      },
+      "statuses": {
+        "delivered": "Geliefert",
+        "pending": "Ausstehend",
+        "canceled": "Storniert"
+      }
+    },
+    "demographic": {
+      "title": "Kundendemografie",
+      "subtitle": "Anzahl der Kunden nach Land",
+      "customers": "{count} Kunden",
+      "usa": "USA",
+      "france": "France",
+      "yemen": "Yemen",
+      "uk": "UK"
+    }
+  },
+  "analytics": {
+    "metrics": {
+      "uniqueVisitors": "Einzigartige Besucher",
+      "totalPageviews": "Seitenaufrufe insgesamt",
+      "bounceRate": "Absprungrate",
+      "visitDuration": "Besuchsdauer",
+      "vsLastMonth": "Gegenüber dem Vormonat"
+    },
+    "barChart": {
+      "title": "Analytik",
+      "subtitle": "Besucheranalytik der letzten 30 Tage",
+      "twelveMonths": "12 Monate",
+      "thirtyDays": "30 Tage",
+      "sevenDays": "7 Tage",
+      "twentyFourHours": "24 Stunden",
+      "visitors": "Besucher"
+    },
+    "topChannels": {
+      "title": "Top-Kanäle",
+      "source": "Quelle",
+      "visitors": "Besucher",
+      "channelsReport": "Kanalbericht"
+    },
+    "topPages": {
+      "title": "Top-Seiten",
+      "source": "Quelle",
+      "pageview": "Seitenaufrufe",
+      "channelsReport": "Kanalbericht"
+    },
+    "activeUsers": {
+      "title": "Aktive Benutzer",
+      "liveVisitors": "Live-Besucher",
+      "avgDaily": "Durchschn. täglich",
+      "avgWeekly": "Durchschn. wöchentlich",
+      "avgMonthly": "Durchschn. monatlich"
+    },
+    "acquisitionChannels": {
+      "title": "Akquisitionskanäle",
+      "direct": "Direkt",
+      "organic": "Organisch",
+      "referral": "Empfehlung",
+      "total": "Gesamt: 120k"
+    },
+    "session": {
+      "title": "Sitzungen nach Gerät",
+      "total": "Gesamt"
+    },
+    "recentOrders": {
+      "title": "Aktuelle Bestellungen",
+      "products": "Produkte",
+      "category": "Kategorie",
+      "country": "Land",
+      "cr": "CR",
+      "value": "Wert",
+      "categories": {
+        "uiKits": "UI-Kits",
+        "templates": "Vorlagen",
+        "saas": "SaaS"
+      },
+      "crDashboard": "Dashboard"
+    }
+  },
+  "notFound": {
+    "error": "FEHLER",
+    "message": "Wir können die gesuchte Seite leider nicht finden!",
+    "backHome": "Zurück zur Startseite"
+  },
+  "marketing": {
+    "metrics": {
+      "avgClientRating": "Durchschn. Kundenbewertung",
+      "instagramFollowers": "Instagram-Follower",
+      "totalRevenue": "Gesamteinnahmen",
+      "vsLastMonth": "Gegenüber dem Vormonat"
+    },
+    "impressionChart": {
+      "title": "Impressionen & Datenverkehr",
+      "totalRevenue": "Gesamteinnahmen",
+      "sales": "Verkäufe",
+      "revenue": "Umsatz",
+      "selectDateRange": "Datumsbereich auswählen"
+    },
+    "featuredCampaign": {
+      "title": "Vorgestellte Kampagnen",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen",
+      "products": "Produkte",
+      "campaign": "Kampagne",
+      "status": "Status",
+      "adsCampaign": "Werbekampagne",
+      "campaigns": {
+        "growBrand": "Bauen Sie Ihre Marke aus durch...",
+        "betterIdeas": "Bessere Ideen entwickeln...",
+        "increaseTraffic": "Website-Traffic steigern..."
+      },
+      "statuses": {
+        "success": "Erfolgreich",
+        "pending": "Ausstehend",
+        "failed": "Fehlgeschlagen"
+      }
+    },
+    "trafficStats": {
+      "title": "Verkehrsstatistiken",
+      "today": "Heute",
+      "week": "Woche",
+      "month": "Monat",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen",
+      "newSubscribers": "Neue Abonnenten",
+      "conversionRate": "Konversionsrate",
+      "pageBounceRate": "Seiten-Absprungrate",
+      "thenLastWeek": "als letzte Woche",
+      "thanYesterday": "als gestern",
+      "thanLastMonth": "als letzten Monat",
+      "newSales": "Neue Verkäufe"
+    },
+    "trafficSource": {
+      "title": "Top-Traffic-Quelle",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen",
+      "viewAll": "Alle anzeigen"
+    }
+  },
+  "crm": {
+    "metrics": {
+      "activeDeal": "Aktiver Deal",
+      "revenueTotal": "Gesamteinnahmen",
+      "closedDeals": "Abgeschlossene Deals",
+      "lastMonth": "letzten Monat"
+    },
+    "statistics": {
+      "title": "Statistiken",
+      "subtitle": "Ziel, das Sie für jeden Monat festgelegt haben",
+      "avgYearlyProfit": "Durchschn. Jahresgewinn",
+      "sales": "Verkäufe",
+      "revenue": "Umsatz",
+      "monthly": "Monatlich",
+      "quarterly": "Vierteljährlich",
+      "annually": "Jährlich"
+    },
+    "estimatedRevenue": {
+      "title": "Geschätzter Umsatz",
+      "subtitle": "Ziel, das Sie für jeden Monat festgelegt haben",
+      "goals": "Juni-Ziele",
+      "marketing": "Marketing",
+      "sales": "Verkäufe"
+    },
+    "salesCategory": {
+      "title": "Verkaufskategorie",
+      "affiliate": "Affiliate",
+      "direct": "Direkt",
+      "adsense": "Adsense",
+      "affiliateProgram": "Partnerprogramm",
+      "directBuy": "Direktkauf",
+      "products": "Produkte",
+      "total": "Gesamt",
+      "usedOf": "Verwendet von"
+    },
+    "upcomingSchedule": {
+      "title": "Bevorstehender Zeitplan",
+      "schedules": {
+        "item1": {
+          "title": "Business-Analytics-Presse",
+          "description": "Erkundung der datengesteuerten Zukunft +6 weitere"
+        },
+        "item2": {
+          "title": "Business Sprint",
+          "description": "Techniken aus dem Business Sprint +2 weitere"
+        },
+        "item3": {
+          "title": "Kundenüberprüfungs-Meeting",
+          "description": "Einblicke aus dem Kunden-Meeting +8 weitere"
+        }
+      }
+    },
+    "recentOrders": {
+      "title": "Letzte Bestellungen",
+      "searchPlaceholder": "Suchen...",
+      "dealId": "Deal-ID",
+      "customer": "Kunde",
+      "productService": "Produkt/Dienstleistung",
+      "dealValue": "Deal-Wert",
+      "closeDate": "Abschlussdatum",
+      "status": "Status",
+      "action": "Aktion",
+      "products": {
+        "softwareLicense": "Softwarelizenz",
+        "cloudHosting": "Cloud-Hosting",
+        "webDomain": "Web-Domain",
+        "sslCertificate": "SSL-Zertifikat",
+        "premiumSupport": "Premium-Support"
+      },
+      "statuses": {
+        "complete": "Abgeschlossen",
+        "pending": "Ausstehend",
+        "cancel": "Storniert"
+      },
+      "noOrders": "Keine Bestellungen gefunden",
+      "noOrdersDescription": "Versuchen Sie, Ihre Suche oder Ihren Filter anzupassen, um zu finden, wonach Sie suchen."
+    }
+  },
+  "stocks": {
+    "title": "Aktien",
+    "dividend": {
+      "title": "Dividende",
+      "series": "Dividende",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen"
+    },
+    "portfolioPerformance": {
+      "title": "Portfolio-Performance",
+      "subtitle": "Hier sind Ihre monatlichen Leistungsstatistiken",
+      "series": "Portfolio-Performance",
+      "monthly": "Monatlich",
+      "quarterly": "Vierteljährlich",
+      "annually": "Jährlich"
+    },
+    "trendingStocks": {
+      "title": "Trending-Aktien",
+      "shortStock": "Aktie leerverkaufen",
+      "buyStock": "Aktie kaufen"
+    },
+    "watchlist": {
+      "title": "Meine Watchlist",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen"
+    },
+    "latestTransactions": {
+      "title": "Neueste Transaktionen",
+      "searchPlaceholder": "Suchen...",
+      "table": {
+        "name": "Name",
+        "date": "Datum",
+        "price": "Preis",
+        "category": "Kategorie",
+        "status": "Status"
+      },
+      "actions": {
+        "bought": "{symbol} gekauft",
+        "sell": "{symbol} verkaufen"
+      },
+      "categories": {
+        "finance": "Finanzen",
+        "technology": "Technologie",
+        "ecommerce": "E-Commerce",
+        "media": "Soziale Medien"
+      },
+      "statuses": {
+        "success": "Erfolgreich",
+        "pending": "Ausstehend",
+        "failed": "Fehlgeschlagen"
+      }
+    }
+  },
+  "saas": {
+    "title": "SaaS",
+    "metrics": {
+      "overview": "Übersicht",
+      "totalRevenue": "Gesamtumsatz",
+      "activeUsers": "Aktive Benutzer",
+      "clv": "Kundenlebenszeitwert",
+      "cac": "Kundenakquisitionskosten",
+      "weekly": "Wöchentlich",
+      "monthly": "Monatlich",
+      "yearly": "Jährlich",
+      "filter": "Filter"
+    },
+    "churnRate": {
+      "title": "Abwanderungsrate",
+      "subtitle": "Herabstufung auf Free-Plan",
+      "thanLastWeek": "als letzte Woche",
+      "series": "Abwanderungsrate",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen"
+    },
+    "userGrowth": {
+      "title": "Benutzerwachstum",
+      "subtitle": "Neue Anmeldungen Website + Mobil",
+      "thanLastWeek": "als letzte Woche",
+      "series": "Umsatz",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen"
+    },
+    "conversionFunnel": {
+      "title": "Conversion-Trichter",
+      "total": "Gesamt: 120k",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen",
+      "series": {
+        "adImpression": "Werbeeinblendung",
+        "adImpressions": "Werbeeinblendungen",
+        "websiteSession": "Website-Sitzungen",
+        "appDownload": "App-Downloads",
+        "newUsers": "Neue Benutzer"
+      }
+    },
+    "recentInvoices": {
+      "title": "Neueste Rechnungen",
+      "table": {
+        "serialNo": "Serien-Nr.:",
+        "closeDate": "Abschlussdatum",
+        "user": "Benutzer",
+        "amount": "Betrag",
+        "status": "Status"
+      },
+      "statuses": {
+        "complete": "Abgeschlossen",
+        "pending": "Ausstehend",
+        "cancelled": "Storniert"
+      }
+    },
+    "productPerformance": {
+      "title": "Produktleistung",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen",
+      "tabs": {
+        "dailySales": "Tagesverkäufe",
+        "onlineSales": "Online-Verkäufe",
+        "newUsers": "Neue Benutzer"
+      },
+      "digitalProduct": "Digitales Produkt",
+      "physicalProduct": "Physisches Produkt",
+      "avgDailySales": "Durchschnittliche Tagesverkäufe",
+      "totalOnlineSales": "Gesamte Online-Verkäufe",
+      "addedLastMonth": "Im letzten Monat hinzugefügt",
+      "totalNewUsers": "Gesamte neue Benutzer",
+      "series": {
+        "sales": "Verkäufe",
+        "revenue": "Umsatz"
+      }
+    },
+    "activities": {
+      "title": "Aktivitäten",
+      "viewMore": "Mehr anzeigen",
+      "delete": "Löschen",
+      "newInvoice": "Neue Rechnung",
+      "createdInvoice": "Rechnung erstellt"
+    }
+  },
+  "logistics": {
+    "title": "Logistik",
+    "metrics": {
+      "totalOrders": "Bestellungen insgesamt",
+      "ordersInTransit": "Bestellungen im Transit"
+    },
+    "deliveryStatistics": {
+      "title": "Lieferstatistiken",
+      "subtitle": "Gesamtzahl der Lieferungen 70.5K",
+      "monthly": "Monatlich",
+      "yearly": "Jährlich",
+      "shipment": "Versand",
+      "inTransit": "Unterwegs",
+      "delivery": "Lieferung"
+    },
+    "revenueEarned": {
+      "totalRevenue": "Erzielter Gesamtumsatz",
+      "shippedQuantities": "Versandte Mengen",
+      "newSales": "Neue Verkäufe"
+    },
+    "deliveryVehicle": {
+      "title": "Lieferfahrzeuge",
+      "subtitle": "Auf der Straße verkehrende Fahrzeuge",
+      "thanLastWeek": "als letzte Woche",
+      "onRoute": "Unterwegs"
+    },
+    "trackingDelivery": {
+      "title": "Lieferverfolgung",
+      "subtitle": "Zuletzt angezeigter Lieferverlauf"
+    },
+    "trackingProgress": {
+      "trackingId": "Tracking-ID",
+      "inTransit": "Im Transit",
+      "pickedUp": "Abgeholt",
+      "delivered": "Zugestellt"
+    },
+    "deliveryMan": {
+      "courier": "Kurier"
+    },
+    "deliveriesActivity": {
+      "title": "Lieferaktivitäten",
+      "subtitle": "Verfolgen Sie Ihre aktuellen Versandaktivitäten",
+      "tabs": {
+        "all": "Alle Sendungen",
+        "delivered": "Zugestellt",
+        "inTransit": "Im Transit",
+        "pending": "Ausstehend",
+        "processing": "In Bearbeitung"
+      },
+      "filter": {
+        "button": "Filter",
+        "category": "Kategorie",
+        "searchCategory": "Kategorie suchen...",
+        "company": "Unternehmen",
+        "searchCompany": "Unternehmen suchen...",
+        "apply": "Anwenden"
+      },
+      "table": {
+        "orderId": "Bestell-ID",
+        "category": "Kategorie",
+        "company": "Unternehmen",
+        "arrivalTime": "Ankunftszeit",
+        "route": "Route",
+        "price": "Preis",
+        "status": "Status"
+      },
+      "categories": {
+        "furniture": "Möbel",
+        "clothing": "Kleidung",
+        "books": "Bücher",
+        "automotive": "Automobil",
+        "electronics": "Elektronik",
+        "health": "Gesundheit",
+        "toys": "Spielzeug",
+        "kitchen": "Küche",
+        "beauty": "Schönheit",
+        "sports": "Sport"
+      },
+      "statuses": {
+        "delivered": "Zugestellt",
+        "inTransit": "Im Transit",
+        "pending": "Ausstehend",
+        "processing": "In Bearbeitung",
+        "canceled": "Storniert"
+      },
+      "pagination": {
+        "showing": "Zeige",
+        "to": "bis",
+        "of": "von",
+        "page": "Seite"
+      }
+    }
+  },
+  "aiDashboard": {
+    "stats": {
+      "users": "Benutzer",
+      "projects": "Projekte",
+      "revenue": "Umsatz",
+      "paidUsers": "Zahlende Benutzer",
+      "last30Days": "Letzte 30 Tage"
+    },
+    "userRevenue": {
+      "title": "Benutzer- & Umsatzstatistiken",
+      "subtitle": "Visualisieren Sie den monatlichen Fortschritt und das Engagement.",
+      "users": "Benutzer",
+      "revenue": "Umsatz",
+      "monthly": "Monatlich",
+      "quarterly": "Vierteljährlich",
+      "annually": "Jährlich"
+    },
+    "apiToken": {
+      "title": "API-Token-Nutzung",
+      "totalApiTokenUsed": "Verwendete API-Tokens insgesamt",
+      "tokenUsed": "Verwendete Tokens",
+      "configuredKey": "{count, plural, one {# API-Schlüssel konfiguriert} other {# API-Schlüssel konfiguriert}}",
+      "viewAllUsageDetails": "Alle Nutzungsdetails anzeigen"
+    },
+    "userAnalytics": {
+      "title": "Benutzeranalysen",
+      "subtitle": "Einblicke in die Plattformbenutzer",
+      "totalUsers": "Gesamtbenutzer",
+      "freeUsers": "Kostenlose Benutzer",
+      "paidUsers": "Zahlende Benutzer",
+      "ofTotalUser": "der gesamten Benutzer",
+      "thisMonth": "Diesen Monat",
+      "fromLastMonth": "im Vergleich zum Vormonat",
+      "thisYear": "Dieses Jahr",
+      "fromLastYear": "im Vergleich zum Vorjahr"
+    },
+    "projectAnalytics": {
+      "title": "Projektanalysen",
+      "subtitle": "Detaillierte Projekteinblicke anzeigen",
+      "totalProjects": "Gesamtprojekte",
+      "today": "Heute",
+      "yesterday": "Gestern",
+      "projectCreated": "Projekt erstellt",
+      "thisMonth": "Diesen Monat",
+      "fromLastMonth": "im Vergleich zum Vormonat",
+      "thisYear": "Dieses Jahr",
+      "fromLastYear": "im Vergleich zum Vorjahr"
+    },
+    "recentTransactions": {
+      "title": "Letzte Transaktionen",
+      "searchPlaceholder": "Suchen...",
+      "filter": "Filtern",
+      "noTransactions": "Keine Transaktionen gefunden",
+      "noTransactionsDescription": "Versuchen Sie, Ihre Suche oder Ihren Filter anzupassen, um zu finden, wonach Sie suchen.",
+      "table": {
+        "paidBy": "Bezahlt von",
+        "packageName": "Paketname",
+        "price": "Preis",
+        "paidDate": "Zahlungsdatum",
+        "status": "Status",
+        "actions": "Aktionen"
+      },
+      "packages": {
+        "starterMonthly": "Starter - Monatlich",
+        "growthYearly": "Wachstum - Jährlich",
+        "premiumMonthly": "Premium - Monatlich"
+      },
+      "statuses": {
+        "active": "Aktiv",
+        "expired": "Abgelaufen"
+      },
+      "pagination": {
+        "previous": "Zurück",
+        "next": "Weiter",
+        "pageOf": "Seite {current} von {total}"
+      }
+    }
+  },
+  "sales": {
+    "salesStats": {
+      "title": "Verkaufs-Dashboard",
+      "subtitle": "Verfolgen Sie Umsatz, Leistung und Verkaufswachstum in Echtzeit",
+      "selectDateRange": "Datumsbereich auswählen",
+      "export": "Exportieren",
+      "totalRevenue": "Gesamteinnahmen",
+      "totalSales": "Gesamtverkäufe",
+      "conversionRate": "Konversionsrate",
+      "refundRate": "Rückerstattungsquote",
+      "vsLastMonth": "im Vergleich zum Vormonat",
+      "newSales": "Neue Verkäufe"
+    },
+    "userRevenueStats": {
+      "title": "Benutzer- & Umsatzstatistiken",
+      "subtitle": "Visualisieren Sie den monatlichen Fortschritt und das Engagement.",
+      "daily": "Täglich",
+      "weekly": "Wöchentlich",
+      "monthly": "Monatlich",
+      "onlineSales": "Online-Verkäufe",
+      "offlineSales": "Offline-Verkäufe"
+    },
+    "revenueChart": {
+      "title": "Umsatzaufschlüsselung",
+      "subtitle": "Umsatzeinblicke und Leistungsübersicht",
+      "daily": "Täglich",
+      "weekly": "Wöchentlich",
+      "monthly": "Monatlich",
+      "online": "Online",
+      "offline": "Offline"
+    },
+    "userRetention": {
+      "title": "Benutzerbindung",
+      "subtitle": "Benutzerengagement im Zeitverlauf",
+      "increasedVsLastWeek": "Gesteigert ggü. letzter Woche"
+    },
+    "salesByChannel": {
+      "title": "Verkäufe nach Kanal",
+      "subtitle": "Übersicht über die Kanal-Performance",
+      "increasedVsLastWeek": "Gesteigert ggü. letzter Woche",
+      "channels": {
+        "website": "Website",
+        "email": "E-Mail",
+        "socialMedia": "Soziale Medien"
+      },
+      "table": {
+        "channels": "Kanäle",
+        "metric": "Metrik",
+        "total": "Gesamt"
+      }
+    },
+    "salesByCountry": {
+      "title": "Verkäufe nach Land",
+      "subtitle": "Länderbezogene Verkaufsübersicht",
+      "countries": {
+        "usa": "USA",
+        "france": "Frankreich",
+        "japan": "Japan",
+        "egypt": "Ägypten",
+        "germany": "Deutschland"
+      }
+    },
+    "topProducts": {
+      "title": "Top-Produkte",
+      "searchPlaceholder": "Suchen...",
+      "noProducts": "Keine Produkte gefunden",
+      "noProductsDescription": "Versuchen Sie, Ihre Suchanfrage zu ändern.",
+      "table": {
+        "productName": "Produktname",
+        "productId": "Produkt-ID",
+        "category": "Kategorie",
+        "sales": "Verkäufe",
+        "earnings": "Einnahmen",
+        "stocks": "Bestände",
+        "status": "Status"
+      },
+      "products": {
+        "classicDenimJacket": "Klassische Jeansjacke",
+        "slimFitChinos": "Slim-Fit-Chinos",
+        "organicCottonTShirt": "T-Shirt aus Bio-Baumwolle",
+        "leatherAnkleBoots": "Lederstiefeletten",
+        "woolBlendScarf": "Schal aus Wollmischung"
+      },
+      "variants": {
+        "threeSizes": "3 Größen",
+        "fourColors": "4 Farben",
+        "fiveColors": "5 Farben",
+        "sixSizes": "6 Größen",
+        "twoColors": "2 Farben"
+      },
+      "categories": {
+        "jacket": "Jacke",
+        "pants": "Hosen",
+        "tShirt": "T-Shirt",
+        "footwear": "Schuhwerk",
+        "accessory": "Accessoire"
+      },
+      "statuses": {
+        "inStock": "Auf Lager",
+        "lowStock": "Geringer Bestand",
+        "outOfStock": "Nicht auf Lager"
+      }
+    }
+  },
+  "finance": {
+    "totalBalanceOverview": {
+      "title": "Gesamtsaldo",
+      "overview": "Übersicht über Ihr aktuelles Guthaben",
+      "thanLastMonth": "im Vergleich zum Vormonat",
+      "primaryAccount": "Hauptkonto:",
+      "seeDetails": "Details anzeigen",
+      "transfer": "Überweisen",
+      "received": "Empfangen",
+      "balance": "Saldo"
+    },
+    "stats": {
+      "totalBalance": "Gesamtsaldo",
+      "monthlyIncome": "Monatliches Einkommen",
+      "totalSpent": "Gesamtausgaben",
+      "savingRate": "Sparquote",
+      "thanLastMonth": "im Vergleich zum Vormonat",
+      "goalProgress": "Ziel: 30% - 3.9% verbleibend"
+    },
+    "cashflow": {
+      "title": "Cashflow-Übersicht",
+      "totalRevenue": "Gesamteinnahmen",
+      "income": "Einnahmen",
+      "expense": "Ausgaben"
+    },
+    "spending": {
+      "title": "Ausgaben",
+      "yearly": "Jährlich",
+      "monthly": "Monatlich",
+      "total": "Gesamt",
+      "categories": {
+        "activity": "Aktivität",
+        "onlinePurchases": "Online-Einkäufe",
+        "groceries": "Lebensmittel",
+        "digitalGoods": "Digitale Güter",
+        "stationery": "Schreibwaren",
+        "others": "Sonstiges"
+      }
+    },
+    "quickSend": {
+      "title": "Schnellüberweisung",
+      "sendFrom": "Senden von",
+      "currency": "Währung",
+      "amount": "Betrag",
+      "sendMoney": "Geld senden"
+    },
+    "myCards": {
+      "title": "Meine Karten",
+      "addCard": "Karte hinzufügen",
+      "virtualCard": "Virtuelle Karte",
+      "recentTransactions": "Letzte Transaktionen",
+      "seeAllTransactions": "Alle Transaktionen anzeigen",
+      "transactions": {
+        "paymentReceived": "Zahlung erhalten",
+        "cashbackDesc": "Cashback von Stellar Rewards",
+        "netflixSubscription": "Netflix-Abonnement",
+        "netflixDesc": "Abonnementgebühr für September",
+        "moneyReceived": "Geld erhalten",
+        "paypalDesc": "Zahlung per PayPal erhalten",
+        "googleAds": "Google Ads",
+        "googleAdsDesc": "Zahlung von Google Ads erhalten"
+      }
+    },
+    "transactionsTable": {
+      "title": "Letzte Transaktionen",
+      "searchPlaceholder": "Suchen...",
+      "filter": "Filter",
+      "table": {
+        "orderId": "Bestell-ID",
+        "activity": "Aktivität",
+        "price": "Preis",
+        "date": "Datum",
+        "status": "Status"
+      },
+      "activities": {
+        "hotelBooking": "Hotelbuchung",
+        "onlineShopping": "Online-Shopping",
+        "gamePurchase": "Spielekauf",
+        "utilityBillPayment": "Zahlung von Nebenkosten",
+        "onlineCourseEnrollment": "Anmeldung zum Online-Kurs"
+      },
+      "statuses": {
+        "completed": "Abgeschlossen",
+        "inProgress": "In Bearbeitung"
+      }
+    }
+  },
+  "hr": {
+    "header": {
+      "title": "HR-Dashboard",
+      "subtitle": "Hier ist der aktuelle Überblick über Ihr Team.",
+      "dateRange": "16. Aug. 2028 - 16. Sep. 2028",
+      "addMember": "Mitglied hinzufügen"
+    },
+    "quickStats": {
+      "title": "Schnellübersicht",
+      "monthly": "Monatlich",
+      "weekly": "Wöchentlich",
+      "yearly": "Jährlich",
+      "thanLastMonth": "im Vergleich zum Vormonat",
+      "thanLastWeek": "im Vergleich zur Vorwoche",
+      "thanLastYear": "im Vergleich zum Vorjahr",
+      "totalEmployee": "Gesamte Mitarbeiter",
+      "activeEmployee": "Aktive Mitarbeiter",
+      "onLeave": "Im Urlaub",
+      "totalPayroll": "Gesamtgehalt"
+    },
+    "attendanceOverview": {
+      "title": "Anwesenheitsübersicht",
+      "monthly": "Monatlich",
+      "weekly": "Wöchentlich",
+      "yearly": "Jährlich",
+      "days": {
+        "mon": "Mo",
+        "tue": "Di",
+        "wed": "Mi",
+        "thu": "Do",
+        "fri": "Fr",
+        "sat": "Sa",
+        "sun": "So"
+      }
+    },
+    "employeeByDepartment": {
+      "title": "Mitarbeiter nach Abteilung",
+      "thanLastMonth": "im Vergleich zum Vormonat",
+      "viewDetails": "Details anzeigen",
+      "exportData": "Daten exportieren",
+      "departments": {
+        "engineering": "Entwicklung",
+        "marketing": "Marketing",
+        "sales": "Vertrieb",
+        "hr": "Personalwesen",
+        "finance": "Finanzen",
+        "others": "Sonstige"
+      }
+    },
+    "interviewAndMeetings": {
+      "title": "Bewerbungsgespräche & Meetings",
+      "monthYear": "Januar 2027",
+      "joinNow": "Jetzt beitreten",
+      "days": {
+        "mon": "Mo",
+        "tue": "Di",
+        "wed": "Mi",
+        "thu": "Do",
+        "fri": "Fr",
+        "sat": "Sa",
+        "sun": "So"
+      },
+      "meetings": {
+        "productSync": "Produktteam-Synchronisation",
+        "frontendInterview": "Bewerbungsgespräche - Frontend-Entwickler"
+      }
+    },
+    "jobStatistics": {
+      "title": "Stellenstatistiken",
+      "monthly": "Monatlich",
+      "weekly": "Wöchentlich",
+      "yearly": "Jährlich",
+      "totalJob": "Offene Stellen gesamt",
+      "activeJob": "Aktive Stellen",
+      "interview": "Bewerbungsphase",
+      "hired": "Eingestellt"
+    },
+    "employeeGrowth": {
+      "title": "Mitarbeiterwachstum",
+      "weekly": "Wöchentlich",
+      "monthly": "Monatlich",
+      "yearly": "Jährlich",
+      "series": "Mitarbeiter",
+      "days": {
+        "sat": "Sa",
+        "sun": "So",
+        "mon": "Mo",
+        "tue": "Di",
+        "wed": "Mi",
+        "thu": "Do",
+        "fri": "Fr"
+      }
+    },
+    "employeeDirectory": {
+      "title": "Mitarbeiterverzeichnis",
+      "searchPlaceholder": "Suchen...",
+      "filter": "Filter",
+      "noEmployeesTitle": "Keine Mitarbeiter gefunden",
+      "allDepartment": "Alle Abteilungen",
+      "allStatus": "Alle Status",
+      "table": {
+        "users": "Benutzer",
+        "department": "Abteilung",
+        "role": "Rolle",
+        "status": "Status",
+        "joined": "Eintritt",
+        "action": "Aktion"
+      },
+      "departments": {
+        "all": "Alle Abteilungen",
+        "engineering": "Entwicklung",
+        "hr": "Personal",
+        "sales": "Vertrieb",
+        "marketing": "Marketing",
+        "finance": "Finanzen"
+      },
+      "statuses": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "onboarding": "Einarbeitung",
+        "onLeave": "Abwesend"
+      },
+      "roles": {
+        "seniorDeveloper": "Senior-Entwickler",
+        "juniorDeveloper": "Junior-Entwickler",
+        "hrSpecialist": "HR-Spezialist",
+        "accountExecutive": "Account Executive"
+      },
+      "noEmployees": "Keine Mitarbeiter gefunden, die den gewählten Kriterien entsprechen."
+    }
+  },
+  "roles": {
+    "title": "Rollen",
+    "meta": {
+      "title": "Rollen | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie die im System verfügbaren Rollen."
+    },
+    "create": "Neue Rolle",
+    "retry": "Erneut versuchen",
+    "loading": "Rollen werden geladen...",
+    "empty": "Es sind noch keine Rollen registriert.",
+    "noResults": "Keine Rolle entspricht der Suche.",
+    "noDescription": "Keine Beschreibung",
+    "columns": {
+      "name": "Name",
+      "description": "Beschreibung",
+      "status": "Status",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Namen suchen...",
+      "searchLabel": "Rollen nach Namen suchen",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      }
+    },
+    "actions": {
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren",
+      "view": "Ansehen"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Rolle aktivieren",
+        "description": "Möchten Sie die Rolle \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Rolle deaktivieren",
+        "description": "Möchten Sie die Rolle \"{name}\" deaktivieren? Die Rolle wird nicht gelöscht und ihre Berechtigungen bleiben erhalten.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "form": {
+      "createTitle": "Neue Rolle",
+      "editTitle": "Rolle bearbeiten",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. receptionist",
+      "descriptionLabel": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung der Rolle",
+      "create": "Rolle erstellen",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Rollen",
+      "noChanges": "Es gibt keine Änderungen zu speichern."
+    },
+    "validation": {
+      "nameRequired": "Der Name ist erforderlich.",
+      "nameTooLong": "Der Name darf höchstens 80 Zeichen lang sein."
+    },
+    "notices": {
+      "created": "Rolle erfolgreich erstellt.",
+      "updated": "Rolle erfolgreich aktualisiert.",
+      "activated": "Rolle erfolgreich aktiviert.",
+      "deactivated": "Rolle erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Die Rolle wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "detail": {
+      "title": "Rollendetails"
+    },
+    "permissions": {
+      "title": "Berechtigungen der Rolle",
+      "createHint": "Optional. Wählen Sie die aktiven Berechtigungen, die nach dem Anlegen der Rolle zugewiesen werden.",
+      "editHint": "Dieser Rolle zugewiesene Berechtigungen. Änderungen werden beim Speichern der Rolle angewendet.",
+      "manageInEdit": "Berechtigungen verwalten",
+      "selectedLabel": "Ausgewählte Berechtigungen",
+      "removeSelection": "{name} aus der Auswahl entfernen",
+      "searchPlaceholder": "Aktive Berechtigungen suchen...",
+      "searchLabel": "Aktive Berechtigungen nach Namen suchen",
+      "catalogError": "Der Berechtigungskatalog konnte nicht geladen werden.",
+      "retry": "Erneut versuchen",
+      "loadingCatalog": "Berechtigungen werden geladen...",
+      "noResults": "Für diese Suche sind keine aktiven Berechtigungen verfügbar.",
+      "emptyPage": "Auf dieser Seite gibt es keine Berechtigungen.",
+      "alreadyAssigned": "Zugewiesen",
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "pageSummary": "Seite {page} von {totalPages} · {total} aktive Berechtigungen",
+      "previous": "Zurück",
+      "next": "Weiter",
+      "status": {
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "assignedError": "Die zugewiesenen Berechtigungen konnten nicht geladen werden.",
+      "loadingAssigned": "Zugewiesene Berechtigungen werden geladen...",
+      "noAssigned": "Dieser Rolle sind keine Berechtigungen zugewiesen.",
+      "currentTitle": "Zugewiesene Berechtigungen",
+      "inactiveAssigned": "Diese Berechtigung ist inaktiv. Sie bleibt verknüpft und kann entfernt werden.",
+      "willBeRemoved": "Wird entfernt",
+      "undoRemove": "Rückgängig",
+      "remove": "Entfernen",
+      "addTitle": "Berechtigungen hinzufügen",
+      "roleInactive": "Diese Rolle ist inaktiv. Aktivieren Sie sie zuerst, um neue Berechtigungen zuzuweisen.",
+      "saved": "Die Berechtigungsänderungen wurden erfolgreich gespeichert.",
+      "someFailed": "Einige Berechtigungsänderungen konnten nicht abgeschlossen werden",
+      "pendingSummary": "Ausstehende Berechtigungsänderungen: {adds} hinzuzufügen, {removes} zu entfernen.",
+      "roleDataSaved": "Die Rollendaten wurden gespeichert. Einige Berechtigungsänderungen stehen noch aus; prüfen Sie sie unten und speichern Sie erneut.",
+      "assigning": "Berechtigungen werden zugewiesen...",
+      "partial": {
+        "title": "Die Rolle wurde angelegt, aber einige Berechtigungen wurden nicht zugewiesen",
+        "description": "Die Rolle \"{name}\" wurde erfolgreich angelegt, aber einige Berechtigungszuweisungen konnten nicht abgeschlossen werden. Die Rolle wird nicht erneut angelegt; Sie können nur die ausstehenden Berechtigungen erneut versuchen.",
+        "assigned": "Zugewiesene Berechtigungen",
+        "failed": "Ausstehende Berechtigungen",
+        "retry": "Ausstehende Berechtigungen erneut versuchen",
+        "goToList": "Zur Rollenliste",
+        "editRole": "Rolle bearbeiten"
+      },
+      "errors": {
+        "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+        "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+        "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+        "duplicate": "Die Berechtigung ist dieser Rolle bereits zugewiesen.",
+        "notFound": "Die Rolle oder die Berechtigung ist nicht mehr verfügbar.",
+        "assignFailed": "Die Berechtigung konnte nicht zugewiesen werden.",
+        "removeFailed": "Die Berechtigung konnte nicht entfernt werden."
+      }
+    }
+  },
+  "permissions": {
+    "title": "Berechtigungen",
+    "meta": {
+      "title": "Berechtigungen | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie den Berechtigungskatalog des Systems."
+    },
+    "create": "Neue Berechtigung",
+    "retry": "Erneut versuchen",
+    "loading": "Berechtigungen werden geladen...",
+    "empty": "Es sind noch keine Berechtigungen registriert.",
+    "noResults": "Keine Berechtigung entspricht der Suche.",
+    "noDescription": "Keine Beschreibung",
+    "columns": {
+      "name": "Name",
+      "description": "Beschreibung",
+      "status": "Status",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Namen suchen...",
+      "searchLabel": "Berechtigungen nach Namen suchen",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      }
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Berechtigung aktivieren",
+        "description": "Möchten Sie die Berechtigung \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Berechtigung deaktivieren",
+        "description": "Möchten Sie die Berechtigung \"{name}\" deaktivieren? Der Eintrag wird nicht gelöscht.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Berechtigungsdetails"
+    },
+    "form": {
+      "createTitle": "Neue Berechtigung",
+      "editTitle": "Berechtigung bearbeiten",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. appointment.cancel",
+      "nameHint": "Verwenden Sie das Format ressource.aktion in Kleinbuchstaben (z. B. person.create). Es kann später nicht geändert werden.",
+      "nameReadOnlyHint": "Der Name ist eine stabile Kennung und kann nicht bearbeitet werden.",
+      "descriptionLabel": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung der Berechtigung",
+      "create": "Berechtigung erstellen",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Berechtigungen",
+      "noChanges": "Es gibt keine Änderungen zu speichern."
+    },
+    "validation": {
+      "nameRequired": "Der Name ist erforderlich.",
+      "nameTooLong": "Der Name darf höchstens 120 Zeichen lang sein.",
+      "nameInvalid": "Verwenden Sie Kleinbuchstaben, Zahlen und Unterstriche im Format ressource.aktion (z. B. person.create)."
+    },
+    "notices": {
+      "created": "Berechtigung erfolgreich erstellt.",
+      "updated": "Berechtigung erfolgreich aktualisiert.",
+      "activated": "Berechtigung erfolgreich aktiviert.",
+      "deactivated": "Berechtigung erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Die Berechtigung wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    }
+  },
+  "specialties": {
+    "title": "Fachgebiete",
+    "meta": {
+      "title": "Fachgebiete | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie den Katalog der beruflichen Fachgebiete."
+    },
+    "create": "Neues Fachgebiet",
+    "retry": "Erneut versuchen",
+    "loading": "Fachgebiete werden geladen...",
+    "empty": "Es sind noch keine Fachgebiete registriert.",
+    "noResults": "Kein Fachgebiet entspricht der Suche.",
+    "noDescription": "Keine Beschreibung",
+    "columns": {
+      "id": "ID",
+      "name": "Name",
+      "description": "Beschreibung",
+      "status": "Status",
+      "createdAt": "Erstellt",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Namen suchen...",
+      "searchLabel": "Fachgebiete nach Namen suchen",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "sortByLabel": "Sortieren nach",
+      "sortBy": {
+        "id": "Sortierung: ID",
+        "name": "Sortierung: Name",
+        "created_at": "Sortierung: Erstellungsdatum"
+      },
+      "orderLabel": "Reihenfolge",
+      "order": {
+        "asc": "Aufsteigend",
+        "desc": "Absteigend"
+      }
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Fachgebiet aktivieren",
+        "description": "Möchten Sie das Fachgebiet \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Fachgebiet deaktivieren",
+        "description": "Möchten Sie das Fachgebiet \"{name}\" deaktivieren? Der Eintrag wird nicht gelöscht und historische Daten bleiben unverändert.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Fachgebietsdetails"
+    },
+    "form": {
+      "createTitle": "Neues Fachgebiet",
+      "editTitle": "Fachgebiet bearbeiten",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. Kieferorthopädie",
+      "descriptionLabel": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung des Fachgebiets",
+      "create": "Fachgebiet erstellen",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Fachgebieten",
+      "noChanges": "Es gibt keine Änderungen zu speichern."
+    },
+    "validation": {
+      "nameRequired": "Der Name ist erforderlich.",
+      "nameTooLong": "Der Name darf höchstens 120 Zeichen lang sein."
+    },
+    "notices": {
+      "created": "Fachgebiet erfolgreich erstellt.",
+      "updated": "Fachgebiet erfolgreich aktualisiert.",
+      "activated": "Fachgebiet erfolgreich aktiviert.",
+      "deactivated": "Fachgebiet erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Das Fachgebiet wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    }
+  },
+  "specialConditions": {
+    "title": "Sonderbedingungen",
+    "meta": {
+      "title": "Sonderbedingungen | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie den Katalog der Sonderbedingungen."
+    },
+    "create": "Neue Sonderbedingung",
+    "retry": "Erneut versuchen",
+    "loading": "Sonderbedingungen werden geladen...",
+    "empty": "Es sind noch keine Sonderbedingungen registriert.",
+    "noResults": "Keine Sonderbedingung entspricht der Suche.",
+    "noDescription": "Keine Beschreibung",
+    "columns": {
+      "id": "ID",
+      "name": "Name",
+      "description": "Beschreibung",
+      "status": "Status",
+      "createdAt": "Erstellt",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Namen suchen...",
+      "searchLabel": "Sonderbedingungen nach Namen suchen",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "sortByLabel": "Sortieren nach",
+      "sortBy": {
+        "id": "Sortierung: ID",
+        "name": "Sortierung: Name",
+        "created_at": "Sortierung: Erstellungsdatum"
+      },
+      "orderLabel": "Reihenfolge",
+      "order": {
+        "asc": "Aufsteigend",
+        "desc": "Absteigend"
+      }
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Sonderbedingung aktivieren",
+        "description": "Möchten Sie die Sonderbedingung \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Sonderbedingung deaktivieren",
+        "description": "Möchten Sie die Sonderbedingung \"{name}\" deaktivieren? Der Eintrag wird nicht gelöscht und historische Daten bleiben unverändert.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Details zur Sonderbedingung"
+    },
+    "form": {
+      "createTitle": "Neue Sonderbedingung",
+      "editTitle": "Sonderbedingung bearbeiten",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. Latexallergie",
+      "descriptionLabel": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung des Sonderbedingungs",
+      "create": "Sonderbedingung erstellen",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Sonderbedingungenn",
+      "noChanges": "Es gibt keine Änderungen zu speichern."
+    },
+    "validation": {
+      "nameRequired": "Der Name ist erforderlich.",
+      "nameTooLong": "Der Name darf höchstens 120 Zeichen lang sein."
+    },
+    "notices": {
+      "created": "Sonderbedingung erfolgreich erstellt.",
+      "updated": "Sonderbedingung erfolgreich aktualisiert.",
+      "activated": "Sonderbedingung erfolgreich aktiviert.",
+      "deactivated": "Sonderbedingung erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Die Sonderbedingung wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    }
+  },
+  "clinics": {
+    "title": "Kliniken",
+    "meta": {
+      "title": "Kliniken | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie den Katalog der Kliniken und Standorte."
+    },
+    "create": "Neue Klinik",
+    "retry": "Erneut versuchen",
+    "loading": "Kliniken werden geladen...",
+    "empty": "Es sind noch keine Kliniken registriert.",
+    "noResults": "Keine Klinik entspricht der Suche.",
+    "noDescription": "Keine Beschreibung",
+    "columns": {
+      "id": "ID",
+      "name": "Name",
+      "description": "Beschreibung",
+      "status": "Status",
+      "createdAt": "Erstellt",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen",
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Namen suchen...",
+      "searchLabel": "Kliniken nach Namen suchen",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "sortByLabel": "Sortieren nach",
+      "sortBy": {
+        "id": "Sortierung: ID",
+        "name": "Sortierung: Name",
+        "created_at": "Sortierung: Erstellungsdatum"
+      },
+      "orderLabel": "Reihenfolge",
+      "order": {
+        "asc": "Aufsteigend",
+        "desc": "Absteigend"
+      }
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Klinik aktivieren",
+        "description": "Möchten Sie die Klinik \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Klinik deaktivieren",
+        "description": "Möchten Sie die Klinik \"{name}\" deaktivieren? Der Eintrag wird nicht gelöscht und historische Daten bleiben unverändert.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Klinikdetails"
+    },
+    "form": {
+      "createTitle": "Neue Klinik",
+      "editTitle": "Klinik bearbeiten",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. Zentrumsklinik",
+      "descriptionLabel": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung des Kliniks",
+      "create": "Klinik erstellen",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Klinikenn",
+      "noChanges": "Es gibt keine Änderungen zu speichern.",
+      "addressLabel": "Adresse",
+      "addressPlaceholder": "z. B. Hauptstraße 123",
+      "phoneLabel": "Telefon",
+      "phonePlaceholder": "z. B. +51 976 543 210",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "z. B. kontakt@klinik.de"
+    },
+    "validation": {
+      "nameRequired": "Der Name ist erforderlich.",
+      "nameTooLong": "Der Name darf höchstens 150 Zeichen lang sein.",
+      "addressRequired": "Die Adresse ist erforderlich.",
+      "addressTooLong": "Die Adresse darf höchstens 255 Zeichen lang sein.",
+      "phoneInvalid": "Geben Sie eine gültige Telefonnummer mit 6 bis 15 Ziffern ein (ein führendes + ist erlaubt).",
+      "emailInvalid": "Geben Sie ein gültiges E-Mail-Format ein."
+    },
+    "notices": {
+      "created": "Klinik erfolgreich erstellt.",
+      "updated": "Klinik erfolgreich aktualisiert.",
+      "activated": "Klinik erfolgreich aktiviert.",
+      "deactivated": "Klinik erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Die Klinik wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "noValue": "—",
+    "schedules": {
+      "title": "Öffnungszeiten",
+      "createHint": "Optional. Fügen Sie die wöchentlich wiederkehrenden Intervalle (Ortszeit der Klinik) hinzu. Pro Tag sind mehrere Intervalle möglich; Sie können sie später ergänzen.",
+      "editHint": "Wöchentlich wiederkehrende Öffnungsintervalle in der Ortszeit der Klinik. Intervalle werden deaktiviert, nie gelöscht. Änderungen werden beim Speichern der Zeiten angewendet.",
+      "manageInEdit": "Öffnungszeiten verwalten",
+      "days": {
+        "1": "Montag",
+        "2": "Dienstag",
+        "3": "Mittwoch",
+        "4": "Donnerstag",
+        "5": "Freitag",
+        "6": "Samstag",
+        "7": "Sonntag"
+      },
+      "fields": {
+        "day": "Tag",
+        "startsAt": "Beginn",
+        "endsAt": "Ende",
+        "validFrom": "Gültig ab",
+        "validUntil": "Gültig bis"
+      },
+      "optional": "optional",
+      "noDrafts": "Keine Intervalle hinzugefügt. Die Klinik kann ohne Öffnungszeiten registriert werden.",
+      "addInterval": "Intervall hinzufügen",
+      "removeInterval": "Intervall entfernen",
+      "loading": "Öffnungszeiten werden geladen...",
+      "loadError": "Die Öffnungszeiten konnten nicht geladen werden.",
+      "retry": "Erneut versuchen",
+      "empty": "Keine Öffnungszeiten konfiguriert.",
+      "noIntervals": "Keine Intervalle konfiguriert",
+      "validity": "Gültig {from} – {until}",
+      "validityOpen": "Gültig ab {from}, ohne Enddatum",
+      "partialList": "{shown} von {total} Intervallen werden angezeigt.",
+      "status": {
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "currentTitle": "Registrierte Intervalle",
+      "edit": "Bearbeiten",
+      "cancelEdit": "Bearbeiten abbrechen",
+      "activate": "Reaktivieren",
+      "deactivate": "Deaktivieren",
+      "undoStatus": "Rückgängig",
+      "willActivate": "Wird reaktiviert",
+      "willDeactivate": "Wird deaktiviert",
+      "addTitle": "Intervalle hinzufügen",
+      "saved": "Die Öffnungszeiten wurden erfolgreich gespeichert.",
+      "someFailed": "Einige Änderungen an den Öffnungszeiten konnten nicht abgeschlossen werden",
+      "operations": {
+        "create": "registrieren",
+        "update": "aktualisieren",
+        "activate": "reaktivieren",
+        "deactivate": "deaktivieren"
+      },
+      "pendingSummary": "Ausstehende Änderungen an den Öffnungszeiten: {count}.",
+      "discard": "Änderungen verwerfen",
+      "saving": "Wird gespeichert...",
+      "save": "Öffnungszeiten speichern",
+      "creating": "Öffnungszeiten werden registriert...",
+      "partial": {
+        "title": "Die Klinik wurde registriert, aber einige Intervalle wurden nicht gespeichert",
+        "description": "Die Klinik \"{name}\" wurde erfolgreich registriert, aber einige Intervalle konnten nicht registriert werden. Die Klinik wird nicht erneut angelegt; Sie können nur die ausstehenden Intervalle erneut versuchen (Ihre Eingaben bleiben erhalten).",
+        "created": "Registrierte Intervalle",
+        "failed": "Ausstehende Intervalle",
+        "retry": "Ausstehende Intervalle erneut versuchen",
+        "goToList": "Zur Klinikliste",
+        "editClinic": "Klinik bearbeiten"
+      },
+      "validation": {
+        "dayInvalid": "Der Tag muss zwischen Montag und Sonntag liegen.",
+        "startsRequired": "Geben Sie die Startzeit ein.",
+        "endsRequired": "Geben Sie die Endzeit ein.",
+        "timeOrder": "Die Startzeit muss vor der Endzeit liegen. Ein Intervall darf nicht über Mitternacht gehen; verwenden Sie zwei aufeinanderfolgende Tage.",
+        "validFromRequired": "Geben Sie das Datum ein, ab dem das Intervall gültig ist.",
+        "validUntilBeforeFrom": "Das Enddatum darf nicht vor dem Startdatum liegen.",
+        "overlap": "Dieses Intervall überschneidet sich mit einem anderen aktiven Intervall am selben Tag und im selben Gültigkeitszeitraum."
+      },
+      "errors": {
+        "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+        "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+        "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+        "notFound": "Die Klinik oder das Intervall ist nicht mehr verfügbar.",
+        "createFailed": "Das Intervall konnte nicht registriert werden.",
+        "updateFailed": "Das Intervall konnte nicht aktualisiert werden.",
+        "activateFailed": "Das Intervall konnte nicht reaktiviert werden.",
+        "deactivateFailed": "Das Intervall konnte nicht deaktiviert werden."
+      }
+    }
+  },
+  "persons": {
+    "title": "Personen",
+    "meta": {
+      "title": "Personen | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie die persönlichen Daten der im System registrierten Personen."
+    },
+    "create": "Neue Person",
+    "retry": "Erneut versuchen",
+    "loading": "Wird geladen...",
+    "empty": "Es sind noch keine Personen registriert.",
+    "noResults": "Keine Person entspricht der Suche.",
+    "noValue": "—",
+    "columns": {
+      "id": "ID",
+      "fullName": "Vollständiger Name",
+      "document": "Dokument",
+      "status": "Status",
+      "createdAt": "Erstellt",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Vor- oder Nachname suchen...",
+      "searchLabel": "Personen nach Vor- oder Nachname suchen",
+      "documentTypePlaceholder": "Dokumentart",
+      "documentTypeLabel": "Dokumentart",
+      "documentNumberPlaceholder": "Dokumentnr. (exakt)",
+      "documentNumberLabel": "Dokumentnummer (exakte Übereinstimmung)",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "sortByLabel": "Sortieren nach",
+      "sortBy": {
+        "id": "Sortierung: ID",
+        "last_name": "Sortierung: Nachname",
+        "first_name": "Sortierung: Vorname",
+        "created_at": "Sortierung: Erstellungsdatum"
+      },
+      "orderLabel": "Reihenfolge",
+      "order": {
+        "asc": "Aufsteigend",
+        "desc": "Absteigend"
+      }
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Person aktivieren",
+        "description": "Möchten Sie \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Person deaktivieren",
+        "description": "Möchten Sie \"{name}\" deaktivieren? Der Eintrag wird nicht gelöscht und zugehörige Patienten oder Mitarbeiter werden nicht verändert.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Personendetails",
+      "personalData": "Persönliche Daten",
+      "audit": "Informationen zum Eintrag"
+    },
+    "form": {
+      "createTitle": "Neue Person",
+      "editTitle": "Person bearbeiten",
+      "optional": "optional",
+      "first_nameLabel": "Vorname",
+      "first_namePlaceholder": "z. B. Maria",
+      "last_nameLabel": "Nachname",
+      "last_namePlaceholder": "z. B. Garcia",
+      "maternal_last_nameLabel": "Zweiter Nachname",
+      "maternal_last_namePlaceholder": "z. B. Lopez",
+      "document_typeLabel": "Dokumentart",
+      "document_typePlaceholder": "z. B. DNI",
+      "document_numberLabel": "Dokumentnummer",
+      "document_numberPlaceholder": "z. B. 12345678",
+      "birth_dateLabel": "Geburtsdatum",
+      "birth_datePlaceholder": "",
+      "phoneLabel": "Telefon",
+      "phonePlaceholder": "z. B. 976543210",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "z. B. name@beispiel.de",
+      "addressLabel": "Adresse",
+      "addressPlaceholder": "z. B. Hauptstraße 123",
+      "create": "Person registrieren",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Personen",
+      "noChanges": "Es gibt keine Änderungen zu speichern.",
+      "phoneHint": "Nur Ziffern, ohne Ländervorwahl (ohne +51).",
+      "phone_whatsappLabel": "WhatsApp",
+      "phone_whatsappPlaceholder": "z. B. 976543210",
+      "phone_whatsappHint": "WhatsApp-Nummer: nur Ziffern, ohne Ländervorwahl (ohne +51)."
+    },
+    "validation": {
+      "firstNameRequired": "Der Vorname ist erforderlich.",
+      "lastNameRequired": "Der Nachname ist erforderlich.",
+      "nameTooLong": "Dieses Feld darf höchstens 100 Zeichen lang sein.",
+      "documentTypeInvalid": "Verwenden Sie nur Buchstaben, Zahlen und Unterstriche (bis zu 30 Zeichen).",
+      "documentTypeRequired": "Geben Sie die Dokumentart ein oder löschen Sie die Dokumentnummer.",
+      "documentNumberRequired": "Geben Sie die Dokumentnummer ein oder löschen Sie die Dokumentart.",
+      "documentNumberTooLong": "Die Dokumentnummer darf höchstens 30 Zeichen lang sein.",
+      "birthDateInvalid": "Geben Sie ein gültiges Datum ein, das nicht in der Zukunft liegt.",
+      "phoneInvalid": "Geben Sie eine gültige Telefonnummer mit 6 bis 15 Ziffern ohne Ländervorwahl ein.",
+      "emailInvalid": "Geben Sie ein gültiges E-Mail-Format ein.",
+      "addressTooLong": "Die Adresse darf höchstens 255 Zeichen lang sein.",
+      "phoneNoCountryCode": "Geben Sie keine Ländervorwahl an (ohne +51): nur die Nummer."
+    },
+    "selector": {
+      "namePlaceholder": "Vor- oder Nachname",
+      "nameLabel": "Vor- oder Nachname",
+      "documentTypePlaceholder": "Dokumentart",
+      "documentTypeLabel": "Dokumentart",
+      "documentNumberPlaceholder": "Dokumentnummer",
+      "documentNumberLabel": "Dokumentnummer (exakte Übereinstimmung)",
+      "search": "Suchen",
+      "hint": "Suchen Sie nach Namen oder nach der exakten Dokumentnummer, um eine Person zu finden.",
+      "criteriaRequired": "Geben Sie einen Namen oder eine Dokumentnummer zum Suchen ein.",
+      "noResults": "Mit diesen Kriterien wurden keine Personen gefunden.",
+      "noDocument": "Kein Dokument",
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "refine": "{shown} von {total} Ergebnissen werden angezeigt. Verfeinern Sie die Suche, um sie einzugrenzen."
+    },
+    "notices": {
+      "created": "Person erfolgreich registriert.",
+      "updated": "Person erfolgreich aktualisiert.",
+      "activated": "Person erfolgreich aktiviert.",
+      "deactivated": "Person erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Die Person wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    }
+  },
+  "patients": {
+    "title": "Patienten",
+    "meta": {
+      "title": "Patienten | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie die Patienten des Systems."
+    },
+    "newPatient": "Neuer Patient",
+    "retry": "Erneut versuchen",
+    "loading": "Wird geladen...",
+    "empty": "Es sind noch keine Patienten registriert.",
+    "noResults": "Kein Patient entspricht der Suche.",
+    "noValue": "—",
+    "columns": {
+      "id": "ID",
+      "fullName": "Vollständiger Name",
+      "document": "Dokument",
+      "patientNumber": "Patientennr.",
+      "notes": "Notizen",
+      "status": "Status",
+      "createdAt": "Registriert",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Vor- oder Nachname suchen...",
+      "searchLabel": "Patienten nach Vor- oder Nachname suchen",
+      "documentNumberPlaceholder": "Dokumentnr. (exakt)",
+      "documentNumberLabel": "Dokumentnummer (exakte Übereinstimmung)",
+      "patientNumberPlaceholder": "Patientennr. (exakt)",
+      "patientNumberLabel": "Patientennummer (exakte Übereinstimmung)",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "sortByLabel": "Sortieren nach",
+      "sortBy": {
+        "id": "Sortierung: ID",
+        "created_at": "Sortierung: Registrierungsdatum",
+        "patient_number": "Sortierung: Patientennummer",
+        "last_name": "Sortierung: Nachname"
+      },
+      "orderLabel": "Reihenfolge",
+      "order": {
+        "asc": "Aufsteigend",
+        "desc": "Absteigend"
+      }
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Patient aktivieren",
+        "description": "Möchten Sie den Patienten \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Patient deaktivieren",
+        "description": "Möchten Sie den Patienten \"{name}\" deaktivieren? Der Eintrag wird nicht gelöscht und die zugehörige Person bleibt unverändert.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Patientendetails",
+      "patientData": "Patienteninformationen",
+      "personData": "Zugehörige Person",
+      "viewPerson": "Person ansehen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "personStatus": "Status der Person"
+    },
+    "form": {
+      "createTitle": "Neuer Patient",
+      "editTitle": "Patient bearbeiten",
+      "optional": "optional",
+      "patientNumberLabel": "Patientennummer",
+      "patientNumberPlaceholder": "z. B. HC-0001",
+      "notesLabel": "Administrative Notizen",
+      "notesPlaceholder": "Optionale administrative Notizen (keine Krankenakte)",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Patienten",
+      "noChanges": "Es gibt keine Änderungen zu speichern.",
+      "editPersonLink": "Persönliche Daten bearbeiten",
+      "personDataHint": "Persönliche Daten werden im Modul Personen verwaltet. Hier können Sie nur die Patientennummer und die Notizen bearbeiten."
+    },
+    "create": {
+      "personSection": "1. Person",
+      "patientSection": "2. Patientendaten",
+      "patientSectionHint": "Informationen, die zum Patienten gehören, nicht zur Person.",
+      "modeExisting": "Bestehende Person auswählen",
+      "modeNew": "Neue Person registrieren",
+      "selectedPerson": "Ausgewählte Person",
+      "selectPersonFirst": "Wählen Sie eine aktive Person aus, um fortzufahren.",
+      "save": "Patient registrieren",
+      "saveNew": "Person und Patient registrieren",
+      "retry": "Patientenregistrierung erneut versuchen",
+      "partialTitle": "Die Person wurde registriert, der Patient wurde jedoch nicht erstellt",
+      "partialDescription": "Die Person \"{name}\" wurde erfolgreich registriert, der Patient konnte jedoch nicht erstellt werden. Prüfen Sie die Daten und versuchen Sie es erneut; die Person wird nicht noch einmal registriert.",
+      "conditionsSection": "3. Besondere Bedingungen des Patienten",
+      "conditionsSectionHint": "Optional. Wählen Sie die aktiven besonderen Bedingungen, die nach der Registrierung des Patienten zugeordnet werden, mit optionalen Notizen zu jeder.",
+      "conditionsPartialTitle": "Der Patient wurde registriert, aber einige besondere Bedingungen wurden nicht zugeordnet",
+      "conditionsPartialDescription": "Der Patient \"{name}\" wurde erfolgreich registriert, aber einige besondere Bedingungen konnten nicht zugeordnet werden. Der Patient wird nicht erneut angelegt; Sie können nur die ausstehenden Bedingungen erneut versuchen (ihre Notizen bleiben erhalten).",
+      "conditionsAssigned": "Zugeordnete Bedingungen",
+      "conditionsFailed": "Ausstehende Bedingungen",
+      "conditionsRetry": "Ausstehende Bedingungen erneut versuchen",
+      "goToList": "Zur Patientenliste",
+      "editPatient": "Patient bearbeiten"
+    },
+    "validation": {
+      "patientNumberInvalid": "Verwenden Sie bis zu 30 Buchstaben, Zahlen und die Zeichen . _ / -",
+      "notesTooLong": "Die Notizen dürfen höchstens 1000 Zeichen lang sein."
+    },
+    "notices": {
+      "created": "Patient erfolgreich registriert.",
+      "updated": "Patient erfolgreich aktualisiert.",
+      "activated": "Patient erfolgreich aktiviert.",
+      "deactivated": "Patient erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Der Patient wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "conditions": {
+      "title": "Besondere Bedingungen",
+      "editHint": "Administrative Informationen zum Patienten. Es handelt sich nicht um Diagnosen und sie lösen keine klinischen Entscheidungen aus. Änderungen werden beim Speichern angewendet.",
+      "manageInEdit": "Bedingungen verwalten",
+      "patientDataSaved": "Die Patientendaten wurden gespeichert. Einige Änderungen an besonderen Bedingungen stehen noch aus; prüfen Sie sie unten und speichern Sie erneut.",
+      "selectedLabel": "Ausgewählte Bedingungen",
+      "removeSelection": "{name} aus der Auswahl entfernen",
+      "removeFromSelection": "Entfernen",
+      "notesLabel": "Notizen",
+      "notesPlaceholder": "Optionale Notizen zu dieser Bedingung für diesen Patienten",
+      "optional": "optional",
+      "noNotes": "Keine Notizen",
+      "searchPlaceholder": "Aktive Bedingungen suchen...",
+      "searchLabel": "Aktive besondere Bedingungen nach Namen suchen",
+      "catalogError": "Der Katalog der besonderen Bedingungen konnte nicht geladen werden.",
+      "retry": "Erneut versuchen",
+      "loadingCatalog": "Besondere Bedingungen werden geladen...",
+      "noResults": "Für diese Suche sind keine aktiven besonderen Bedingungen verfügbar.",
+      "emptyPage": "Auf dieser Seite gibt es keine besonderen Bedingungen.",
+      "alreadyAssigned": "Zugeordnet",
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "pageSummary": "Seite {page} von {totalPages} · {total} aktive Bedingungen",
+      "previous": "Zurück",
+      "next": "Weiter",
+      "status": {
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "assignedError": "Die besonderen Bedingungen des Patienten konnten nicht geladen werden.",
+      "loadingAssigned": "Besondere Bedingungen werden geladen...",
+      "noAssigned": "Diesem Patienten sind keine besonderen Bedingungen zugeordnet.",
+      "currentTitle": "Zugeordnete Bedingungen",
+      "inactiveAssigned": "Diese Bedingung ist inaktiv. Sie bleibt zugeordnet und kann entfernt werden.",
+      "willBeRemoved": "Wird entfernt",
+      "undoRemove": "Rückgängig",
+      "remove": "Entfernen",
+      "addTitle": "Bedingungen hinzufügen",
+      "saved": "Die Änderungen an den besonderen Bedingungen wurden erfolgreich gespeichert.",
+      "someFailed": "Einige Änderungen an besonderen Bedingungen konnten nicht abgeschlossen werden",
+      "operations": {
+        "assign": "zuordnen",
+        "updateNotes": "Notizen aktualisieren",
+        "remove": "entfernen"
+      },
+      "pendingSummary": "Ausstehende Änderungen an besonderen Bedingungen: {count}.",
+      "assigning": "Besondere Bedingungen werden zugeordnet...",
+      "errors": {
+        "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+        "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+        "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+        "notFound": "Der Patient oder die Bedingung ist nicht mehr verfügbar.",
+        "assignFailed": "Die Bedingung konnte nicht zugeordnet werden.",
+        "updateNotesFailed": "Die Notizen konnten nicht aktualisiert werden.",
+        "removeFailed": "Die Bedingung konnte nicht entfernt werden."
+      }
+    }
+  },
+  "staff": {
+    "title": "Personal",
+    "meta": {
+      "title": "Personal | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie die Mitarbeitenden der Organisation."
+    },
+    "newStaffMember": "Neue Mitarbeiterin / neuer Mitarbeiter",
+    "retry": "Erneut versuchen",
+    "loading": "Wird geladen...",
+    "empty": "Es ist noch kein Personal registriert.",
+    "noResults": "Kein Eintrag entspricht der Suche.",
+    "noValue": "—",
+    "columns": {
+      "id": "ID",
+      "fullName": "Vollständiger Name",
+      "document": "Dokument",
+      "employeeNumber": "Personalnr.",
+      "hireDate": "Einstellungsdatum",
+      "status": "Status",
+      "createdAt": "Registriert",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Vor- oder Nachname suchen...",
+      "searchLabel": "Personal nach Vor- oder Nachname suchen",
+      "documentNumberPlaceholder": "Dokumentnr. (exakt)",
+      "documentNumberLabel": "Dokumentnummer (exakte Übereinstimmung)",
+      "employeeNumberPlaceholder": "Personalnr. (exakt)",
+      "employeeNumberLabel": "Personalnummer (exakte Übereinstimmung)",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "sortByLabel": "Sortieren nach",
+      "sortBy": {
+        "id": "Sortierung: ID",
+        "created_at": "Sortierung: Registrierungsdatum",
+        "employee_number": "Sortierung: Personalnummer",
+        "last_name": "Sortierung: Nachname"
+      },
+      "orderLabel": "Reihenfolge",
+      "order": {
+        "asc": "Aufsteigend",
+        "desc": "Absteigend"
+      }
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Mitarbeitende aktivieren",
+        "description": "Möchten Sie \"{name}\" aktivieren?",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Mitarbeitende deaktivieren",
+        "description": "Möchten Sie \"{name}\" deaktivieren? Der Eintrag wird nicht gelöscht und die zugehörige Person bleibt unverändert.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Details zum Personaleintrag",
+      "staffMemberData": "Personalinformationen",
+      "personData": "Zugehörige Person",
+      "viewPerson": "Person ansehen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "personStatus": "Status der Person"
+    },
+    "form": {
+      "createTitle": "Neuer Personaleintrag",
+      "editTitle": "Personaleintrag bearbeiten",
+      "optional": "optional",
+      "employeeNumberLabel": "Personalnummer",
+      "employeeNumberPlaceholder": "z. B. EMP-0001",
+      "hireDateLabel": "Einstellungsdatum",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zum Personal",
+      "noChanges": "Es gibt keine Änderungen zu speichern.",
+      "editPersonLink": "Persönliche Daten bearbeiten",
+      "personDataHint": "Persönliche Daten werden im Modul Personen verwaltet. Hier können Sie nur die Personalnummer und das Einstellungsdatum bearbeiten."
+    },
+    "create": {
+      "personSection": "1. Person",
+      "staffMemberSection": "2. Personaldaten",
+      "staffMemberSectionHint": "Informationen, die zum Personaleintrag gehören, nicht zur Person.",
+      "modeExisting": "Bestehende Person auswählen",
+      "modeNew": "Neue Person registrieren",
+      "selectedPerson": "Ausgewählte Person",
+      "selectPersonFirst": "Wählen Sie eine aktive Person aus, um fortzufahren.",
+      "save": "Personaleintrag registrieren",
+      "saveNew": "Person und Personaleintrag registrieren",
+      "retry": "Personalregistrierung erneut versuchen",
+      "partialTitle": "Die Person wurde registriert, der Personaleintrag wurde jedoch nicht erstellt",
+      "partialDescription": "Die Person \"{name}\" wurde erfolgreich registriert, der Personaleintrag konnte jedoch nicht abgeschlossen werden. Prüfen Sie die Daten und versuchen Sie es erneut; die Person wird nicht noch einmal registriert.",
+      "rolesSection": "3. Rollen des Personals",
+      "rolesSectionHint": "Optional. Wählen Sie die aktiven Rollen, die nach dem Anlegen des Personaleintrags zugewiesen werden.",
+      "rolesPartialTitle": "Der Personaleintrag wurde registriert, aber einige Rollen wurden nicht zugewiesen",
+      "rolesPartialDescription": "Der Personaleintrag \"{name}\" wurde erfolgreich registriert, aber einige Rollenzuweisungen konnten nicht abgeschlossen werden. Der Eintrag wird nicht erneut angelegt; Sie können nur die ausstehenden Rollen erneut versuchen.",
+      "rolesAssigned": "Zugewiesene Rollen",
+      "rolesFailed": "Ausstehende Rollen",
+      "rolesRetry": "Ausstehende Rollen erneut versuchen",
+      "goToList": "Zur Personalliste",
+      "editStaffMember": "Personaleintrag bearbeiten",
+      "specialtiesSection": "4. Fachgebiete des Personals",
+      "specialtiesSectionHint": "Optional. Wählen Sie die aktiven Fachgebiete, die nach dem Anlegen des Personaleintrags zugeordnet werden. Sie können dies auch leer lassen und später ergänzen.",
+      "assigningRelations": "Rollen und Fachgebiete werden zugewiesen...",
+      "relationsPartialTitle": "Der Personaleintrag wurde registriert, aber einige Rollen oder Fachgebiete wurden nicht zugewiesen",
+      "relationsPartialDescription": "Der Personaleintrag \"{name}\" wurde erfolgreich registriert, aber einige Zuweisungen konnten nicht abgeschlossen werden. Der Eintrag wird nicht erneut angelegt; Sie können nur die ausstehenden erneut versuchen.",
+      "rolesResultTitle": "Rollen",
+      "specialtiesResultTitle": "Fachgebiete",
+      "assignedLabel": "Zugewiesen",
+      "pendingLabel": "Ausstehend",
+      "relationsRetry": "Ausstehende Zuweisungen erneut versuchen",
+      "schedulesSection": "5. Wöchentliche Verfügbarkeit",
+      "schedulesSectionHint": "Optional. Fügen Sie die wöchentlich wiederkehrenden Verfügbarkeitsintervalle hinzu, die nach dem Anlegen des Personaleintrags registriert werden. Sie können dies auch leer lassen und später ergänzen.",
+      "schedulesResultTitle": "Wöchentliche Verfügbarkeit",
+      "registeredLabel": "Registriert"
+    },
+    "validation": {
+      "employeeNumberInvalid": "Verwenden Sie bis zu 30 Buchstaben, Zahlen und die Zeichen . _ / -",
+      "hireDateInvalid": "Geben Sie ein gültiges Datum ein."
+    },
+    "notices": {
+      "created": "Personaleintrag erfolgreich registriert.",
+      "updated": "Personaleintrag erfolgreich aktualisiert.",
+      "activated": "Personaleintrag erfolgreich aktiviert.",
+      "deactivated": "Personaleintrag erfolgreich deaktiviert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Der Personaleintrag wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "roles": {
+      "title": "Rollen des Personals",
+      "hint": "Diesem Personaleintrag zugewiesene Rollen. Die Zuweisung einer Rolle gewährt in dieser Phase weder Zugriff noch Berechtigungen.",
+      "manageInEdit": "Rollen verwalten",
+      "selectedLabel": "Ausgewählte Rollen",
+      "removeSelection": "{name} aus der Auswahl entfernen",
+      "searchPlaceholder": "Aktive Rollen suchen...",
+      "searchLabel": "Aktive Rollen nach Namen suchen",
+      "catalogError": "Der Rollenkatalog konnte nicht geladen werden.",
+      "retry": "Erneut versuchen",
+      "loadingCatalog": "Rollen werden geladen...",
+      "noResults": "Keine aktive Rolle entspricht der Suche.",
+      "catalogEmpty": "Es sind keine aktiven Rollen verfügbar.",
+      "alreadyAssigned": "Zugewiesen",
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "refine": "{shown} von {total} aktiven Rollen werden angezeigt. Verwenden Sie die Suche, um sie einzugrenzen.",
+      "status": {
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "assignedError": "Die zugewiesenen Rollen konnten nicht geladen werden.",
+      "loadingAssigned": "Zugewiesene Rollen werden geladen...",
+      "noAssigned": "Diesem Personaleintrag sind keine Rollen zugewiesen.",
+      "currentTitle": "Zugewiesene Rollen",
+      "inactiveAssigned": "Diese Rolle ist inaktiv. Sie bleibt zugewiesen und kann entfernt werden.",
+      "willBeRemoved": "Wird entfernt",
+      "undoRemove": "Rückgängig",
+      "remove": "Entfernen",
+      "addTitle": "Rollen hinzufügen",
+      "saved": "Die Rollenänderungen wurden erfolgreich gespeichert.",
+      "someFailed": "Einige Rollenänderungen konnten nicht abgeschlossen werden",
+      "pendingSummary": "Ausstehende Änderungen: {adds} hinzuzufügen, {removes} zu entfernen.",
+      "discard": "Änderungen verwerfen",
+      "saving": "Wird gespeichert...",
+      "save": "Rollen speichern",
+      "assigning": "Rollen werden zugewiesen...",
+      "errors": {
+        "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+        "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+        "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+        "duplicate": "Die Rolle ist diesem Personaleintrag bereits zugewiesen.",
+        "notFound": "Der Personaleintrag oder die Rolle ist nicht mehr verfügbar.",
+        "assignFailed": "Die Rolle konnte nicht zugewiesen werden.",
+        "removeFailed": "Die Rolle konnte nicht entfernt werden."
+      }
+    },
+    "specialties": {
+      "title": "Fachgebiete des Personals",
+      "hint": "Für diesen Personaleintrag angegebene Fachgebiete. Eine Zuordnung ist keine berufliche Zertifizierung und keine Berechtigung zur Durchführung von Eingriffen.",
+      "manageInEdit": "Fachgebiete verwalten",
+      "selectedLabel": "Ausgewählte Fachgebiete",
+      "removeSelection": "{name} aus der Auswahl entfernen",
+      "searchPlaceholder": "Aktive Fachgebiete suchen...",
+      "searchLabel": "Aktive Fachgebiete nach Namen suchen",
+      "catalogError": "Der Fachgebietskatalog konnte nicht geladen werden.",
+      "retry": "Erneut versuchen",
+      "loadingCatalog": "Fachgebiete werden geladen...",
+      "noResults": "Für diese Suche sind keine aktiven Fachgebiete verfügbar.",
+      "emptyPage": "Auf dieser Seite gibt es keine Fachgebiete.",
+      "alreadyAssigned": "Zugeordnet",
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "pageSummary": "Seite {page} von {totalPages} · {total} aktive Fachgebiete",
+      "previous": "Zurück",
+      "next": "Weiter",
+      "status": {
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "assignedError": "Die zugeordneten Fachgebiete konnten nicht geladen werden.",
+      "loadingAssigned": "Zugeordnete Fachgebiete werden geladen...",
+      "noAssigned": "Diesem Personaleintrag sind keine Fachgebiete zugeordnet.",
+      "currentTitle": "Zugeordnete Fachgebiete",
+      "inactiveAssigned": "Dieses Fachgebiet ist inaktiv. Es bleibt zugeordnet und kann entfernt werden.",
+      "willBeRemoved": "Wird entfernt",
+      "undoRemove": "Rückgängig",
+      "remove": "Entfernen",
+      "addTitle": "Fachgebiete hinzufügen",
+      "saved": "Die Änderungen an den Fachgebieten wurden erfolgreich gespeichert.",
+      "someFailed": "Einige Änderungen an den Fachgebieten konnten nicht abgeschlossen werden",
+      "pendingSummary": "Ausstehende Änderungen an Fachgebieten: {adds} hinzuzufügen, {removes} zu entfernen.",
+      "discard": "Änderungen verwerfen",
+      "saving": "Wird gespeichert...",
+      "save": "Fachgebiete speichern",
+      "errors": {
+        "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+        "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+        "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+        "notFound": "Der Personaleintrag oder das Fachgebiet ist nicht mehr verfügbar.",
+        "assignFailed": "Das Fachgebiet konnte nicht zugeordnet werden.",
+        "removeFailed": "Das Fachgebiet konnte nicht entfernt werden."
+      }
+    },
+    "schedules": {
+      "title": "Wöchentliche Verfügbarkeit",
+      "createHint": "Optional. Fügen Sie die wöchentlich wiederkehrenden Verfügbarkeitsintervalle (Ortszeit) hinzu. Pro Tag sind mehrere Intervalle möglich; Sie können sie später ergänzen.",
+      "editHint": "Für diesen Personaleintrag angegebene wöchentlich wiederkehrende Verfügbarkeit (Ortszeit). Intervalle werden deaktiviert, nie gelöscht. Es handelt sich nicht um Arbeitszeit oder Anwesenheit. Änderungen werden beim Speichern der Verfügbarkeit angewendet.",
+      "manageInEdit": "Verfügbarkeit verwalten",
+      "days": {
+        "1": "Montag",
+        "2": "Dienstag",
+        "3": "Mittwoch",
+        "4": "Donnerstag",
+        "5": "Freitag",
+        "6": "Samstag",
+        "7": "Sonntag"
+      },
+      "fields": {
+        "day": "Tag",
+        "startsAt": "Beginn",
+        "endsAt": "Ende",
+        "validFrom": "Gültig ab",
+        "validUntil": "Gültig bis"
+      },
+      "optional": "optional",
+      "noDrafts": "Keine Intervalle hinzugefügt. Der Personaleintrag kann ohne Verfügbarkeit registriert werden.",
+      "addInterval": "Intervall hinzufügen",
+      "removeInterval": "Intervall entfernen",
+      "loading": "Verfügbarkeit wird geladen...",
+      "loadError": "Die Verfügbarkeit konnte nicht geladen werden.",
+      "retry": "Erneut versuchen",
+      "empty": "Keine wöchentliche Verfügbarkeit konfiguriert.",
+      "noIntervals": "Keine Intervalle konfiguriert",
+      "validity": "Gültig {from} – {until}",
+      "validityOpen": "Gültig ab {from}, ohne Enddatum",
+      "partialList": "{shown} von {total} Intervallen werden angezeigt.",
+      "status": {
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "currentTitle": "Registrierte Intervalle",
+      "edit": "Bearbeiten",
+      "cancelEdit": "Bearbeiten abbrechen",
+      "activate": "Reaktivieren",
+      "deactivate": "Deaktivieren",
+      "undoStatus": "Rückgängig",
+      "willActivate": "Wird reaktiviert",
+      "willDeactivate": "Wird deaktiviert",
+      "addTitle": "Intervalle hinzufügen",
+      "saved": "Die Verfügbarkeit wurde erfolgreich gespeichert.",
+      "someFailed": "Einige Änderungen an der Verfügbarkeit konnten nicht abgeschlossen werden",
+      "operations": {
+        "create": "registrieren",
+        "update": "aktualisieren",
+        "activate": "reaktivieren",
+        "deactivate": "deaktivieren"
+      },
+      "pendingSummary": "Ausstehende Änderungen an der Verfügbarkeit: {count}.",
+      "discard": "Änderungen verwerfen",
+      "saving": "Wird gespeichert...",
+      "save": "Verfügbarkeit speichern",
+      "creating": "Verfügbarkeit wird registriert...",
+      "validation": {
+        "dayInvalid": "Der Tag muss zwischen Montag und Sonntag liegen.",
+        "startsRequired": "Geben Sie die Startzeit ein.",
+        "endsRequired": "Geben Sie die Endzeit ein.",
+        "timeOrder": "Die Startzeit muss vor der Endzeit liegen. Ein Intervall darf nicht über Mitternacht gehen; verwenden Sie zwei aufeinanderfolgende Tage.",
+        "validFromRequired": "Geben Sie das Datum ein, ab dem das Intervall gültig ist.",
+        "validUntilBeforeFrom": "Das Enddatum darf nicht vor dem Startdatum liegen.",
+        "overlap": "Dieses Intervall überschneidet sich mit einem anderen aktiven Intervall am selben Tag und im selben Gültigkeitszeitraum."
+      },
+      "errors": {
+        "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+        "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+        "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+        "notFound": "Der Personaleintrag oder das Intervall ist nicht mehr verfügbar.",
+        "createFailed": "Das Intervall konnte nicht registriert werden.",
+        "updateFailed": "Das Intervall konnte nicht aktualisiert werden.",
+        "activateFailed": "Das Intervall konnte nicht reaktiviert werden.",
+        "deactivateFailed": "Das Intervall konnte nicht deaktiviert werden."
+      },
+      "declaredNote": "Angegebene wiederkehrende Verfügbarkeit. Keine Arbeitszeit, Anwesenheit oder tatsächliche Verfügbarkeit für Termine."
+    }
+  },
+  "scheduleExceptions": {
+    "title": "Zeitplanausnahmen",
+    "meta": {
+      "title": "Zeitplanausnahmen | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie außergewöhnliche Schließungen und Sperren von Kliniken und Personal."
+    },
+    "newException": "Neue Ausnahme",
+    "retry": "Erneut versuchen",
+    "loading": "Wird geladen...",
+    "empty": "Es sind noch keine Zeitplanausnahmen registriert.",
+    "noResults": "Keine Ausnahme entspricht den Filtern.",
+    "noValue": "—",
+    "blockNote": "Eine Ausnahme ist eine außergewöhnliche Sperre: Sie verringert die Verfügbarkeit immer und erweitert sie nie und ändert nicht die wiederkehrenden Zeitpläne.",
+    "columns": {
+      "id": "ID",
+      "target": "Betrifft",
+      "type": "Art",
+      "reason": "Grund",
+      "startsAt": "Beginn",
+      "endsAt": "Ende",
+      "createdAt": "Erstellt",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "types": {
+      "closure": "Schließung",
+      "absence": "Abwesenheit",
+      "maintenance": "Wartung",
+      "other": "Sonstiges"
+    },
+    "target": {
+      "clinic": "Klinik",
+      "staff": "Personal"
+    },
+    "filters": {
+      "clinic": "Klinik",
+      "staff": "Personal",
+      "type": "Art",
+      "allClinics": "Alle Kliniken",
+      "allStaff": "Gesamtes Personal",
+      "allTypes": "Alle Arten",
+      "clear": "Filter zurücksetzen",
+      "rangeStart": "Endet nach",
+      "rangeEnd": "Beginnt vor",
+      "rangeHint": "Der Zeitraum liefert Ausnahmen, die nach dem ersten Datum enden und vor dem zweiten beginnen (Ihre Zeitzone)."
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "detail": {
+      "title": "Details der Ausnahme",
+      "effect": {
+        "clinic": "Diese Sperre betrifft die gesamte Klinik: Kein Behandler der Klinik ist in diesem Intervall verfügbar.",
+        "staff": "Diese Sperre betrifft nur diesen Personaleintrag; andere Behandler und die Öffnungszeiten der Klinik bleiben unverändert."
+      },
+      "notRecurring": "Dies ist eine außergewöhnliche Sperre, keine Änderung des wiederkehrenden Zeitplans."
+    },
+    "form": {
+      "createTitle": "Neue Zeitplanausnahme",
+      "editTitle": "Zeitplanausnahme bearbeiten",
+      "create": "Ausnahme registrieren",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Ausnahmen",
+      "noChanges": "Es gibt keine Änderungen zu speichern.",
+      "blockNote": "Die Ausnahme sperrt die Verfügbarkeit im Intervall. Sie erweitert sie nie und ändert keine Zeitpläne von Klinik oder Personal.",
+      "targetSection": "Was gesperrt wird",
+      "targetHint": {
+        "clinic": "Sperrt die gesamte Klinik (alle Behandler).",
+        "staff": "Sperrt nur den ausgewählten Personaleintrag."
+      },
+      "selectedTarget": "Ausgewählt",
+      "detailsSection": "Details und Zeitraum",
+      "typeLabel": "Art der Ausnahme",
+      "reasonLabel": "Grund",
+      "reasonPlaceholder": "z. B. Wartung",
+      "optional": "optional",
+      "startsAtLabel": "Beginn",
+      "endsAtLabel": "Ende",
+      "timeZoneHint": "Daten werden mit dem Versatz Ihrer Zeitzone gesendet (UTC{offset}).",
+      "timeZoneHintGeneric": "Daten werden mit dem Versatz Ihrer Zeitzone gesendet."
+    },
+    "targetSelector": {
+      "searchPlaceholder": {
+        "clinic": "Kliniken suchen...",
+        "staff": "Personal nach Namen suchen..."
+      },
+      "searchLabel": {
+        "clinic": "Kliniken nach Namen suchen",
+        "staff": "Personal nach Namen suchen"
+      },
+      "loadError": {
+        "clinic": "Die Kliniken konnten nicht geladen werden.",
+        "staff": "Das Personal konnte nicht geladen werden."
+      },
+      "retry": "Erneut versuchen",
+      "loading": {
+        "clinic": "Kliniken werden geladen...",
+        "staff": "Personal wird geladen..."
+      },
+      "noResults": {
+        "clinic": "Keine aktiven Kliniken gefunden.",
+        "staff": "Kein aktives Personal gefunden."
+      },
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "refine": "{shown} von {total} werden angezeigt. Verwenden Sie die Suche, um sie einzugrenzen."
+    },
+    "validation": {
+      "typeInvalid": "Wählen Sie eine gültige Art der Ausnahme.",
+      "targetRequired": "Wählen Sie die zu sperrende Klinik oder den Personaleintrag.",
+      "startsRequired": "Geben Sie Datum und Uhrzeit des Beginns ein.",
+      "endsRequired": "Geben Sie Datum und Uhrzeit des Endes ein.",
+      "dateTimeInvalid": "Geben Sie ein gültiges Datum mit Uhrzeit ein.",
+      "intervalOrder": "Das Ende muss nach dem Beginn liegen."
+    },
+    "notices": {
+      "created": "Ausnahme erfolgreich registriert.",
+      "updated": "Ausnahme erfolgreich aktualisiert."
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Die Ausnahme wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    }
+  },
+  "scheduleOverrides": {
+    "title": "Punktuelle Zeitplanänderungen",
+    "meta": {
+      "title": "Punktuelle Änderungen | Verwaltung zahnärztlicher Termine",
+      "description": "Verwalten Sie einmalige außergewöhnliche Verfügbarkeitsintervalle von Kliniken und Personal."
+    },
+    "newOverride": "Neue Änderung",
+    "retry": "Erneut versuchen",
+    "loading": "Wird geladen...",
+    "empty": "Es sind noch keine punktuellen Änderungen registriert.",
+    "noResults": "Keine Änderung entspricht den Filtern.",
+    "noValue": "—",
+    "overrideNote": "Eine punktuelle Änderung schafft außergewöhnliche Verfügbarkeit zu einem bestimmten Datum und einer bestimmten Uhrzeit. Sie ändert nicht die wöchentlichen Zeitpläne, hebt keine Ausnahmen (Schließungen, Abwesenheiten, Wartung) auf und garantiert nicht, dass im gesamten Intervall ein Termin gebucht werden kann.",
+    "columns": {
+      "id": "ID",
+      "target": "Gilt für",
+      "startsAt": "Beginn",
+      "endsAt": "Ende",
+      "reason": "Grund",
+      "status": "Status",
+      "createdAt": "Erstellt",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "filters": {
+      "clinic": "Klinik",
+      "staff": "Personal",
+      "status": "Status",
+      "statusOptions": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "allClinics": "Alle Kliniken",
+      "allStaff": "Gesamtes Personal",
+      "clear": "Filter zurücksetzen",
+      "rangeStart": "Endet nach",
+      "rangeEnd": "Beginnt vor",
+      "rangeHint": "Der Zeitraum liefert Änderungen, die nach dem ersten Datum enden und vor dem zweiten beginnen (Ihre Zeitzone)."
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Änderung aktivieren",
+        "description": "Möchten Sie die Änderung #{id} aktivieren? Sie kann dann an der Verfügbarkeit teilnehmen.",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Änderung deaktivieren",
+        "description": "Möchten Sie die Änderung #{id} deaktivieren? Der Eintrag bleibt erhalten, nimmt aber nicht mehr an der Verfügbarkeit teil.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "detail": {
+      "title": "Details der Änderung",
+      "effect": {
+        "clinic": "Diese Änderung fügt der gesamten Klinik ein außergewöhnliches Öffnungsintervall hinzu.",
+        "staff": "Diese Änderung fügt diesem Personaleintrag außergewöhnliche Verfügbarkeit hinzu, stets innerhalb der effektiven Öffnung der Klinik."
+      },
+      "activeNote": "Sie ist aktiv und kann an der Verfügbarkeit teilnehmen.",
+      "inactiveNote": "Sie ist inaktiv und nimmt nicht an der Verfügbarkeit teil.",
+      "notRecurring": "Dies ist eine punktuelle Änderung, kein wiederkehrender Wochenplan."
+    },
+    "form": {
+      "createTitle": "Neue punktuelle Änderung",
+      "editTitle": "Punktuelle Änderung bearbeiten",
+      "create": "Änderung registrieren",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Änderungen",
+      "noChanges": "Es gibt keine Änderungen zu speichern.",
+      "statusHint": "Der Status wird mit der Aktion Aktivieren / Deaktivieren geändert.",
+      "overrideNote": "Eine punktuelle Änderung schafft außergewöhnliche Verfügbarkeit. Für Abwesenheiten, Schließungen oder Wartung verwenden Sie Zeitplanausnahmen. Sie ändert keine Wochenpläne.",
+      "overlap": {
+        "title": "Mögliche Überschneidung mit aktiven Änderungen",
+        "description": "{count} aktive Änderung(en) desselben Ziels überschneiden sich mit diesem Intervall. Der Server kann sie ablehnen, wenn die Überschneidung mehrdeutig ist.",
+        "review": "Prüfen",
+        "continue": "Trotzdem registrieren"
+      },
+      "targetSection": "Für wen sie gilt",
+      "targetLocked": "Das Ziel kann nach dem Anlegen nicht geändert werden; registrieren Sie stattdessen eine weitere Änderung.",
+      "targetHint": {
+        "clinic": "Fügt der gesamten Klinik ein außergewöhnliches Öffnungsintervall hinzu.",
+        "staff": "Fügt dem ausgewählten Personaleintrag Verfügbarkeit hinzu, innerhalb der effektiven Öffnung der Klinik."
+      },
+      "selectedTarget": "Ausgewählt",
+      "detailsSection": "Zeitraum und Details",
+      "startsAtLabel": "Beginn",
+      "endsAtLabel": "Ende",
+      "timeZoneHint": "Daten werden mit dem Versatz Ihrer Zeitzone gesendet (UTC{offset}).",
+      "timeZoneHintGeneric": "Daten werden mit dem Versatz Ihrer Zeitzone gesendet.",
+      "reasonLabel": "Grund",
+      "reasonPlaceholder": "z. B. Außerordentliche Öffnung",
+      "reasonHint": "Beschreiben Sie die zusätzliche Verfügbarkeit (z. B. verlängerter Tag). Verwenden Sie punktuelle Änderungen nicht für Abwesenheiten, Schließungen oder Wartung.",
+      "optional": "optional",
+      "isActiveLabel": "Als aktiv registrieren"
+    },
+    "validation": {
+      "targetRequired": "Wählen Sie die Klinik oder den Personaleintrag.",
+      "startsRequired": "Geben Sie Datum und Uhrzeit des Beginns ein.",
+      "endsRequired": "Geben Sie Datum und Uhrzeit des Endes ein.",
+      "dateTimeInvalid": "Geben Sie ein gültiges Datum mit Uhrzeit ein.",
+      "intervalOrder": "Das Ende muss nach dem Beginn liegen."
+    },
+    "notices": {
+      "created": "Änderung erfolgreich registriert.",
+      "updated": "Änderung erfolgreich aktualisiert.",
+      "activated": "Änderung erfolgreich aktiviert.",
+      "deactivated": "Änderung erfolgreich deaktiviert."
+    },
+    "target": {
+      "clinic": "Klinik",
+      "staff": "Personal"
+    },
+    "targetSelector": {
+      "searchPlaceholder": {
+        "clinic": "Kliniken suchen...",
+        "staff": "Personal nach Namen suchen..."
+      },
+      "searchLabel": {
+        "clinic": "Kliniken nach Namen suchen",
+        "staff": "Personal nach Namen suchen"
+      },
+      "loadError": {
+        "clinic": "Die Kliniken konnten nicht geladen werden.",
+        "staff": "Das Personal konnte nicht geladen werden."
+      },
+      "retry": "Erneut versuchen",
+      "loading": {
+        "clinic": "Kliniken werden geladen...",
+        "staff": "Personal wird geladen..."
+      },
+      "noResults": {
+        "clinic": "Keine aktiven Kliniken gefunden.",
+        "staff": "Kein aktives Personal gefunden."
+      },
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "refine": "{shown} von {total} werden angezeigt. Verwenden Sie die Suche, um sie einzugrenzen."
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "errors": {
+      "network": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte erneut versuchen.",
+      "notFound": "Die punktuelle Änderung wurde nicht gefunden.",
+      "server": "Der Server hat ein unerwartetes Problem. Bitte später erneut versuchen.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    }
+  },
+  "appointments": {
+    "title": "Terminkalender",
+    "meta": {
+      "title": "Terminkalender | Zahnarzt-Terminverwaltung",
+      "description": "Zahnarzttermine in der Tages-, Wochen- und Monatsansicht anzeigen und verwalten."
+    },
+    "newAppointment": "Neuer Termin",
+    "retry": "Erneut versuchen",
+    "dismiss": "Schließen",
+    "empty": "In diesem Zeitraum gibt es keine Termine.",
+    "noResults": "Keine Termine in diesem Zeitraum entsprechen den Filtern.",
+    "truncated": "Dieser Zeitraum enthält mehr Termine, als angezeigt werden können. Grenzen Sie ihn mit den Filtern oder einer kürzeren Ansicht ein.",
+    "availabilityNote": "Verfügbarkeit, Überschneidungen und die Regeln zu aktiven Patienten und Mitarbeitenden werden vom Server geprüft. Ein freier Platz im Kalender garantiert nicht, dass er gebucht werden kann.",
+    "notices": {
+      "created": "Termin erfolgreich erstellt.",
+      "updated": "Termin erfolgreich aktualisiert.",
+      "pending": "Termin als ausstehend markiert.",
+      "confirmed": "Termin bestätigt.",
+      "completed": "Termin als abgeschlossen markiert.",
+      "cancelled": "Termin abgesagt."
+    },
+    "status": {
+      "pending": "Ausstehend",
+      "confirmed": "Bestätigt",
+      "completed": "Abgeschlossen",
+      "cancelled": "Abgesagt"
+    },
+    "filters": {
+      "patient": "Patient",
+      "staff": "Mitarbeitende",
+      "status": "Status",
+      "allPatients": "Alle Patienten",
+      "allStaff": "Alle Mitarbeitenden",
+      "allStatuses": "Alle Status",
+      "clear": "Filter zurücksetzen"
+    },
+    "calendar": {
+      "previous": "Vorheriger Zeitraum",
+      "next": "Nächster Zeitraum",
+      "today": "Heute",
+      "goToDate": "Zum Datum springen",
+      "viewLabel": "Kalenderansicht",
+      "loading": "Termine werden geladen...",
+      "views": {
+        "day": "Tag",
+        "week": "Woche",
+        "month": "Monat"
+      }
+    },
+    "selector": {
+      "searchPlaceholder": {
+        "patient": "Patient nach Name suchen",
+        "staff": "Mitarbeitende nach Name suchen"
+      },
+      "searchLabel": {
+        "patient": "Patienten suchen",
+        "staff": "Mitarbeitende suchen"
+      },
+      "loadError": {
+        "patient": "Die Patienten konnten nicht geladen werden.",
+        "staff": "Die Mitarbeitenden konnten nicht geladen werden."
+      },
+      "retry": "Erneut versuchen",
+      "loading": {
+        "patient": "Patienten werden geladen...",
+        "staff": "Mitarbeitende werden geladen..."
+      },
+      "noResults": {
+        "patient": "Keine aktiven Patienten gefunden.",
+        "staff": "Keine aktiven Mitarbeitenden gefunden."
+      },
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "refine": "{shown} von {total} werden angezeigt. Verfeinern Sie die Suche, um weitere zu finden."
+    },
+    "form": {
+      "createTitle": "Neuer Termin",
+      "editTitle": "Termin bearbeiten",
+      "createDescription": "Wählen Sie Patient, Mitarbeitende und Datum sowie Uhrzeit.",
+      "editDescription": "Ändern Sie Zeit, Mitarbeitende oder Grund. Der Server prüft die Verfügbarkeit erneut.",
+      "availabilityNote": "Der Server prüft, ob die Person aktiv ist, das Intervall in ihrer Verfügbarkeit liegt, keine Ausnahme es blockiert und es sich nicht mit anderen Terminen überschneidet.",
+      "patientSection": "Patient",
+      "patientLocked": "Der Patient kann nicht geändert werden. Um einen anderen Patienten zu buchen, erstellen Sie einen neuen Termin.",
+      "selectedPatient": "Ausgewählter Patient",
+      "staffSection": "Mitarbeitende",
+      "selectedStaff": "Ausgewählte Mitarbeitende",
+      "scheduleSection": "Datum und Uhrzeit",
+      "dateLabel": "Datum",
+      "startTimeLabel": "Beginn",
+      "endTimeLabel": "Ende",
+      "timeZoneHint": "Die Zeiten gelten in {timeZone} (UTC{offset}).",
+      "timeZoneHintGeneric": "Die Zeiten werden in der Zeitzone der Anwendung interpretiert.",
+      "reasonLabel": "Grund",
+      "optional": "optional",
+      "reasonPlaceholder": "Kurze Beschreibung des Besuchsgrunds",
+      "cancel": "Abbrechen",
+      "saveCreate": "Termin erstellen",
+      "saveEdit": "Änderungen speichern",
+      "savingCreate": "Wird erstellt...",
+      "savingEdit": "Wird gespeichert...",
+      "noChanges": "Sie haben nichts geändert.",
+      "close": "Schließen"
+    },
+    "validation": {
+      "patientRequired": "Wählen Sie einen Patienten.",
+      "staffRequired": "Wählen Sie eine Mitarbeiterin oder einen Mitarbeiter.",
+      "dateRequired": "Geben Sie das Datum an.",
+      "dateInvalid": "Geben Sie ein gültiges Datum an.",
+      "startRequired": "Geben Sie die Startzeit an.",
+      "endRequired": "Geben Sie die Endzeit an.",
+      "timeInvalid": "Geben Sie eine gültige Uhrzeit an.",
+      "intervalOrder": "Die Endzeit muss nach der Startzeit liegen."
+    },
+    "errors": {
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+      "network": "Der Server ist nicht erreichbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+      "notFound": "Der Termin wurde nicht gefunden.",
+      "server": "Der Server konnte die Anfrage nicht abschließen. Bitte versuchen Sie es später erneut.",
+      "loadList": "Die Termine konnten nicht geladen werden."
+    },
+    "detail": {
+      "title": "Termindetails",
+      "description": "Termin ansehen und seinen Status verwalten.",
+      "loading": "Termin wird geladen...",
+      "retry": "Erneut versuchen",
+      "close": "Schließen",
+      "id": "ID",
+      "patient": "Patient",
+      "staff": "Mitarbeitende",
+      "date": "Datum",
+      "startTime": "Beginn",
+      "endTime": "Ende",
+      "status": "Status",
+      "reason": "Grund",
+      "createdAt": "Erstellt",
+      "updatedAt": "Aktualisiert",
+      "noValue": "—",
+      "edit": "Bearbeiten / verschieben",
+      "finalNote": {
+        "completed": "Dieser Termin ist abgeschlossen und kann nicht mehr geändert werden.",
+        "cancelled": "Dieser Termin ist abgesagt und kann nicht reaktiviert werden. Erstellen Sie für eine neue Buchung einen neuen Termin."
+      },
+      "actions": {
+        "confirmed": "Bestätigen",
+        "completed": "Als abgeschlossen markieren",
+        "cancelled": "Termin absagen"
+      },
+      "pending": {
+        "confirmed": "Wird bestätigt...",
+        "completed": "Wird abgeschlossen...",
+        "cancelled": "Wird abgesagt..."
+      },
+      "confirm": {
+        "back": "Zurück",
+        "completed": {
+          "description": "Der Termin wird als abgeschlossen markiert. Das kann nicht rückgängig gemacht werden.",
+          "confirm": "Als abgeschlossen markieren"
+        },
+        "cancelled": {
+          "description": "Der Termin wird abgesagt und kann nicht reaktiviert werden. Er bleibt im Verlauf erhalten.",
+          "confirm": "Termin absagen"
+        }
+      }
+    },
+    "section": {
+      "title": "Termine",
+      "viewInAgenda": "Im Terminkalender anzeigen",
+      "retry": "Erneut versuchen",
+      "loading": "Termine werden geladen...",
+      "empty": {
+        "patient": "Dieser Patient hat keine Termine.",
+        "staff": "Diese Mitarbeitenden haben keine Termine."
+      },
+      "counterpart": {
+        "patient": "Mitarbeitende",
+        "staff": "Patient"
+      },
+      "page": "Seite {page} von {totalPages}",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "procedures": {
+      "title": "Behandlungen",
+      "hint": "Optional. Die Behandlungen stammen aus dem Katalog; der Preis wird von dort übernommen und der Server berechnet die endgültige Dauer.",
+      "empty": "Dieser Termin hat keine Behandlungen.",
+      "addFromCatalog": "Behandlung aus dem Katalog hinzufügen",
+      "inactive": "Inaktiv",
+      "saved": "Gespeichert",
+      "pending": "Noch nicht gespeichert",
+      "willRemove": "Wird entfernt",
+      "modified": "Geändert",
+      "remove": "Entfernen",
+      "undoRemove": "Rückgängig",
+      "quantity": "Menge",
+      "unitPrice": "Einzelpreis",
+      "unitPriceHistoric": "Einzelpreis (historisch)",
+      "duration": "Gesamtdauer",
+      "amount": "Zeilenbetrag",
+      "notes": "Notizen",
+      "optional": "optional",
+      "notesPlaceholder": "Notizen zu dieser Behandlung",
+      "unknown": "—",
+      "minutes": "{count} Min.",
+      "quantityInvalid": "Die Menge muss eine ganze Zahl von 1 bis {max} sein.",
+      "linesInvalid": "Korrigieren Sie die Mengen der Behandlungen vor dem Speichern.",
+      "lineError": "„{name}“ konnte nicht gespeichert werden: {message}",
+      "loadingDetails": "Behandlungen werden geladen...",
+      "loadDetailsError": "Die Behandlungen dieses Termins konnten nicht geladen werden.",
+      "noDetails": "Dieser Termin hat keine Behandlungen.",
+      "retry": "Erneut versuchen",
+      "close": "Schließen",
+      "readOnlyLine": "Menge: {quantity} · Einzelpreis: {unitPrice} · Dauer: {duration} Min. · Betrag: {amount}",
+      "partial": {
+        "title": "Termin #{id} wurde erstellt, aber einige Behandlungen stehen noch aus",
+        "description": "{count} Behandlung(en) konnten nicht registriert werden. Der Termin wird nicht erneut erstellt; Sie können nur die ausstehenden erneut versuchen.",
+        "retry": "Ausstehende Behandlungen erneut versuchen"
+      },
+      "selector": {
+        "searchPlaceholder": "Behandlungen nach Name oder Code suchen",
+        "searchLabel": "Behandlungen suchen",
+        "loading": "Behandlungen werden geladen...",
+        "loadError": "Der Behandlungskatalog konnte nicht geladen werden.",
+        "retry": "Erneut versuchen",
+        "catalogEmpty": "Der Katalog enthält keine aktiven Behandlungen.",
+        "noResults": "Keine aktive Behandlung entspricht der Suche.",
+        "add": "Hinzufügen",
+        "added": "Hinzugefügt",
+        "minutes": "{count} Min.",
+        "refine": "{shown} von {total} werden angezeigt. Verfeinern Sie die Suche, um weitere zu finden."
+      },
+      "summary": {
+        "title": "Terminübersicht",
+        "count": "Behandlungen",
+        "requiredDuration": "Benötigte Dauer",
+        "reservedDuration": "Reservierte Dauer",
+        "totalAmount": "Geschätzte Summe",
+        "minutes": "{count} Min.",
+        "unknown": "—",
+        "estimateNote": "Mit ≈ markierte Beträge und Dauern sind bis zum Speichern Schätzungen; der Server berechnet die endgültigen Werte.",
+        "incomplete": "Bei einigen Zeilen fehlen Katalogdaten, daher sind die Summen unvollständig.",
+        "insufficient": "Die Behandlungen benötigen {required} Min., der Termin reserviert aber {reserved} Min. Passen Sie die Endzeit an; der Server prüft die Verfügbarkeit.",
+        "adjustEnd": "Endzeit anpassen",
+        "adjustImpossible": "Die Endzeit kann nicht innerhalb desselben Tages angepasst werden."
+      }
+    }
+  },
+  "procedures": {
+    "title": "Behandlungen",
+    "meta": {
+      "title": "Behandlungen | Zahnarzt-Terminverwaltung",
+      "description": "Den Katalog der zahnärztlichen Behandlungen verwalten: Preise, Dauer und Hierarchie."
+    },
+    "create": "Neue Behandlung",
+    "retry": "Erneut versuchen",
+    "loading": "Behandlungen werden geladen...",
+    "empty": "Es sind noch keine Behandlungen registriert.",
+    "noResults": "Keine Behandlung entspricht der Suche oder den Filtern.",
+    "noValue": "—",
+    "minutes": "{count} Min.",
+    "columns": {
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "parent": "Übergeordnete Behandlung",
+      "basePrice": "Grundpreis",
+      "duration": "Geschätzte Dauer",
+      "description": "Beschreibung",
+      "status": "Status",
+      "createdAt": "Erstellt",
+      "updatedAt": "Zuletzt aktualisiert",
+      "actions": "Aktionen"
+    },
+    "actions": {
+      "view": "Ansehen",
+      "edit": "Bearbeiten",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "notices": {
+      "created": "Behandlung erfolgreich erstellt.",
+      "updated": "Behandlung erfolgreich aktualisiert.",
+      "activated": "Behandlung erfolgreich aktiviert.",
+      "deactivated": "Behandlung erfolgreich deaktiviert."
+    },
+    "filters": {
+      "searchPlaceholder": "Nach Name oder Code suchen",
+      "searchLabel": "Behandlungen suchen",
+      "statusLabel": "Nach Status filtern",
+      "status": {
+        "all": "Alle Status",
+        "active": "Aktiv",
+        "inactive": "Inaktiv"
+      },
+      "sortByLabel": "Sortieren nach",
+      "sortBy": {
+        "id": "ID",
+        "name": "Name",
+        "code": "Code",
+        "base_price": "Grundpreis",
+        "base_duration_minutes": "Dauer",
+        "created_at": "Erstellungsdatum"
+      },
+      "orderLabel": "Reihenfolge",
+      "order": {
+        "asc": "Aufsteigend",
+        "desc": "Absteigend"
+      },
+      "parent": "Übergeordnete Behandlung",
+      "allParents": "Alle Behandlungen",
+      "minPrice": "Mindestpreis",
+      "maxPrice": "Höchstpreis",
+      "priceInvalid": "Geben Sie einen gültigen Betrag ein (bis zu 2 Dezimalstellen).",
+      "clear": "Filter zurücksetzen"
+    },
+    "pagination": {
+      "summary": "{from}–{to} von {total} werden angezeigt",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "activate": {
+        "title": "Behandlung aktivieren",
+        "description": "Möchten Sie die Behandlung „{name}“ aktivieren? Sie steht dann wieder für neue Termine zur Verfügung.",
+        "confirm": "Aktivieren"
+      },
+      "deactivate": {
+        "title": "Behandlung deaktivieren",
+        "description": "Möchten Sie die Behandlung „{name}“ deaktivieren? Der Datensatz bleibt erhalten, sie wird für neue Termine nicht mehr angeboten und bestehende Termindetails ändern sich nicht.",
+        "confirm": "Deaktivieren"
+      }
+    },
+    "errors": {
+      "network": "Verbindung zum Server fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "notFound": "Die Behandlung wurde nicht gefunden.",
+      "server": "Der Server hatte ein unerwartetes Problem. Bitte versuchen Sie es später erneut.",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "form": {
+      "createTitle": "Neue Behandlung",
+      "createDescription": "Registrieren Sie eine Behandlung im Katalog. Sie wird als aktiv angelegt.",
+      "editTitle": "Behandlung bearbeiten",
+      "create": "Behandlung erstellen",
+      "save": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "cancel": "Abbrechen",
+      "backToList": "Zurück zu den Behandlungen",
+      "noChanges": "Sie haben nichts geändert.",
+      "historyNote": "Eine Änderung von Preis oder Dauer verändert bestehende Termindetails nicht: Sie behalten ihre historischen Werte.",
+      "nameLabel": "Name",
+      "namePlaceholder": "z. B. Zahnreinigung",
+      "codeLabel": "Code",
+      "codePlaceholder": "z. B. PRO-001",
+      "priceLabel": "Grundpreis",
+      "pricePlaceholder": "0.00",
+      "priceHint": "Null oder größer, bis zu 2 Dezimalstellen.",
+      "durationLabel": "Geschätzte Dauer (Minuten)",
+      "durationPlaceholder": "30",
+      "durationHint": "Eine ganze Zahl größer als null.",
+      "descriptionLabel": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung der Behandlung",
+      "parentSection": "Übergeordnete Behandlung",
+      "parentHint": "Optional. Nur aktive Behandlungen können übergeordnet sein. Der Server lehnt zirkuläre Hierarchien ab.",
+      "selectedParent": "Ausgewählte übergeordnete Behandlung",
+      "noParent": "Keine"
+    },
+    "validation": {
+      "nameRequired": "Geben Sie den Namen an.",
+      "nameTooLong": "Der Name darf höchstens 150 Zeichen lang sein.",
+      "codeBlank": "Der Code darf nicht nur aus Leerzeichen bestehen. Lassen Sie ihn leer, falls es keinen gibt.",
+      "codeTooLong": "Der Code darf höchstens 50 Zeichen lang sein.",
+      "priceRequired": "Geben Sie den Grundpreis an.",
+      "priceInvalid": "Geben Sie einen Betrag von null oder mehr mit bis zu 2 Dezimalstellen an.",
+      "durationRequired": "Geben Sie die Dauer an.",
+      "durationInvalid": "Geben Sie eine ganze Zahl von Minuten größer als null an.",
+      "durationTooLarge": "Die Dauer ist zu groß."
+    },
+    "parentSelector": {
+      "searchPlaceholder": "Nach Name oder Code suchen",
+      "searchLabel": "Übergeordnete Behandlungen suchen",
+      "none": "Keine",
+      "loadError": "Die Behandlungen konnten nicht geladen werden.",
+      "retry": "Erneut versuchen",
+      "loading": "Behandlungen werden geladen...",
+      "noResults": "Keine aktiven Behandlungen gefunden.",
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "refine": "{shown} von {total} werden angezeigt. Verfeinern Sie die Suche, um weitere zu finden."
+    },
+    "detail": {
+      "title": "Behandlungsdetails",
+      "inactiveNote": "Diese Behandlung ist inaktiv: Sie bleibt erhalten, wird aber für neue Termine nicht angeboten.",
+      "historyNote": "Änderungen am Katalog verändern niemals den historischen Preis und die Dauer in bestehenden Termindetails."
+    },
+    "hierarchy": {
+      "title": "Hierarchie",
+      "loading": "Hierarchie wird geladen...",
+      "loadError": "Die Hierarchie konnte nicht geladen werden.",
+      "path": "Position im Katalog",
+      "children": "Direkte untergeordnete Behandlungen ({count})",
+      "noChildren": "Diese Behandlung hat keine untergeordneten Behandlungen.",
+      "moreChildren": "{shown} von {total} untergeordneten Behandlungen werden angezeigt."
+    }
+  },
+  "conversations": {
+    "title": "Konversationen",
+    "meta": {
+      "title": "Konversationen | Zahnarzt-Terminverwaltung",
+      "description": "Konversationen mit Personen, ihre Nachrichten und das zugewiesene Personal verwalten."
+    },
+    "newConversation": "Neue Konversation",
+    "dismiss": "Schließen",
+    "internalNote": "Konversationen werden intern in der Plattform registriert. Es gibt keine Live-Verbindung zu WhatsApp und keine Echtzeit-Aktualisierung: Nutzen Sie „Aktualisieren“, um die Daten zu erneuern.",
+    "notices": {
+      "created": "Konversation erfolgreich erstellt.",
+      "closed": "Konversation geschlossen.",
+      "reopened": "Konversation wieder geöffnet. Sie hat keine zugewiesene Person, bis Sie eine zuweisen.",
+      "assigned": "Konversation zugewiesen.",
+      "transferred": "Konversation übertragen.",
+      "ended": "Zuweisung beendet. Die Konversation bleibt offen und ist nicht zugewiesen."
+    },
+    "status": {
+      "open": "Offen",
+      "closed": "Geschlossen"
+    },
+    "channel": {
+      "whatsapp": "WhatsApp"
+    },
+    "list": {
+      "title": "Chats",
+      "loading": "Konversationen werden geladen...",
+      "retry": "Erneut versuchen",
+      "empty": "Es gibt noch keine Konversationen.",
+      "noResults": "Keine Konversation entspricht den Filtern.",
+      "page": "Seite {page} von {totalPages}",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "filters": {
+      "allPeople": "Alle Personen",
+      "channelLabel": "Nach Kanal filtern",
+      "allChannels": "Alle Kanäle",
+      "statusLabel": "Nach Status filtern",
+      "allStatuses": "Alle Status",
+      "clear": "Filter zurücksetzen"
+    },
+    "selector": {
+      "searchPlaceholder": {
+        "person": "Person nach Name suchen",
+        "staff": "Mitarbeitende nach Name suchen"
+      },
+      "searchLabel": {
+        "person": "Personen suchen",
+        "staff": "Mitarbeitende suchen"
+      },
+      "loadError": {
+        "person": "Die Personen konnten nicht geladen werden.",
+        "staff": "Die Mitarbeitenden konnten nicht geladen werden."
+      },
+      "loading": {
+        "person": "Personen werden geladen...",
+        "staff": "Mitarbeitende werden geladen..."
+      },
+      "noResults": {
+        "person": "Keine aktiven Personen gefunden.",
+        "staff": "Keine aktiven Mitarbeitenden gefunden."
+      },
+      "retry": "Erneut versuchen",
+      "select": "Auswählen",
+      "selected": "Ausgewählt",
+      "refine": "{shown} von {total} werden angezeigt. Verfeinern Sie die Suche, um weitere zu finden."
+    },
+    "create": {
+      "title": "Neue Konversation",
+      "description": "Starten Sie eine interne Konversation mit einer vorhandenen Person.",
+      "personSection": "Person",
+      "personHint": "Jede registrierte Person; sie muss kein Patient sein.",
+      "selectedPerson": "Ausgewählte Person",
+      "personRequired": "Wählen Sie eine Person.",
+      "channelSection": "Kanal",
+      "internalNote": "Die Konversation wird intern registriert; es wird keine Nachricht an WhatsApp gesendet.",
+      "cancel": "Abbrechen",
+      "creating": "Wird erstellt...",
+      "submit": "Konversation erstellen"
+    },
+    "statusDialog": {
+      "cancel": "Abbrechen",
+      "close": {
+        "title": "Konversation schließen",
+        "description": "Die Konversation wird geschlossen. Nachrichten und Zuweisungsverlauf bleiben erhalten, und die aktive Zuweisung endet automatisch.",
+        "confirm": "Konversation schließen"
+      },
+      "reopen": {
+        "title": "Konversation wieder öffnen",
+        "description": "Die Konversation wird wieder geöffnet. Es wird nicht automatisch jemand zugewiesen.",
+        "confirm": "Konversation wieder öffnen"
+      }
+    },
+    "chat": {
+      "loading": "Konversation wird geladen...",
+      "backToList": "Zurück zur Liste",
+      "retry": "Erneut versuchen",
+      "closedNote": "Diese Konversation ist geschlossen: Der Verlauf ist schreibgeschützt.",
+      "noSelection": "Wählen Sie eine Konversation",
+      "noSelectionHint": "Wählen Sie eine Konversation aus der Liste oder erstellen Sie eine neue."
+    },
+    "header": {
+      "back": "Zurück zur Liste",
+      "startedAt": "Gestartet {date}",
+      "assignedTo": "Zugewiesen an {name}",
+      "refresh": "Aktualisieren",
+      "close": "Schließen",
+      "reopen": "Wieder öffnen",
+      "toggleInfo": "Informationen ein- oder ausblenden",
+      "openInfo": "Informationen anzeigen"
+    },
+    "info": {
+      "title": "Konversationsinformationen",
+      "description": "Angaben zu Person, Konversation und Zuweisung.",
+      "noValue": "—",
+      "personActive": "Aktive Person",
+      "personInactive": "Inaktive Person",
+      "document": "Dokument",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "conversation": "Konversation",
+      "id": "ID",
+      "channel": "Kanal",
+      "status": "Status",
+      "startedAt": "Beginn",
+      "closedAt": "Geschlossen",
+      "whatsapp": "WhatsApp"
+    },
+    "messages": {
+      "retry": "Erneut versuchen",
+      "loading": "Nachrichten werden geladen...",
+      "historyLabel": "Nachrichtenverlauf",
+      "loadOlder": "Frühere Nachrichten laden",
+      "empty": "Diese Konversation hat noch keine Nachrichten.",
+      "notConfirmed": "Versand noch nicht bestätigt",
+      "failedNote": "Die Nachricht konnte nicht gesendet werden.",
+      "sender": {
+        "person": "Person",
+        "staff": "Personal",
+        "ai": "KI"
+      },
+      "delivery": {
+        "received": "Empfangen",
+        "queued": "In der Warteschlange, Versand ausstehend",
+        "sent": "Gesendet",
+        "delivered": "Zugestellt",
+        "read": "Gelesen",
+        "failed": "Fehlgeschlagen"
+      }
+    },
+    "composer": {
+      "closed": "Die Konversation ist geschlossen. Öffnen Sie sie wieder, um Nachrichten zu senden.",
+      "empty": "Schreiben Sie eine Nachricht, bevor Sie senden.",
+      "tooLong": "Die Nachricht darf höchstens {max} Zeichen lang sein.",
+      "recovered": "Die Verbindung wurde unterbrochen, aber die Nachricht war bereits registriert. Sie wurde nicht erneut gesendet.",
+      "placeholder": "Nachricht schreiben",
+      "label": "Nachricht",
+      "sending": "Wird gesendet...",
+      "send": "Senden",
+      "hint": "Enter zum Senden, Umschalt + Enter für einen Zeilenumbruch"
+    },
+    "assignments": {
+      "title": "Zugewiesenes Personal",
+      "retry": "Erneut versuchen",
+      "loading": "Zuweisungen werden geladen...",
+      "active": "Aktiv",
+      "assignedAt": "Zugewiesen {date}",
+      "transfer": "Übertragen",
+      "end": "Zuweisung beenden",
+      "unassigned": "Nicht zugewiesen",
+      "assign": "Mitarbeitende zuweisen",
+      "closedNote": "Die Konversation ist geschlossen: Sie kann keine neuen Zuweisungen erhalten.",
+      "history": "Zuweisungsverlauf",
+      "historyEmpty": "Diese Konversation hat noch keine Zuweisungen.",
+      "finished": "Beendet",
+      "from": "Ab {date}",
+      "until": "bis {date}",
+      "dialog": {
+        "cancel": "Abbrechen",
+        "eligibilityNote": "Es werden nur aktive Mitarbeitende aufgelistet. Der Server prüft die endgültige Eignung und zeigt seine Meldung, wenn die Person keine Zuweisungen erhalten kann.",
+        "assign": {
+          "title": "Konversation zuweisen",
+          "description": "Wählen Sie die Person, die diese Konversation betreut.",
+          "confirm": "Zuweisen",
+          "summary": "Die Konversation wird {to} zugewiesen."
+        },
+        "transfer": {
+          "title": "Konversation übertragen",
+          "description": "Wählen Sie die Person, die diese Konversation übernimmt.",
+          "confirm": "Übertragen",
+          "summary": "Die Konversation wird von {from} an {to} übertragen."
+        },
+        "end": {
+          "title": "Zuweisung beenden",
+          "description": "Möchten Sie die Zuweisung von {name} beenden? Die Konversation bleibt offen und nicht zugewiesen, und der Verlauf bleibt erhalten.",
+          "confirm": "Zuweisung beenden"
+        }
+      }
+    },
+    "errors": {
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+      "network": "Der Server ist nicht erreichbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+      "notFound": "Die Konversation wurde nicht gefunden.",
+      "server": "Der Server konnte die Anfrage nicht abschließen. Bitte versuchen Sie es später erneut."
+    }
+  },
+  "guardians": {
+    "noValue": "—",
+    "relationshipPlaceholder": "Verwandtschaftsverhältnis wählen",
+    "relationship": {
+      "mother": "Mutter",
+      "father": "Vater",
+      "brother": "Bruder",
+      "sister": "Schwester",
+      "grandfather": "Großvater",
+      "grandmother": "Großmutter",
+      "uncle": "Onkel",
+      "aunt": "Tante",
+      "husband": "Ehemann",
+      "wife": "Ehefrau",
+      "son": "Sohn",
+      "daughter": "Tochter",
+      "legal_guardian": "Gesetzlicher Vormund",
+      "other": "Andere"
+    },
+    "page": {
+      "title": "Erziehungsberechtigte",
+      "meta": {
+        "title": "Erziehungsberechtigte | Zahnarzt-Terminverwaltung",
+        "description": "Die Rolle einer Person als Erziehungsberechtigte und die zugeordneten Patienten nachschlagen."
+      },
+      "limitation": "Das System hat keine allgemeine Liste der Erziehungsberechtigten: Sie werden jedem Patienten zugeordnet. Suchen Sie eine Person, um die Patienten zu sehen, für die sie erziehungsberechtigt ist. Um eine Person zuzuordnen, öffnen Sie den Patienten und nutzen Sie den Bereich Erziehungsberechtigte. Persönliche Daten werden unter Personen verwaltet.",
+      "searchTitle": "Person suchen",
+      "selectPerson": "Wählen Sie eine Person, um die Patienten zu sehen, für die sie erziehungsberechtigt ist.",
+      "personTitle": "Person",
+      "viewPerson": "Person ansehen",
+      "patientsTitle": "Patienten, für die sie erziehungsberechtigt ist"
+    },
+    "guardedPatients": {
+      "retry": "Erneut versuchen",
+      "loading": "Patienten werden geladen...",
+      "empty": "Diese Person ist für keinen Patienten erziehungsberechtigt.",
+      "noValue": "—",
+      "active": "Aktiver Patient",
+      "inactive": "Inaktiver Patient",
+      "viewPatient": "Patient ansehen",
+      "page": "Seite {page} von {totalPages}",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "detail": {
+      "title": "Details zur erziehungsberechtigten Person",
+      "description": "Persönliche Daten und Kontaktdaten sowie zugeordnete Patienten.",
+      "relationship": "Verwandtschaftsverhältnis",
+      "loading": "Person wird geladen...",
+      "personError": "Die Daten der Person konnten nicht geladen werden.",
+      "name": "Name",
+      "document": "Dokument",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "status": "Status",
+      "active": "Aktiv",
+      "inactive": "Inaktiv",
+      "noValue": "—",
+      "patients": "Patienten, für die sie erziehungsberechtigt ist",
+      "close": "Schließen",
+      "editPerson": "Persönliche Daten bearbeiten",
+      "whatsapp": "WhatsApp"
+    },
+    "section": {
+      "title": "Erziehungsberechtigte",
+      "add": "Erziehungsberechtigte hinzufügen",
+      "retry": "Erneut versuchen",
+      "loading": "Erziehungsberechtigte werden geladen...",
+      "empty": "Dieser Patient hat keine Erziehungsberechtigten.",
+      "emptyManage": "Dieser Patient hat keine Erziehungsberechtigten. Fügen Sie mit „Erziehungsberechtigte hinzufügen“ eine hinzu.",
+      "noValue": "—",
+      "personInactive": "Inaktive Person",
+      "view": "Ansehen",
+      "editRelationship": "Verhältnis ändern",
+      "remove": "Entfernen",
+      "notices": {
+        "added": "Erziehungsberechtigte erfolgreich zugeordnet.",
+        "updated": "Verwandtschaftsverhältnis erfolgreich aktualisiert.",
+        "removed": "Zuordnung entfernt. Die Person bleibt registriert."
+      },
+      "noPermission": "Sie haben keine Berechtigung, Erziehungsberechtigte anzusehen (patient_guardian.read). Bitten Sie eine Administration, sie Ihrer Rolle zuzuweisen, und melden Sie sich erneut an."
+    },
+    "picker": {
+      "empty": "Keine Erziehungsberechtigten hinzugefügt. Sie sind optional.",
+      "add": "Erziehungsberechtigte hinzufügen",
+      "remove": "Entfernen",
+      "unexpected": "Die Erziehungsberechtigte konnte nicht hinzugefügt werden."
+    },
+    "addDialog": {
+      "title": "Erziehungsberechtigte hinzufügen",
+      "description": "Suchen Sie eine vorhandene Person oder registrieren Sie eine neue und wählen Sie das Verhältnis zum Patienten.",
+      "modeExisting": "Vorhandene Person",
+      "modeNew": "Neue Person",
+      "relationshipLabel": "Verhältnis zum Patienten",
+      "relationshipRequired": "Wählen Sie das Verhältnis.",
+      "selectedPerson": "Ausgewählte Person",
+      "selectPersonFirst": "Suchen und wählen Sie eine Person.",
+      "duplicate": "Diese Person ist bereits erziehungsberechtigt für den Patienten.",
+      "confirm": "Hinzufügen",
+      "confirmNew": "Registrieren und hinzufügen",
+      "adding": "Wird hinzugefügt...",
+      "cancel": "Abbrechen"
+    },
+    "relationshipDialog": {
+      "title": "Verhältnis ändern",
+      "description": "Wählen Sie das neue Verhältnis von {name} zum Patienten.",
+      "label": "Verhältnis",
+      "save": "Speichern",
+      "cancel": "Abbrechen"
+    },
+    "removeDialog": {
+      "title": "Zuordnung entfernen",
+      "description": "Möchten Sie {name} als Erziehungsberechtigte dieses Patienten entfernen? Nur die Zuordnung wird entfernt: Die Person bleibt registriert.",
+      "confirm": "Entfernen",
+      "cancel": "Abbrechen"
+    },
+    "create": {
+      "section": "Erziehungsberechtigte",
+      "sectionHint": "Optional. Fügen Sie eine oder mehrere Personen hinzu: Suchen Sie eine vorhandene Person oder registrieren Sie eine neue. Sie werden zugeordnet, sobald der Patient erstellt ist.",
+      "partialTitle": "Der Patient wurde erstellt, aber einige Erziehungsberechtigte stehen noch aus",
+      "partialDescription": "Der Patient „{name}“ wurde erstellt, aber einige Erziehungsberechtigte konnten nicht zugeordnet werden. Der Patient wird nicht erneut erstellt und registrierte Personen werden nicht dupliziert; versuchen Sie nur die ausstehenden erneut.",
+      "associated": "Zugeordnete Erziehungsberechtigte",
+      "failed": "Ausstehende Erziehungsberechtigte",
+      "retryPending": "Ausstehende Zuordnungen erneut versuchen",
+      "noPermission": "Sie haben keine Berechtigung, Erziehungsberechtigte zuzuordnen (patient_guardian.create). Bitten Sie eine Administration, sie Ihrer Rolle zuzuweisen, und melden Sie sich erneut an."
+    },
+    "errors": {
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+      "network": "Verbindung zum Server fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "notFound": "Der Patient, die Person oder die Zuordnung wurde nicht gefunden.",
+      "server": "Der Server hatte ein unerwartetes Problem. Bitte versuchen Sie es später erneut."
+    }
+  }
+}

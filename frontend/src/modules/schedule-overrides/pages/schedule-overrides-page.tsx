@@ -1,0 +1,152 @@
+import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
+import { Can } from "@/modules/auth";
+import { PageMeta } from "@/components/shared/page-meta";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
+import { useTranslations } from "@/i18n";
+import { PlusIcon } from "@/icons";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import { ScheduleOverrideStatusDialog } from "../components/schedule-override-status-dialog";
+import { ScheduleOverridesFilters } from "../components/schedule-overrides-filters";
+import { ScheduleOverridesPagination } from "../components/schedule-overrides-pagination";
+import { ScheduleOverridesTable } from "../components/schedule-overrides-table";
+import { useOverrideStatusChange } from "../hooks/use-override-status-change";
+import {
+  SCHEDULE_OVERRIDES_PAGE_SIZE,
+  useScheduleOverrides,
+} from "../hooks/use-schedule-overrides";
+import { getScheduleOverrideErrorMessage } from "../utils/schedule-override-error.utils";
+
+type Notice = "created" | "updated" | "activated" | "deactivated";
+
+export default function ScheduleOverridesPage() {
+  const t = useTranslations("scheduleOverrides");
+  const tErrors = useTranslations("scheduleOverrides.errors");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const {
+    filters,
+    hasFilters,
+    updateFilters,
+    clearFilters,
+    setPage,
+    reload,
+    data,
+    error,
+    isLoading,
+  } = useScheduleOverrides();
+
+  const [notice, setNotice] = useState<Notice | null>(
+    (location.state as { notice?: Notice } | null)?.notice ?? null,
+  );
+
+  // El aviso llega por location.state; se limpia para que no reaparezca al recargar.
+  useEffect(() => {
+    if (location.state) void navigate(location.pathname, { replace: true });
+  }, [location.state, location.pathname, navigate]);
+
+  const statusChange = useOverrideStatusChange(
+    (updated) => {
+      setNotice(updated.is_active ? "activated" : "deactivated");
+      reload();
+    },
+    (caught) => getScheduleOverrideErrorMessage(caught, tErrors),
+  );
+
+  const overrides = data?.items ?? [];
+
+  return (
+    <div>
+      <PageMeta title={t("meta.title")} description={t("meta.description")} />
+      <PageBreadcrumb pageTitle={t("title")} />
+
+      <div className="space-y-4">
+        {notice && (
+          <Alert variant="success">
+            <AlertDescription>{t(`notices.${notice}`)}</AlertDescription>
+          </Alert>
+        )}
+
+        <Alert variant="info">
+          <AlertDescription>{t("overrideNote")}</AlertDescription>
+        </Alert>
+
+        <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/3">
+          <div className="flex flex-col gap-4 p-4 sm:p-6 lg:flex-row lg:items-start lg:justify-between">
+            <div className="flex-1">
+              <ScheduleOverridesFilters
+                filters={filters}
+                hasFilters={hasFilters}
+                onChange={updateFilters}
+                onClear={clearFilters}
+              />
+            </div>
+            <Can permission="schedule_override.create">
+              <Button
+                nativeButton={false}
+                render={<Link to="/schedule-overrides/create" />}
+              >
+                <PlusIcon className="fill-current" />
+                {t("newOverride")}
+              </Button>
+            </Can>
+          </div>
+
+          <div className="border-t border-gray-100 dark:border-white/5">
+            {error ? (
+              <div className="space-y-4 p-4 sm:p-6">
+                <Alert variant="destructive">
+                  <AlertDescription>
+                    {getScheduleOverrideErrorMessage(error, tErrors)}
+                  </AlertDescription>
+                </Alert>
+                <Button variant="outline" onClick={reload}>
+                  {t("retry")}
+                </Button>
+              </div>
+            ) : !data ? (
+              <div className="flex items-center justify-center gap-2 p-10 text-sm text-gray-500 dark:text-gray-400">
+                <Spinner />
+                {t("loading")}
+              </div>
+            ) : (
+              <div
+                className={isLoading ? "opacity-60 transition-opacity" : ""}
+                aria-busy={isLoading}
+              >
+                {overrides.length === 0 ? (
+                  <p className="p-10 text-center text-sm text-gray-500 dark:text-gray-400">
+                    {hasFilters ? t("noResults") : t("empty")}
+                  </p>
+                ) : (
+                  <ScheduleOverridesTable
+                    overrides={overrides}
+                    onToggleStatus={statusChange.request}
+                  />
+                )}
+                {data.total > 0 && (
+                  <ScheduleOverridesPagination
+                    page={data.page}
+                    pageSize={data.page_size || SCHEDULE_OVERRIDES_PAGE_SIZE}
+                    total={data.total}
+                    onPageChange={setPage}
+                  />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <ScheduleOverrideStatusDialog
+        override={statusChange.target}
+        isPending={statusChange.isPending}
+        error={statusChange.error}
+        onConfirm={() => void statusChange.confirm()}
+        onClose={statusChange.cancel}
+      />
+    </div>
+  );
+}
