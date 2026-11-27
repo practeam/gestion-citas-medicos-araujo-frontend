@@ -2,18 +2,19 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Field, FieldLabel } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "@/i18n";
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
-  CheckIcon,
-  PlusIcon,
   RegenerateIcon,
   SearchIcon,
-  XIcon,
 } from "@/icons";
 import type { SpecialCondition } from "@/modules/special-conditions";
 import { useEffect, useState } from "react";
@@ -85,55 +86,14 @@ export function PatientConditionPicker({
 
   return (
     <div className="space-y-4">
-      {selected.length > 0 && (
-        <ul className="space-y-3" aria-label={t("selectedLabel")}>
-          {selected.map(({ condition, notes }) => (
-            <li
-              key={condition.id}
-              className="space-y-2 rounded-xl border border-brand-200 bg-brand-50/50 p-4 dark:border-brand-500/30 dark:bg-brand-500/5"
-            >
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                  {condition.name}
-                </p>
-                <Button
-                  type="button"
-                  size="xs"
-                  variant="outline"
-                  disabled={disabled}
-                  aria-label={t("removeSelection", { name: condition.name })}
-                  onClick={() => toggle(condition)}
-                >
-                  <XIcon className="fill-current" />
-                  {t("removeFromSelection")}
-                </Button>
-              </div>
-              <Field>
-                <FieldLabel className="text-xs">
-                  {t("notesLabel")}{" "}
-                  <span className="font-normal text-gray-400">
-                    ({t("optional")})
-                  </span>
-                </FieldLabel>
-                <Textarea
-                  value={notes}
-                  rows={2}
-                  maxLength={CONDITION_NOTES_MAX_LENGTH}
-                  disabled={disabled}
-                  placeholder={t("notesPlaceholder")}
-                  onChange={(event) =>
-                    setNotes(condition.id, event.target.value)
-                  }
-                />
-              </Field>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div className="relative sm:max-w-xs">
-        <SearchIcon className="pointer-events-none absolute inset-s-4 top-1/2 size-5 -translate-y-1/2 fill-gray-500 dark:fill-gray-400" />
-        <Input
+      <InputGroup className="min-w-0">
+        <InputGroupAddon className="border-e border-gray-200 px-3 dark:border-gray-700">
+          <SearchIcon className="size-4 text-blue-500" />
+          <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+            {t("searchLabel")}
+          </span>
+        </InputGroupAddon>
+        <InputGroupInput
           type="search"
           value={searchInput}
           maxLength={120}
@@ -145,10 +105,9 @@ export function PatientConditionPicker({
           }}
           placeholder={t("searchPlaceholder")}
           aria-label={t("searchLabel")}
-          className="ps-11"
           autoComplete="off"
         />
-      </div>
+      </InputGroup>
 
       {error ? (
         <div className="space-y-3">
@@ -171,47 +130,77 @@ export function PatientConditionPicker({
         </p>
       ) : (
         <ul
-          className={`divide-y divide-gray-100 rounded-xl border border-gray-200 dark:divide-white/5 dark:border-gray-800 ${isLoading ? "opacity-60" : ""}`}
+          className={`grid gap-3 sm:grid-cols-2 ${isLoading ? "opacity-60" : ""}`}
           aria-busy={isLoading}
         >
           {conditions.map((condition) => {
             const isSelected = selectedIds.has(condition.id);
             const isAssigned = assignedIds.includes(condition.id);
+            const selectedCondition = selected.find(
+              (item) => item.condition.id === condition.id,
+            );
             return (
               <li
                 key={condition.id}
-                className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"
+                className={`space-y-3 rounded-xl border px-4 py-3 transition-colors ${
+                  isSelected
+                    ? "cursor-pointer border-blue-400 bg-blue-50 dark:border-blue-500/50 dark:bg-blue-500/10"
+                    : isAssigned
+                      ? "border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/3"
+                      : "cursor-pointer border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50/50 dark:border-gray-800 dark:bg-white/3 dark:hover:border-blue-500/40 dark:hover:bg-blue-500/5"
+                }`}
+                role={!isAssigned ? "button" : undefined}
+                tabIndex={!isAssigned && !disabled ? 0 : undefined}
+                aria-pressed={!isAssigned ? isSelected : undefined}
+                onClick={() => !isAssigned && !disabled && toggle(condition)}
+                onKeyDown={(event) => {
+                  if (
+                    event.target === event.currentTarget &&
+                    !isAssigned &&
+                    !disabled &&
+                    (event.key === "Enter" || event.key === " ")
+                  ) {
+                    event.preventDefault();
+                    toggle(condition);
+                  }
+                }}
               >
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-gray-800 dark:text-white/90">
-                    {condition.name}
-                  </p>
-                  {condition.description && (
-                    <p className="line-clamp-2 text-xs text-gray-500 dark:text-gray-400">
-                      {condition.description}
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-medium text-gray-800 dark:text-white/90">
+                      {condition.name}
                     </p>
+                    {condition.description && (
+                      <p className="line-clamp-2 text-xs text-gray-500 dark:text-gray-400">
+                        {condition.description}
+                      </p>
+                    )}
+                  </div>
+                  {isAssigned && (
+                    <Badge size="sm" color="gray">
+                      {t("alreadyAssigned")}
+                    </Badge>
                   )}
                 </div>
-                {isAssigned ? (
-                  <Badge size="sm" color="gray">
-                    {t("alreadyAssigned")}
-                  </Badge>
-                ) : (
-                  <Button
-                    type="button"
-                    size="xs"
-                    variant={isSelected ? "default" : "outline"}
-                    aria-pressed={isSelected}
-                    disabled={disabled}
-                    onClick={() => toggle(condition)}
-                  >
-                    {isSelected ? (
-                      <CheckIcon className="fill-current" />
-                    ) : (
-                      <PlusIcon className="fill-current" />
-                    )}
-                    {isSelected ? t("selected") : t("select")}
-                  </Button>
+                {isSelected && selectedCondition && (
+                  <Field onClick={(event) => event.stopPropagation()}>
+                    <FieldLabel className="text-xs">
+                      {t("notesLabel")}{" "}
+                      <span className="font-normal text-gray-400">
+                        ({t("optional")})
+                      </span>
+                    </FieldLabel>
+                    <Textarea
+                      value={selectedCondition.notes}
+                      rows={2}
+                      maxLength={CONDITION_NOTES_MAX_LENGTH}
+                      disabled={disabled}
+                      placeholder={t("notesPlaceholder")}
+                      onChange={(event) =>
+                        setNotes(condition.id, event.target.value)
+                      }
+                    />
+                  </Field>
                 )}
               </li>
             );

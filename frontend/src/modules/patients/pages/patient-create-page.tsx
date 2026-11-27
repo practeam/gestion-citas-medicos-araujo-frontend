@@ -268,29 +268,13 @@ export default function PatientCreatePage() {
   };
 
   const patientSection = (
-    <section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
-      <div>
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {t("create.patientSection")}
-        </h4>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          {t("create.patientSectionHint")}
-        </p>
-      </div>
+    <section>
       <PatientFields register={register} errors={errors} />
     </section>
   );
 
   const conditionsSection = (
-    <section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
-      <div>
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {t("create.conditionsSection")}
-        </h4>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          {t("create.conditionsSectionHint")}
-        </p>
-      </div>
+    <section>
       <PatientConditionPicker
         selected={selectedConditions}
         onChange={setSelectedConditions}
@@ -300,24 +284,13 @@ export default function PatientCreatePage() {
   );
 
   const guardiansSection = !canAssociateGuardians ? (
-    <section className="space-y-2 border-t border-gray-100 pt-6 dark:border-gray-800">
-      <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-        {tGuardians("create.section")}
-      </h4>
+    <section>
       <p className="text-sm text-gray-500 dark:text-gray-400">
         {tGuardians("create.noPermission")}
       </p>
     </section>
   ) : (
-    <section className="space-y-4 border-t border-gray-100 pt-6 dark:border-gray-800">
-      <div>
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {tGuardians("create.section")}
-        </h4>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          {tGuardians("create.sectionHint")}
-        </p>
-      </div>
+    <section>
       <GuardiansPicker
         value={guardians}
         onChange={setGuardians}

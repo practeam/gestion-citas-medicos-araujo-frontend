@@ -2084,7 +2084,7 @@
       "optional": "opcional",
       "noNotes": "Sin notas",
       "searchPlaceholder": "Buscar condiciones activas...",
-      "searchLabel": "Buscar habilidades especiales activas por nombre",
+      "searchLabel": "Nombre",
       "catalogError": "No se pudo cargar el catálogo de habilidades especiales.",
       "retry": "Reintentar",
       "loadingCatalog": "Cargando habilidades especiales...",
