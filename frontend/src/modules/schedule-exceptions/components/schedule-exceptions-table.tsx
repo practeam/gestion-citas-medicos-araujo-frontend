@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useLocale, useTranslations } from "@/i18n";
+import { EyeIcon, PencilIcon } from "@/icons";
 import { Link } from "react-router";
 import { useTargetLabels, targetKey } from "../hooks/use-target-labels";
 import type { ScheduleException } from "../types/schedule-exception.types";
@@ -37,7 +38,7 @@ export function ScheduleExceptionsTable({
   return (
     <div className="max-w-full overflow-x-auto">
       <Table>
-        <TableHeader className="border-b border-gray-100 dark:border-white/5">
+        <TableHeader className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/4">
           <TableRow>
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.id")}
@@ -71,7 +72,7 @@ export function ScheduleExceptionsTable({
               <TableCell
                 className={`${BODY_CELL} text-gray-500 dark:text-gray-400`}
               >
-                {exception.id}
+                #{exception.id}
               </TableCell>
               <TableCell className={BODY_CELL}>
                 <ScheduleExceptionTarget
@@ -103,18 +104,24 @@ export function ScheduleExceptionsTable({
                 <div className="flex flex-wrap items-center gap-2">
                   <Button
                     variant="outline"
-                    size="xs"
+                    size="icon-xs"
+                    className="border-blue-200 text-blue-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 dark:border-blue-500/30 dark:text-blue-400 dark:hover:bg-blue-500/10 dark:hover:text-blue-300"
+                    aria-label={t("actions.view")}
+                    title={t("actions.view")}
                     nativeButton={false}
                     render={
                       <Link to={`/schedule-exceptions/${exception.id}`} />
                     }
                   >
-                    {t("actions.view")}
+                    <EyeIcon className="fill-current" />
                   </Button>
                   <Can permission="schedule_exception.update">
                     <Button
                       variant="outline"
-                      size="xs"
+                      size="icon-xs"
+                      className="border-amber-200 text-amber-600 hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 dark:border-amber-500/30 dark:text-amber-400 dark:hover:bg-amber-500/10 dark:hover:text-amber-300"
+                      aria-label={t("actions.edit")}
+                      title={t("actions.edit")}
                       nativeButton={false}
                       render={
                         <Link
@@ -122,7 +129,7 @@ export function ScheduleExceptionsTable({
                         />
                       }
                     >
-                      {t("actions.edit")}
+                      <PencilIcon className="fill-current" />
                     </Button>
                   </Can>
                 </div>
