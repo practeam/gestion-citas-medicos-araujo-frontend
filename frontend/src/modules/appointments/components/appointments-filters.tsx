@@ -77,6 +77,7 @@ function EntityFilter({ type, value, onChange }: EntityFilterProps) {
             <AppointmentEntitySelector
               type={type}
               value={value}
+              rowSelection
               onSelect={(option) => {
                 onChange(option.id);
                 setOpen(false);
@@ -86,6 +87,7 @@ function EntityFilter({ type, value, onChange }: EntityFilterProps) {
               type="button"
               variant="outline"
               size="sm"
+              className="w-full justify-between border-red-200 text-red-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700 dark:border-red-500/30 dark:text-red-400 dark:hover:bg-red-500/10 dark:hover:text-red-300"
               disabled={value === null}
               onClick={() => {
                 onChange(null);
@@ -93,6 +95,7 @@ function EntityFilter({ type, value, onChange }: EntityFilterProps) {
               }}
             >
               {all}
+              <XIcon className="fill-current" />
             </Button>
           </div>
         </PopoverContent>

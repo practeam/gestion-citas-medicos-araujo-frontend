@@ -19,6 +19,8 @@ interface AppointmentEntitySelectorProps {
   value: number | null;
   onSelect: (option: AppointmentEntityOption) => void;
   disabled?: boolean;
+  /** Permite elegir desde toda la fila y oculta el botÃ³n de selecciÃ³n. */
+  rowSelection?: boolean;
 }
 
 /**
@@ -31,6 +33,7 @@ export function AppointmentEntitySelector({
   value,
   onSelect,
   disabled = false,
+  rowSelection = false,
 }: AppointmentEntitySelectorProps) {
   const t = useTranslations("appointments.selector");
   const [searchInput, setSearchInput] = useState("");
@@ -95,7 +98,34 @@ export function AppointmentEntitySelector({
               return (
                 <li
                   key={option.id}
-                  className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5"
+                  className={`flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 transition-colors ${
+                    rowSelection
+                      ? selected
+                        ? "cursor-pointer bg-blue-50 dark:bg-blue-500/15"
+                        : "cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5"
+                      : ""
+                  }`}
+                  role={rowSelection ? "button" : undefined}
+                  tabIndex={rowSelection && !disabled ? 0 : undefined}
+                  aria-pressed={rowSelection ? selected : undefined}
+                  title={
+                    rowSelection
+                      ? selected
+                        ? t("selected")
+                        : t("select")
+                      : undefined
+                  }
+                  onClick={() => rowSelection && !disabled && onSelect(option)}
+                  onKeyDown={(event) => {
+                    if (
+                      rowSelection &&
+                      !disabled &&
+                      (event.key === "Enter" || event.key === " ")
+                    ) {
+                      event.preventDefault();
+                      onSelect(option);
+                    }
+                  }}
                 >
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium text-gray-800 dark:text-white/90">
@@ -107,16 +137,18 @@ export function AppointmentEntitySelector({
                       </p>
                     )}
                   </div>
-                  <Button
-                    type="button"
-                    size="xs"
-                    variant={selected ? "default" : "outline"}
-                    aria-pressed={selected}
-                    disabled={disabled}
-                    onClick={() => onSelect(option)}
-                  >
-                    {selected ? t("selected") : t("select")}
-                  </Button>
+                  {!rowSelection && (
+                    <Button
+                      type="button"
+                      size="xs"
+                      variant={selected ? "default" : "outline"}
+                      aria-pressed={selected}
+                      disabled={disabled}
+                      onClick={() => onSelect(option)}
+                    >
+                      {selected ? t("selected") : t("select")}
+                    </Button>
+                  )}
                 </li>
               );
             })}
