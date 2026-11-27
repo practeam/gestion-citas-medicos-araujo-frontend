@@ -2160,6 +2160,11 @@
       "employeeNumberPlaceholder": "الرقم الوظيفي (مطابق)",
       "employeeNumberLabel": "الرقم الوظيفي (مطابقة تامة)",
       "statusLabel": "التصفية حسب الحالة",
+      "searchType": {
+        "name": "الاسم",
+        "documentNumber": "المستند",
+        "employeeNumber": "الرقم الوظيفي"
+      },
       "status": {
         "all": "كل الحالات",
         "active": "نشط",

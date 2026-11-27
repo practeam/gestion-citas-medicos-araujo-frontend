@@ -2160,6 +2160,11 @@
       "employeeNumberPlaceholder": "Personalnr. (exakt)",
       "employeeNumberLabel": "Personalnummer (exakte Übereinstimmung)",
       "statusLabel": "Nach Status filtern",
+      "searchType": {
+        "name": "Name",
+        "documentNumber": "Dokument",
+        "employeeNumber": "Personalnr."
+      },
       "status": {
         "all": "Alle Status",
         "active": "Aktiv",

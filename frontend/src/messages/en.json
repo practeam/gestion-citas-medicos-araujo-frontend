@@ -2168,6 +2168,11 @@
       "employeeNumberPlaceholder": "Employee no. (exact)",
       "employeeNumberLabel": "Employee number (exact match)",
       "statusLabel": "Filter by status",
+      "searchType": {
+        "name": "Name",
+        "documentNumber": "Document",
+        "employeeNumber": "Employee no."
+      },
       "status": {
         "all": "All statuses",
         "active": "Active",

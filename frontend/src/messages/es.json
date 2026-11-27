@@ -2168,6 +2168,11 @@
       "employeeNumberPlaceholder": "N.º de empleado (exacto)",
       "employeeNumberLabel": "Número de empleado (coincidencia exacta)",
       "statusLabel": "Filtrar por estado",
+      "searchType": {
+        "name": "Nombre",
+        "documentNumber": "Documento",
+        "employeeNumber": "N.º empleado"
+      },
       "status": {
         "all": "Todos los estados",
         "active": "Activos",
