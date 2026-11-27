@@ -1,17 +1,10 @@
 import NotificationDropdown from "@/components/shared/header/notification-dropdown";
 import ThemeToggleButton from "@/components/shared/header/theme-toggler";
 import UserDropdown from "@/components/shared/header/user-dropdown";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Field } from "@/components/ui/field";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group";
 import { useSidebar } from "@/components/ui/sidebar";
 import { useTranslations } from "@/i18n";
-import { HorizontalDotsIcon, MenuTwoIcon, SearchIcon, XIcon } from "@/icons";
+import { HorizontalDotsIcon, MenuTwoIcon, XIcon } from "@/icons";
 import { cn } from "@/utils";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
