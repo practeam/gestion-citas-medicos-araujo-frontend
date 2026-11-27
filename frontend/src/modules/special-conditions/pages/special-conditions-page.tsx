@@ -17,7 +17,10 @@ import {
   useSpecialConditions,
 } from "../hooks/use-special-conditions";
 import { specialConditionApi } from "../services/special-condition-api";
-import type { SpecialCondition } from "../types/special-condition.types";
+import type {
+  SpecialCondition,
+  SpecialConditionSortField,
+} from "../types/special-condition.types";
 import { getSpecialConditionErrorMessage } from "../utils/special-condition-error.utils";
 
 type Notice = "created" | "updated" | "activated" | "deactivated";
@@ -79,6 +82,12 @@ export default function SpecialConditionsPage() {
   };
 
   const specialConditions = data?.items ?? [];
+  const sortSpecialConditions = (field: SpecialConditionSortField) => {
+    const nextOrder =
+      filters.sortBy === field && filters.order === "asc" ? "desc" : "asc";
+    setSortBy(field);
+    setOrder(nextOrder);
+  };
 
   return (
     <div>
@@ -96,12 +105,8 @@ export default function SpecialConditionsPage() {
           <div className="flex flex-col gap-4 p-4 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
             <SpecialConditionsFilters
               status={filters.status}
-              sortBy={filters.sortBy}
-              order={filters.order}
               onNameChange={setName}
               onStatusChange={setStatus}
-              onSortByChange={setSortBy}
-              onOrderChange={setOrder}
             />
             <Can permission="special_condition.create">
               <Button
@@ -143,6 +148,9 @@ export default function SpecialConditionsPage() {
                 ) : (
                   <SpecialConditionsTable
                     specialConditions={specialConditions}
+                    sortBy={filters.sortBy}
+                    order={filters.order}
+                    onSort={sortSpecialConditions}
                     onToggleStatus={setStatusTarget}
                   />
                 )}

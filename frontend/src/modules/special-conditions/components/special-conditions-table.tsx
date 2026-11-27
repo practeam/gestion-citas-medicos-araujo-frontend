@@ -8,9 +8,21 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useLocale, useTranslations } from "@/i18n";
-import { CheckCircleIcon, EyeIcon, PencilIcon, XIcon } from "@/icons";
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  CheckCircleIcon,
+  ChevronUpDownIcon,
+  EyeIcon,
+  PencilIcon,
+  XIcon,
+} from "@/icons";
 import { Link } from "react-router";
-import type { SpecialCondition } from "../types/special-condition.types";
+import type {
+  SortOrder,
+  SpecialCondition,
+  SpecialConditionSortField,
+} from "../types/special-condition.types";
 import { formatDateTime } from "../utils/special-condition-date.utils";
 import { SpecialConditionStatusBadge } from "./special-condition-status-badge";
 
@@ -20,23 +32,57 @@ const BODY_CELL = "px-5 py-4 text-start text-sm sm:px-6";
 
 interface SpecialConditionsTableProps {
   specialConditions: SpecialCondition[];
+  sortBy: SpecialConditionSortField;
+  order: SortOrder;
+  onSort: (field: SpecialConditionSortField) => void;
   onToggleStatus: (specialCondition: SpecialCondition) => void;
 }
 
 export function SpecialConditionsTable({
   specialConditions,
+  sortBy,
+  order,
+  onSort,
   onToggleStatus,
 }: SpecialConditionsTableProps) {
   const t = useTranslations("specialConditions");
   const locale = useLocale();
+  const sortIcon = (field: SpecialConditionSortField) => {
+    if (sortBy !== field) {
+      return <ChevronUpDownIcon className="size-3.5 text-gray-400" />;
+    }
+    return order === "asc" ? (
+      <ArrowUpIcon className="size-3.5 text-green-500" />
+    ) : (
+      <ArrowDownIcon className="size-3.5 text-red-500" />
+    );
+  };
 
   return (
     <div className="max-w-full overflow-x-auto">
       <Table>
         <TableHeader className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/4">
           <TableRow>
-            <TableCell isHeader className={HEADER_CELL}>
-              {t("columns.name")}
+            <TableCell
+              isHeader
+              className={HEADER_CELL}
+              aria-sort={
+                sortBy === "name"
+                  ? order === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
+            >
+              <Button
+                variant="ghost"
+                size="xs"
+                className="-ms-3 text-xs font-medium text-gray-500 dark:text-gray-400"
+                onClick={() => onSort("name")}
+              >
+                {t("columns.name")}
+                {sortIcon("name")}
+              </Button>
             </TableCell>
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.description")}
@@ -44,8 +90,26 @@ export function SpecialConditionsTable({
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.status")}
             </TableCell>
-            <TableCell isHeader className={HEADER_CELL}>
-              {t("columns.createdAt")}
+            <TableCell
+              isHeader
+              className={HEADER_CELL}
+              aria-sort={
+                sortBy === "created_at"
+                  ? order === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
+            >
+              <Button
+                variant="ghost"
+                size="xs"
+                className="-ms-3 text-xs font-medium text-gray-500 dark:text-gray-400"
+                onClick={() => onSort("created_at")}
+              >
+                {t("columns.createdAt")}
+                {sortIcon("created_at")}
+              </Button>
             </TableCell>
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.updatedAt")}
