@@ -14,7 +14,7 @@ import { PersonsPagination } from "../components/persons-pagination";
 import { PersonsTable } from "../components/persons-table";
 import { PERSONS_PAGE_SIZE, usePersons } from "../hooks/use-persons";
 import { personApi } from "../services/person-api";
-import type { Person } from "../types/person.types";
+import type { Person, PersonSortField } from "../types/person.types";
 import { getPersonErrorMessage } from "../utils/person-error.utils";
 
 type Notice = "created" | "updated" | "activated" | "deactivated";
@@ -71,6 +71,13 @@ export default function PersonsPage() {
   };
 
   const persons = data?.items ?? [];
+  const sortPersons = (field: PersonSortField) => {
+    updateFilters({
+      sortBy: field,
+      order:
+        filters.sortBy === field && filters.order === "asc" ? "desc" : "asc",
+    });
+  };
 
   return (
     <div>
@@ -127,6 +134,9 @@ export default function PersonsPage() {
                 ) : (
                   <PersonsTable
                     persons={persons}
+                    sortBy={filters.sortBy}
+                    order={filters.order}
+                    onSort={sortPersons}
                     onToggleStatus={setStatusTarget}
                   />
                 )}

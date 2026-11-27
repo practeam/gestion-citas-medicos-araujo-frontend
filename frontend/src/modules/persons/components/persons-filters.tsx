@@ -16,24 +16,12 @@ import {
 } from "../schemas/person-schema";
 import type { PersonsFilters as Filters } from "../hooks/use-persons";
 import { DocumentTypeSelect } from "./document-type-select";
-import type {
-  PersonSortField,
-  PersonStatusFilter,
-  SortOrder,
-} from "../types/person.types";
+import type { PersonStatusFilter } from "../types/person.types";
 
 const SEARCH_DEBOUNCE_MS = 400;
 const STATUS_OPTIONS: PersonStatusFilter[] = ["all", "active", "inactive"];
-const SORT_FIELDS: PersonSortField[] = [
-  "id",
-  "last_name",
-  "first_name",
-  "created_at",
-];
-const SORT_ORDERS: SortOrder[] = ["asc", "desc"];
-
 interface PersonsFiltersProps {
-  filters: Pick<Filters, "status" | "sortBy" | "order">;
+  filters: Pick<Filters, "status">;
   onChange: (patch: Partial<Omit<Filters, "page">>) => void;
 }
 
@@ -101,38 +89,6 @@ export function PersonsFilters({ filters, onChange }: PersonsFiltersProps) {
           {STATUS_OPTIONS.map((option) => (
             <SelectItem key={option} value={option}>
               {t(`status.${option}`)}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-      <Select
-        value={filters.sortBy}
-        onValueChange={(value) =>
-          onChange({ sortBy: value as PersonSortField })
-        }
-      >
-        <SelectTrigger className="sm:w-52" aria-label={t("sortByLabel")}>
-          <SelectValue>{(value: string) => t(`sortBy.${value}`)}</SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-          {SORT_FIELDS.map((option) => (
-            <SelectItem key={option} value={option}>
-              {t(`sortBy.${option}`)}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-      <Select
-        value={filters.order}
-        onValueChange={(value) => onChange({ order: value as SortOrder })}
-      >
-        <SelectTrigger className="sm:w-40" aria-label={t("orderLabel")}>
-          <SelectValue>{(value: string) => t(`order.${value}`)}</SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-          {SORT_ORDERS.map((option) => (
-            <SelectItem key={option} value={option}>
-              {t(`order.${option}`)}
             </SelectItem>
           ))}
         </SelectContent>
