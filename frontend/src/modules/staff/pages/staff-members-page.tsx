@@ -17,7 +17,10 @@ import {
   useStaffMembers,
 } from "../hooks/use-staff-members";
 import { staffMemberApi } from "../services/staff-member-api";
-import type { StaffMember } from "../types/staff-member.types";
+import type {
+  StaffMember,
+  StaffMemberSortField,
+} from "../types/staff-member.types";
 import { getStaffMemberErrorMessage } from "../utils/staff-member-error.utils";
 
 type Notice = "created" | "updated" | "activated" | "deactivated";
@@ -74,6 +77,13 @@ export default function StaffMembersPage() {
   };
 
   const staffMembers = data?.items ?? [];
+  const sortStaffMembers = (field: StaffMemberSortField) => {
+    updateFilters({
+      sortBy: field,
+      order:
+        filters.sortBy === field && filters.order === "asc" ? "desc" : "asc",
+    });
+  };
 
   return (
     <div>
@@ -127,6 +137,9 @@ export default function StaffMembersPage() {
                 ) : (
                   <StaffMembersTable
                     staffMembers={staffMembers}
+                    sortBy={filters.sortBy}
+                    order={filters.order}
+                    onSort={sortStaffMembers}
                     onToggleStatus={setStatusTarget}
                   />
                 )}

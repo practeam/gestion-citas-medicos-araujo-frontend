@@ -14,24 +14,12 @@ import {
   EMPLOYEE_NUMBER_MAX_LENGTH,
   normalizeEmployeeNumber,
 } from "../schemas/staff-member-schema";
-import type {
-  StaffMemberSortField,
-  StaffMemberStatusFilter,
-  SortOrder,
-} from "../types/staff-member.types";
+import type { StaffMemberStatusFilter } from "../types/staff-member.types";
 
 const SEARCH_DEBOUNCE_MS = 400;
 const STATUS_OPTIONS: StaffMemberStatusFilter[] = ["all", "active", "inactive"];
-const SORT_FIELDS: StaffMemberSortField[] = [
-  "id",
-  "created_at",
-  "employee_number",
-  "last_name",
-];
-const SORT_ORDERS: SortOrder[] = ["asc", "desc"];
-
 interface StaffMembersFiltersProps {
-  filters: Pick<Filters, "status" | "sortBy" | "order">;
+  filters: Pick<Filters, "status">;
   onChange: (patch: Partial<Omit<Filters, "page">>) => void;
 }
 
@@ -104,38 +92,6 @@ export function StaffMembersFilters({
           {STATUS_OPTIONS.map((option) => (
             <SelectItem key={option} value={option}>
               {t(`status.${option}`)}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-      <Select
-        value={filters.sortBy}
-        onValueChange={(value) =>
-          onChange({ sortBy: value as StaffMemberSortField })
-        }
-      >
-        <SelectTrigger className="sm:w-56" aria-label={t("sortByLabel")}>
-          <SelectValue>{(value: string) => t(`sortBy.${value}`)}</SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-          {SORT_FIELDS.map((option) => (
-            <SelectItem key={option} value={option}>
-              {t(`sortBy.${option}`)}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-      <Select
-        value={filters.order}
-        onValueChange={(value) => onChange({ order: value as SortOrder })}
-      >
-        <SelectTrigger className="sm:w-40" aria-label={t("orderLabel")}>
-          <SelectValue>{(value: string) => t(`order.${value}`)}</SelectValue>
-        </SelectTrigger>
-        <SelectContent>
-          {SORT_ORDERS.map((option) => (
-            <SelectItem key={option} value={option}>
-              {t(`order.${option}`)}
             </SelectItem>
           ))}
         </SelectContent>
