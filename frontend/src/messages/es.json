@@ -1069,7 +1069,7 @@
         "finance": "Finanzas"
       },
       "statuses": {
-        "all": "Todos los estados",
+        "all": "Todos",
         "active": "Activo",
         "onboarding": "Incorporación",
         "onLeave": "De permiso"
@@ -1936,6 +1936,11 @@
       "documentNumberLabel": "Número de documento (coincidencia exacta)",
       "patientNumberPlaceholder": "N.º de paciente (exacto)",
       "patientNumberLabel": "Número de paciente (coincidencia exacta)",
+      "searchType": {
+        "name": "Nombre",
+        "documentNumber": "DNI",
+        "patientNumber": "N.º paciente"
+      },
       "statusLabel": "Filtrar por estado",
       "status": {
         "all": "Todos los estados",

@@ -14,7 +14,7 @@ import { PatientsPagination } from "../components/patients-pagination";
 import { PatientsTable } from "../components/patients-table";
 import { PATIENTS_PAGE_SIZE, usePatients } from "../hooks/use-patients";
 import { patientApi } from "../services/patient-api";
-import type { Patient } from "../types/patient.types";
+import type { Patient, PatientSortField } from "../types/patient.types";
 import { getPatientErrorMessage } from "../utils/patient-error.utils";
 
 type Notice = "created" | "updated" | "activated" | "deactivated";
@@ -71,6 +71,13 @@ export default function PatientsPage() {
   };
 
   const patients = data?.items ?? [];
+  const sortPatients = (field: PatientSortField) => {
+    updateFilters({
+      sortBy: field,
+      order:
+        filters.sortBy === field && filters.order === "asc" ? "desc" : "asc",
+    });
+  };
 
   return (
     <div>
@@ -129,6 +136,9 @@ export default function PatientsPage() {
                 ) : (
                   <PatientsTable
                     patients={patients}
+                    sortBy={filters.sortBy}
+                    order={filters.order}
+                    onSort={sortPatients}
                     onToggleStatus={setStatusTarget}
                   />
                 )}

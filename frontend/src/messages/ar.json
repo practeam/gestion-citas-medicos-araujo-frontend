@@ -1110,7 +1110,7 @@
       "searchLabel": "البحث عن الأدوار بالاسم",
       "statusLabel": "التصفية حسب الحالة",
       "status": {
-        "all": "كل الحالات",
+        "all": "الكل",
         "active": "نشط",
         "inactive": "غير نشط"
       }
@@ -1928,6 +1928,11 @@
       "documentNumberLabel": "رقم الوثيقة (مطابقة تامة)",
       "patientNumberPlaceholder": "رقم المريض (مطابق)",
       "patientNumberLabel": "رقم المريض (مطابقة تامة)",
+      "searchType": {
+        "name": "الاسم",
+        "documentNumber": "الهوية",
+        "patientNumber": "رقم المريض"
+      },
       "statusLabel": "التصفية حسب الحالة",
       "status": {
         "all": "كل الحالات",

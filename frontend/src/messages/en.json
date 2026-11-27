@@ -1110,7 +1110,7 @@
       "searchLabel": "Search roles by name",
       "statusLabel": "Filter by status",
       "status": {
-        "all": "All statuses",
+        "all": "All",
         "active": "Active",
         "inactive": "Inactive"
       }
@@ -1936,6 +1936,11 @@
       "documentNumberLabel": "Document number (exact match)",
       "patientNumberPlaceholder": "Patient no. (exact)",
       "patientNumberLabel": "Patient number (exact match)",
+      "searchType": {
+        "name": "Name",
+        "documentNumber": "ID",
+        "patientNumber": "Patient no."
+      },
       "statusLabel": "Filter by status",
       "status": {
         "all": "All statuses",

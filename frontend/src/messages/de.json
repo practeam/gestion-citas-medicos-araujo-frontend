@@ -1069,7 +1069,7 @@
         "finance": "Finanzen"
       },
       "statuses": {
-        "all": "Alle Status",
+        "all": "Alle",
         "active": "Aktiv",
         "onboarding": "Einarbeitung",
         "onLeave": "Abwesend"
@@ -1928,6 +1928,11 @@
       "documentNumberLabel": "Dokumentnummer (exakte Übereinstimmung)",
       "patientNumberPlaceholder": "Patientennr. (exakt)",
       "patientNumberLabel": "Patientennummer (exakte Übereinstimmung)",
+      "searchType": {
+        "name": "Name",
+        "documentNumber": "Ausweis",
+        "patientNumber": "Patientennr."
+      },
       "statusLabel": "Nach Status filtern",
       "status": {
         "all": "Alle Status",

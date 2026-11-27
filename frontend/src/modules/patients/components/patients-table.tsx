@@ -10,7 +10,10 @@ import {
 } from "@/components/ui/table";
 import { useLocale, useTranslations } from "@/i18n";
 import {
+  ArrowDownIcon,
+  ArrowUpIcon,
   CheckCircleIcon,
+  ChevronUpDownIcon,
   EyeIcon,
   PencilIcon,
   UsersIcon,
@@ -19,7 +22,11 @@ import {
 import { getPersonDocument, getPersonFullName } from "@/modules/persons";
 import { getInitials } from "@/utils/get-initials";
 import { Link } from "react-router";
-import type { Patient } from "../types/patient.types";
+import type {
+  Patient,
+  PatientSortField,
+  SortOrder,
+} from "../types/patient.types";
 import { formatDateTime } from "../utils/patient-date.utils";
 import { PatientStatusBadge } from "./patient-status-badge";
 
@@ -29,37 +36,107 @@ const BODY_CELL = "px-5 py-4 text-start text-sm sm:px-6";
 
 interface PatientsTableProps {
   patients: Patient[];
+  sortBy: PatientSortField;
+  order: SortOrder;
+  onSort: (field: PatientSortField) => void;
   onToggleStatus: (patient: Patient) => void;
 }
 
 /** Los datos personales salen del objeto `person` de la respuesta. */
 export function PatientsTable({
   patients,
+  sortBy,
+  order,
+  onSort,
   onToggleStatus,
 }: PatientsTableProps) {
   const t = useTranslations("patients");
   const tGuardians = useTranslations("guardians");
   const locale = useLocale();
+  const sortIcon = (field: PatientSortField) => {
+    if (sortBy !== field) {
+      return <ChevronUpDownIcon className="size-3.5 text-gray-400" />;
+    }
+    return order === "asc" ? (
+      <ArrowUpIcon className="size-3.5 text-green-500" />
+    ) : (
+      <ArrowDownIcon className="size-3.5 text-red-500" />
+    );
+  };
 
   return (
     <div className="max-w-full overflow-x-auto">
       <Table>
         <TableHeader className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/4">
           <TableRow>
-            <TableCell isHeader className={HEADER_CELL}>
-              {t("columns.fullName")}
+            <TableCell
+              isHeader
+              className={HEADER_CELL}
+              aria-sort={
+                sortBy === "last_name"
+                  ? order === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
+            >
+              <Button
+                variant="ghost"
+                size="xs"
+                className="-ms-3 text-xs font-medium text-gray-500 dark:text-gray-400"
+                onClick={() => onSort("last_name")}
+              >
+                {t("columns.fullName")}
+                {sortIcon("last_name")}
+              </Button>
             </TableCell>
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.document")}
             </TableCell>
-            <TableCell isHeader className={HEADER_CELL}>
-              {t("columns.patientNumber")}
+            <TableCell
+              isHeader
+              className={HEADER_CELL}
+              aria-sort={
+                sortBy === "patient_number"
+                  ? order === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
+            >
+              <Button
+                variant="ghost"
+                size="xs"
+                className="-ms-3 text-xs font-medium text-gray-500 dark:text-gray-400"
+                onClick={() => onSort("patient_number")}
+              >
+                {t("columns.patientNumber")}
+                {sortIcon("patient_number")}
+              </Button>
             </TableCell>
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.status")}
             </TableCell>
-            <TableCell isHeader className={HEADER_CELL}>
-              {t("columns.createdAt")}
+            <TableCell
+              isHeader
+              className={HEADER_CELL}
+              aria-sort={
+                sortBy === "created_at"
+                  ? order === "asc"
+                    ? "ascending"
+                    : "descending"
+                  : "none"
+              }
+            >
+              <Button
+                variant="ghost"
+                size="xs"
+                className="-ms-3 text-xs font-medium text-gray-500 dark:text-gray-400"
+                onClick={() => onSort("created_at")}
+              >
+                {t("columns.createdAt")}
+                {sortIcon("created_at")}
+              </Button>
             </TableCell>
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.actions")}
