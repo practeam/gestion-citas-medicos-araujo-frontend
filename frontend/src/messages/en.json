@@ -1869,10 +1869,12 @@
     "selector": {
       "namePlaceholder": "Name or surname",
       "nameLabel": "Name or surname",
+      "nameOption": "Name",
       "documentTypePlaceholder": "Document type",
       "documentTypeLabel": "Document type",
       "documentNumberPlaceholder": "Document number",
       "documentNumberLabel": "Document number (exact match)",
+      "documentNumberOption": "Document",
       "search": "Search",
       "hint": "Search by name or by exact document number to find a person.",
       "criteriaRequired": "Enter a name or a document number to search.",

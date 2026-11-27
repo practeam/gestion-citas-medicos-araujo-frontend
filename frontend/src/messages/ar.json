@@ -1868,10 +1868,12 @@
     "selector": {
       "namePlaceholder": "الاسم أو اللقب",
       "nameLabel": "الاسم أو اللقب",
+      "nameOption": "الاسم",
       "documentTypePlaceholder": "نوع الوثيقة",
       "documentTypeLabel": "نوع الوثيقة",
       "documentNumberPlaceholder": "رقم الوثيقة",
       "documentNumberLabel": "رقم الوثيقة (مطابقة تامة)",
+      "documentNumberOption": "الوثيقة",
       "search": "بحث",
       "hint": "ابحث بالاسم أو برقم الوثيقة بالتحديد للعثور على شخص.",
       "criteriaRequired": "أدخل اسمًا أو رقم وثيقة للبحث.",

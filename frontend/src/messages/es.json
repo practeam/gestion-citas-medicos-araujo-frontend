@@ -1869,10 +1869,12 @@
     "selector": {
       "namePlaceholder": "Nombre o apellido",
       "nameLabel": "Nombre o apellido",
+      "nameOption": "Nombre",
       "documentTypePlaceholder": "Tipo de documento",
       "documentTypeLabel": "Tipo de documento",
       "documentNumberPlaceholder": "N.º de documento",
       "documentNumberLabel": "Número de documento (coincidencia exacta)",
+      "documentNumberOption": "Documento",
       "search": "Buscar",
       "hint": "Busca por nombre o por número de documento exacto para encontrar a una persona.",
       "criteriaRequired": "Ingresa un nombre o un número de documento para buscar.",

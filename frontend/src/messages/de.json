@@ -1868,10 +1868,12 @@
     "selector": {
       "namePlaceholder": "Vor- oder Nachname",
       "nameLabel": "Vor- oder Nachname",
+      "nameOption": "Name",
       "documentTypePlaceholder": "Dokumentart",
       "documentTypeLabel": "Dokumentart",
       "documentNumberPlaceholder": "Dokumentnummer",
       "documentNumberLabel": "Dokumentnummer (exakte Übereinstimmung)",
+      "documentNumberOption": "Dokument",
       "search": "Suchen",
       "hint": "Suchen Sie nach Namen oder nach der exakten Dokumentnummer, um eine Person zu finden.",
       "criteriaRequired": "Geben Sie einen Namen oder eine Dokumentnummer zum Suchen ein.",
