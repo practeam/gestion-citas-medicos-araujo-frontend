@@ -2519,6 +2519,7 @@
       "allStaff": "All staff",
       "allTypes": "All types",
       "clear": "Clear filters",
+      "period": "Period",
       "rangeStart": "Ends after",
       "rangeEnd": "Starts before",
       "rangeHint": "The range returns exceptions that end after the first date and start before the second one (your time zone)."

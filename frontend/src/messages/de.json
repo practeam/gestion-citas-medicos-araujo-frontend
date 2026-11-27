@@ -2501,6 +2501,7 @@
       "allStaff": "Gesamtes Personal",
       "allTypes": "Alle Arten",
       "clear": "Filter zurücksetzen",
+      "period": "Zeitraum",
       "rangeStart": "Endet nach",
       "rangeEnd": "Beginnt vor",
       "rangeHint": "Der Zeitraum liefert Ausnahmen, die nach dem ersten Datum enden und vor dem zweiten beginnen (Ihre Zeitzone)."

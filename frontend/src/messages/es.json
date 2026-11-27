@@ -2519,6 +2519,7 @@
       "allStaff": "Todo el personal",
       "allTypes": "Todos los tipos",
       "clear": "Limpiar filtros",
+      "period": "Periodo",
       "rangeStart": "Termina después de",
       "rangeEnd": "Empieza antes de",
       "rangeHint": "El rango devuelve las excepciones que terminan después de la primera fecha y empiezan antes de la segunda (en tu zona horaria)."
