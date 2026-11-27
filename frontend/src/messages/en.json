@@ -2815,6 +2815,8 @@
       }
     },
     "selector": {
+      "patientOption": "Patient",
+      "staffOption": "Staff member",
       "searchPlaceholder": {
         "patient": "Search patient by name",
         "staff": "Search staff member by name"

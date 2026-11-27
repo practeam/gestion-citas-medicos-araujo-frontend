@@ -2815,6 +2815,8 @@
       }
     },
     "selector": {
+      "patientOption": "Paciente",
+      "staffOption": "Empleado",
       "searchPlaceholder": {
         "patient": "Buscar paciente por nombre",
         "staff": "Buscar empleado por nombre"
@@ -2849,8 +2851,8 @@
       "patientSection": "Paciente",
       "patientLocked": "El paciente no se puede cambiar. Para agendar a otro paciente, crea una cita nueva.",
       "selectedPatient": "Paciente seleccionado",
-      "staffSection": "Miembro del personal",
-      "selectedStaff": "Personal seleccionado",
+      "staffSection": "Empleado",
+      "selectedStaff": "Empleado seleccionado",
       "scheduleSection": "Fecha y hora",
       "dateLabel": "Fecha",
       "startTimeLabel": "Hora de inicio",

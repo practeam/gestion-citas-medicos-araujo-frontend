@@ -1,9 +1,13 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
-import { SearchIcon } from "@/icons";
+import { UserCircleIcon, UserIcon } from "@/icons";
 import { useEffect, useState } from "react";
 import { useEntityOptions } from "../hooks/use-entity-options";
 import type {
@@ -50,9 +54,18 @@ export function AppointmentEntitySelector({
 
   return (
     <div className="space-y-3">
-      <div className="relative sm:max-w-xs">
-        <SearchIcon className="pointer-events-none absolute inset-s-4 top-1/2 size-5 -translate-y-1/2 fill-gray-500 dark:fill-gray-400" />
-        <Input
+      <InputGroup className="min-w-0">
+        <InputGroupAddon className="border-e border-gray-200 px-3 dark:border-gray-700">
+          {type === "patient" ? (
+            <UserIcon className="size-4 text-blue-500" />
+          ) : (
+            <UserCircleIcon className="size-4 text-purple-500" />
+          )}
+          <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+            {type === "patient" ? t("patientOption") : t("staffOption")}
+          </span>
+        </InputGroupAddon>
+        <InputGroupInput
           type="search"
           value={searchInput}
           maxLength={120}
@@ -64,10 +77,9 @@ export function AppointmentEntitySelector({
           }}
           placeholder={t(`searchPlaceholder.${type}`)}
           aria-label={t(`searchLabel.${type}`)}
-          className="ps-11"
           autoComplete="off"
         />
-      </div>
+      </InputGroup>
 
       {error ? (
         <div className="space-y-3">

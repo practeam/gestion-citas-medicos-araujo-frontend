@@ -2797,6 +2797,8 @@
       }
     },
     "selector": {
+      "patientOption": "المريض",
+      "staffOption": "الموظف",
       "searchPlaceholder": {
         "patient": "ابحث عن مريض بالاسم",
         "staff": "ابحث عن موظف بالاسم"

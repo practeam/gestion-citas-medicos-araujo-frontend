@@ -481,64 +481,68 @@ function AppointmentForm({
         <AlertDescription>{t("availabilityNote")}</AlertDescription>
       </Alert>
 
-      <section className="space-y-3">
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {t("patientSection")}
-        </h4>
-        {patientLocked ? (
-          <div className="space-y-1">
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              <strong>{patientLabel ?? `#${patientId}`}</strong>
-            </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
-              {t("patientLocked")}
-            </p>
-          </div>
-        ) : (
-          <Field data-invalid={Boolean(errors.patientId)}>
-            {patientId !== null && (
+      <div className="grid gap-4 lg:grid-cols-2">
+        <section className="space-y-3 rounded-xl border border-gray-200 p-4 dark:border-gray-800">
+          <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+            {t("patientSection")}
+          </h4>
+          {patientLocked ? (
+            <div className="space-y-1">
               <p className="text-sm text-gray-700 dark:text-gray-300">
-                {t("selectedPatient")}:{" "}
                 <strong>{patientLabel ?? `#${patientId}`}</strong>
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                {t("patientLocked")}
+              </p>
+            </div>
+          ) : (
+            <Field data-invalid={Boolean(errors.patientId)}>
+              {patientId !== null && (
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  {t("selectedPatient")}:{" "}
+                  <strong>{patientLabel ?? `#${patientId}`}</strong>
+                </p>
+              )}
+              <AppointmentEntitySelector
+                type="patient"
+                value={patientId}
+                disabled={isSubmitting}
+                rowSelection
+                onSelect={(option) => {
+                  setValue("patientId", option.id, { shouldValidate: true });
+                  setPatientLabel(option.label);
+                }}
+              />
+              <FieldError errors={toFieldErrors(errors.patientId)} />
+            </Field>
+          )}
+        </section>
+
+        <section className="space-y-3 rounded-xl border border-gray-200 p-4 dark:border-gray-800">
+          <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+            {t("staffSection")}
+          </h4>
+          <Field data-invalid={Boolean(errors.staffMemberId)}>
+            {staffMemberId !== null && (
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                {t("selectedStaff")}:{" "}
+                <strong>{staffLabel ?? `#${staffMemberId}`}</strong>
               </p>
             )}
             <AppointmentEntitySelector
-              type="patient"
-              value={patientId}
+              type="staff"
+              value={staffMemberId}
               disabled={isSubmitting}
+              rowSelection
               onSelect={(option) => {
-                setValue("patientId", option.id, { shouldValidate: true });
-                setPatientLabel(option.label);
+                setValue("staffMemberId", option.id, { shouldValidate: true });
+                setStaffLabel(option.label);
               }}
             />
-            <FieldError errors={toFieldErrors(errors.patientId)} />
+            <FieldError errors={toFieldErrors(errors.staffMemberId)} />
           </Field>
-        )}
-      </section>
-
-      <section className="space-y-3 border-t border-gray-100 pt-5 dark:border-gray-800">
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {t("staffSection")}
-        </h4>
-        <Field data-invalid={Boolean(errors.staffMemberId)}>
-          {staffMemberId !== null && (
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              {t("selectedStaff")}:{" "}
-              <strong>{staffLabel ?? `#${staffMemberId}`}</strong>
-            </p>
-          )}
-          <AppointmentEntitySelector
-            type="staff"
-            value={staffMemberId}
-            disabled={isSubmitting}
-            onSelect={(option) => {
-              setValue("staffMemberId", option.id, { shouldValidate: true });
-              setStaffLabel(option.label);
-            }}
-          />
-          <FieldError errors={toFieldErrors(errors.staffMemberId)} />
-        </Field>
-      </section>
+        </section>
+      </div>
 
       <section className="space-y-4 border-t border-gray-100 pt-5 dark:border-gray-800">
         <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">

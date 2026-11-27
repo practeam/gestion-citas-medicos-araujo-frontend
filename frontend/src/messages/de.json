@@ -2797,6 +2797,8 @@
       }
     },
     "selector": {
+      "patientOption": "Patient",
+      "staffOption": "Mitarbeiter",
       "searchPlaceholder": {
         "patient": "Patient nach Name suchen",
         "staff": "Mitarbeitende nach Name suchen"
