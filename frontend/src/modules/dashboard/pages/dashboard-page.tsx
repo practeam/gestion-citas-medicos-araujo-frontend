@@ -83,22 +83,24 @@ export default function DashboardPage() {
         <DashboardCardsGrid cards={data?.cards} isLoading={loading} />
 
         <div className="grid grid-cols-1 gap-4 md:gap-6 xl:grid-cols-2">
-          <DashboardChartCard
-            title={tCharts("appointmentsEvolution.title")}
-            description={tCharts("appointmentsEvolution.description")}
-            isEmpty={ready && !hasData(data.appointments_evolution)}
-            {...frame}
-          >
-            {data && (
-              <DashboardSeriesChart
-                type="line"
-                points={data.appointments_evolution}
-                granularity={granularity}
-                seriesName={tCharts("appointmentsEvolution.series")}
-                color="#465FFF"
-              />
-            )}
-          </DashboardChartCard>
+          <div className="xl:col-span-2">
+            <DashboardChartCard
+              title={tCharts("appointmentsEvolution.title")}
+              description={tCharts("appointmentsEvolution.description")}
+              isEmpty={ready && !hasData(data.appointments_evolution)}
+              {...frame}
+            >
+              {data && (
+                <DashboardSeriesChart
+                  type="line"
+                  points={data.appointments_evolution}
+                  granularity={granularity}
+                  seriesName={tCharts("appointmentsEvolution.series")}
+                  color="#465FFF"
+                />
+              )}
+            </DashboardChartCard>
+          </div>
 
           <DashboardChartCard
             title={tCharts("patientsEvolution.title")}
@@ -145,24 +147,22 @@ export default function DashboardPage() {
             )}
           </DashboardChartCard>
 
-          <div className="xl:col-span-2">
-            <DashboardChartCard
-              title={tCharts("appointmentsByMonth.title")}
-              description={tCharts("appointmentsByMonth.description")}
-              isEmpty={ready && !hasData(data.appointments_by_month)}
-              {...frame}
-            >
-              {data && (
-                <DashboardSeriesChart
-                  type="bar"
-                  points={data.appointments_by_month}
-                  granularity="month"
-                  seriesName={tCharts("appointmentsByMonth.series")}
-                  color="#465FFF"
-                />
-              )}
-            </DashboardChartCard>
-          </div>
+          <DashboardChartCard
+            title={tCharts("appointmentsByMonth.title")}
+            description={tCharts("appointmentsByMonth.description")}
+            isEmpty={ready && !hasData(data.appointments_by_month)}
+            {...frame}
+          >
+            {data && (
+              <DashboardSeriesChart
+                type="bar"
+                points={data.appointments_by_month}
+                granularity="month"
+                seriesName={tCharts("appointmentsByMonth.series")}
+                color="#465FFF"
+              />
+            )}
+          </DashboardChartCard>
         </div>
       </div>
     </div>
