@@ -6,6 +6,9 @@ import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
 import {
   ArrowLeftIcon,
+  CheckIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
   FloppyDiscIcon,
   PencilIcon,
   PlusIcon,
@@ -59,6 +62,7 @@ import { getPatientErrorMessage } from "../utils/patient-error.utils";
 import { toCreatePayload } from "../utils/patient-payload.utils";
 
 type PersonMode = "existing" | "new";
+type CreateStep = 0 | 1 | 2 | 3 | 4;
 
 /** Resultado de las asociaciones tras crear el paciente. */
 interface ConditionOutcome {
@@ -83,6 +87,7 @@ export default function PatientCreatePage() {
   const navigate = useNavigate();
 
   const [mode, setMode] = useState<PersonMode>("existing");
+  const [step, setStep] = useState<CreateStep>(0);
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
   // Persona ya registrada en este flujo cuyo paciente quedó pendiente (fallo parcial).
   const [pendingPerson, setPendingPerson] = useState<Person | null>(null);
@@ -228,8 +233,10 @@ export default function PatientCreatePage() {
     }
   };
 
-  const submitExisting = handleSubmit((values) =>
-    selectedPerson ? createPatient(selectedPerson.id, values) : undefined,
+  const submitExisting = handleSubmit(
+    (values) =>
+      selectedPerson ? createPatient(selectedPerson.id, values) : undefined,
+    () => setStep(1),
   );
 
   const retryPending = handleSubmit((values) =>
@@ -240,7 +247,10 @@ export default function PatientCreatePage() {
   const submitNewPerson = async (personValues: PersonFormValues) => {
     if (isSaving) return;
     // Se validan los campos del paciente antes de crear la persona para evitar fallos evitables.
-    if (!(await trigger())) return;
+    if (!(await trigger())) {
+      setStep(1);
+      return;
+    }
     const patientValues = getValues();
     // Si falla, PersonForm muestra el error de la persona y no se crea el paciente.
     const person = await personApi.create(toCreatePersonPayload(personValues));
@@ -324,6 +334,147 @@ export default function PatientCreatePage() {
       <XIcon className="fill-current" />
       {t("form.cancel")}
     </Button>
+  );
+
+  const steps = [
+    t("create.steps.basic"),
+    t("create.steps.patient"),
+    t("create.steps.conditions"),
+    t("create.steps.guardians"),
+    t("create.steps.confirm"),
+  ];
+  const goPrevious = () => setStep((current) => (current - 1) as CreateStep);
+  const goNext = () => setStep((current) => (current + 1) as CreateStep);
+
+  const wizardProgress = (
+    <ol
+      className="grid grid-cols-2 gap-2 sm:grid-cols-5"
+      aria-label={t("create.steps.label")}
+    >
+      {steps.map((label, index) => {
+        const isCurrent = index === step;
+        const isComplete = index < step;
+        return (
+          <li key={label}>
+            <button
+              type="button"
+              className={`flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-start text-xs font-medium transition-colors ${
+                isCurrent
+                  ? "border-brand-500 bg-brand-50 text-brand-700 dark:border-brand-400 dark:bg-brand-500/10 dark:text-brand-300"
+                  : isComplete
+                    ? "border-green-500 bg-green-500 text-white hover:bg-green-600 dark:border-green-500 dark:bg-green-500 dark:text-white dark:hover:bg-green-600"
+                    : "border-gray-200 text-gray-500 dark:border-gray-800 dark:text-gray-400"
+              }`}
+              aria-current={isCurrent ? "step" : undefined}
+              onClick={() => index < step && setStep(index as CreateStep)}
+              disabled={index > step || isSaving}
+            >
+              <span
+                className={`flex size-6 shrink-0 items-center justify-center rounded-full ${
+                  isComplete
+                    ? "bg-white/20 text-white"
+                    : "bg-current/10"
+                }`}
+              >
+                {isComplete ? (
+                  <CheckIcon className="size-3 fill-current" />
+                ) : (
+                  index + 1
+                )}
+              </span>
+              <span className="truncate">{label}</span>
+            </button>
+          </li>
+        );
+      })}
+    </ol>
+  );
+
+  const confirmationSection = (
+    <section className="space-y-4">
+      <div>
+        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+          {t("create.reviewTitle")}
+        </h4>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {t("create.reviewHint")}
+        </p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <div className="rounded-lg border border-gray-200 p-3 dark:border-gray-800">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            {t("create.steps.basic")}
+          </p>
+          <p className="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">
+            {mode === "existing" && selectedPerson
+              ? getPersonFullName(selectedPerson)
+              : t("create.newBasicData")}
+          </p>
+        </div>
+        {(["conditions", "guardians"] as const).map((item) => (
+          <div
+            key={item}
+            className="rounded-lg border border-gray-200 p-3 dark:border-gray-800"
+          >
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              {t(`create.steps.${item}`)}
+            </p>
+            <p className="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">
+              {t("create.selectedCount", {
+                count:
+                  item === "conditions"
+                    ? selectedConditions.length
+                    : guardians.length,
+              })}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+
+  const wizardActions = (insidePersonForm: boolean) => (
+    <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+      <div>
+        {step === 0 ? (
+          cancelButton
+        ) : (
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            disabled={isSaving}
+            onClick={goPrevious}
+          >
+            <ChevronLeftIcon className="fill-current rtl:rotate-180" />
+            {t("create.previous")}
+          </Button>
+        )}
+      </div>
+      {step < 4 ? (
+        <Button
+          type="button"
+          size="sm"
+          disabled={
+            (step === 0 && mode === "existing" && !selectedPerson) || isSaving
+          }
+          onClick={goNext}
+        >
+          {t("create.next")}
+          <ChevronRightIcon className="fill-current rtl:rotate-180" />
+        </Button>
+      ) : (
+        <Button
+          type={insidePersonForm ? "submit" : "button"}
+          size="sm"
+          disabled={isSaving}
+          onClick={insidePersonForm ? undefined : () => void submitExisting()}
+        >
+          {isSaving ? <Spinner /> : <FloppyDiscIcon className="fill-current" />}
+          {isSaving ? t("form.saving") : t("create.save")}
+        </Button>
+      )}
+    </div>
   );
 
   return (
@@ -502,7 +653,8 @@ export default function PatientCreatePage() {
           </div>
         ) : (
           <>
-            <section className="space-y-4">
+            {wizardProgress}
+            <section className="space-y-4" hidden={step !== 0}>
               <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
                 {t("create.personSection")}
               </h4>
@@ -516,7 +668,10 @@ export default function PatientCreatePage() {
                   variant={mode === "existing" ? "default" : "outline"}
                   aria-pressed={mode === "existing"}
                   disabled={isSaving}
-                  onClick={() => setMode("existing")}
+                  onClick={() => {
+                    setMode("existing");
+                    setStep(0);
+                  }}
                 >
                   <UserIcon className="fill-current" />
                   {t("create.modeExisting")}
@@ -527,7 +682,10 @@ export default function PatientCreatePage() {
                   variant={mode === "new" ? "default" : "outline"}
                   aria-pressed={mode === "new"}
                   disabled={isSaving}
-                  onClick={() => setMode("new")}
+                  onClick={() => {
+                    setMode("new");
+                    setStep(0);
+                  }}
                 >
                   <PlusIcon className="fill-current" />
                   {t("create.modeNew")}
@@ -539,43 +697,32 @@ export default function PatientCreatePage() {
 
             {mode === "existing" ? (
               <div className="space-y-6">
-                <PersonSelector
-                  value={selectedPerson?.id ?? null}
-                  onSelect={setSelectedPerson}
-                  activeOnly
-                />
-                {selectedPerson ? (
-                  <Alert variant="success">
-                    <AlertTitle>{t("create.selectedPerson")}</AlertTitle>
-                    <AlertDescription>
-                      {getPersonFullName(selectedPerson)}
-                      {" · "}
-                      {getPersonDocument(selectedPerson) ?? t("noValue")}
-                    </AlertDescription>
-                  </Alert>
-                ) : (
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {t("create.selectPersonFirst")}
-                  </p>
-                )}
-                {patientSection}
-                {conditionsSection}
-                {guardiansSection}
-                <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-                  {cancelButton}
-                  <Button
-                    size="sm"
-                    disabled={!selectedPerson || isSaving}
-                    onClick={() => void submitExisting()}
-                  >
-                    {isSaving ? (
-                      <Spinner />
-                    ) : (
-                      <FloppyDiscIcon className="fill-current" />
-                    )}
-                    {isSaving ? t("form.saving") : t("create.save")}
-                  </Button>
+                <div className="space-y-6" hidden={step !== 0}>
+                  <PersonSelector
+                    value={selectedPerson?.id ?? null}
+                    onSelect={setSelectedPerson}
+                    activeOnly
+                  />
+                  {selectedPerson ? (
+                    <Alert variant="success">
+                      <AlertTitle>{t("create.selectedPerson")}</AlertTitle>
+                      <AlertDescription>
+                        {getPersonFullName(selectedPerson)}
+                        {" · "}
+                        {getPersonDocument(selectedPerson) ?? t("noValue")}
+                      </AlertDescription>
+                    </Alert>
+                  ) : (
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      {t("create.selectPersonFirst")}
+                    </p>
+                  )}
                 </div>
+                <div hidden={step !== 1}>{patientSection}</div>
+                <div hidden={step !== 2}>{conditionsSection}</div>
+                <div hidden={step !== 3}>{guardiansSection}</div>
+                <div hidden={step !== 4}>{confirmationSection}</div>
+                {wizardActions(false)}
               </div>
             ) : (
               <PersonForm
@@ -583,10 +730,14 @@ export default function PatientCreatePage() {
                 submitLabel={t("create.saveNew")}
                 onSubmit={submitNewPerson}
                 onCancel={() => void navigate("/patients")}
+                fieldsHidden={step !== 0}
+                onInvalid={() => setStep(0)}
+                actions={wizardActions(true)}
               >
-                {patientSection}
-                {conditionsSection}
-                {guardiansSection}
+                <div hidden={step !== 1}>{patientSection}</div>
+                <div hidden={step !== 2}>{conditionsSection}</div>
+                <div hidden={step !== 3}>{guardiansSection}</div>
+                <div hidden={step !== 4}>{confirmationSection}</div>
               </PersonForm>
             )}
           </>

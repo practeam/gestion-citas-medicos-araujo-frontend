@@ -52,6 +52,12 @@ export interface PersonFormProps {
    * las acciones (por ejemplo, los campos propios del paciente).
    */
   children?: React.ReactNode;
+  /** Permite integrar el formulario en un flujo por pasos sin desmontar sus campos. */
+  fieldsHidden?: boolean;
+  /** Reemplaza las acciones predeterminadas cuando el consumidor controla la navegaciÃ³n. */
+  actions?: React.ReactNode;
+  /** Se ejecuta cuando el envÃ­o encuentra errores en los datos personales. */
+  onInvalid?: () => void;
 }
 
 /**
@@ -64,6 +70,9 @@ export function PersonForm({
   onSubmit,
   onCancel,
   children,
+  fieldsHidden = false,
+  actions,
+  onInvalid,
 }: PersonFormProps) {
   const t = useTranslations("persons.form");
   const tValidation = useTranslations("persons.validation");
@@ -199,14 +208,18 @@ export function PersonForm({
   );
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="space-y-6" noValidate>
+    <form
+      onSubmit={handleSubmit(submit, onInvalid)}
+      className="space-y-6"
+      noValidate
+    >
       {formError && (
         <Alert variant="destructive">
           <AlertDescription>{formError}</AlertDescription>
         </Alert>
       )}
 
-      <div className="space-y-5">
+      <div className="space-y-5" hidden={fieldsHidden}>
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {renderField("first_name", {
             required: true,
@@ -265,31 +278,33 @@ export function PersonForm({
 
       {children}
 
-      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-        {onCancel ? (
-          <Button
-            type="button"
-            variant="outline"
-            disabled={isSubmitting}
-            onClick={onCancel}
-          >
-            {t("cancel")}
+      {actions ?? (
+        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+          {onCancel ? (
+            <Button
+              type="button"
+              variant="outline"
+              disabled={isSubmitting}
+              onClick={onCancel}
+            >
+              {t("cancel")}
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              disabled={isSubmitting}
+              nativeButton={false}
+              render={<Link to="/persons" />}
+            >
+              {t("cancel")}
+            </Button>
+          )}
+          <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting && <Spinner />}
+            {isSubmitting ? t("saving") : submitLabel}
           </Button>
-        ) : (
-          <Button
-            variant="outline"
-            disabled={isSubmitting}
-            nativeButton={false}
-            render={<Link to="/persons" />}
-          >
-            {t("cancel")}
-          </Button>
-        )}
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting && <Spinner />}
-          {isSubmitting ? t("saving") : submitLabel}
-        </Button>
-      </div>
+        </div>
+      )}
     </form>
   );
 }
