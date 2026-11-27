@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import { ClockIcon, DollarIcon, TaskIcon } from "@/icons";
 import { useAppointmentDetails } from "../hooks/use-appointment-details";
 import {
   fallbackProcedureInfo,
@@ -81,12 +82,15 @@ export function AppointmentDetailList({
 
   return (
     <div className="space-y-4">
-      <ul className="divide-y divide-gray-100 rounded-xl border border-gray-200 dark:divide-white/5 dark:border-gray-800">
+      <ul className="custom-scrollbar max-h-96 space-y-3 overflow-y-auto pe-1">
         {lines.map((line) => {
           const detail = line.saved!;
           return (
-            <li key={line.key} className="space-y-1 px-4 py-3 text-sm">
-              <div className="flex flex-wrap items-center gap-2">
+            <li
+              key={line.key}
+              className="rounded-xl border border-gray-200 bg-white p-4 text-sm dark:border-gray-800 dark:bg-white/3"
+            >
+              <div className="flex flex-wrap items-start justify-between gap-2">
                 <span className="font-medium text-gray-800 dark:text-white/90">
                   {line.procedure.code ? `${line.procedure.code} · ` : ""}
                   {line.procedure.name}
@@ -97,16 +101,46 @@ export function AppointmentDetailList({
                   </Badge>
                 )}
               </div>
-              <p className="text-gray-600 dark:text-gray-300">
-                {t("readOnlyLine", {
-                  quantity: detail.quantity,
-                  unitPrice: detail.unit_price,
-                  duration: detail.duration_minutes,
-                  amount: detail.line_amount,
-                })}
-              </p>
+              <div className="mt-3 grid overflow-hidden rounded-lg border border-gray-100 sm:grid-cols-4 dark:border-gray-800">
+                <div className="border-b border-gray-100 p-3 sm:border-e sm:border-b-0 dark:border-gray-800">
+                  <TaskIcon className="size-4 fill-current text-blue-500" />
+                  <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                    {t("quantity")}
+                  </p>
+                  <p className="font-semibold text-gray-800 dark:text-white/90">
+                    {detail.quantity}
+                  </p>
+                </div>
+                <div className="border-b border-gray-100 p-3 sm:border-e sm:border-b-0 dark:border-gray-800">
+                  <DollarIcon className="size-4 fill-current text-green-500" />
+                  <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                    {t("unitPrice")}
+                  </p>
+                  <p className="font-semibold text-gray-800 dark:text-white/90">
+                    {detail.unit_price}
+                  </p>
+                </div>
+                <div className="border-b border-gray-100 p-3 sm:border-e sm:border-b-0 dark:border-gray-800">
+                  <ClockIcon className="size-4 fill-current text-purple-500" />
+                  <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                    {t("duration")}
+                  </p>
+                  <p className="font-semibold text-gray-800 dark:text-white/90">
+                    {t("minutes", { count: detail.duration_minutes })}
+                  </p>
+                </div>
+                <div className="p-3">
+                  <DollarIcon className="size-4 fill-current text-amber-500" />
+                  <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                    {t("amount")}
+                  </p>
+                  <p className="font-semibold text-gray-800 dark:text-white/90">
+                    {detail.line_amount}
+                  </p>
+                </div>
+              </div>
               {detail.notes && (
-                <p className="text-xs whitespace-pre-line text-gray-500 dark:text-gray-400">
+                <p className="mt-3 rounded-lg bg-gray-50 p-3 text-xs whitespace-pre-line text-gray-500 dark:bg-white/3 dark:text-gray-400">
                   {t("notes")}: {detail.notes}
                 </p>
               )}
