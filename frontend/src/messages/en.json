@@ -2652,6 +2652,7 @@
       "allClinics": "All clinics",
       "allStaff": "All staff",
       "clear": "Clear filters",
+      "period": "Period",
       "rangeStart": "Ends after",
       "rangeEnd": "Starts before",
       "rangeHint": "The range returns overrides that end after the first date and start before the second one (your time zone)."

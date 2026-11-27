@@ -2634,6 +2634,7 @@
       "allClinics": "Alle Kliniken",
       "allStaff": "Gesamtes Personal",
       "clear": "Filter zurücksetzen",
+      "period": "Zeitraum",
       "rangeStart": "Endet nach",
       "rangeEnd": "Beginnt vor",
       "rangeHint": "Der Zeitraum liefert Änderungen, die nach dem ersten Datum enden und vor dem zweiten beginnen (Ihre Zeitzone)."
