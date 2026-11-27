@@ -506,6 +506,9 @@ export default function PatientCreatePage() {
               <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
                 {t("create.personSection")}
               </h4>
+              <Alert variant="info">
+                <AlertDescription>{t("create.modeHint")}</AlertDescription>
+              </Alert>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Button
                   type="button"

@@ -135,7 +135,7 @@
       "permissions": "Permisos",
       "clinicalManagement": "Gestión clínica",
       "specialties": "Especialidades",
-      "specialConditions": "Condiciones especiales",
+      "specialConditions": "Habilidades especiales",
       "clinics": "Clínicas",
       "peopleManagement": "Gestión de personas",
       "persons": "Personas",
@@ -1429,16 +1429,16 @@
     }
   },
   "specialConditions": {
-    "title": "Condiciones especiales",
+    "title": "Habilidades especiales",
     "meta": {
-      "title": "Condiciones especiales | Gestión de Citas Odontológicas",
-      "description": "Administra el catálogo de condiciones especiales."
+      "title": "Habilidades especiales | Gestión de Citas Odontológicas",
+      "description": "Administra el catálogo de habilidades especiales."
     },
-    "create": "Nueva condición especial",
+    "create": "Nueva habilidad especial",
     "retry": "Reintentar",
-    "loading": "Cargando condiciones especiales...",
-    "empty": "Aún no hay condiciones especiales registradas.",
-    "noResults": "Ninguna condición especial coincide con la búsqueda.",
+    "loading": "Cargando habilidades especiales...",
+    "empty": "Aún no hay habilidades especiales registradas.",
+    "noResults": "Ninguna habilidad especial coincide con la búsqueda.",
     "noDescription": "Sin descripción",
     "columns": {
       "id": "ID",
@@ -1455,7 +1455,7 @@
     },
     "filters": {
       "searchPlaceholder": "Buscar por nombre...",
-      "searchLabel": "Buscar condiciones especiales por nombre",
+      "searchLabel": "Buscar habilidades especiales por nombre",
       "statusLabel": "Filtrar por estado",
       "status": {
         "all": "Todos los estados",
@@ -1488,31 +1488,31 @@
     "statusDialog": {
       "cancel": "Cancelar",
       "activate": {
-        "title": "Activar condición especial",
-        "description": "¿Deseas activar la condición especial \"{name}\"?",
+        "title": "Activar habilidad especial",
+        "description": "¿Deseas activar la habilidad especial \"{name}\"?",
         "confirm": "Activar"
       },
       "deactivate": {
-        "title": "Desactivar condición especial",
-        "description": "¿Deseas desactivar la condición especial \"{name}\"? El registro no se elimina y no se alteran los registros históricos.",
+        "title": "Desactivar habilidad especial",
+        "description": "¿Deseas desactivar la habilidad especial \"{name}\"? El registro no se elimina y no se alteran los registros históricos.",
         "confirm": "Desactivar"
       }
     },
     "detail": {
-      "title": "Detalle de la condición especial"
+      "title": "Detalle de la habilidad especial"
     },
     "form": {
-      "createTitle": "Nueva condición especial",
-      "editTitle": "Editar condición especial",
+      "createTitle": "Nueva habilidad especial",
+      "editTitle": "Editar habilidad especial",
       "nameLabel": "Nombre",
       "namePlaceholder": "Ej. Alergia al látex",
       "descriptionLabel": "Descripción",
-      "descriptionPlaceholder": "Descripción opcional de la condición especial",
-      "create": "Crear condición especial",
+      "descriptionPlaceholder": "Descripción opcional de la habilidad especial",
+      "create": "Crear habilidad especial",
       "save": "Guardar cambios",
       "saving": "Guardando...",
       "cancel": "Cancelar",
-      "backToList": "Volver a condiciones especiales",
+      "backToList": "Volver a habilidades especiales",
       "noChanges": "No hay cambios para guardar."
     },
     "validation": {
@@ -1520,14 +1520,14 @@
       "nameTooLong": "El nombre no puede superar los 120 caracteres."
     },
     "notices": {
-      "created": "Condición especial creada correctamente.",
-      "updated": "Condición especial actualizada correctamente.",
-      "activated": "Condición especial activada correctamente.",
-      "deactivated": "Condición especial desactivada correctamente."
+      "created": "Habilidad especial creada correctamente.",
+      "updated": "Habilidad especial actualizada correctamente.",
+      "activated": "Habilidad especial activada correctamente.",
+      "deactivated": "Habilidad especial desactivada correctamente."
     },
     "errors": {
       "network": "No se pudo conectar con el servidor. Inténtalo de nuevo.",
-      "notFound": "No se encontró la condición especial.",
+      "notFound": "No se encontró la habilidad especial.",
       "server": "El servidor tuvo un problema inesperado. Inténtalo más tarde.",
       "unexpected": "Ocurrió un error inesperado."
     }
@@ -2010,22 +2010,23 @@
       "personDataHint": "Los datos personales se administran en el módulo Personas. Aquí solo puedes editar el número de paciente y las notas."
     },
     "create": {
-      "personSection": "1. Persona",
+      "personSection": "1. Datos básicos",
       "patientSection": "2. Datos del paciente",
       "patientSectionHint": "Información que pertenece al paciente, no a la persona.",
-      "modeExisting": "Seleccionar una persona existente",
-      "modeNew": "Registrar una persona nueva",
-      "selectedPerson": "Persona seleccionada",
-      "selectPersonFirst": "Selecciona una persona activa para continuar.",
+      "modeExisting": "Usar datos registrados",
+      "modeNew": "Ingresar datos nuevos",
+      "modeHint": "Si anteriormente ya brindaste tus datos, búscalos para reutilizarlos y completar tu registro como paciente. Si es la primera vez, ingresa tus datos básicos.",
+      "selectedPerson": "Datos seleccionados",
+      "selectPersonFirst": "Busca y selecciona tus datos registrados para continuar.",
       "save": "Registrar paciente",
-      "saveNew": "Registrar persona y paciente",
+      "saveNew": "Registrar paciente",
       "retry": "Reintentar registro del paciente",
-      "partialTitle": "La persona se registró, pero el paciente no se creó",
-      "partialDescription": "La persona \"{name}\" se registró correctamente, pero no se pudo crear el paciente. Revisa los datos y reintenta; la persona no se volverá a registrar.",
-      "conditionsSection": "3. Condiciones especiales del paciente",
-      "conditionsSectionHint": "Opcional. Selecciona las condiciones especiales activas que se asociarán una vez registrado el paciente, con notas opcionales para cada una.",
-      "conditionsPartialTitle": "El paciente se registró, pero algunas condiciones especiales no se asociaron",
-      "conditionsPartialDescription": "El paciente \"{name}\" se registró correctamente, pero no se pudieron asociar algunas condiciones especiales. El paciente no se creará de nuevo; puedes reintentar solo las condiciones pendientes (sus notas se conservan).",
+      "partialTitle": "Los datos básicos se guardaron, pero el paciente no se creó",
+      "partialDescription": "Los datos básicos de \"{name}\" se guardaron correctamente, pero no se pudo completar el registro como paciente. Revisa los datos y reintenta; la información básica no se volverá a registrar.",
+      "conditionsSection": "3. Habilidades especiales del paciente",
+      "conditionsSectionHint": "Opcional. Selecciona las habilidades especiales activas que se asociarán una vez registrado el paciente, con notas opcionales para cada una.",
+      "conditionsPartialTitle": "El paciente se registró, pero algunas habilidades especiales no se asociaron",
+      "conditionsPartialDescription": "El paciente \"{name}\" se registró correctamente, pero no se pudieron asociar algunas habilidades especiales. El paciente no se creará de nuevo; puedes reintentar solo las habilidades pendientes (sus notas se conservan).",
       "conditionsAssigned": "Condiciones asociadas",
       "conditionsFailed": "Condiciones pendientes",
       "conditionsRetry": "Reintentar condiciones pendientes",
@@ -2049,10 +2050,10 @@
       "unexpected": "Ocurrió un error inesperado."
     },
     "conditions": {
-      "title": "Condiciones especiales",
+      "title": "Habilidades especiales",
       "editHint": "Información administrativa del paciente. No son diagnósticos ni generan decisiones clínicas. Los cambios se aplican al guardar.",
       "manageInEdit": "Gestionar condiciones",
-      "patientDataSaved": "Los datos del paciente se guardaron. Algunos cambios de condiciones especiales siguen pendientes; revísalos abajo y guarda de nuevo.",
+      "patientDataSaved": "Los datos del paciente se guardaron. Algunos cambios de habilidades especiales siguen pendientes; revísalos abajo y guarda de nuevo.",
       "selectedLabel": "Condiciones seleccionadas",
       "removeSelection": "Quitar {name} de la selección",
       "removeFromSelection": "Quitar",
@@ -2061,12 +2062,12 @@
       "optional": "opcional",
       "noNotes": "Sin notas",
       "searchPlaceholder": "Buscar condiciones activas...",
-      "searchLabel": "Buscar condiciones especiales activas por nombre",
-      "catalogError": "No se pudo cargar el catálogo de condiciones especiales.",
+      "searchLabel": "Buscar habilidades especiales activas por nombre",
+      "catalogError": "No se pudo cargar el catálogo de habilidades especiales.",
       "retry": "Reintentar",
-      "loadingCatalog": "Cargando condiciones especiales...",
-      "noResults": "No hay condiciones especiales activas disponibles para esta búsqueda.",
-      "emptyPage": "No hay condiciones especiales en esta página.",
+      "loadingCatalog": "Cargando habilidades especiales...",
+      "noResults": "No hay habilidades especiales activas disponibles para esta búsqueda.",
+      "emptyPage": "No hay habilidades especiales en esta página.",
       "alreadyAssigned": "Asociada",
       "select": "Seleccionar",
       "selected": "Seleccionada",
@@ -2077,24 +2078,24 @@
         "active": "Activa",
         "inactive": "Inactiva"
       },
-      "assignedError": "No se pudieron cargar las condiciones especiales del paciente.",
-      "loadingAssigned": "Cargando condiciones especiales...",
-      "noAssigned": "Este paciente no tiene condiciones especiales asociadas.",
+      "assignedError": "No se pudieron cargar las habilidades especiales del paciente.",
+      "loadingAssigned": "Cargando habilidades especiales...",
+      "noAssigned": "Este paciente no tiene habilidades especiales asociadas.",
       "currentTitle": "Condiciones asociadas",
       "inactiveAssigned": "Esta condición está inactiva. Sigue asociada y puede retirarse.",
       "willBeRemoved": "Se retirará",
       "undoRemove": "Deshacer",
       "remove": "Retirar",
       "addTitle": "Agregar condiciones",
-      "saved": "Los cambios de condiciones especiales se guardaron correctamente.",
-      "someFailed": "Algunos cambios de condiciones especiales no pudieron completarse",
+      "saved": "Los cambios de habilidades especiales se guardaron correctamente.",
+      "someFailed": "Algunos cambios de habilidades especiales no pudieron completarse",
       "operations": {
         "assign": "asociar",
         "updateNotes": "actualizar notas",
         "remove": "retirar"
       },
-      "pendingSummary": "Cambios de condiciones especiales pendientes: {count}.",
-      "assigning": "Asociando condiciones especiales...",
+      "pendingSummary": "Cambios de habilidades especiales pendientes: {count}.",
+      "assigning": "Asociando habilidades especiales...",
       "errors": {
         "unexpected": "Ocurrió un error inesperado.",
         "network": "No se pudo conectar con el servidor. Inténtalo de nuevo.",
