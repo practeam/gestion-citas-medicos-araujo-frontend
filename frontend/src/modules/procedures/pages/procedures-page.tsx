@@ -14,7 +14,7 @@ import { ProceduresPagination } from "../components/procedures-pagination";
 import { ProceduresTable } from "../components/procedures-table";
 import { PROCEDURES_PAGE_SIZE, useProcedures } from "../hooks/use-procedures";
 import { procedureApi } from "../services/procedure-api";
-import type { Procedure } from "../types/procedure.types";
+import type { Procedure, ProcedureSortField } from "../types/procedure.types";
 import { getProcedureErrorMessage } from "../utils/procedure-error.utils";
 
 type Notice = "created" | "updated" | "activated" | "deactivated";
@@ -72,6 +72,13 @@ export default function ProceduresPage() {
   };
 
   const procedures = data?.items ?? [];
+  const sortProcedures = (field: ProcedureSortField) => {
+    updateFilters({
+      sortBy: field,
+      order:
+        filters.sortBy === field && filters.order === "asc" ? "desc" : "asc",
+    });
+  };
 
   return (
     <div>
@@ -135,6 +142,9 @@ export default function ProceduresPage() {
                 ) : (
                   <ProceduresTable
                     procedures={procedures}
+                    sortBy={filters.sortBy}
+                    order={filters.order}
+                    onSort={sortProcedures}
                     onToggleStatus={setStatusTarget}
                   />
                 )}

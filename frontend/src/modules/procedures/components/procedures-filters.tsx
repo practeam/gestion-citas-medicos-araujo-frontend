@@ -18,25 +18,12 @@ import { SearchIcon } from "@/icons";
 import { useEffect, useState } from "react";
 import type { ProcedureFilters } from "../hooks/use-procedures";
 import { useProcedureLabels } from "../hooks/use-procedure-labels";
-import type {
-  ProcedureSortField,
-  ProcedureStatusFilter,
-  SortOrder,
-} from "../types/procedure.types";
+import type { ProcedureStatusFilter } from "../types/procedure.types";
 import { isValidPrice } from "../utils/procedure-price.utils";
 import { ProcedureParentSelector } from "./procedure-parent-selector";
 
 const SEARCH_DEBOUNCE_MS = 400;
 const STATUS_OPTIONS: ProcedureStatusFilter[] = ["all", "active", "inactive"];
-const SORT_FIELDS: ProcedureSortField[] = [
-  "id",
-  "name",
-  "code",
-  "base_price",
-  "base_duration_minutes",
-  "created_at",
-];
-const SORT_ORDERS: SortOrder[] = ["asc", "desc"];
 
 interface ProceduresFiltersProps {
   filters: ProcedureFilters;
@@ -97,38 +84,6 @@ export function ProceduresFilters({
             {STATUS_OPTIONS.map((option) => (
               <SelectItem key={option} value={option}>
                 {t(`status.${option}`)}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select
-          value={filters.sortBy}
-          onValueChange={(value) =>
-            onChange({ sortBy: value as ProcedureSortField })
-          }
-        >
-          <SelectTrigger className="sm:w-52" aria-label={t("sortByLabel")}>
-            <SelectValue>{(value: string) => t(`sortBy.${value}`)}</SelectValue>
-          </SelectTrigger>
-          <SelectContent>
-            {SORT_FIELDS.map((option) => (
-              <SelectItem key={option} value={option}>
-                {t(`sortBy.${option}`)}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Select
-          value={filters.order}
-          onValueChange={(value) => onChange({ order: value as SortOrder })}
-        >
-          <SelectTrigger className="sm:w-40" aria-label={t("orderLabel")}>
-            <SelectValue>{(value: string) => t(`order.${value}`)}</SelectValue>
-          </SelectTrigger>
-          <SelectContent>
-            {SORT_ORDERS.map((option) => (
-              <SelectItem key={option} value={option}>
-                {t(`order.${option}`)}
               </SelectItem>
             ))}
           </SelectContent>
