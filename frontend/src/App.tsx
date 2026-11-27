@@ -77,7 +77,6 @@ import {
 } from "@/modules/specialties";
 import { Error404Page } from "@/pages/main/pages";
 import ProfilePage from "@/pages/main/profile";
-import CalendarPage from "@/pages/main/calendar";
 import { AuthLayout } from "@/pages/others/auth";
 import "flatpickr/dist/flatpickr.css";
 import type { ReactNode } from "react";
