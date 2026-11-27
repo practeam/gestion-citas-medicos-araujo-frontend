@@ -224,10 +224,16 @@ function AddForm({
           )}
           {relationshipField}
           <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-            <Button variant="outline" disabled={isPending} onClick={onClose}>
+            <Button
+              type="button"
+              variant="outline"
+              disabled={isPending}
+              onClick={onClose}
+            >
               {t("cancel")}
             </Button>
             <Button
+              type="button"
               disabled={!person || duplicate || isPending}
               onClick={() => person && void confirm(person)}
             >

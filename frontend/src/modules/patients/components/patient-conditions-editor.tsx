@@ -36,6 +36,8 @@ interface PatientConditionsEditorProps {
   /** Resultado de la última ejecución de operaciones, si hubo. */
   results: ConditionOperationResult[] | null;
   disabled: boolean;
+  /** Oculta títulos y mensajes introductorios cuando el paso ya aporta contexto. */
+  showHeadings?: boolean;
 }
 
 /**
@@ -57,6 +59,7 @@ export function PatientConditionsEditor({
   onNotesDraftChange,
   results,
   disabled,
+  showHeadings = true,
 }: PatientConditionsEditorProps) {
   const t = useTranslations("patients.conditions");
   const tErrors = useTranslations("patients.conditions.errors");
@@ -102,13 +105,17 @@ export function PatientConditionsEditor({
   return (
     <div className="space-y-6">
       <div className="space-y-3">
-        <h5 className="text-sm font-medium text-gray-800 dark:text-white/90">
-          {t("currentTitle")}
-        </h5>
+        {showHeadings && (
+          <h5 className="text-sm font-medium text-gray-800 dark:text-white/90">
+            {t("currentTitle")}
+          </h5>
+        )}
         {assignments.length === 0 ? (
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {t("noAssigned")}
-          </p>
+          showHeadings ? (
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {t("noAssigned")}
+            </p>
+          ) : null
         ) : (
           <ul className="space-y-3">
             {assignments.map(({ special_condition: condition, notes }) => {
@@ -189,9 +196,11 @@ export function PatientConditionsEditor({
       </div>
 
       <div className="space-y-3">
-        <h5 className="text-sm font-medium text-gray-800 dark:text-white/90">
-          {t("addTitle")}
-        </h5>
+        {showHeadings && (
+          <h5 className="text-sm font-medium text-gray-800 dark:text-white/90">
+            {t("addTitle")}
+          </h5>
+        )}
         <PatientConditionPicker
           selected={toAdd}
           onChange={onToAddChange}

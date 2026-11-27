@@ -55,7 +55,7 @@ export interface PersonFormProps {
   /** Permite integrar el formulario en un flujo por pasos sin desmontar sus campos. */
   fieldsHidden?: boolean;
   /** Reemplaza las acciones predeterminadas cuando el consumidor controla la navegaciÃ³n. */
-  actions?: React.ReactNode;
+  actions?: React.ReactNode | ((isSubmitting: boolean) => React.ReactNode);
   /** Se ejecuta cuando el envÃ­o encuentra errores en los datos personales. */
   onInvalid?: () => void;
 }
@@ -278,33 +278,35 @@ export function PersonForm({
 
       {children}
 
-      {actions ?? (
-        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-          {onCancel ? (
-            <Button
-              type="button"
-              variant="outline"
-              disabled={isSubmitting}
-              onClick={onCancel}
-            >
-              {t("cancel")}
-            </Button>
-          ) : (
-            <Button
-              variant="outline"
-              disabled={isSubmitting}
-              nativeButton={false}
-              render={<Link to="/persons" />}
-            >
-              {t("cancel")}
-            </Button>
-          )}
-          <Button type="submit" disabled={isSubmitting}>
-            {isSubmitting && <Spinner />}
-            {isSubmitting ? t("saving") : submitLabel}
-          </Button>
-        </div>
-      )}
+      {typeof actions === "function"
+        ? actions(isSubmitting)
+        : (actions ?? (
+            <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              {onCancel ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={isSubmitting}
+                  onClick={onCancel}
+                >
+                  {t("cancel")}
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  disabled={isSubmitting}
+                  nativeButton={false}
+                  render={<Link to="/persons" />}
+                >
+                  {t("cancel")}
+                </Button>
+              )}
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting && <Spinner />}
+                {isSubmitting ? t("saving") : submitLabel}
+              </Button>
+            </div>
+          ))}
     </form>
   );
 }

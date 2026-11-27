@@ -15,9 +15,13 @@ export {
   type PersonFormValues,
 } from "./schemas/person-schema";
 export { personApi } from "./services/person-api";
+export { usePerson } from "./hooks/use-person";
 export type { Person, PersonCreateRequest } from "./types/person.types";
 export {
   getPersonDocument,
   getPersonFullName,
   toCreatePayload,
+  toFormValues,
+  toUpdatePayload,
 } from "./utils/person-payload.utils";
+export { getPersonErrorMessage } from "./utils/person-error.utils";

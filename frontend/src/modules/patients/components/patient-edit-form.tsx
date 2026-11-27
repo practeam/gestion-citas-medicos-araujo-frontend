@@ -21,6 +21,14 @@ interface PatientEditFormProps {
   onSubmit: (values: PatientFormValues) => Promise<void>;
   /** Contenido adicional del formulario (p. ej. condiciones especiales), antes de las acciones. */
   children?: React.ReactNode;
+  /** Oculta los campos propios cuando el formulario se presenta por pasos. */
+  fieldsHidden?: boolean;
+  /** Acciones personalizadas para flujos guiados. */
+  actions?: (isSubmitting: boolean) => React.ReactNode;
+  /** Permite volver al paso con errores de validación. */
+  onInvalid?: () => void;
+  /** Impide envíos accidentales antes del paso de confirmación. */
+  submitEnabled?: boolean;
 }
 
 /** Edición de los campos propios del paciente (número y notas). */
@@ -28,6 +36,10 @@ export function PatientEditForm({
   defaultValues,
   onSubmit,
   children,
+  fieldsHidden = false,
+  actions,
+  onInvalid,
+  submitEnabled = true,
 }: PatientEditFormProps) {
   const t = useTranslations("patients.form");
   const tErrors = useTranslations("patients.errors");
@@ -72,34 +84,50 @@ export function PatientEditForm({
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="space-y-5" noValidate>
+    <form
+      onSubmit={(event) => {
+        if (!submitEnabled) {
+          event.preventDefault();
+          return;
+        }
+        void handleSubmit(submit, onInvalid)(event);
+      }}
+      className="space-y-5"
+      noValidate
+    >
       {formError && (
         <Alert variant="destructive">
           <AlertDescription>{formError}</AlertDescription>
         </Alert>
       )}
-      <PatientFields register={register} errors={errors} />
-      {children}
-      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-        <Button
-          variant="outline"
-          size="sm"
-          disabled={isSubmitting}
-          nativeButton={false}
-          render={<Link to="/patients" />}
-        >
-          <XIcon className="fill-current" />
-          {t("cancel")}
-        </Button>
-        <Button type="submit" size="sm" disabled={isSubmitting}>
-          {isSubmitting ? (
-            <Spinner />
-          ) : (
-            <FloppyDiscIcon className="fill-current" />
-          )}
-          {isSubmitting ? t("saving") : t("save")}
-        </Button>
+      <div hidden={fieldsHidden}>
+        <PatientFields register={register} errors={errors} />
       </div>
+      {children}
+      {actions ? (
+        actions(isSubmitting)
+      ) : (
+        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={isSubmitting}
+            nativeButton={false}
+            render={<Link to="/patients" />}
+          >
+            <XIcon className="fill-current" />
+            {t("cancel")}
+          </Button>
+          <Button type="submit" size="sm" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <Spinner />
+            ) : (
+              <FloppyDiscIcon className="fill-current" />
+            )}
+            {isSubmitting ? t("saving") : t("save")}
+          </Button>
+        </div>
+      )}
     </form>
   );
 }

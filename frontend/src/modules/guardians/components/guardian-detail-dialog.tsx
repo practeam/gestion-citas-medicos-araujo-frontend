@@ -64,11 +64,12 @@ export function GuardianDetailDialog({
               <GuardedPatientsList personId={personId} />
             </section>
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-              <Button variant="outline" onClick={onClose}>
+              <Button type="button" variant="outline" onClick={onClose}>
                 {t("close")}
               </Button>
               <Can permission="person.update">
                 <Button
+                  type="button"
                   variant="outline"
                   nativeButton={false}
                   render={<Link to={`/persons/${personId}/edit`} />}

@@ -27,6 +27,12 @@ interface GuardiansSectionProps {
   patientId: number;
   /** Permite asociar, cambiar el parentesco y desasociar (según los permisos del usuario). */
   manage?: boolean;
+  /** Oculta el encabezado cuando el contenedor ya identifica la sección. */
+  showHeading?: boolean;
+  /** Permite omitir el texto vacío en flujos compactos. */
+  showEmptyMessage?: boolean;
+  /** Notifica que una asociación fue agregada, modificada o retirada. */
+  onChanged?: () => void;
 }
 
 type Notice = "added" | "updated" | "removed";
@@ -39,14 +45,17 @@ type Notice = "added" | "updated" | "removed";
  */
 export function GuardiansSection(props: GuardiansSectionProps) {
   return (
-    <Can permission="patient_guardian.read" fallback={<NoPermissionNotice />}>
+    <Can
+      permission="patient_guardian.read"
+      fallback={<NoPermissionNotice showHeading={props.showHeading} />}
+    >
       <SectionContent {...props} />
     </Can>
   );
 }
 
 /** Sin `patient_guardian.read` la sección no se oculta en silencio: se explica por qué falta. */
-function NoPermissionNotice() {
+function NoPermissionNotice({ showHeading = true }: { showHeading?: boolean }) {
   const t = useTranslations("guardians.section");
 
   return (
@@ -54,9 +63,11 @@ function NoPermissionNotice() {
       id="guardians"
       className="space-y-3 border-t border-gray-100 pt-5 dark:border-gray-800"
     >
-      <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-        {t("title")}
-      </h4>
+      {showHeading && (
+        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+          {t("title")}
+        </h4>
+      )}
       <Alert variant="info">
         <AlertDescription>{t("noPermission")}</AlertDescription>
       </Alert>
@@ -64,7 +75,13 @@ function NoPermissionNotice() {
   );
 }
 
-function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
+function SectionContent({
+  patientId,
+  manage = false,
+  showHeading = true,
+  showEmptyMessage = true,
+  onChanged,
+}: GuardiansSectionProps) {
   const location = useLocation();
   const sectionRef = useRef<HTMLElement>(null);
   const isLoaded = useRef(false);
@@ -90,15 +107,22 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
     <section
       id="guardians"
       ref={sectionRef}
-      className="space-y-3 border-t border-gray-100 pt-5 dark:border-gray-800"
+      className={
+        showHeading
+          ? "space-y-3 border-t border-gray-100 pt-5 dark:border-gray-800"
+          : "space-y-3"
+      }
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {t("title")}
-        </h4>
+        {showHeading && (
+          <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+            {t("title")}
+          </h4>
+        )}
         {manage && (
           <Can permission="patient_guardian.create">
             <Button
+              type="button"
               size="sm"
               variant="outline"
               onClick={() => setAddOpen(true)}
@@ -122,7 +146,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
               {getGuardianErrorMessage(error, tErrors)}
             </AlertDescription>
           </Alert>
-          <Button variant="outline" size="sm" onClick={reload}>
+          <Button type="button" variant="outline" size="sm" onClick={reload}>
             {t("retry")}
           </Button>
         </div>
@@ -131,7 +155,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
           <Spinner />
           {t("loading")}
         </div>
-      ) : guardians.length === 0 ? (
+      ) : guardians.length === 0 && showEmptyMessage ? (
         <p className="text-sm text-gray-500 dark:text-gray-400">
           {manage ? t("emptyManage") : t("empty")}
         </p>
@@ -160,6 +184,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
                   </Badge>
                 )}
                 <Button
+                  type="button"
                   size="xs"
                   variant="outline"
                   onClick={() => setViewing(guardian)}
@@ -170,6 +195,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
                   <>
                     <Can permission="patient_guardian.update">
                       <Button
+                        type="button"
                         size="xs"
                         variant="outline"
                         onClick={() => setEditing(guardian)}
@@ -179,6 +205,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
                     </Can>
                     <Can permission="patient_guardian.delete">
                       <Button
+                        type="button"
                         size="xs"
                         variant="outline"
                         onClick={() => setRemoving(guardian)}
@@ -205,6 +232,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
             relationship,
           });
           setNotice("added");
+          onChanged?.();
           reload();
         }}
       />
@@ -225,6 +253,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
             relationship,
           );
           setNotice("updated");
+          onChanged?.();
           reload();
         }}
       />
@@ -235,6 +264,7 @@ function SectionContent({ patientId, manage = false }: GuardiansSectionProps) {
         onConfirm={async (guardian) => {
           await guardianApi.remove(patientId, guardian.id);
           setNotice("removed");
+          onChanged?.();
           reload();
         }}
       />
@@ -315,10 +345,19 @@ function RelationshipDialog({
           ariaLabel={t("label")}
         />
         <DialogFooter>
-          <Button variant="outline" disabled={isPending} onClick={close}>
+          <Button
+            type="button"
+            variant="outline"
+            disabled={isPending}
+            onClick={close}
+          >
             {t("cancel")}
           </Button>
-          <Button disabled={isPending} onClick={() => void save()}>
+          <Button
+            type="button"
+            disabled={isPending}
+            onClick={() => void save()}
+          >
             {isPending && <Spinner />}
             {t("save")}
           </Button>
@@ -384,10 +423,16 @@ function RemoveDialog({
           </Alert>
         )}
         <DialogFooter>
-          <Button variant="outline" disabled={isPending} onClick={close}>
+          <Button
+            type="button"
+            variant="outline"
+            disabled={isPending}
+            onClick={close}
+          >
             {t("cancel")}
           </Button>
           <Button
+            type="button"
             variant="destructive"
             disabled={isPending}
             onClick={() => void confirm()}
