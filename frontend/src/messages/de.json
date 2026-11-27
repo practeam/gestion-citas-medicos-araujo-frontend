@@ -1771,6 +1771,10 @@
       "documentNumberPlaceholder": "Dokumentnr. (exakt)",
       "documentNumberLabel": "Dokumentnummer (exakte Übereinstimmung)",
       "statusLabel": "Nach Status filtern",
+      "searchType": {
+        "name": "Name",
+        "documentNumber": "Dokument"
+      },
       "status": {
         "all": "Alle Status",
         "active": "Aktiv",

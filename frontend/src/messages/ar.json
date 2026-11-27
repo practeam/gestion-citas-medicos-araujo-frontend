@@ -1771,6 +1771,10 @@
       "documentNumberPlaceholder": "رقم الوثيقة (مطابق)",
       "documentNumberLabel": "رقم الوثيقة (مطابقة تامة)",
       "statusLabel": "التصفية حسب الحالة",
+      "searchType": {
+        "name": "الاسم",
+        "documentNumber": "المستند"
+      },
       "status": {
         "all": "كل الحالات",
         "active": "نشط",

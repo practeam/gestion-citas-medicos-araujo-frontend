@@ -1771,6 +1771,10 @@
       "documentNumberPlaceholder": "N.º de documento (exacto)",
       "documentNumberLabel": "Número de documento (coincidencia exacta)",
       "statusLabel": "Filtrar por estado",
+      "searchType": {
+        "name": "Nombre",
+        "documentNumber": "Documento"
+      },
       "status": {
         "all": "Todos los estados",
         "active": "Activas",
