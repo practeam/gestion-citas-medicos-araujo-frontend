@@ -3109,6 +3109,7 @@
       },
       "parent": "Parent procedure",
       "allParents": "All procedures",
+      "price": "Price",
       "minPrice": "Minimum price",
       "maxPrice": "Maximum price",
       "priceInvalid": "Enter a valid amount (up to 2 decimals).",

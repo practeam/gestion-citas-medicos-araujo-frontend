@@ -3109,6 +3109,7 @@
       },
       "parent": "Procedimiento padre",
       "allParents": "Todos los procedimientos",
+      "price": "Precio",
       "minPrice": "Precio mínimo",
       "maxPrice": "Precio máximo",
       "priceInvalid": "Indica un importe válido (hasta 2 decimales).",

@@ -1,9 +1,13 @@
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
-import { SearchIcon } from "@/icons";
+import { SearchIcon, XIcon } from "@/icons";
 import { useEffect, useState } from "react";
 import { useParentOptions } from "../hooks/use-parent-options";
 import type { Procedure } from "../types/procedure.types";
@@ -45,35 +49,25 @@ export function ProcedureParentSelector({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="relative w-full sm:max-w-xs">
-          <SearchIcon className="pointer-events-none absolute inset-s-4 top-1/2 size-5 -translate-y-1/2 fill-gray-500 dark:fill-gray-400" />
-          <Input
-            type="search"
-            value={searchInput}
-            maxLength={150}
-            disabled={disabled}
-            onChange={(event) => setSearchInput(event.target.value)}
-            // Dentro de un formulario, Enter no debe enviarlo.
-            onKeyDown={(event) => {
-              if (event.key === "Enter") event.preventDefault();
-            }}
-            placeholder={t("searchPlaceholder")}
-            aria-label={t("searchLabel")}
-            className="ps-11"
-            autoComplete="off"
-          />
-        </div>
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          disabled={disabled || value === null}
-          onClick={() => onSelect(null)}
-        >
-          {t("none")}
-        </Button>
-      </div>
+      <InputGroup>
+        <InputGroupAddon>
+          <SearchIcon className="size-5 fill-none text-blue-500 dark:text-blue-400" />
+        </InputGroupAddon>
+        <InputGroupInput
+          type="search"
+          value={searchInput}
+          maxLength={150}
+          disabled={disabled}
+          onChange={(event) => setSearchInput(event.target.value)}
+          // Dentro de un formulario, Enter no debe enviarlo.
+          onKeyDown={(event) => {
+            if (event.key === "Enter") event.preventDefault();
+          }}
+          placeholder={t("searchPlaceholder")}
+          aria-label={t("searchLabel")}
+          autoComplete="off"
+        />
+      </InputGroup>
 
       {error ? (
         <div className="space-y-3">
@@ -104,7 +98,24 @@ export function ProcedureParentSelector({
               return (
                 <li
                   key={procedure.id}
-                  className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5"
+                  className={`cursor-pointer px-4 py-2.5 transition-colors ${
+                    selected
+                      ? "bg-green-50 ring-1 ring-green-300 ring-inset dark:bg-green-500/10 dark:ring-green-500/40"
+                      : "hover:bg-blue-50 dark:hover:bg-blue-500/10"
+                  }`}
+                  role="button"
+                  tabIndex={disabled ? undefined : 0}
+                  aria-pressed={selected}
+                  onClick={() => !disabled && onSelect(procedure)}
+                  onKeyDown={(event) => {
+                    if (
+                      !disabled &&
+                      (event.key === "Enter" || event.key === " ")
+                    ) {
+                      event.preventDefault();
+                      onSelect(procedure);
+                    }
+                  }}
                 >
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium text-gray-800 dark:text-white/90">
@@ -120,16 +131,6 @@ export function ProcedureParentSelector({
                         .join(" · ")}
                     </p>
                   </div>
-                  <Button
-                    type="button"
-                    size="xs"
-                    variant={selected ? "default" : "outline"}
-                    aria-pressed={selected}
-                    disabled={disabled}
-                    onClick={() => onSelect(procedure)}
-                  >
-                    {selected ? t("selected") : t("select")}
-                  </Button>
                 </li>
               );
             })}
@@ -141,6 +142,17 @@ export function ProcedureParentSelector({
           )}
         </>
       )}
+
+      <Button
+        type="button"
+        variant="outline"
+        className="w-full border-red-200 bg-red-50/60 text-red-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-400 dark:hover:bg-red-500/15 dark:hover:text-red-300"
+        disabled={disabled || value === null}
+        onClick={() => onSelect(null)}
+      >
+        <XIcon className="fill-current" />
+        {t("none")}
+      </Button>
     </div>
   );
 }

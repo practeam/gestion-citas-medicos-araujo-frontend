@@ -3090,6 +3090,7 @@
       },
       "parent": "Übergeordnete Behandlung",
       "allParents": "Alle Behandlungen",
+      "price": "Preis",
       "minPrice": "Mindestpreis",
       "maxPrice": "Höchstpreis",
       "priceInvalid": "Geben Sie einen gültigen Betrag ein (bis zu 2 Dezimalstellen).",
