@@ -110,6 +110,8 @@ export default function SpecialConditionsPage() {
             />
             <Can permission="special_condition.create">
               <Button
+                size="sm"
+                className="shrink-0"
                 nativeButton={false}
                 render={<Link to="/special-conditions/create" />}
               >
