@@ -206,54 +206,61 @@ export function PersonForm({
         </Alert>
       )}
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        {renderField("first_name", {
-          required: true,
-          maxLength: PERSON_NAME_MAX_LENGTH + 20,
-        })}
-        {renderField("last_name", {
-          required: true,
-          maxLength: PERSON_NAME_MAX_LENGTH + 20,
-        })}
-        {renderField("maternal_last_name", {
-          maxLength: PERSON_NAME_MAX_LENGTH + 20,
-        })}
-        {renderField("birth_date", { type: "date", max: todayIsoDate() })}
-        <Field data-invalid={Boolean(errors.document_type)}>
-          <FieldLabel className="mb-1.5 block">
-            {t("document_typeLabel")}{" "}
-            <span className="text-xs font-normal text-gray-400">
-              ({t("optional")})
-            </span>
-          </FieldLabel>
-          <Controller
-            control={control}
-            name="document_type"
-            render={({ field }) => (
-              <DocumentTypeSelect
-                value={field.value}
-                onChange={field.onChange}
-                emptyLabel={t("document_typePlaceholder")}
-                ariaLabel={t("document_typeLabel")}
-                invalid={Boolean(errors.document_type)}
-                className="w-full"
-              />
-            )}
-          />
-          <FieldError errors={toFieldErrors(errors.document_type)} />
-        </Field>
-        {renderField("document_number", {
-          maxLength: PERSON_DOCUMENT_MAX_LENGTH + 10,
-          uppercase: true,
-        })}
-        {renderPhoneField("phone")}
-        {renderPhoneField("phone_whatsapp")}
-        {renderField("email", { type: "email" })}
-        <div className="sm:col-span-2">
-          {renderField("address", {
-            maxLength: PERSON_ADDRESS_MAX_LENGTH + 20,
+      <div className="space-y-5">
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {renderField("first_name", {
+            required: true,
+            maxLength: PERSON_NAME_MAX_LENGTH + 20,
+          })}
+          {renderField("last_name", {
+            required: true,
+            maxLength: PERSON_NAME_MAX_LENGTH + 20,
+          })}
+          {renderField("maternal_last_name", {
+            maxLength: PERSON_NAME_MAX_LENGTH + 20,
           })}
         </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <Field data-invalid={Boolean(errors.document_type)}>
+            <FieldLabel className="mb-1.5 block">
+              {t("document_typeLabel")}{" "}
+              <span className="text-xs font-normal text-gray-400">
+                ({t("optional")})
+              </span>
+            </FieldLabel>
+            <Controller
+              control={control}
+              name="document_type"
+              render={({ field }) => (
+                <DocumentTypeSelect
+                  value={field.value}
+                  onChange={field.onChange}
+                  emptyLabel={t("document_typePlaceholder")}
+                  ariaLabel={t("document_typeLabel")}
+                  invalid={Boolean(errors.document_type)}
+                  className="w-full"
+                />
+              )}
+            />
+            <FieldError errors={toFieldErrors(errors.document_type)} />
+          </Field>
+          {renderField("document_number", {
+            maxLength: PERSON_DOCUMENT_MAX_LENGTH + 10,
+            uppercase: true,
+          })}
+          {renderField("birth_date", { type: "date", max: todayIsoDate() })}
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {renderPhoneField("phone")}
+          {renderPhoneField("phone_whatsapp")}
+          {renderField("email", { type: "email" })}
+        </div>
+
+        {renderField("address", {
+          maxLength: PERSON_ADDRESS_MAX_LENGTH + 20,
+        })}
       </div>
 
       {children}
