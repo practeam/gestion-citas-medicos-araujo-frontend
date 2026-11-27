@@ -15,12 +15,12 @@ export default function AppSidebarHeader({
           <>
             <img
               className="h-10 w-37.5 dark:hidden"
-              src="/images/logo/logo.svg"
+              src="/images/logo/logo.png"
               alt="Logo"
             />
             <img
               className="hidden h-10 w-37.5 dark:block"
-              src="/images/logo/logo-dark.svg"
+              src="/images/logo/logo-dark.png"
               alt="Logo"
             />
           </>
