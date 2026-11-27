@@ -49,7 +49,7 @@ export function AppointmentProcedureSelector({
 
   return (
     <div className="space-y-3">
-      <div className="relative sm:max-w-xs">
+      <div className="relative">
         <SearchIcon className="pointer-events-none absolute inset-s-4 top-1/2 size-5 -translate-y-1/2 fill-gray-500 dark:fill-gray-400" />
         <Input
           type="search"
@@ -93,7 +93,7 @@ export function AppointmentProcedureSelector({
       ) : (
         <>
           <ul
-            className={`max-h-56 divide-y divide-gray-100 overflow-y-auto rounded-xl border border-gray-200 dark:divide-white/5 dark:border-gray-800 ${isLoading ? "opacity-60" : ""}`}
+            className={`grid custom-scrollbar max-h-96 gap-3 overflow-y-auto pe-1 ${isLoading ? "opacity-60" : ""}`}
             aria-busy={isLoading}
           >
             {options.map((procedure) => {
@@ -101,7 +101,26 @@ export function AppointmentProcedureSelector({
               return (
                 <li
                   key={procedure.id}
-                  className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5"
+                  className={`rounded-xl border px-4 py-3 transition-colors ${
+                    added
+                      ? "border-green-300 bg-green-50 dark:border-green-500/40 dark:bg-green-500/10"
+                      : "cursor-pointer border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50 dark:border-gray-800 dark:bg-white/3 dark:hover:border-blue-500/40 dark:hover:bg-blue-500/10"
+                  }`}
+                  role={!added ? "button" : undefined}
+                  tabIndex={!added && !disabled ? 0 : undefined}
+                  aria-pressed={added}
+                  title={added ? t("added") : t("add")}
+                  onClick={() => !added && !disabled && onAdd(procedure)}
+                  onKeyDown={(event) => {
+                    if (
+                      !added &&
+                      !disabled &&
+                      (event.key === "Enter" || event.key === " ")
+                    ) {
+                      event.preventDefault();
+                      onAdd(procedure);
+                    }
+                  }}
                 >
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium text-gray-800 dark:text-white/90">
@@ -119,15 +138,6 @@ export function AppointmentProcedureSelector({
                         .join(" · ")}
                     </p>
                   </div>
-                  <Button
-                    type="button"
-                    size="xs"
-                    variant="outline"
-                    disabled={disabled || added}
-                    onClick={() => onAdd(procedure)}
-                  >
-                    {added ? t("added") : t("add")}
-                  </Button>
                 </li>
               );
             })}
