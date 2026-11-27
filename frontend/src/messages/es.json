@@ -2794,10 +2794,10 @@
     },
     "filters": {
       "patient": "Paciente",
-      "staff": "Miembro del personal",
+      "staff": "Empleado",
       "status": "Estado",
       "allPatients": "Todos los pacientes",
-      "allStaff": "Todo el personal",
+      "allStaff": "Todos los empleados",
       "allStatuses": "Todos los estados",
       "clear": "Limpiar filtros"
     },
@@ -2817,24 +2817,24 @@
     "selector": {
       "searchPlaceholder": {
         "patient": "Buscar paciente por nombre",
-        "staff": "Buscar personal por nombre"
+        "staff": "Buscar empleado por nombre"
       },
       "searchLabel": {
         "patient": "Buscar pacientes",
-        "staff": "Buscar personal"
+        "staff": "Buscar empleados"
       },
       "loadError": {
         "patient": "No se pudieron cargar los pacientes.",
-        "staff": "No se pudo cargar el personal."
+        "staff": "No se pudieron cargar los empleados."
       },
       "retry": "Reintentar",
       "loading": {
         "patient": "Cargando pacientes...",
-        "staff": "Cargando personal..."
+        "staff": "Cargando empleados..."
       },
       "noResults": {
         "patient": "No se encontraron pacientes activos.",
-        "staff": "No se encontró personal activo."
+        "staff": "No se encontraron empleados activos."
       },
       "select": "Seleccionar",
       "selected": "Seleccionado",

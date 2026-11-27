@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Field, FieldLabel } from "@/components/ui/field";
 import {
   Popover,
   PopoverContent,
@@ -13,6 +12,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useTranslations } from "@/i18n";
+import {
+  CheckCircleIcon,
+  ClockIcon,
+  FilterIcon,
+  TaskIcon,
+  TrashBinIcon,
+  UserCircleIcon,
+  UserIcon,
+  XIcon,
+} from "@/icons";
 import { useState } from "react";
 import { useEntityLabels } from "../hooks/use-entity-labels";
 import {
@@ -40,23 +49,27 @@ function EntityFilter({ type, value, onChange }: EntityFilterProps) {
   const [open, setOpen] = useState(false);
   const labels = useEntityLabels(type, value === null ? [] : [value]);
   const all = type === "patient" ? t("allPatients") : t("allStaff");
+  const icon =
+    type === "patient" ? (
+      <UserIcon className="size-4 text-blue-500" />
+    ) : (
+      <UserCircleIcon className="size-4 text-purple-500" />
+    );
 
   return (
-    <Field>
-      <FieldLabel className="text-xs">
-        {type === "patient" ? t("patient") : t("staff")}
-      </FieldLabel>
+    <div className="min-w-0">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger
           render={
             <Button
               type="button"
               variant="outline"
-              size="sm"
               className="w-full justify-start truncate font-normal"
+              aria-label={type === "patient" ? t("patient") : t("staff")}
             />
           }
         >
+          {icon}
           {value === null ? all : (labels[value] ?? `#${value}`)}
         </PopoverTrigger>
         <PopoverContent align="start" className="w-80 max-w-[90vw] p-4">
@@ -84,7 +97,7 @@ function EntityFilter({ type, value, onChange }: EntityFilterProps) {
           </div>
         </PopoverContent>
       </Popover>
-    </Field>
+    </div>
   );
 }
 
@@ -106,7 +119,7 @@ export function AppointmentsFilters({
   const tStatus = useTranslations("appointments.status");
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid w-full grid-cols-1 items-center gap-3 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_11rem_2.75rem]">
       <EntityFilter
         type="patient"
         value={filters.patientId}
@@ -117,39 +130,65 @@ export function AppointmentsFilters({
         value={filters.staffMemberId}
         onChange={(staffMemberId) => onChange({ staffMemberId })}
       />
-      <Field>
-        <FieldLabel className="text-xs">{t("status")}</FieldLabel>
+      <div className="min-w-0">
         <Select
           value={filters.status}
           onValueChange={(value) =>
             onChange({ status: value as AppointmentStatusFilter })
           }
         >
-          <SelectTrigger size="sm">
+          <SelectTrigger aria-label={t("status")}>
             <SelectValue>
-              {(value: string) =>
-                value === "all" ? t("allStatuses") : tStatus(value)
-              }
+              {(value: string) => (
+                <>
+                  {value === "pending" ? (
+                    <ClockIcon className="size-4 text-amber-500" />
+                  ) : value === "confirmed" ? (
+                    <CheckCircleIcon className="size-4 text-blue-500" />
+                  ) : value === "completed" ? (
+                    <TaskIcon className="size-4 text-green-500" />
+                  ) : value === "cancelled" ? (
+                    <XIcon className="size-4 text-red-500" />
+                  ) : (
+                    <FilterIcon className="size-4 text-gray-500" />
+                  )}
+                  {value === "all" ? t("allStatuses") : tStatus(value)}
+                </>
+              )}
             </SelectValue>
           </SelectTrigger>
           <SelectContent>
             {STATUS_OPTIONS.map((option) => (
               <SelectItem key={option} value={option}>
+                {option === "pending" ? (
+                  <ClockIcon className="size-4 text-amber-500" />
+                ) : option === "confirmed" ? (
+                  <CheckCircleIcon className="size-4 text-blue-500" />
+                ) : option === "completed" ? (
+                  <TaskIcon className="size-4 text-green-500" />
+                ) : option === "cancelled" ? (
+                  <XIcon className="size-4 text-red-500" />
+                ) : (
+                  <FilterIcon className="size-4 text-gray-500" />
+                )}
                 {option === "all" ? t("allStatuses") : tStatus(option)}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
-      </Field>
-      <div className="flex items-end">
+      </div>
+      <div className="flex lg:justify-end">
         <Button
           type="button"
           variant="outline"
-          size="sm"
+          size="icon"
+          className="border-red-200 text-red-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700 dark:border-red-500/30 dark:text-red-400 dark:hover:bg-red-500/10 dark:hover:text-red-300"
           disabled={!hasFilters}
           onClick={onClear}
+          aria-label={t("clear")}
+          title={t("clear")}
         >
-          {t("clear")}
+          <TrashBinIcon className="fill-current" />
         </Button>
       </div>
     </div>
