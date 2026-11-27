@@ -2,6 +2,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import { RegenerateIcon } from "@/icons";
 import { usePatientSpecialConditions } from "../hooks/use-patient-special-conditions";
 import { PatientConditionStatusBadge } from "./patient-condition-status-badge";
 
@@ -21,6 +22,7 @@ export function PatientConditionsList({ patientId }: { patientId: number }) {
           <AlertDescription>{t("assignedError")}</AlertDescription>
         </Alert>
         <Button type="button" variant="outline" size="sm" onClick={reload}>
+          <RegenerateIcon className="fill-current" />
           {t("retry")}
         </Button>
       </div>

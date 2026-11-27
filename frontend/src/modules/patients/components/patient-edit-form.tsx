@@ -2,6 +2,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import { FloppyDiscIcon, XIcon } from "@/icons";
 import { getFieldErrors, isApiError } from "@/services/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -82,14 +83,20 @@ export function PatientEditForm({
       <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
         <Button
           variant="outline"
+          size="sm"
           disabled={isSubmitting}
           nativeButton={false}
           render={<Link to="/patients" />}
         >
+          <XIcon className="fill-current" />
           {t("cancel")}
         </Button>
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting && <Spinner />}
+        <Button type="submit" size="sm" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <Spinner />
+          ) : (
+            <FloppyDiscIcon className="fill-current" />
+          )}
           {isSubmitting ? t("saving") : t("save")}
         </Button>
       </div>

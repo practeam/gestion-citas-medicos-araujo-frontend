@@ -6,7 +6,15 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "@/i18n";
-import { SearchIcon } from "@/icons";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  CheckIcon,
+  PlusIcon,
+  RegenerateIcon,
+  SearchIcon,
+  XIcon,
+} from "@/icons";
 import type { SpecialCondition } from "@/modules/special-conditions";
 import { useEffect, useState } from "react";
 import { useActiveSpecialConditions } from "../hooks/use-active-special-conditions";
@@ -96,6 +104,7 @@ export function PatientConditionPicker({
                   aria-label={t("removeSelection", { name: condition.name })}
                   onClick={() => toggle(condition)}
                 >
+                  <XIcon className="fill-current" />
                   {t("removeFromSelection")}
                 </Button>
               </div>
@@ -147,6 +156,7 @@ export function PatientConditionPicker({
             <AlertDescription>{t("catalogError")}</AlertDescription>
           </Alert>
           <Button type="button" variant="outline" size="sm" onClick={reload}>
+            <RegenerateIcon className="fill-current" />
             {t("retry")}
           </Button>
         </div>
@@ -195,6 +205,11 @@ export function PatientConditionPicker({
                     disabled={disabled}
                     onClick={() => toggle(condition)}
                   >
+                    {isSelected ? (
+                      <CheckIcon className="fill-current" />
+                    ) : (
+                      <PlusIcon className="fill-current" />
+                    )}
                     {isSelected ? t("selected") : t("select")}
                   </Button>
                 )}
@@ -215,6 +230,7 @@ export function PatientConditionPicker({
               disabled={page <= 1 || isLoading}
               onClick={() => setPage(page - 1)}
             >
+              <ArrowLeftIcon className="fill-current rtl:rotate-180" />
               {t("previous")}
             </Button>
             <Button
@@ -225,6 +241,7 @@ export function PatientConditionPicker({
               onClick={() => setPage(page + 1)}
             >
               {t("next")}
+              <ArrowRightIcon className="fill-current rtl:rotate-180" />
             </Button>
           </div>
         </div>

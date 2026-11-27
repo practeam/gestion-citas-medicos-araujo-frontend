@@ -5,6 +5,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import { ArrowLeftIcon } from "@/icons";
 import { GuardiansSection } from "@/modules/guardians";
 import { getPersonFullName } from "@/modules/persons";
 import { useState } from "react";
@@ -147,9 +148,11 @@ export default function PatientEditPage() {
           </Alert>
           <Button
             variant="outline"
+            size="sm"
             nativeButton={false}
             render={<Link to="/patients" />}
           >
+            <ArrowLeftIcon className="fill-current rtl:rotate-180" />
             {t("form.backToList")}
           </Button>
         </div>

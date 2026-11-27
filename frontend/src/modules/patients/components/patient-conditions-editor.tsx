@@ -5,6 +5,7 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "@/i18n";
+import { RegenerateIcon, TrashBinIcon } from "@/icons";
 import type {
   ConditionOperationResult,
   PatientSpecialCondition,
@@ -67,6 +68,7 @@ export function PatientConditionsEditor({
           <AlertDescription>{t("assignedError")}</AlertDescription>
         </Alert>
         <Button type="button" variant="outline" size="sm" onClick={onReload}>
+          <RegenerateIcon className="fill-current" />
           {t("retry")}
         </Button>
       </div>
@@ -150,6 +152,11 @@ export function PatientConditionsEditor({
                         disabled={disabled}
                         onClick={() => toggleRemoval(condition.id)}
                       >
+                        {marked ? (
+                          <RegenerateIcon className="fill-current" />
+                        ) : (
+                          <TrashBinIcon className="fill-current" />
+                        )}
                         {marked ? t("undoRemove") : t("remove")}
                       </Button>
                     </div>

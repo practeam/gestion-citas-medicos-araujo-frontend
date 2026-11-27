@@ -5,7 +5,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
-import { PlusIcon } from "@/icons";
+import { PlusIcon, RegenerateIcon } from "@/icons";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { PatientStatusDialog } from "../components/patient-status-dialog";
@@ -89,6 +89,7 @@ export default function PatientsPage() {
             <PatientsFilters filters={filters} onChange={updateFilters} />
             <Can permission="patient.create">
               <Button
+                size="sm"
                 nativeButton={false}
                 render={<Link to="/patients/create" />}
               >
@@ -106,7 +107,8 @@ export default function PatientsPage() {
                     {getPatientErrorMessage(error, tErrors)}
                   </AlertDescription>
                 </Alert>
-                <Button variant="outline" onClick={reload}>
+                <Button variant="outline" size="sm" onClick={reload}>
+                  <RegenerateIcon className="fill-current" />
                   {t("retry")}
                 </Button>
               </div>

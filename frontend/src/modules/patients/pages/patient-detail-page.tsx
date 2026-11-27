@@ -6,6 +6,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useLocale, useTranslations } from "@/i18n";
+import { ArrowLeftIcon, PencilIcon } from "@/icons";
 import { getPersonDocument, getPersonFullName } from "@/modules/persons";
 import { AppointmentsSection } from "@/modules/appointments";
 import { GuardiansSection } from "@/modules/guardians";
@@ -64,9 +65,11 @@ export default function PatientDetailPage() {
           </Alert>
           <Button
             variant="outline"
+            size="sm"
             nativeButton={false}
             render={<Link to="/patients" />}
           >
+            <ArrowLeftIcon className="fill-current rtl:rotate-180" />
             {t("form.backToList")}
           </Button>
         </div>
@@ -148,16 +151,20 @@ export default function PatientDetailPage() {
           <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
             <Button
               variant="outline"
+              size="sm"
               nativeButton={false}
               render={<Link to="/patients" />}
             >
+              <ArrowLeftIcon className="fill-current rtl:rotate-180" />
               {t("form.backToList")}
             </Button>
             <Can permission="patient.update">
               <Button
+                size="sm"
                 nativeButton={false}
                 render={<Link to={`/patients/${patient.id}/edit`} />}
               >
+                <PencilIcon className="fill-current" />
                 {t("actions.edit")}
               </Button>
             </Can>

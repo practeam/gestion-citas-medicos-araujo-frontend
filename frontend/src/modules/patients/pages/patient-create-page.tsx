@@ -4,6 +4,15 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import {
+  ArrowLeftIcon,
+  FloppyDiscIcon,
+  PencilIcon,
+  PlusIcon,
+  RegenerateIcon,
+  UserIcon,
+  XIcon,
+} from "@/icons";
 import { useAuth } from "@/modules/auth";
 import {
   GuardiansPicker,
@@ -307,10 +316,12 @@ export default function PatientCreatePage() {
   const cancelButton = (
     <Button
       variant="outline"
+      size="sm"
       disabled={isSaving}
       nativeButton={false}
       render={<Link to="/patients" />}
     >
+      <XIcon className="fill-current" />
       {t("form.cancel")}
     </Button>
   );
@@ -423,25 +434,34 @@ export default function PatientCreatePage() {
                 <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
                   <Button
                     variant="outline"
+                    size="sm"
                     disabled={isSaving}
                     nativeButton={false}
                     render={<Link to="/patients" />}
                   >
+                    <ArrowLeftIcon className="fill-current rtl:rotate-180" />
                     {t("create.goToList")}
                   </Button>
                   <Button
                     variant="outline"
+                    size="sm"
                     disabled={isSaving}
                     nativeButton={false}
                     render={<Link to={`/patients/${createdPatient.id}/edit`} />}
                   >
+                    <PencilIcon className="fill-current" />
                     {t("create.editPatient")}
                   </Button>
                   <Button
+                    size="sm"
                     disabled={isSaving}
                     onClick={() => void retryAssociations()}
                   >
-                    {isSaving && <Spinner />}
+                    {isSaving ? (
+                      <Spinner />
+                    ) : (
+                      <RegenerateIcon className="fill-current" />
+                    )}
                     {isSaving
                       ? t("form.saving")
                       : tGuardians("create.retryPending")}
@@ -466,8 +486,16 @@ export default function PatientCreatePage() {
             {guardiansSection}
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
               {cancelButton}
-              <Button disabled={isSaving} onClick={() => void retryPending()}>
-                {isSaving && <Spinner />}
+              <Button
+                size="sm"
+                disabled={isSaving}
+                onClick={() => void retryPending()}
+              >
+                {isSaving ? (
+                  <Spinner />
+                ) : (
+                  <RegenerateIcon className="fill-current" />
+                )}
                 {isSaving ? t("form.saving") : t("create.retry")}
               </Button>
             </div>
@@ -481,20 +509,24 @@ export default function PatientCreatePage() {
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Button
                   type="button"
+                  size="sm"
                   variant={mode === "existing" ? "default" : "outline"}
                   aria-pressed={mode === "existing"}
                   disabled={isSaving}
                   onClick={() => setMode("existing")}
                 >
+                  <UserIcon className="fill-current" />
                   {t("create.modeExisting")}
                 </Button>
                 <Button
                   type="button"
+                  size="sm"
                   variant={mode === "new" ? "default" : "outline"}
                   aria-pressed={mode === "new"}
                   disabled={isSaving}
                   onClick={() => setMode("new")}
                 >
+                  <PlusIcon className="fill-current" />
                   {t("create.modeNew")}
                 </Button>
               </div>
@@ -529,10 +561,15 @@ export default function PatientCreatePage() {
                 <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
                   {cancelButton}
                   <Button
+                    size="sm"
                     disabled={!selectedPerson || isSaving}
                     onClick={() => void submitExisting()}
                   >
-                    {isSaving && <Spinner />}
+                    {isSaving ? (
+                      <Spinner />
+                    ) : (
+                      <FloppyDiscIcon className="fill-current" />
+                    )}
                     {isSaving ? t("form.saving") : t("create.save")}
                   </Button>
                 </div>

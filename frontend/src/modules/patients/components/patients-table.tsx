@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Can } from "@/modules/auth";
 import {
   Table,
@@ -8,7 +9,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useLocale, useTranslations } from "@/i18n";
+import {
+  CheckCircleIcon,
+  EyeIcon,
+  PencilIcon,
+  UsersIcon,
+  XIcon,
+} from "@/icons";
 import { getPersonDocument, getPersonFullName } from "@/modules/persons";
+import { getInitials } from "@/utils/get-initials";
 import { Link } from "react-router";
 import type { Patient } from "../types/patient.types";
 import { formatDateTime } from "../utils/patient-date.utils";
@@ -35,7 +44,7 @@ export function PatientsTable({
   return (
     <div className="max-w-full overflow-x-auto">
       <Table>
-        <TableHeader className="border-b border-gray-100 dark:border-white/5">
+        <TableHeader className="border-b border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-white/4">
           <TableRow>
             <TableCell isHeader className={HEADER_CELL}>
               {t("columns.fullName")}
@@ -66,7 +75,16 @@ export function PatientsTable({
               <TableCell
                 className={`${BODY_CELL} font-medium text-gray-800 dark:text-white/90`}
               >
-                {getPersonFullName(patient.person)}
+                <div className="flex items-center gap-3">
+                  {getInitials(getPersonFullName(patient.person)) && (
+                    <Avatar size="sm">
+                      <AvatarFallback className="bg-brand-50 font-semibold text-brand-600 dark:bg-brand-500/15 dark:text-brand-400">
+                        {getInitials(getPersonFullName(patient.person))}
+                      </AvatarFallback>
+                    </Avatar>
+                  )}
+                  <span>{getPersonFullName(patient.person)}</span>
+                </div>
               </TableCell>
               <TableCell
                 className={`${BODY_CELL} whitespace-nowrap text-gray-500 dark:text-gray-400`}
@@ -90,41 +108,67 @@ export function PatientsTable({
                 <div className="flex flex-wrap items-center gap-2">
                   <Button
                     variant="outline"
-                    size="xs"
+                    size="icon-xs"
+                    className="border-blue-200 text-blue-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 dark:border-blue-500/30 dark:text-blue-400 dark:hover:bg-blue-500/10 dark:hover:text-blue-300"
+                    aria-label={t("actions.view")}
+                    title={t("actions.view")}
                     nativeButton={false}
                     render={<Link to={`/patients/${patient.id}`} />}
                   >
-                    {t("actions.view")}
+                    <EyeIcon className="fill-current" />
                   </Button>
                   <Can permission="patient_guardian.read">
                     <Button
                       variant="outline"
-                      size="xs"
+                      size="icon-xs"
+                      className="border-purple-200 text-purple-600 hover:border-purple-300 hover:bg-purple-50 hover:text-purple-700 dark:border-purple-500/30 dark:text-purple-400 dark:hover:bg-purple-500/10 dark:hover:text-purple-300"
+                      aria-label={tGuardians("section.title")}
+                      title={tGuardians("section.title")}
                       nativeButton={false}
                       render={<Link to={`/patients/${patient.id}#guardians`} />}
                     >
-                      {tGuardians("section.title")}
+                      <UsersIcon className="fill-current" />
                     </Button>
                   </Can>
                   <Can permission="patient.update">
                     <Button
                       variant="outline"
-                      size="xs"
+                      size="icon-xs"
+                      className="border-amber-200 text-amber-600 hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 dark:border-amber-500/30 dark:text-amber-400 dark:hover:bg-amber-500/10 dark:hover:text-amber-300"
+                      aria-label={t("actions.edit")}
+                      title={t("actions.edit")}
                       nativeButton={false}
                       render={<Link to={`/patients/${patient.id}/edit`} />}
                     >
-                      {t("actions.edit")}
+                      <PencilIcon className="fill-current" />
                     </Button>
                   </Can>
                   <Can permission="patient.update">
                     <Button
                       variant="outline"
-                      size="xs"
+                      size="icon-xs"
+                      className={
+                        patient.is_active
+                          ? "border-red-200 text-red-600 hover:border-red-300 hover:bg-red-50 hover:text-red-700 dark:border-red-500/30 dark:text-red-400 dark:hover:bg-red-500/10 dark:hover:text-red-300"
+                          : "border-green-200 text-green-600 hover:border-green-300 hover:bg-green-50 hover:text-green-700 dark:border-green-500/30 dark:text-green-400 dark:hover:bg-green-500/10 dark:hover:text-green-300"
+                      }
+                      aria-label={
+                        patient.is_active
+                          ? t("actions.deactivate")
+                          : t("actions.activate")
+                      }
+                      title={
+                        patient.is_active
+                          ? t("actions.deactivate")
+                          : t("actions.activate")
+                      }
                       onClick={() => onToggleStatus(patient)}
                     >
-                      {patient.is_active
-                        ? t("actions.deactivate")
-                        : t("actions.activate")}
+                      {patient.is_active ? (
+                        <XIcon className="fill-current" />
+                      ) : (
+                        <CheckCircleIcon className="fill-current" />
+                      )}
                     </Button>
                   </Can>
                 </div>

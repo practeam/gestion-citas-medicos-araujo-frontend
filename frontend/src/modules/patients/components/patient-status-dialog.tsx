@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
+import { CheckCircleIcon, XIcon } from "@/icons";
 import { getPersonFullName } from "@/modules/persons";
 import type { Patient } from "../types/patient.types";
 
@@ -54,15 +55,28 @@ export function PatientStatusDialog({
           </Alert>
         )}
         <DialogFooter>
-          <Button variant="outline" disabled={isPending} onClick={onClose}>
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={isPending}
+            onClick={onClose}
+          >
+            <XIcon className="fill-current" />
             {t("cancel")}
           </Button>
           <Button
             variant={action === "deactivate" ? "destructive" : "default"}
+            size="sm"
             disabled={isPending}
             onClick={onConfirm}
           >
-            {isPending && <Spinner />}
+            {isPending ? (
+              <Spinner />
+            ) : action === "activate" ? (
+              <CheckCircleIcon className="fill-current" />
+            ) : (
+              <XIcon className="fill-current" />
+            )}
             {t(`${action}.confirm`)}
           </Button>
         </DialogFooter>
