@@ -485,6 +485,10 @@ function AppointmentForm({
     if (valid) setStep((current) => (current + 1) as AppointmentFormStep);
   };
 
+  const submitForm = handleSubmit(send, (invalidErrors) =>
+    setStep(invalidErrors.patientId || invalidErrors.staffMemberId ? 0 : 1),
+  );
+
   const wizardProgress = (
     <ol
       className="grid grid-cols-2 gap-2 sm:grid-cols-4"
@@ -576,9 +580,18 @@ function AppointmentForm({
 
   return (
     <form
-      onSubmit={handleSubmit(send, (invalidErrors) =>
-        setStep(invalidErrors.patientId || invalidErrors.staffMemberId ? 0 : 1),
-      )}
+      onSubmit={(event) => {
+        const submitter = event.nativeEvent.submitter as HTMLElement | null;
+        const isFinalConfirmation =
+          submitter?.dataset.appointmentSubmit === "true";
+
+        if (step < 3 || !isFinalConfirmation) {
+          event.preventDefault();
+          if (step < 3) void goNext();
+          return;
+        }
+        void submitForm(event);
+      }}
       className="space-y-6"
       noValidate
     >
@@ -763,13 +776,21 @@ function AppointmentForm({
           <Button
             type="button"
             disabled={isSubmitting}
-            onClick={() => void goNext()}
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              void goNext();
+            }}
           >
             {t("next")}
             <ChevronRightIcon className="fill-current rtl:rotate-180" />
           </Button>
         ) : (
-          <Button type="submit" disabled={isSubmitting}>
+          <Button
+            type="submit"
+            data-appointment-submit="true"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? (
               <Spinner />
             ) : (
