@@ -2825,11 +2825,25 @@
       "refine": "{shown} von {total} werden angezeigt. Verfeinern Sie die Suche, um weitere zu finden."
     },
     "form": {
+      "steps": {
+        "label": "Schritte des Terminformulars",
+        "people": "Patient und Mitarbeiter",
+        "schedule": "Datum und Uhrzeit",
+        "procedures": "Behandlungen",
+        "confirm": "Bestätigung"
+      },
+      "previous": "Zurück",
+      "next": "Weiter",
+      "review": {
+        "title": "Prüfen und bestätigen",
+        "description": "Prüfen Sie die Angaben, bevor Sie den Termin speichern.",
+        "procedureCount": "{count} Behandlungen"
+      },
       "createTitle": "Neuer Termin",
       "editTitle": "Termin bearbeiten",
       "createDescription": "Wählen Sie Patient, Mitarbeitende und Datum sowie Uhrzeit.",
       "editDescription": "Ändern Sie Zeit, Mitarbeitende oder Grund. Der Server prüft die Verfügbarkeit erneut.",
-      "availabilityNote": "Der Server prüft, ob die Person aktiv ist, das Intervall in ihrer Verfügbarkeit liegt, keine Ausnahme es blockiert und es sich nicht mit anderen Terminen überschneidet.",
+      "availabilityNote": "Es wird geprüft, ob der Mitarbeiter zum gewählten Zeitpunkt verfügbar ist und keinen anderen Termin oder gesperrten Zeitraum hat.",
       "patientSection": "Patient",
       "patientLocked": "Der Patient kann nicht geändert werden. Um einen anderen Patienten zu buchen, erstellen Sie einen neuen Termin.",
       "selectedPatient": "Ausgewählter Patient",

@@ -2843,11 +2843,25 @@
       "refine": "Mostrando {shown} de {total}. Afina la búsqueda para encontrar otros."
     },
     "form": {
+      "steps": {
+        "label": "Pasos del formulario de cita",
+        "people": "Paciente y empleado",
+        "schedule": "Fecha y hora",
+        "procedures": "Procedimientos",
+        "confirm": "Confirmación"
+      },
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "review": {
+        "title": "Revisar y confirmar",
+        "description": "Verifica la información antes de guardar la cita.",
+        "procedureCount": "{count} procedimientos"
+      },
       "createTitle": "Nueva cita",
       "editTitle": "Editar cita",
       "createDescription": "Elige el paciente, el miembro del personal y la fecha y hora.",
       "editDescription": "Cambia el horario, el personal o el motivo. El servidor vuelve a validar la disponibilidad.",
-      "availabilityNote": "El servidor valida que el trabajador esté activo, que el intervalo esté dentro de su disponibilidad, que ninguna excepción lo bloquee y que no se solape con otras citas.",
+      "availabilityNote": "Se comprobará que el empleado esté disponible en el horario elegido y que no tenga otra cita o bloqueo.",
       "patientSection": "Paciente",
       "patientLocked": "El paciente no se puede cambiar. Para agendar a otro paciente, crea una cita nueva.",
       "selectedPatient": "Paciente seleccionado",

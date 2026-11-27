@@ -81,13 +81,6 @@ export function AppointmentProceduresSection({
 
   return (
     <div className="space-y-5">
-      <div>
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {t("title")}
-        </h4>
-        <p className="text-xs text-gray-500 dark:text-gray-400">{t("hint")}</p>
-      </div>
-
       {lines.length === 0 ? (
         <p className="text-sm text-gray-500 dark:text-gray-400">{t("empty")}</p>
       ) : (

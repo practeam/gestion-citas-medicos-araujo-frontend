@@ -12,6 +12,15 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "@/i18n";
+import {
+  CalendarIcon,
+  CheckIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  FloppyDiscIcon,
+  TaskIcon,
+  UsersIcon,
+} from "@/icons";
 import { getFieldErrors, isApiError } from "@/services/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -232,6 +241,8 @@ interface AppointmentFormProps {
   onChanged: AppointmentFormModalProps["onChanged"];
 }
 
+type AppointmentFormStep = 0 | 1 | 2 | 3;
+
 function AppointmentForm({
   target,
   initialLines,
@@ -244,6 +255,7 @@ function AppointmentForm({
   const tValidation = useTranslations("appointments.validation");
   const tErrors = useTranslations("appointments.errors");
   const isEdit = target.mode === "edit";
+  const [step, setStep] = useState<AppointmentFormStep>(0);
   const [formError, setFormError] = useState<string | null>(null);
   // Cita confirmada por la API: la existente al editar; la creada al crear (aunque falle un detalle).
   const [current, setCurrent] = useState<Appointment | null>(
@@ -262,6 +274,7 @@ function AppointmentForm({
     handleSubmit,
     setError,
     setValue,
+    trigger,
     control,
     formState: { errors, isSubmitting },
   } = useForm<AppointmentFormValues>({
@@ -370,6 +383,7 @@ function AppointmentForm({
     );
     if (invalid.length > 0) {
       setFormError(tProcedures("linesInvalid"));
+      setStep(2);
       return;
     }
 
@@ -431,6 +445,13 @@ function AppointmentForm({
             message: fieldMessage,
           });
         }
+        setStep(
+          mapped.some(
+            ([field]) => field === "patient_id" || field === "staff_member_id",
+          )
+            ? 0
+            : 1,
+        );
       } else {
         setFormError(message);
       }
@@ -441,13 +462,127 @@ function AppointmentForm({
     if (failures > 0) {
       // Los detalles guardados se conservan; se puede reintentar solo lo pendiente.
       onChanged(appointment);
+      setStep(2);
       return;
     }
     onSaved(appointment, isEdit ? "edit" : "create");
   };
 
+  const steps = [
+    { label: t("steps.people"), icon: UsersIcon },
+    { label: t("steps.schedule"), icon: CalendarIcon },
+    { label: t("steps.procedures"), icon: TaskIcon },
+    { label: t("steps.confirm"), icon: CheckIcon },
+  ];
+
+  const goNext = async () => {
+    const valid =
+      step === 0
+        ? await trigger(["patientId", "staffMemberId"])
+        : step === 1
+          ? await trigger(["date", "startTime", "endTime", "reason"])
+          : true;
+    if (valid) setStep((current) => (current + 1) as AppointmentFormStep);
+  };
+
+  const wizardProgress = (
+    <ol
+      className="grid grid-cols-2 gap-2 sm:grid-cols-4"
+      aria-label={t("steps.label")}
+    >
+      {steps.map(({ label, icon: StepIcon }, index) => {
+        const isCurrent = index === step;
+        const isComplete = index < step;
+        return (
+          <li key={label}>
+            <button
+              type="button"
+              className={`flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-start text-xs font-medium transition-colors ${
+                isCurrent
+                  ? "border-brand-500 bg-brand-50 text-brand-700 dark:border-brand-400 dark:bg-brand-500/10 dark:text-brand-300"
+                  : isComplete
+                    ? "border-green-500 bg-green-500 text-white hover:bg-green-600 dark:border-green-500 dark:bg-green-500 dark:text-white"
+                    : "border-gray-200 text-gray-500 dark:border-gray-800 dark:text-gray-400"
+              }`}
+              aria-current={isCurrent ? "step" : undefined}
+              disabled={index > step || isSubmitting}
+              onClick={() =>
+                index < step && setStep(index as AppointmentFormStep)
+              }
+            >
+              <span
+                className={`flex size-7 shrink-0 items-center justify-center rounded-full ${
+                  isComplete ? "bg-white/20" : "bg-current/10"
+                }`}
+              >
+                {isComplete ? (
+                  <CheckIcon className="size-3 fill-current" />
+                ) : (
+                  <StepIcon className="size-4 fill-current" />
+                )}
+              </span>
+              <span className="truncate">{label}</span>
+            </button>
+          </li>
+        );
+      })}
+    </ol>
+  );
+
+  const confirmation = (
+    <section className="space-y-4">
+      <div>
+        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
+          {t("review.title")}
+        </h4>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {t("review.description")}
+        </p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <div className="rounded-xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
+          <UsersIcon className="size-5 text-blue-500" />
+          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+            {t("steps.people")}
+          </p>
+          <p className="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">
+            {patientLabel ?? `#${patientId}`} /{" "}
+            {staffLabel ?? `#${staffMemberId}`}
+          </p>
+        </div>
+        <div className="rounded-xl border border-purple-200 bg-purple-50 p-4 dark:border-purple-500/30 dark:bg-purple-500/10">
+          <CalendarIcon className="size-5 text-purple-500" />
+          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+            {t("steps.schedule")}
+          </p>
+          <p className="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">
+            {date} · {startTime}–{endTime}
+          </p>
+        </div>
+        <div className="rounded-xl border border-green-200 bg-green-50 p-4 dark:border-green-500/30 dark:bg-green-500/10">
+          <TaskIcon className="size-5 text-green-500" />
+          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+            {t("steps.procedures")}
+          </p>
+          <p className="mt-1 text-sm font-medium text-gray-800 dark:text-white/90">
+            {t("review.procedureCount", {
+              count: lines.filter((line) => !line.removed).length,
+            })}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+
   return (
-    <form onSubmit={handleSubmit(send)} className="space-y-6" noValidate>
+    <form
+      onSubmit={handleSubmit(send, (invalidErrors) =>
+        setStep(invalidErrors.patientId || invalidErrors.staffMemberId ? 0 : 1),
+      )}
+      className="space-y-6"
+      noValidate
+    >
+      {wizardProgress}
       {formError && (
         <Alert variant="destructive">
           <AlertDescription>{formError}</AlertDescription>
@@ -477,15 +612,12 @@ function AppointmentForm({
         </Alert>
       )}
 
-      <Alert variant="info">
+      <Alert variant="info" hidden={step !== 1}>
         <AlertDescription>{t("availabilityNote")}</AlertDescription>
       </Alert>
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2" hidden={step !== 0}>
         <section className="space-y-3 rounded-xl border border-gray-200 p-4 dark:border-gray-800">
-          <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-            {t("patientSection")}
-          </h4>
           {patientLocked ? (
             <div className="space-y-1">
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -497,12 +629,6 @@ function AppointmentForm({
             </div>
           ) : (
             <Field data-invalid={Boolean(errors.patientId)}>
-              {patientId !== null && (
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {t("selectedPatient")}:{" "}
-                  <strong>{patientLabel ?? `#${patientId}`}</strong>
-                </p>
-              )}
               <AppointmentEntitySelector
                 type="patient"
                 value={patientId}
@@ -519,16 +645,7 @@ function AppointmentForm({
         </section>
 
         <section className="space-y-3 rounded-xl border border-gray-200 p-4 dark:border-gray-800">
-          <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-            {t("staffSection")}
-          </h4>
           <Field data-invalid={Boolean(errors.staffMemberId)}>
-            {staffMemberId !== null && (
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                {t("selectedStaff")}:{" "}
-                <strong>{staffLabel ?? `#${staffMemberId}`}</strong>
-              </p>
-            )}
             <AppointmentEntitySelector
               type="staff"
               value={staffMemberId}
@@ -544,10 +661,7 @@ function AppointmentForm({
         </section>
       </div>
 
-      <section className="space-y-4 border-t border-gray-100 pt-5 dark:border-gray-800">
-        <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-          {t("scheduleSection")}
-        </h4>
+      <section className="space-y-4" hidden={step !== 1}>
         <div className="grid gap-4 sm:grid-cols-3">
           <Field data-invalid={Boolean(errors.date)}>
             <FieldLabel className="mb-1.5 block">
@@ -606,7 +720,7 @@ function AppointmentForm({
         </Field>
       </section>
 
-      <section className="border-t border-gray-100 pt-5 dark:border-gray-800">
+      <section hidden={step !== 2}>
         <AppointmentProceduresSection
           lines={lines}
           onChange={setLines}
@@ -616,27 +730,62 @@ function AppointmentForm({
         />
       </section>
 
-      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-        <Button
-          type="button"
-          variant="outline"
-          disabled={isSubmitting}
-          onClick={onClose}
-        >
-          {current && !isEdit ? t("close") : t("cancel")}
-        </Button>
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting && <Spinner />}
-          {isSubmitting
-            ? isEdit
-              ? t("savingEdit")
-              : t("savingCreate")
-            : createdPartially
-              ? tProcedures("partial.retry")
-              : isEdit
-                ? t("saveEdit")
-                : t("saveCreate")}
-        </Button>
+      <div hidden={step !== 3}>{confirmation}</div>
+
+      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+        <div>
+          {step === 0 ? (
+            <Button
+              type="button"
+              variant="outline"
+              disabled={isSubmitting}
+              onClick={onClose}
+            >
+              {current && !isEdit ? t("close") : t("cancel")}
+            </Button>
+          ) : (
+            <Button
+              type="button"
+              variant="outline"
+              disabled={isSubmitting}
+              onClick={() =>
+                setStep(
+                  (currentStep) => (currentStep - 1) as AppointmentFormStep,
+                )
+              }
+            >
+              <ChevronLeftIcon className="fill-current rtl:rotate-180" />
+              {t("previous")}
+            </Button>
+          )}
+        </div>
+        {step < 3 ? (
+          <Button
+            type="button"
+            disabled={isSubmitting}
+            onClick={() => void goNext()}
+          >
+            {t("next")}
+            <ChevronRightIcon className="fill-current rtl:rotate-180" />
+          </Button>
+        ) : (
+          <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <Spinner />
+            ) : (
+              <FloppyDiscIcon className="fill-current" />
+            )}
+            {isSubmitting
+              ? isEdit
+                ? t("savingEdit")
+                : t("savingCreate")
+              : createdPartially
+                ? tProcedures("partial.retry")
+                : isEdit
+                  ? t("saveEdit")
+                  : t("saveCreate")}
+          </Button>
+        )}
       </div>
     </form>
   );

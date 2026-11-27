@@ -2843,11 +2843,25 @@
       "refine": "Showing {shown} of {total}. Refine the search to find others."
     },
     "form": {
+      "steps": {
+        "label": "Appointment form steps",
+        "people": "Patient and staff",
+        "schedule": "Date and time",
+        "procedures": "Procedures",
+        "confirm": "Confirmation"
+      },
+      "previous": "Previous",
+      "next": "Next",
+      "review": {
+        "title": "Review and confirm",
+        "description": "Review the information before saving the appointment.",
+        "procedureCount": "{count} procedures"
+      },
       "createTitle": "New appointment",
       "editTitle": "Edit appointment",
       "createDescription": "Choose the patient, the staff member and the date and time.",
       "editDescription": "Change the schedule, the staff member or the reason. The server validates availability again.",
-      "availabilityNote": "The server validates that the staff member is active, that the interval is within their availability, that no exception blocks it and that it does not overlap other appointments.",
+      "availabilityNote": "We will check that the staff member is available at the selected time and has no other appointment or blocked period.",
       "patientSection": "Patient",
       "patientLocked": "The patient cannot be changed. To book another patient, create a new appointment.",
       "selectedPatient": "Selected patient",
