@@ -2030,6 +2030,12 @@
       "reviewHint": "Revisa la información antes de registrar al paciente. Puedes volver a cualquier paso completado.",
       "newBasicData": "Datos básicos nuevos",
       "selectedCount": "{count} seleccionados",
+      "confirmPerson": {
+        "title": "Confirmar datos seleccionados",
+        "description": "¿Confirmas que los datos de {name} son correctos?",
+        "cancel": "Cancelar",
+        "confirm": "Confirmar"
+      },
       "selectedPerson": "Datos seleccionados",
       "selectPersonFirst": "Busca y selecciona tus datos registrados para continuar.",
       "save": "Registrar paciente",

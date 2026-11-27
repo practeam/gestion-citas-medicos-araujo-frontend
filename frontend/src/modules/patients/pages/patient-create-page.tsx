@@ -2,6 +2,14 @@ import { PageBreadcrumb } from "@/components/shared/page-breadcrumb";
 import { PageMeta } from "@/components/shared/page-meta";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Spinner } from "@/components/ui/spinner";
 import { useTranslations } from "@/i18n";
 import {
@@ -89,6 +97,7 @@ export default function PatientCreatePage() {
   const [mode, setMode] = useState<PersonMode>("existing");
   const [step, setStep] = useState<CreateStep>(0);
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
+  const [personToConfirm, setPersonToConfirm] = useState<Person | null>(null);
   // Persona ya registrada en este flujo cuyo paciente quedó pendiente (fallo parcial).
   const [pendingPerson, setPendingPerson] = useState<Person | null>(null);
   const [selectedConditions, setSelectedConditions] = useState<
@@ -371,9 +380,7 @@ export default function PatientCreatePage() {
             >
               <span
                 className={`flex size-6 shrink-0 items-center justify-center rounded-full ${
-                  isComplete
-                    ? "bg-white/20 text-white"
-                    : "bg-current/10"
+                  isComplete ? "bg-white/20 text-white" : "bg-current/10"
                 }`}
               >
                 {isComplete ? (
@@ -655,17 +662,16 @@ export default function PatientCreatePage() {
           <>
             {wizardProgress}
             <section className="space-y-4" hidden={step !== 0}>
-              <h4 className="text-sm font-semibold text-gray-800 dark:text-white/90">
-                {t("create.personSection")}
-              </h4>
-              <Alert variant="info">
-                <AlertDescription>{t("create.modeHint")}</AlertDescription>
-              </Alert>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Button
                   type="button"
                   size="sm"
-                  variant={mode === "existing" ? "default" : "outline"}
+                  variant="outline"
+                  className={
+                    mode === "existing"
+                      ? "border-blue-600 bg-blue-600 text-white hover:border-blue-700 hover:bg-blue-700 hover:text-white dark:border-blue-500 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-600"
+                      : "border-blue-200 text-blue-600 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 dark:border-blue-500/30 dark:text-blue-400 dark:hover:bg-blue-500/10 dark:hover:text-blue-300"
+                  }
                   aria-pressed={mode === "existing"}
                   disabled={isSaving}
                   onClick={() => {
@@ -679,7 +685,12 @@ export default function PatientCreatePage() {
                 <Button
                   type="button"
                   size="sm"
-                  variant={mode === "new" ? "default" : "outline"}
+                  variant="outline"
+                  className={
+                    mode === "new"
+                      ? "border-green-600 bg-green-600 text-white hover:border-green-700 hover:bg-green-700 hover:text-white dark:border-green-500 dark:bg-green-500 dark:text-white dark:hover:bg-green-600"
+                      : "border-green-200 text-green-600 hover:border-green-300 hover:bg-green-50 hover:text-green-700 dark:border-green-500/30 dark:text-green-400 dark:hover:bg-green-500/10 dark:hover:text-green-300"
+                  }
                   aria-pressed={mode === "new"}
                   disabled={isSaving}
                   onClick={() => {
@@ -700,23 +711,12 @@ export default function PatientCreatePage() {
                 <div className="space-y-6" hidden={step !== 0}>
                   <PersonSelector
                     value={selectedPerson?.id ?? null}
-                    onSelect={setSelectedPerson}
+                    onSelect={setPersonToConfirm}
                     activeOnly
+                    showHint={false}
+                    rowSelection
+                    resultColumns={2}
                   />
-                  {selectedPerson ? (
-                    <Alert variant="success">
-                      <AlertTitle>{t("create.selectedPerson")}</AlertTitle>
-                      <AlertDescription>
-                        {getPersonFullName(selectedPerson)}
-                        {" · "}
-                        {getPersonDocument(selectedPerson) ?? t("noValue")}
-                      </AlertDescription>
-                    </Alert>
-                  ) : (
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {t("create.selectPersonFirst")}
-                    </p>
-                  )}
                 </div>
                 <div hidden={step !== 1}>{patientSection}</div>
                 <div hidden={step !== 2}>{conditionsSection}</div>
@@ -743,6 +743,50 @@ export default function PatientCreatePage() {
           </>
         )}
       </div>
+      <Dialog
+        open={personToConfirm !== null}
+        onOpenChange={(open) => !open && setPersonToConfirm(null)}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("create.confirmPerson.title")}</DialogTitle>
+            <DialogDescription>
+              {t("create.confirmPerson.description", {
+                name: personToConfirm ? getPersonFullName(personToConfirm) : "",
+              })}
+            </DialogDescription>
+          </DialogHeader>
+          {personToConfirm && (
+            <div className="rounded-xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-500/30 dark:bg-blue-500/10">
+              <p className="font-medium text-blue-700 dark:text-blue-300">
+                {getPersonFullName(personToConfirm)}
+              </p>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                {getPersonDocument(personToConfirm) ?? t("noValue")}
+              </p>
+            </div>
+          )}
+          <DialogFooter>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setPersonToConfirm(null)}
+            >
+              {t("create.confirmPerson.cancel")}
+            </Button>
+            <Button
+              type="button"
+              onClick={() => {
+                if (personToConfirm) setSelectedPerson(personToConfirm);
+                setPersonToConfirm(null);
+              }}
+            >
+              <CheckIcon className="fill-current" />
+              {t("create.confirmPerson.confirm")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

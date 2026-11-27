@@ -2022,6 +2022,12 @@
       "reviewHint": "Prüfen Sie die Angaben vor der Registrierung. Sie können zu jedem abgeschlossenen Schritt zurückkehren.",
       "newBasicData": "Neue Grunddaten",
       "selectedCount": "{count} ausgewählt",
+      "confirmPerson": {
+        "title": "Ausgewählte Daten bestätigen",
+        "description": "Bestätigen Sie, dass die Daten von {name} korrekt sind?",
+        "cancel": "Abbrechen",
+        "confirm": "Bestätigen"
+      },
       "selectedPerson": "Ausgewählte Daten",
       "selectPersonFirst": "Suchen und wählen Sie Ihre registrierten Daten aus, um fortzufahren.",
       "save": "Patient registrieren",

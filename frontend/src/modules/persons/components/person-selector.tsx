@@ -35,6 +35,12 @@ export interface PersonSelectorProps {
   onSelect: (person: Person) => void;
   /** Solo permite elegir personas activas (las inactivas se muestran deshabilitadas). */
   activeOnly?: boolean;
+  /** Permite ocultar la ayuda inicial en contextos donde el flujo ya es explÃ­cito. */
+  showHint?: boolean;
+  /** Permite seleccionar haciendo clic en toda la fila, sin mostrar un botÃ³n adicional. */
+  rowSelection?: boolean;
+  /** Cantidad de columnas para presentar los resultados en pantallas amplias. */
+  resultColumns?: 1 | 2;
 }
 
 /**
@@ -45,6 +51,9 @@ export function PersonSelector({
   value = null,
   onSelect,
   activeOnly = false,
+  showHint = true,
+  rowSelection = false,
+  resultColumns = 1,
 }: PersonSelectorProps) {
   const t = useTranslations("persons.selector");
   const tErrors = useTranslations("persons.errors");
@@ -138,7 +147,7 @@ export function PersonSelector({
           <AlertDescription>{t("criteriaRequired")}</AlertDescription>
         </Alert>
       )}
-      {state.status === "idle" && !missingCriteria && (
+      {showHint && state.status === "idle" && !missingCriteria && (
         <p className="text-sm text-gray-500 dark:text-gray-400">{t("hint")}</p>
       )}
       {state.status === "error" && (
@@ -153,14 +162,57 @@ export function PersonSelector({
       )}
       {state.status === "success" && state.items.length > 0 && (
         <>
-          <ul className="divide-y divide-gray-100 rounded-xl border border-gray-200 dark:divide-white/5 dark:border-gray-800">
+          <ul
+            className={
+              resultColumns === 2
+                ? "grid gap-3 sm:grid-cols-2"
+                : "divide-y divide-gray-100 rounded-xl border border-gray-200 dark:divide-white/5 dark:border-gray-800"
+            }
+          >
             {state.items.map((person) => {
               const selected = person.id === value;
               const disabled = activeOnly && !person.is_active;
               return (
                 <li
                   key={person.id}
-                  className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"
+                  className={`flex flex-wrap items-center justify-between gap-3 px-4 py-3 transition-colors ${
+                    resultColumns === 2
+                      ? "rounded-xl border border-gray-200 dark:border-gray-800"
+                      : ""
+                  } ${
+                    rowSelection
+                      ? disabled
+                        ? "cursor-not-allowed opacity-60"
+                        : "cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand-500"
+                      : ""
+                  } ${
+                    rowSelection && selected
+                      ? "bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300"
+                      : rowSelection && !disabled
+                        ? "hover:bg-gray-50 dark:hover:bg-white/5"
+                        : ""
+                  }`}
+                  role={rowSelection ? "button" : undefined}
+                  tabIndex={rowSelection && !disabled ? 0 : undefined}
+                  aria-pressed={rowSelection ? selected : undefined}
+                  title={
+                    rowSelection
+                      ? selected
+                        ? t("selected")
+                        : t("select")
+                      : undefined
+                  }
+                  onClick={() => rowSelection && !disabled && onSelect(person)}
+                  onKeyDown={(event) => {
+                    if (
+                      rowSelection &&
+                      !disabled &&
+                      (event.key === "Enter" || event.key === " ")
+                    ) {
+                      event.preventDefault();
+                      onSelect(person);
+                    }
+                  }}
                 >
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium text-gray-800 dark:text-white/90">
@@ -172,16 +224,18 @@ export function PersonSelector({
                   </div>
                   <div className="flex items-center gap-3">
                     <PersonStatusBadge isActive={person.is_active} />
-                    <Button
-                      type="button"
-                      size="xs"
-                      variant={selected ? "default" : "outline"}
-                      disabled={disabled}
-                      aria-pressed={selected}
-                      onClick={() => onSelect(person)}
-                    >
-                      {selected ? t("selected") : t("select")}
-                    </Button>
+                    {!rowSelection && (
+                      <Button
+                        type="button"
+                        size="xs"
+                        variant={selected ? "default" : "outline"}
+                        disabled={disabled}
+                        aria-pressed={selected}
+                        onClick={() => onSelect(person)}
+                      >
+                        {selected ? t("selected") : t("select")}
+                      </Button>
+                    )}
                   </div>
                 </li>
               );

@@ -2030,6 +2030,12 @@
       "reviewHint": "Review the information before registering the patient. You can return to any completed step.",
       "newBasicData": "New basic data",
       "selectedCount": "{count} selected",
+      "confirmPerson": {
+        "title": "Confirm selected information",
+        "description": "Do you confirm that {name}'s information is correct?",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      },
       "selectedPerson": "Selected information",
       "selectPersonFirst": "Find and select your registered information to continue.",
       "save": "Register patient",
